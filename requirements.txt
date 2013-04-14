@@ -1,5 +1,5 @@
 Django==1.2.3
-PIL==1.1.7
+#PIL==1.1.7
 -e hg+https://bitbucket.org/etienned/pil-2009-raclette/#egg=PIL
 South==0.7.6
 argparse==1.2.1
