@@ -1,8 +1,8 @@
 Django==1.2.3
 #PIL==1.1.7
 -e hg+https://bitbucket.org/etienned/pil-2009-raclette/#egg=PIL
-#South==0.7.6
-#argparse==1.2.1
+South==0.7.6
+argparse==1.2.1
 #distribute==0.6.36
 #dj-database-url==0.2.1
 #django-heroku-memcacheify==0.4
