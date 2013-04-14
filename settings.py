@@ -143,7 +143,20 @@ LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # Path for static docs (css, images, etc)
-STATIC_DOC_ROOT = STATIC_ROOT = os.path.join(curdir, 'site_media')
+STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
+
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'site_media')
+
+# URL prefix for static files.
+# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_URL = '/site_media/'
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
 
 DATE_FORMAT = 'd/m/Y'
 DATETIME_FORMAT = 'd/m/Y, H:i'
