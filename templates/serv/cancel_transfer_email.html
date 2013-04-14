@@ -1,0 +1,15 @@
+{% load i18n %}
+{% url serv-transfer-view transfer.id as transfer_url %}
+{% if not transfer.is_direct %}
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Hi,
+
+The transfer initially requested by {{ transfer_creator }} from the service created by {{ service_creator }} has been cancelled. You can see the details of the cancelled transfer in {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+{% else %}
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Hola {{ transfer_recipient }},
+
+The direct transfer created by {{ transfer_creator }} with you has been cancelled. You can see the details of the cancelled transfer in {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+{% endif %}

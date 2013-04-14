@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-messages-0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-10 12:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: krisje8 <info@krisje8.com>\n"
+"Language-Team: krisje8 <info@krisje8.com\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:19 forms.py:20 models.py:75
+msgid "Recipient"
+msgstr "Ontvanger"
+
+#: admin.py:21
+msgid "group"
+msgstr "groep"
+
+#: admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr ""
+"Maakt het bericht optioneel voor alle gebruikers of een groep van gebruikers."
+
+#: admin.py:29
+msgid "All users"
+msgstr "Alle gebruikers"
+
+#: admin.py:44 forms.py:21 models.py:73 models.py:120
+msgid "Message"
+msgstr "Bericht"
+
+#: admin.py:51
+msgid "Date/time"
+msgstr "Datum/tijd"
+
+#: fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr "De volgende gebruikersnamen zijn incorrect: %(users)s"
+
+#: management.py:9
+msgid "Message Received"
+msgstr "Bericht Ontvangen"
+
+#: management.py:9
+msgid "you have received a message"
+msgstr "je hebt een bericht ontvangen"
+
+#: management.py:10
+msgid "Message Sent"
+msgstr "Bericht Verstuurd"
+
+#: management.py:10
+msgid "you have sent a message"
+msgstr "je hebt een bericht verstuurd"
+
+#: management.py:11
+msgid "Message Replied"
+msgstr "Bericht Beantwoord"
+
+#: management.py:11
+msgid "you have replied to a message"
+msgstr "je hebt een bericht beantwoord"
+
+#: management.py:12
+msgid "Reply Received"
+msgstr "Antwoord Ontvangen"
+
+#: management.py:12
+msgid "you have received a reply to a message"
+msgstr "je hebt een antwoord op een bericht ontvangen"
+
+#: management.py:13
+msgid "Message Deleted"
+msgstr "Bericht Verwijderd"
+
+#: management.py:13
+msgid "you have deleted a message"
+msgstr "je hebt een bericht verwijderd"
+
+#: management.py:14
+msgid "Message Recovered"
+msgstr "Bericht Hersteld"
+
+#: management.py:14
+msgid "you have undeleted a message"
+msgstr "je hebt een bericht hersteld"
+
+#: models.py:72
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: models.py:74
+msgid "Sender"
+msgstr "Verstuurder"
+
+#: models.py:76
+msgid "Parent message"
+msgstr "Hoofdbericht"
+
+#: models.py:77
+msgid "sent at"
+msgstr "verstuurd op"
+
+#: models.py:78
+msgid "read at"
+msgstr "gelezen op"
+
+#: models.py:79
+msgid "replied at"
+msgstr "beantwoord op"
+
+#: models.py:80
+msgid "Sender deleted at"
+msgstr "Verstuurder verwijderde op"
+
+#: models.py:81
+msgid "Recipient deleted at"
+msgstr "Ontvanger verwijderde op"
+
+#: models.py:82
+#, fuzzy
+msgid "Public message"
+msgstr "Hoofdbericht"
+
+#: models.py:84
+msgid "Service"
+msgstr ""
+
+#: models.py:86
+msgid "Transfer"
+msgstr ""
+
+#: models.py:121
+msgid "Messages"
+msgstr "Berichten"
+
+#: utils.py:22
+#, python-format
+msgid "New Message: %(subject)s"
+msgstr "Nieuw Bericht: %(subject)s"
+
+#: utils.py:62
+#, python-format
+msgid "New transfer request from %s"
+msgstr ""
+
+#: utils.py:65
+#, python-format
+msgid "New direct transfer from %s"
+msgstr ""
+
+#: utils.py:81
+#, python-format
+msgid "Transfer from %s edited"
+msgstr ""
+
+#: utils.py:87
+#, python-format
+msgid "Transfer of the service from %s accepted"
+msgstr ""
+
+#: utils.py:90
+#, python-format
+msgid "Direct transfer from %s accepted"
+msgstr ""
+
+#: utils.py:95
+#, python-format
+msgid "Transfer to %(user1)s from a service of %(user2)s cancelled"
+msgstr ""
+
+#: utils.py:101
+#, python-format
+msgid "Direct transfer from %s cancelled"
+msgstr ""
+
+#: utils.py:106
+#, python-format
+msgid "Transfer of the service you did to %s confirmed"
+msgstr ""
+
+#: views.py:105 views.py:163
+msgid "Message successfully sent."
+msgstr "Bericht succesvol verstuurd."
+
+#: views.py:133
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+"%(sender)s schreef:\n"
+"%(body)s"
+
+#: views.py:137
+#, python-format
+msgid "Re: %(subject)s"
+msgstr "Antw: %(subject)s"
+
+#: views.py:204
+msgid "Message successfully deleted."
+msgstr "Bericht succesvol verwijderd."
+
+#: views.py:233
+msgid "Message successfully recovered."
+msgstr "Bericht succesvol hersteld."
+
+#~ msgid "Body"
+#~ msgstr "Inhoud"
+
+#~ msgid "Inbox"
+#~ msgstr "Postvak In"
+
+#~ msgid "Sent Messages"
+#~ msgstr "Verstuurde berichten"
+
+#~ msgid "New Message"
+#~ msgstr "Nieuw Bericht"
+
+#~ msgid "Trash"
+#~ msgstr "Prullenbak"
+
+#~ msgid "Compose Message"
+#~ msgstr "Schrijf een bericht"
+
+#~ msgid "Send"
+#~ msgstr "Verstuur"
+
+#~ msgid "Received"
+#~ msgstr "Ontvangen"
+
+#~ msgid "Action"
+#~ msgstr "Actie"
+
+#~ msgid "DATETIME_FORMAT"
+#~ msgstr "DATETIME_FORMAT"
+
+#~ msgid "delete"
+#~ msgstr "verwijderen"
+
+#~ msgid ""
+#~ "Hello %(recipient)s,\n"
+#~ "\n"
+#~ "you received a private message from %(sender)s with\n"
+#~ "the following contents:"
+#~ msgstr ""
+#~ "Hallo %(recipient)s,\n"
+#~ "\n"
+#~ "Je hebt een persoonlijk bericht ontvangen van %(sender)s met\n"
+#~ "de volgende inhoud:"
+
+#~ msgid "Sent from %(site_url)s"
+#~ msgstr "Verstuurd vanaf %(site_url)s"
+
+#~ msgid "Reply"
+#~ msgstr "Beantwoord"
+
+#~ msgid "Sent"
+#~ msgstr "Verstuurd"
+
+#~ msgid "Deleted Messages"
+#~ msgstr "Verwijderde Berichten"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "undelete"
+#~ msgstr "herstel"
+
+#~ msgid ""
+#~ "Deleted Messages are removed from the trash at unregular intervals, don't "
+#~ "rely on this feature for long-time storage."
+#~ msgstr ""
+#~ "Verwijderde Berichten worden uit de prullenbak verwijderd op "
+#~ "onregelmatige tijden, vertrouw niet op deze functie voor langdurige "
+#~ "opslag."
+
+#~ msgid "View Message"
+#~ msgstr "Bekijk Bericht"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijder"
+
+#~ msgid ""
+#~ "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+#~ msgstr ""
+#~ "Je hebt het bericht <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "verwijderd."
+
+#~ msgid ""
+#~ "You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "from %(message_sender)s."
+#~ msgstr ""
+#~ "Je hebt het bericht <a href=\"%(message_url)s\">%(message)s</a> ontvangen "
+#~ "van %(message_sender)s."
+
+#~ msgid ""
+#~ "You have recovered the message <a href=\"%(message_url)s\">%(message)s</"
+#~ "a>."
+#~ msgstr ""
+#~ "Je hebt het bericht <a href=\"%(message_url)s\">%(message)s</a> hersteld."
+
+#~ msgid ""
+#~ "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</"
+#~ "a> from %(message_recipient)s."
+#~ msgstr ""
+#~ "Je hebt op <a href=\"%(message_url)s\">%(message_parent_msg)s</a> van "
+#~ "%(message_recipient)s geantwoord."
+
+#~ msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+#~ msgstr ""
+#~ "%(message_sender)s heeft je een antwoord op %(message_parent_msg)s "
+#~ "gestuurd."
+
+#~ msgid ""
+#~ "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
+#~ "%(message_recipient)s."
+#~ msgstr ""
+#~ "Je hebt het bericht <a href=\"%(message_url)s\">%(message)s</a> naar "
+#~ "%(message_recipient)s gestuurd."

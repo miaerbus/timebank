@@ -1,0 +1,20 @@
+{% extends "serv/base.html" %}
+{% load i18n %}
+{% block subtitle %}
+    {% if instance %}
+        {% trans "Edit service" %}
+    {% else %}
+        {% trans "Add service" %}
+    {% endif %}
+{% endblock %}
+
+{% block subcontent %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            {% include "main/form_snippet.html" %}
+        </fieldset>
+        <input type="submit" value="{% trans "Save" %}"/>
+    </form>
+</div>
+{% endblock %}

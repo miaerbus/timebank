@@ -1,0 +1,30 @@
+{% load i18n %}
+<div class="serv comment">
+    <div class="information">
+    </div>
+    <div class="gravatar">
+        <a href="{% url user-view comment.sender.id %}">
+            <img src="{% avatar comment.sender 48 %}" alt="{{ comment.sender.username }}" title="{{ comment.sender.username }}"/>
+            {{ comment.sender.username }}
+        </a>
+    </div>
+    <div class="description"><p>{{ comment.body|linebreaks }}</p></div>
+    <div class="cleaner"></div>
+    <div class="information2">
+        {% if not comment.is_public %}
+            {% trans "comment is private" %}
+        {% endif %}
+        {% blocktrans with comment.sent_at|timesince as time %}
+        Published {{ time }} ago
+        {% endblocktrans %} 
+    </div>
+    <div class="cleaner"></div>
+    <div class="buttons">
+        {% if user.is_authenticated and comment.sender == user %}
+            <form method="POST" action="{% url serv-comment-delete comment.id %}"> {% csrf_token %}
+                <input class="action" name="submit" type="submit" value="{% trans 'Remove comment' %}"/>
+            </form>
+        {% endif %}
+    </div>
+</div>
+<div class="cleaner"></div>

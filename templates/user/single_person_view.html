@@ -1,0 +1,28 @@
+{% load i18n %}
+<div class="serv person">
+        <div class="information">
+            {% trans "Nick" %}:
+            <span>{{ person.username }}</span> /
+            {% trans "Name and Surname" %}:
+            <span>{{ person.first_name }} {{ person.last_name }}</span> /
+            {% trans "Credits" %}:
+            <span>{{ person.balance_hours }} horas</span> /
+            {% trans "Karma" %}:
+            <span>{{ person.karma }}</span>
+        </div>
+        <div class="gravatar">
+            <a href="{% url user-view person.id %}">
+                <img src="{% avatar person 48 %}" alt="{{ person.username }}" title="{{ person.username }}"/>
+                {{ person.username|truncate_chars:7 }}
+            </a>
+        </div>
+        <a href="{% url user-view person.id %}"><div class="description">{{ person.description|linebreaks }}</div></a>
+        {% if user.is_authenticated %}
+        <div class="cleaner"></div>
+        <div class="buttons">
+            <a class="action" href="{% url serv-transfer-new-to person.id %}">{% trans "Transfer hours" %}</a>
+            <a class="action" href="{% url user-view-services person.id %}">{% trans "View his services" %}</a>
+        </div>
+        {% endif %}
+</div>
+<div class="cleaner"></div>

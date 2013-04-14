@@ -1,0 +1,21 @@
+{% extends "serv/base.html" %}
+{% load i18n %}
+{% block subtitle %}
+    {% trans "Comment a service" %}
+{% endblock %}
+
+{% block subcontent %}
+    <h2>{% trans "Service" %}</h2>
+    {% with service as serv %}
+        {% include "serv/single_service_view.html" %}
+    {% endwith %}
+    <h2 style="margin-top: 30px">{% trans "Comment the service" %}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            {% include "main/form_snippet.html" %}
+        </fieldset>
+        <input type="submit" value="{% trans 'Send comment' %}"/>
+    </form>
+</div>
+{% endblock %}

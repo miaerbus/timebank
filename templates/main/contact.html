@@ -1,0 +1,17 @@
+{% extends "template_base.html" %}
+{% load i18n %}
+{% block title %} {% trans 'Contact' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h1>{% trans 'Contact' %}</h1>
+        {% trans 'Contact with the site owners via this form.' %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset>
+                {% include "main/form_snippet.html" %}
+            </fieldset>
+            <input class="submit" type="submit" value="{% trans 'Send message' %}"/>
+        </form>
+    </div>
+{% endblock %}

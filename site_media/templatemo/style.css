@@ -1,0 +1,941 @@
+
+html
+{
+    background:none repeat scroll 0 0 #fff;
+}
+
+body
+{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    line-height:1.5em;
+    width:100%;
+    display:table;
+    background:url("templatemo_bg.jpg") repeat-x scroll 0 0 #fff;
+    margin:0;
+    padding:0;
+}
+
+a:link, a:visited
+{
+    color:#494949;
+    text-decoration:underline;
+}
+
+a:active, a:hover
+{
+    color:#494949;
+    text-decoration:none;
+}
+
+p
+{
+    font-family:Tahoma;
+    font-size:13px;
+    color:#484848;
+    text-align:justify;
+    margin:0 0 10px;
+}
+
+h1
+{
+    font-family:Tahoma;
+    font-size:18px;
+    color:#676767;
+    font-weight:400;
+    margin:0 0 15px;
+}
+
+h2
+{
+    font-family:Tahoma;
+    font-size:16px;
+    color:#0895d6;
+    font-weight:400;
+    margin:0 0 10px;
+}
+
+h3
+{
+    font-family:Tahoma;
+    font-size:11px;
+    color:#2780e4;
+    font-weight:400;
+    margin:0 0 5px;
+}
+
+#left form p
+{
+    text-align:right;
+}
+
+#container
+{
+    width:960px;
+    margin:auto;
+}
+
+#header
+{
+    width:960px;
+    height:157px;
+    margin:0 0 0 -15px;
+    padding:1px 0 0;
+}
+
+#logo_area
+{
+    width:175px;
+    height:60px;
+    float:left;
+    margin:25px 0 0 50px;
+}
+
+#logo
+{
+    height: 100px;
+    width: 315px;
+    margin-top: -20px;
+    margin-left: -50px;
+}
+
+#logo img
+{
+    border: none;
+}
+
+#slogan
+{
+    float:left;
+    font-family:Tahoma;
+    font-size:12px;
+    color:#000;
+    font-style:italic;
+    margin:5px 0 0;
+}
+
+#social
+{
+    width:195px;
+    height:80px;
+    float:right;
+    margin:30px 0 0;
+}
+
+#social form
+{
+    float:right;
+    width:185px;
+    height:36px;
+    background:url("templatemo_search.jpg") repeat scroll 0 0 transparent;
+}
+
+.field
+{
+    float:left;
+    width:132px;
+    height:21px;
+    background:none repeat scroll 0 0 transparent;
+    border:medium none;
+    font-family:Tahoma;
+    color:#686868;
+    margin:8px 0 0 10px;
+}
+
+.button
+{
+    float:right;
+    width:35px;
+    height:22px;
+    border:medium none;
+    background:url("templatemo_botton.jpg") no-repeat scroll 0 0 transparent;
+    cursor:pointer;
+    margin:8px 5px 0 0;
+}
+
+#social img
+{
+    float:right;
+    border:medium none;
+    margin:0 20px 0 0;
+}
+
+#menu
+{
+    float:right;
+    width: 980px;
+    height:40px;
+    margin:5px 0 0;
+    padding:0;
+}
+
+#menu ul
+{
+    float:right;
+/*     width:530px; */
+    list-style:none outside none;
+    margin:0;
+    padding:0;
+}
+
+#menu ul#login
+{
+    float:left;
+    width:275px;
+    margin-left:10px;
+}
+
+#menu ul li
+{
+    display:inline;
+}
+
+#menu ul li span
+{
+    float:left;
+    text-align:center;
+    text-decoration:none;
+    color:#2a5f00;
+    font-family:Tahoma;
+    font-size:12px;
+    outline:medium none;
+    padding:11px 20px;
+}
+
+#menu ul li a
+{
+    float:left;
+    text-align:center;
+    text-decoration:none;
+    background:url("templatemo_menu_divider.png") no-repeat scroll right center transparent;
+    color: white;
+    font-family:Tahoma;
+    font-weight:bold;
+    font-size:12px;
+    outline:medium none;
+    padding:11px 20px;
+}
+
+#menu ul li a.messages_inbox small
+{
+    color: #FFFF00;
+}
+
+#menu li .current
+{
+    color:#2a5f00;
+}
+
+#menu li a:hover
+{
+    color:#2a5f00;
+}
+
+#menu li .last
+{
+    background:none repeat scroll 0 0 transparent;
+}
+
+#content_area
+{
+    width:960px;
+    margin:20px 0 0;
+}
+
+#left
+{
+    float:left;
+    width:250px;
+}
+
+#right
+{
+    float:right;
+    width:685px;
+}
+
+.section_1
+{
+    width:250px;
+    margin:0 0 10px;
+}
+
+.section_1 .top
+{
+    width:250px;
+    height:33px;
+    background:url("templatemo_section_1_top.jpg") no-repeat scroll left center transparent;
+}
+
+.top h1
+{
+    display:block;
+    float:left;
+    margin:15px 0 0 15px;
+}
+
+.top span.title
+{
+    float:right;
+    display:block;
+    font-family:Tahoma;
+    font-size:10px;
+    color:#000;
+    margin:15px 10px 0 0;
+}
+
+.top span.title a
+{
+    color: black;
+}
+
+.top span.title a.current
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section_1 .middle
+{
+    width:250px;
+    background:url("templatemo_section_1_mid.jpg") repeat-y scroll left center transparent;
+}
+
+.section_1 .bottom
+{
+    width:210px;
+    background:url("templatemo_section_1_bottom.jpg") no-repeat scroll left bottom transparent;
+    padding:10px 20px 5px 15px;
+}
+
+.templaemo_h_line
+{
+    width:100%;
+    clear:both;
+    height:1px;
+    background:url("templatemo_h_line.jpg") repeat scroll 0 0 transparent;
+    margin:0 0 10px;
+}
+
+.templaemo_v_line
+{
+    width:1px;
+    float:left;
+    height:260px;
+    background:url("templatemo_v_line.jpg") repeat scroll 0 0 transparent;
+}
+
+.section_2
+{
+    width:220px;
+    margin:0 0 10px;
+    padding:15px 15px 5px;
+}
+
+.section_2 .green
+{
+    border-left:8px solid #64d608;
+    margin:0 0 15px;
+    padding:0 0 0 5px;
+}
+
+.section_2 .blue
+{
+    border-left:8px solid #0895d6;
+    margin:0 0 15px;
+    padding:0 0 0 5px;
+}
+
+.section_2 .yellow
+{
+    border-left:8px solid #fc6;
+    margin:0 0 15px;
+    padding:0 0 0 5px;
+}
+
+div.new h2 a, div.new h3 a
+{
+    color: #0895D6;
+    text-decoration: none;
+    border: none;
+}
+
+div.new h2 a:hover, div.new h3 a:hover
+{
+    text-decoration: underline;
+}
+
+div.new .info
+{
+    color: #aaa;
+}
+
+.section_2 > a
+{
+    display: block;
+    text-align: right;
+}
+
+.section_2 h1 a img
+{
+    border: none;
+    height: 16px;
+    width: 16px;
+}
+
+.section_3
+{
+    width:685px;
+    background:url("templatemo_section_3_bg.jpg") no-repeat scroll 105px -5px transparent;
+    margin:0 0 20px;
+}
+
+.section_3 h1
+{
+    font-family:Arial;
+    font-size:20px;
+    color:#0895d6;
+    display:block;
+    margin:0 0 25px 20px;
+}
+
+.section_4
+{
+    width:685px;
+    margin:0 0 15px;
+}
+
+.section_5
+{
+    width:685px;
+    background:url("templatemo_section_5.jpg") no-repeat scroll center top transparent;
+    margin:0 0 20px;
+    padding:15px 0 0;
+}
+
+
+.section_3 form
+{
+  font:100% verdana,arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.section_3 form fieldset
+{
+    border-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.section_3 form fieldset ul, .section_3 form fieldset li
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.section_3 form fieldset li
+{
+    clear: both;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.section_3 form fieldset legend
+{
+    font-size:1.1em;
+    color: #484848;
+}
+
+.section_3 form label
+{
+    display: block;
+    float: left;
+    width: 150px;
+    color: #484848;
+    padding: 5px;
+    text-align: right;
+}
+
+.section_3 form input, .section_3 form textarea
+{
+    margin-top: 5px;
+    width: auto;
+}
+
+.section_3 form input.submit
+{
+    margin-left: 170px;
+}
+
+.section_3 form textarea
+{
+    overflow: auto;
+}
+
+.section_3 form small, .section_3 form ul.errorlist
+{
+    display: block;
+    margin-left: 160px;
+    padding: 0;
+    font-size: 88%;
+    color: #676767;
+}
+
+.section_3 form ul.errorlist li
+{
+    color: red;
+    padding-bottom: 0;
+}
+
+.two_col
+{
+    width:310px;
+    margin:0 0 20px;
+    padding:0 15px 15px;
+}
+
+.two_col img
+{
+    margin:0 0 10px;
+}
+
+.gallery
+{
+    margin:0;
+    padding:0;
+}
+
+.gallery img
+{
+    float:left;
+    margin:0 0 20px;
+}
+
+.gallery img.mid
+{
+    float:left;
+    margin:0 27px;
+}
+
+.right
+{
+    float:right;
+}
+
+.left
+{
+    float:left;
+}
+
+#footer
+{
+    width:100%;
+    height:52px;
+    background:url("templatemo_footer_bg.jpg") repeat scroll 0 0 transparent;
+    color:#fff;
+    text-align:center;
+    margin:0;
+    padding:36px 0 0;
+}
+
+#footer a
+{
+    color:#fff;
+    text-decoration:underline;
+}
+
+#footer a:hover
+{
+    color:#fff;
+    text-decoration:none;
+}
+
+#footer .footer_menu {
+    margin: 0 0 10px 0;
+    padding: 0px;
+    list-style: none;
+}
+
+.footer_menu li {
+    margin: 0px;
+    padding: 0 20px 0 0;
+    display: inline;
+}
+
+.footer_menu li a {
+    color: #fff;
+}
+
+.footer_menu li a.current {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer_menu .last_menu {
+    border: none;
+}
+
+.cleaner
+{
+    clear:both;
+    height:0;
+    margin:0;
+    padding:0;
+}
+
+/*Messages*/
+
+.subnavilist {
+    list-style:none;
+    margin-left: -20px;
+}
+
+.subnavilist li {
+    display: inline;
+}
+
+.subnavilist li a {
+    text-decoration: none;
+}
+
+.subnavilist li a.current {
+    font-weight: bold;
+}
+
+.subnavilist li a:hover {
+    text-decoration: underline;
+}
+
+.subnavilist li small {
+    color: #2A5F00;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#subcontent > table
+{
+    width: 100%;
+    padding: 0;
+}
+
+#subcontent > table > thead
+{
+    text-align: left;
+}
+
+#subcontent > table > thead th
+{
+    border-bottom:1px solid #bbb;
+}
+
+#subcontent > table > thead th.date
+{
+    width: 150px;
+}
+
+#subcontent > table > thead th, #subcontent > table td
+{
+    margin: 0; padding: 0;
+    
+}
+
+#subcontent > table tbody tr.new td.date
+{
+    font-weight: bold;
+}
+
+#subcontent > table tbody tr:hover
+{
+    background-color: #efefdf;
+}
+
+/* Services */
+
+.services .serv .buttons {
+/*     border-top: 1px dotted #ddd; */
+    margin-top: 0;
+}
+
+.services .serv .information a {
+    text-decoration: none;
+    color: black;
+    font: 100% verdana,arial,sans-serif;
+    font-weight: bold;
+}
+
+.services .person .information span {
+    text-decoration: none;
+    color: black;
+    font: 100% verdana,arial,sans-serif;
+    font-weight: bold;
+}
+
+.services .serv .information a:hover, .services .serv .buttons .action:hover {
+    text-decoration: underline;
+}
+
+.services .serv a {
+    text-decoration: none;
+}
+
+.services .serv .information2 a {
+    text-decoration: none;
+    color: #4061C2;
+    font: 100% verdana,arial,sans-serif;
+    font-weight: none;
+}
+
+.services .serv .information2 a:hover {
+    text-decoration: underline;
+}
+
+.services .serv form input {
+    margin-top: -5px;
+}
+
+.services .serv .buttons .action {
+    text-decoration: none;
+    margin: 0px;
+    margin-top: -5px;
+    padding: 5px;
+    cursor:pointer;
+    float:right;
+    background:none;
+    border:0;
+    font-weight: bold;
+    font-size: 12px;
+    color: green;
+    font: 100% verdana,arial,sans-serif;
+}
+
+.buttons .action:hover {
+    text-decoration: underline;
+}
+
+.services h3 {
+    border-bottom: 1px solid #2780e4;
+    margin-top: 10px;
+}
+
+.services .offer, .services .serv {
+    padding: 5px;
+}
+
+.services .serv .description {
+    min-height: 60px;
+    margin-left: 5px;
+    padding: 5px;
+    padding-top: 0;
+    border-left: 3px solid #64D507;
+    display: block;
+    float: left;
+    width: 600px;
+    background-color: white;
+}
+
+.services .serv .description2 {
+    width: 550px;
+}
+
+.services .serv.inactive .description, .services .serv.demand.inactive .description {
+    border-color: #f57900;
+}
+
+.services .serv.demand .description {
+    border-color: #0895d6;
+}
+
+.services .serv .description a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.services .serv .description:hover {
+    background-color: #64D507;
+    color: white;
+}
+
+.services .serv.inactive .description:hover, .services .serv.demand.inactive .description:hover {
+    background-color: #f57900;
+}
+
+.services .serv.demand .description:hover {
+    background-color: #0895d6;
+}
+
+.services .serv .description:hover p {
+    color: white;
+}
+
+.serv {
+    margin-top: 10px;
+}
+
+.services .serv .gravatar {
+    text-align: center;
+    width: 48px;
+    display: block;
+    float: left;
+    padding: 2px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.services .serv .gravatar:hover {
+    background-color: #64D507;
+}
+
+.services .serv .gravatar:hover a {
+    color: white;
+}
+
+.services .serv .gravatar a {
+    text-decoration: none;
+}
+
+.services .serv .gravatar a img {
+    clear: both;
+    display: block;
+    border: 0;
+}
+
+.services .serv .information {
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+/*     border-top: 1px solid #ddd; */
+    margin-bottom: 7px;
+}
+
+.services .serv .information2 {
+    border-top: 1px solid #ddd;
+    float: left;
+    width: 100%;
+}
+
+ul.view-profile {
+    list-style:none outside none;
+}
+
+ul.view-profile li > em {
+    display: block;
+    text-decoration: none;
+    float: left;
+    clear: both;
+    text-align: right;
+    width: 150px;
+    margin-right: 6px;
+    margin-bottom: 12px;
+}
+
+ul.view-profile li > div {
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    width: auto;
+    clear: right;
+    min-width: 200px;
+    max-width: 450px;
+    min-height: 20px;
+}
+
+.message-headers {
+    display: block;
+    clear: both;
+    width: 100%;
+    min-height: 70px;
+}
+
+.message-headers dt {
+    width: 50px;
+    display: block;
+    float: left;
+    clear: both;
+}
+
+.message-headers dd {
+    display: block;
+    float: left;
+    font-weight: bold;
+}
+
+.public_messages form {
+    background-color: #eee;
+}
+
+.public_messages label {
+    visibility: none;
+}
+
+.public_messages .description {
+    padding: 20px;
+}
+
+.public_messages #user_message_list .message .info {
+    margin-bottom: 20px;
+    background-color: #eee;
+}
+
+.services a.more {
+    float: right;
+}
+
+#select-language-input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+/* Transfer statuses */
+.status {
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.status_a {
+    background-image: url('../imgs/accepted.png');
+}
+.status_q {
+    background-image: url('../imgs/requested.png');
+}
+.status_r {
+    background-image: url('../imgs/cancelled.png');
+}
+.status_d {
+    background-image: url('../imgs/done.png');
+}
+
+.status p {
+    margin-right: 50px;
+}
+
+.important_link {
+    background-color: #f57900;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a.important_link:hover {
+    background-color: #64D507;
+    color: black !important;
+}

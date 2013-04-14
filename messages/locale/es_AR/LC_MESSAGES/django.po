@@ -1,0 +1,316 @@
+# django-messages in Spanish Argentina.
+# django-messages en Español Argentina.
+# Copyright (C) 2008
+# This file is distributed under the same license as the django-messages package.
+# Cecilia Lorena Puccinelli <ceciliapuccinelli@gmail.com>, 2008.
+# Juan José Conti <jjconti@gnu.org>, 2008.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-10 12:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:19 forms.py:20 models.py:75
+msgid "Recipient"
+msgstr "Destinatario"
+
+#: admin.py:21
+msgid "group"
+msgstr ""
+
+#: admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr ""
+
+#: admin.py:29
+msgid "All users"
+msgstr ""
+
+#: admin.py:44 forms.py:21 models.py:73 models.py:120
+msgid "Message"
+msgstr "Mensaje"
+
+#: admin.py:51
+#, fuzzy
+msgid "Date/time"
+msgstr "Fecha"
+
+#: fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr ""
+
+#: management.py:9
+msgid "Message Received"
+msgstr "Mensaje Recibido"
+
+#: management.py:9
+msgid "you have received a message"
+msgstr "ha recibido un mensaje"
+
+#: management.py:10
+msgid "Message Sent"
+msgstr "Mensaje Enviado"
+
+#: management.py:10
+msgid "you have sent a message"
+msgstr "ha enviado un mensaje"
+
+#: management.py:11
+msgid "Message Replied"
+msgstr "Mensaje Respondido"
+
+#: management.py:11
+msgid "you have replied to a message"
+msgstr "ha respondido un mensaje"
+
+#: management.py:12
+msgid "Reply Received"
+msgstr "Respuesta Recibida"
+
+#: management.py:12
+msgid "you have received a reply to a message"
+msgstr "ha recibido una respuesta a un mensaje"
+
+#: management.py:13
+msgid "Message Deleted"
+msgstr "Mensaje Eliminado"
+
+#: management.py:13
+msgid "you have deleted a message"
+msgstr "ha eliminado un mensaje"
+
+#: management.py:14
+msgid "Message Recovered"
+msgstr "Mensaje Recuperado"
+
+#: management.py:14
+msgid "you have undeleted a message"
+msgstr "ha recuperado un mensaje"
+
+#: models.py:72
+msgid "Subject"
+msgstr "Asunto"
+
+#: models.py:74
+msgid "Sender"
+msgstr "Emisor"
+
+#: models.py:76
+msgid "Parent message"
+msgstr "Mensaje padre"
+
+#: models.py:77
+msgid "sent at"
+msgstr "enviado"
+
+#: models.py:78
+msgid "read at"
+msgstr "leído"
+
+#: models.py:79
+msgid "replied at"
+msgstr "respondido"
+
+#: models.py:80
+msgid "Sender deleted at"
+msgstr "Emisor borrado"
+
+#: models.py:81
+msgid "Recipient deleted at"
+msgstr "Destinatario borrado"
+
+#: models.py:82
+#, fuzzy
+msgid "Public message"
+msgstr "Mensaje padre"
+
+#: models.py:84
+msgid "Service"
+msgstr ""
+
+#: models.py:86
+msgid "Transfer"
+msgstr ""
+
+#: models.py:121
+msgid "Messages"
+msgstr "Mensajes"
+
+#: utils.py:22
+#, fuzzy, python-format
+msgid "New Message: %(subject)s"
+msgstr "Re: %(subject)s"
+
+#: utils.py:62
+#, python-format
+msgid "New transfer request from %s"
+msgstr ""
+
+#: utils.py:65
+#, python-format
+msgid "New direct transfer from %s"
+msgstr ""
+
+#: utils.py:81
+#, python-format
+msgid "Transfer from %s edited"
+msgstr ""
+
+#: utils.py:87
+#, python-format
+msgid "Transfer of the service from %s accepted"
+msgstr ""
+
+#: utils.py:90
+#, python-format
+msgid "Direct transfer from %s accepted"
+msgstr ""
+
+#: utils.py:95
+#, python-format
+msgid "Transfer to %(user1)s from a service of %(user2)s cancelled"
+msgstr ""
+
+#: utils.py:101
+#, python-format
+msgid "Direct transfer from %s cancelled"
+msgstr ""
+
+#: utils.py:106
+#, python-format
+msgid "Transfer of the service you did to %s confirmed"
+msgstr ""
+
+#: views.py:105 views.py:163
+msgid "Message successfully sent."
+msgstr "Se envió con éxito el mensaje."
+
+#: views.py:133
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+"%(sender)s escribió:\n"
+"%(body)s"
+
+#: views.py:137
+#, python-format
+msgid "Re: %(subject)s"
+msgstr "Re: %(subject)s"
+
+#: views.py:204
+msgid "Message successfully deleted."
+msgstr "Se eliminó con éxito el mensaje."
+
+#: views.py:233
+msgid "Message successfully recovered."
+msgstr "Se recuperó con éxito el mensaje."
+
+#~ msgid "Body"
+#~ msgstr "Cuerpo"
+
+#~ msgid "Inbox"
+#~ msgstr "Bandeja de entrada"
+
+#~ msgid "Sent Messages"
+#~ msgstr "Mensajes Enviados"
+
+#~ msgid "New Message"
+#~ msgstr "Nuevo Mensaje"
+
+#~ msgid "Trash"
+#~ msgstr "Papelera"
+
+#~ msgid "Compose Message"
+#~ msgstr "Redactar Mensaje"
+
+#~ msgid "Send"
+#~ msgstr "Enviar"
+
+#~ msgid "Received"
+#~ msgstr "Recibido"
+
+#~ msgid "Action"
+#~ msgstr "Acción"
+
+#~ msgid "delete"
+#~ msgstr "eliminar"
+
+#~ msgid "Sent from %(site_url)s"
+#~ msgstr "Enviado desde %(site_url)s"
+
+#~ msgid "Reply"
+#~ msgstr "Responder"
+
+#~ msgid "Sent"
+#~ msgstr "Enviado"
+
+#~ msgid "Deleted Messages"
+#~ msgstr "Mensajes Eliminados"
+
+#~ msgid "Date"
+#~ msgstr "Fecha"
+
+#~ msgid "undelete"
+#~ msgstr "recuperar"
+
+#~ msgid ""
+#~ "Deleted Messages are removed from the trash at unregular intervals, don't "
+#~ "rely on this feature for long-time storage."
+#~ msgstr ""
+#~ "Los Mensajes Eliminados son borrados de la Papelera a intérvalos "
+#~ "irregulares,no se confíe en esta característica para almacenamiento a "
+#~ "largo plazo."
+
+#~ msgid "View Message"
+#~ msgstr "Ver Mensaje"
+
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+#~ msgstr "ha eliminado el mensaje %(message)s."
+
+#, fuzzy
+#~ msgid ""
+#~ "You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "from %(message_sender)s."
+#~ msgstr "ha recibido un mensaje de %(sender)s."
+
+#, fuzzy
+#~ msgid ""
+#~ "You have recovered the message <a href=\"%(message_url)s\">%(message)s</"
+#~ "a>."
+#~ msgstr "ha recuperado el mensaje %(message)s."
+
+#, fuzzy
+#~ msgid ""
+#~ "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</"
+#~ "a> from %(message_recipient)s."
+#~ msgstr "ha respondido a %(message)s de %(recipient)s."
+
+#, fuzzy
+#~ msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+#~ msgstr "%(sender)s le ha enviado una respuesta a %(message)s."
+
+#~ msgid "There is no user with this username."
+#~ msgstr "No hay ningún usuario con ese nombre."
+
+#~ msgid "you have sent a message to %(recipient)s."
+#~ msgstr "ha enviado un mensaje a %(recipient)s."
+
+#~ msgid "New Message:"
+#~ msgstr "Mensaje Nuevo"

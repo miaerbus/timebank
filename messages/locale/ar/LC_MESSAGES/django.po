@@ -1,0 +1,327 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ossama M. Khayat <okhayat@yahoo.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-10 12:47+0200\n"
+"PO-Revision-Date: 2009-11-02 00:41+0300\n"
+"Last-Translator: Ossama M. Khayat <okhayat@yahoo.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: admin.py:19 forms.py:20 models.py:75
+msgid "Recipient"
+msgstr "المستلم"
+
+#: admin.py:21
+msgid "group"
+msgstr "مجموعة"
+
+#: admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr "ينشئ الرسالة اختياريا لجميع المستخدمين او لمجموعة من المستخدمين."
+
+#: admin.py:29
+msgid "All users"
+msgstr "جميع المستخدمين"
+
+#: admin.py:44 forms.py:21 models.py:73 models.py:120
+msgid "Message"
+msgstr "الرسالة"
+
+#: admin.py:51
+msgid "Date/time"
+msgstr "التاريخ/الوقت"
+
+#: fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr "أسماء المستخدمين التالي ذكرهم غير صحيحة: %(users)s"
+
+#: management.py:9
+msgid "Message Received"
+msgstr "تم استلام الرسالة"
+
+#: management.py:9
+msgid "you have received a message"
+msgstr "وصلتك رسالة"
+
+#: management.py:10
+msgid "Message Sent"
+msgstr "تم إرسال الرسالة"
+
+#: management.py:10
+msgid "you have sent a message"
+msgstr "قمت بإرسال رسالة"
+
+#: management.py:11
+msgid "Message Replied"
+msgstr "تم الرد على الرسالة"
+
+#: management.py:11
+msgid "you have replied to a message"
+msgstr "قمت بالرد على الرسالة"
+
+#: management.py:12
+msgid "Reply Received"
+msgstr "تم استلام الرد"
+
+#: management.py:12
+msgid "you have received a reply to a message"
+msgstr "استملت رداً على رسالة"
+
+#: management.py:13
+msgid "Message Deleted"
+msgstr "تم حذف الرسالة"
+
+#: management.py:13
+msgid "you have deleted a message"
+msgstr "قمت بحذف رسالة"
+
+#: management.py:14
+msgid "Message Recovered"
+msgstr "تم استرجاع الرسالة"
+
+#: management.py:14
+msgid "you have undeleted a message"
+msgstr "قمت باسترجاع رسالة"
+
+#: models.py:72
+msgid "Subject"
+msgstr "الموضوع"
+
+#: models.py:74
+msgid "Sender"
+msgstr "المرسل"
+
+#: models.py:76
+msgid "Parent message"
+msgstr "الرسالة الأساسية"
+
+#: models.py:77
+msgid "sent at"
+msgstr "أرسلت في"
+
+#: models.py:78
+msgid "read at"
+msgstr "قُرأت في"
+
+#: models.py:79
+msgid "replied at"
+msgstr "رُدّ عليها في"
+
+#: models.py:80
+msgid "Sender deleted at"
+msgstr "حذفها المُرسل في"
+
+#: models.py:81
+msgid "Recipient deleted at"
+msgstr "حذفها المستلم في"
+
+#: models.py:82
+#, fuzzy
+msgid "Public message"
+msgstr "الرسالة الأساسية"
+
+#: models.py:84
+msgid "Service"
+msgstr ""
+
+#: models.py:86
+msgid "Transfer"
+msgstr ""
+
+#: models.py:121
+msgid "Messages"
+msgstr "الرسائل"
+
+#: utils.py:22
+#, python-format
+msgid "New Message: %(subject)s"
+msgstr "رسالة جديدة: %(subject)s"
+
+#: utils.py:62
+#, python-format
+msgid "New transfer request from %s"
+msgstr ""
+
+#: utils.py:65
+#, python-format
+msgid "New direct transfer from %s"
+msgstr ""
+
+#: utils.py:81
+#, python-format
+msgid "Transfer from %s edited"
+msgstr ""
+
+#: utils.py:87
+#, python-format
+msgid "Transfer of the service from %s accepted"
+msgstr ""
+
+#: utils.py:90
+#, python-format
+msgid "Direct transfer from %s accepted"
+msgstr ""
+
+#: utils.py:95
+#, python-format
+msgid "Transfer to %(user1)s from a service of %(user2)s cancelled"
+msgstr ""
+
+#: utils.py:101
+#, python-format
+msgid "Direct transfer from %s cancelled"
+msgstr ""
+
+#: utils.py:106
+#, python-format
+msgid "Transfer of the service you did to %s confirmed"
+msgstr ""
+
+#: views.py:105 views.py:163
+msgid "Message successfully sent."
+msgstr "تم إرسال الرسالة بنجاح."
+
+#: views.py:133
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+"كتب %(sender)s:\n"
+"%(body)s"
+
+#: views.py:137
+#, python-format
+msgid "Re: %(subject)s"
+msgstr "رد: %(subject)s"
+
+#: views.py:204
+msgid "Message successfully deleted."
+msgstr "تم حذف الرسالة بنجاح."
+
+#: views.py:233
+msgid "Message successfully recovered."
+msgstr "تم استرجاع الرسالة بنجاح."
+
+#~ msgid "Body"
+#~ msgstr "المحتوى"
+
+#~ msgid "Inbox"
+#~ msgstr "الوارد"
+
+#~ msgid "Sent Messages"
+#~ msgstr "الرسائل المرسلة"
+
+#~ msgid "New Message"
+#~ msgstr "رسالة جديدة"
+
+#~ msgid "Trash"
+#~ msgstr "الحاوية"
+
+#~ msgid "Compose Message"
+#~ msgstr "أكتب رسالة"
+
+#~ msgid "Send"
+#~ msgstr "أرسل"
+
+#~ msgid "Received"
+#~ msgstr "استُلمت"
+
+#~ msgid "Action"
+#~ msgstr "إجراء"
+
+#~ msgid "DATETIME_FORMAT"
+#~ msgstr "DATETIME_FORMAT"
+
+#~ msgid "delete"
+#~ msgstr "حذف"
+
+#~ msgid "No messages."
+#~ msgstr "لا توجد رسائل."
+
+#~ msgid ""
+#~ "Hello %(recipient)s,\n"
+#~ "\n"
+#~ "you received a private message from %(sender)s with\n"
+#~ "the following contents:"
+#~ msgstr ""
+#~ "مرحباً %(recipient)s،\n"
+#~ "\n"
+#~ "وصلتك رسالة خاصة من %(sender)s\n"
+#~ "تحتوي ما يلي:"
+
+#~ msgid "Sent from %(site_url)s"
+#~ msgstr "أرسلت من %(site_url)s"
+
+#~ msgid "Reply"
+#~ msgstr "رد"
+
+#~ msgid "Sent"
+#~ msgstr "أرسل"
+
+#~ msgid "Deleted Messages"
+#~ msgstr "الرسائل المحذوفة"
+
+#~ msgid "Date"
+#~ msgstr "التاريخ"
+
+#~ msgid "undelete"
+#~ msgstr "استرجاع"
+
+#~ msgid ""
+#~ "Deleted Messages are removed from the trash at unregular intervals, don't "
+#~ "rely on this feature for long-time storage."
+#~ msgstr ""
+#~ "تتم إزالة الرسائل المحذوفة من الحاوية على فترات زمنيّة متفاوتة، فلا تعتمد "
+#~ "على هذه الميزة للتخزين الطويل المدى."
+
+#~ msgid "View Message"
+#~ msgstr "مشاهدة الرسالة"
+
+#~ msgid "Delete"
+#~ msgstr "حذف"
+
+#~ msgid ""
+#~ "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+#~ msgstr "قمت بحذف الرسالة <a href=\"%(message_url)s\">%(message)s</a>."
+
+#~ msgid ""
+#~ "You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "from %(message_sender)s."
+#~ msgstr ""
+#~ "وصلتك الرسالة <a href=\"%(message_url)s\">%(message)s</a> من "
+#~ "%(message_sender)s."
+
+#~ msgid ""
+#~ "You have recovered the message <a href=\"%(message_url)s\">%(message)s</"
+#~ "a>."
+#~ msgstr "قمت باسترجاع الرسالة <a href=\"%(message_url)s\">%(message)s</a>."
+
+#~ msgid ""
+#~ "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</"
+#~ "a> from %(message_recipient)s."
+#~ msgstr ""
+#~ "قمت بالرد الرسائل <a href=\"%(message_url)s\">%(message_parent_msg)s</a> "
+#~ "من %(message_recipient)s."
+
+#~ msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+#~ msgstr "أرسل لك %(message_sender)s رداً على %(message_parent_msg)s."
+
+#~ msgid ""
+#~ "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
+#~ "%(message_recipient)s."
+#~ msgstr ""
+#~ "قمت بإرسالة الرسالة <a href=\"%(message_url)s\">%(message)s</a> إلى "
+#~ "%(message_recipient)s."

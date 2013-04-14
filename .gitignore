@@ -1,0 +1,8 @@
+*.pyc
+*.mo
+*.swp
+sessions
+database.sqlite
+.kdev4
+venv
+local_settings.py
