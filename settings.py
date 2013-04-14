@@ -202,10 +202,10 @@ PUBLIC_USER_INFO = False
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-#DATABASES = { 'default': dj_database_url.config(default='postgres://tfngqcvhrpncgr:NHMKDorRvD5ULolQb34x3Eid1L@ec2-23-21-161-255.compute-1.amazonaws.com:5432/daqa5a2hoasodb') }
+DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
 
-from postgresify import postgresify
-DATABASES = postgresify()
+#from postgresify import postgresify
+#DATABASES = postgresify()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
