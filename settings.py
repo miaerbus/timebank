@@ -145,7 +145,7 @@ LOGIN_REDIRECT_URL = '/'
 # Path for static docs (css, images, etc)
 STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
 
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'site_media')
+STATIC_ROOT = os.path.join(curdir, 'site_media')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
