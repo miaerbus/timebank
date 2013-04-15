@@ -180,10 +180,13 @@ RECAPTCHA_PUBLIC_KEY = "6LfA7d8SAAAAAPHYLhAyft-wNE1MNaDruCjvsxVa"
 RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
-#EMAIL_HOST = ''
-#EMAIL_PORT = 0
-#EMAIL_HOST_USER = ''
-#EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'Časovna banka Maribor'
+SERVER_EMAIL = 'cbs.maribor@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cbs.maribor@gmail.com'
+EMAIL_HOST_PASSWORD = ''
 
 ## For debugging, you can use the console email backend:
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

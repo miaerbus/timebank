@@ -1,15 +1,15 @@
 {% load i18n %}
 {% url serv-transfer-view transfer.id as transfer_url %}
 {% if not transfer.is_direct %}
-{% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Hi {{ transfer_creator }},
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Pozdravljeni {{ transfer_creator }},
 
-The transfer that you requested of a service from {{ service_creator }}  has been accepted by him. You can see the details of the transfer in {{ site_url }}{{ transfer_url }} .
+Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika %(service_creator)s, je bil sprejet. Podrobnosti prenosa lahko vidite na {{ site_url }}{{ transfer_url }}.
 
-The team of {{ site_url }}{% endblocktrans %}
+- {{ site_url }}{% endblocktrans %}
 {% else %}
-{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Hi {{ transfer_creator }},
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_creator }},
 
-The direct transfer that you requested to {{ transfer_recipient }}  has been accepted by him. You can see the details of the transfer in {{ site_url }}{{ transfer_url }}.
+Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil sprejet. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s.
 
-The team of {{ site_url }}{% endblocktrans %}
+- {{ site_url }}{% endblocktrans %}
 {% endif %}
