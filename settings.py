@@ -33,8 +33,6 @@ ADMINS = (
     ('admin', 'admin@localhost'),
 )
 
-DEFAULT_FROM_EMAIL="admin@localhost"
-
 OWNERS = MANAGERS = ADMINS
 
 # Parse database configuration from $DATABASE_URL
@@ -180,7 +178,7 @@ RECAPTCHA_PUBLIC_KEY = "6LfA7d8SAAAAAPHYLhAyft-wNE1MNaDruCjvsxVa"
 RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
-DEFAULT_FROM_EMAIL = 'Časovna banka Maribor'
+DEFAULT_FROM_EMAIL = 'cbs.maribor@gmail.com'
 SERVER_EMAIL = 'cbs.maribor@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
