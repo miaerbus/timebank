@@ -1,24 +1,24 @@
 
 {% extends "template_base.html" %}
 {% load i18n %}
-{% block title %} {% trans 'Home' %} {% endblock %}
+{% block title %} {% trans 'Domov' %} {% endblock %}
 
 {% block content %}
     <div class="section_3">
         <h1>Časovna banka</h1>
-        <p>{% blocktrans %}Timebank is a community where you can exchange services with other users using time as currency.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Časovna banka je skupnost, v kateri lahko z drugimi uporabniki menjujete storitve, pri čemer je menjalno sredstvo čas.{% endblocktrans %}</p>
     </div>
 
     <div class="section_4">
-        <h1>{% trans 'New services' %}</h1>
+        <h1>{% trans 'Nove storitve' %}</h1>
         {% if not user.is_authenticated %}
             {% url user-register as user_register %}
-            <p>{% blocktrans %}To see all services you need to <a href='{{ user_register }}'>register</a>.{% endblocktrans %}</p>
+            <p>{% blocktrans %}Da bi videli vse storitve, se morate <a href='%(user_register)s'>registrirati</a>.{% endblocktrans %}</p>
         {% endif %}
         <p>
         <div class="subcontent services">
             {% include "serv/listservs.html" %}
-            <a href="{% url serv-list %}" class="more">{% trans "+ services" %}</a>
+            <a href="{% url serv-list %}" class="more">{% trans "+ storitve" %}</a>
         </div>
         <div class="cleaner"></div>
     </div>

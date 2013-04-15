@@ -1,13 +1,13 @@
 
 {% extends "template_base.html" %}
 {% load i18n %}
-{% block title %} {% trans "Error 500" %} {% endblock %}
+{% block title %} {% trans "Napaka 500" %} {% endblock %}
 
 {% block content %}
     <div class="section_3 404">
-        <h1>{{ SITE_NAME }} - {% trans "Error 500" %}</h1>
+        <h1>{{ SITE_NAME }} - {% trans "Napaka 500" %}</h1>
         <p>
-            {% blocktrans %}Sorry, an error occurred. We have notified the site administrators to rectify.
+            {% blocktrans %}Oprostite, prišlo je do napake. Trudimo se, da jo čimprej odpravimo.
             {% endblocktrans %}
         </p>
     </div>

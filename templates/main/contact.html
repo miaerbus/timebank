@@ -1,10 +1,10 @@
 {% extends "template_base.html" %}
 {% load i18n %}
-{% block title %} {% trans 'Contact' %} {% endblock %}
+{% block title %} {% trans 'Kontakt' %} {% endblock %}
 
 {% block content %}
     <div class="section_3">
-        <h1>{% trans 'Contact' %}</h1>
+        <h1>{% trans 'Kontakt' %}</h1>
 
 <p>{% trans 'Pišete nam lahko tudi na elektronski naslov <a href="mailto:cbs.maribor@gmail.com">cbs.maribor@gmail.com</a>' %}</p>
 
@@ -14,7 +14,7 @@
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
-            <input class="submit" type="submit" value="{% trans 'Send message' %}"/>
+            <input class="submit" type="submit" value="{% trans 'Pošlji sporočilo' %}"/>
         </form>
     </div>
 {% endblock %}

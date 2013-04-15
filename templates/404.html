@@ -1,13 +1,13 @@
 
 {% extends "template_base.html" %}
 {% load i18n %}
-{% block title %} {% trans "Error 404: Page not found" %} {% endblock %}
+{% block title %} {% trans "Napaka 404: Strani ni mogoče najti" %} {% endblock %}
 
 {% block content %}
     <div class="section_3 404">
-        <h1>{{ SITE_NAME }} - {% trans "Error 404: Page not found" %}</h1>
+        <h1>{{ SITE_NAME }} - {% trans "Napaka 404: Strani ni mogoče najti" %}</h1>
         <p>
-            {% blocktrans %}Sorry, but the page you try to access was not found.
+            {% blocktrans %}Strani, ki jo iščete, ni mogoče najti.
             {% endblocktrans %}
         </p>
     </div>
