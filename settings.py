@@ -37,16 +37,24 @@ DEFAULT_FROM_EMAIL="admin@localhost"
 
 OWNERS = MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database.sqlite',       # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+if bool(os.environ.get('LOCAL_DEV', False)):
+	DATABASES = {
+	    'default': {
+        	'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+	        'NAME': 'database.sqlite',       # Or path to database file if using sqlite3.
+	        'USER': '',                      # Not used with sqlite3.
+	        'PASSWORD': '',                  # Not used with sqlite3.
+	        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+	        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+	    }
+	}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -57,7 +65,7 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'si'
 
 SITE_ID = 1
 
@@ -186,11 +194,8 @@ MAX_CREDITS_PER_TRANSFER = 10*60
 
 
 LANGUAGES = (
-#      ('es', _('Spanish')),
-#      ('es_ng', _('Spanish (neutral gender)')),
-      ('en', _('English')),
-#      ('gl', _('Gallego')),
       ('sl', _('Slovensko')),
+      ('en', _('English')),
 )
 
 # Just in case
@@ -200,13 +205,6 @@ AUTOACCEPT_REGISTRATION=False
 SHOW_CAPTCHAS=True
 
 PUBLIC_USER_INFO = False
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 try:
     from local_settings import *
