@@ -65,7 +65,7 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'sl-SI'
+LANGUAGE_CODE = 'SI'
 
 SITE_ID = 1
 
@@ -192,6 +192,9 @@ MIN_CREDIT = -10*60
 MAX_CREDIT = 20*60
 MAX_CREDITS_PER_TRANSFER = 10*60
 
+LOCALE_PATHS = (
+      os.path.join(curdir, 'locale'),
+)
 
 LANGUAGES = (
       ('sl', _('Slovensko')),
