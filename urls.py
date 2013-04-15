@@ -22,7 +22,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     (r'^admin/', include(admin.site.urls)),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}),
@@ -33,7 +33,8 @@ urlpatterns = patterns('',
     (r'^tasks/', include('tasks.urls')),
     (r'^notification/', include('notification.urls')),
     (r'^', include('main.urls')),
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_DOC_ROOT}),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}),
 )
 
 handler404 = 'main.views.handler404'
