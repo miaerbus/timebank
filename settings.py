@@ -203,11 +203,11 @@ USE_L10N = True
 ugettext = lambda s: s
 
 LANGUAGES = (
-#      ('sl', _('Slovensko')),
+      ('sl', _('Slovensko')),
 #      ('en', _('English')),
 #      ('es', _('Spanish')),
       #('en-us', ugettext('English')),
-      ('sl', ugettext('Slovenian')),
+      #('sl', ugettext('Slovenian')),
 
 )
 

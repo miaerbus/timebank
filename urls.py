@@ -33,8 +33,8 @@ urlpatterns = patterns('',
     (r'^tasks/', include('tasks.urls')),
     (r'^notification/', include('notification.urls')),
     (r'^', include('main.urls')),
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.ADMIN_MEDIA_PREFIX, 'show_indexes': True}),
 )
 
 handler404 = 'main.views.handler404'
