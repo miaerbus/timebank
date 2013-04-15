@@ -65,7 +65,7 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'SI'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
@@ -197,9 +197,12 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-      ('sl', _('Slovensko')),
-      ('en', _('English')),
-      ('es', _('Spanish')),
+#      ('sl', _('Slovensko')),
+#      ('en', _('English')),
+#      ('es', _('Spanish')),
+      #('en-us', ugettext('English')),
+      ('sl', ugettext('Slovenian')),
+
 )
 
 # Just in case
