@@ -5,7 +5,7 @@ from django.template import Context, loader
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from app.utils import send_mail, I18nString
+from utils import send_mail, I18nString
 
 def format_quote(text):
     """
