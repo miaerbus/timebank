@@ -71,7 +71,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -196,19 +196,8 @@ LOCALE_PATHS = (
       os.path.join(curdir, 'locale'),
 )
 
-USE_I18N = True
-
-USE_L10N = True
-
-ugettext = lambda s: s
-
 LANGUAGES = (
       ('sl', _('Slovensko')),
-#      ('en', _('English')),
-#      ('es', _('Spanish')),
-      #('en-us', ugettext('English')),
-      #('sl', ugettext('Slovenian')),
-
 )
 
 # Just in case

@@ -1,7 +1,7 @@
 {% load i18n %}
 
 {% if user.is_staff %}
-    <a href="{% url admin:news_new_add %}">{% trans "Add a piece of news" %}</a>
+    <a href="{% url admin:news_new_add %}">{% trans "Dodaj novico" %}</a>
 {% endif %}
 {% for new in news.object_list %}
     <div class="new">
@@ -11,7 +11,7 @@
 <div class="pagination">
     <span class="step-links">
         {% if news.has_previous %}
-            <a href="?page={{ news.previous_page_number }}">{% trans "previous" %}</a>
+            <a href="?page={{ news.previous_page_number }}">{% trans "prejšnja" %}</a>
         {% endif %}
 
         <span class="current">
@@ -21,7 +21,7 @@
         </span>
 
         {% if news.has_next %}
-            <a href="?page={{ news.next_page_number }}">{% trans "next" %}</a>
+            <a href="?page={{ news.next_page_number }}">{% trans "naslednja" %}</a>
         {% endif %}
     </span>
 </div>

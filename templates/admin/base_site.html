@@ -1,15 +1,15 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
 
-{% block title %}Administration{% endblock %}
+{% block title %}Administracija{% endblock %}
 
 {% block branding %}
-<h1 id="site-name">{% trans "Timebank" %}</h1>
+<h1 id="site-name">{% trans "Časovna banka" %}</h1>
 {% endblock %}
 
 {% block nav-global %}
-<a href="{% url rosetta-home %}">{% trans "Translations" %}</a> |
-<a href="{% url user-send-email-to-all%}">{% trans "Send email to all users" %}</a> |
+<a href="{% url rosetta-home %}">{% trans "Prevodi" %}</a> |
+<a href="{% url user-send-email-to-all%}">{% trans "Pošlji sporočilo vsem uporabnikom" %}</a> |
 <a href="{% url report1 %}">{% trans "report 1" %}</a> |
 <a href="{% url report2 %}">{% trans "report 2" %}</a> |
 <a href="{% url report3 %}">{% trans "report 3" %}</a> |
