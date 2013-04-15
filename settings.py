@@ -176,8 +176,8 @@ AUTHENTICATION_BACKENDS = (
 CUSTOM_USER_MODEL = 'user.Profile'
 
 # reCAPTCHA fill in local_settings.py, not here
-RECAPTCHA_PUBLIC_KEY = ""
-RECAPTCHA_PRIVATE_KEY = ""
+RECAPTCHA_PUBLIC_KEY = "6LfA7d8SAAAAAPHYLhAyft-wNE1MNaDruCjvsxVa"
+RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
 #EMAIL_HOST = ''
@@ -196,6 +196,7 @@ MAX_CREDITS_PER_TRANSFER = 10*60
 LANGUAGES = (
       ('sl', _('Slovensko')),
       ('en', _('English')),
+      ('es', _('Spanish')),
 )
 
 # Just in case
