@@ -21,7 +21,7 @@ from django.utils.translation import ugettext_lazy as _
 
 curdir = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # To remove timebank.fcgi from urls
@@ -53,7 +53,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Madrid'
+TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -186,10 +186,11 @@ MAX_CREDITS_PER_TRANSFER = 10*60
 
 
 LANGUAGES = (
-      ('es', _('Spanish')),
-      ('es_ng', _('Spanish (neutral gender)')),
-      ('en', _('English')),
-      ('gl', _('Gallego')),
+#      ('es', _('Spanish')),
+#      ('es_ng', _('Spanish (neutral gender)')),
+#      ('en', _('English')),
+#      ('gl', _('Gallego')),
+      ('sl', _('Slovensko')),
 )
 
 # Just in case
@@ -203,9 +204,6 @@ PUBLIC_USER_INFO = False
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
-
-#from postgresify import postgresify
-#DATABASES = postgresify()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
