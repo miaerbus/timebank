@@ -2,12 +2,15 @@
 html
 {
     background:none repeat scroll 0 0 #fff;
+    -webkit-any-link:none;
 }
 
 body
 {
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:12px;
+    /*font-family:Arial,Helvetica,sans-serif;*/
+    font-family: Verdana;
+    /*font-size:12px;*/
+    font-size:13px;
     line-height:1.5em;
     width:100%;
     display:table;
@@ -30,8 +33,9 @@ a:active, a:hover
 
 p
 {
-    font-family:Tahoma;
-    font-size:13px;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
+    font-size:12px;
     color:#484848;
     text-align:justify;
     margin:0 0 10px;
@@ -39,7 +43,8 @@ p
 
 h1
 {
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     font-size:18px;
     color:#676767;
     font-weight:400;
@@ -48,7 +53,8 @@ h1
 
 h2
 {
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     font-size:16px;
     color:#0895d6;
     font-weight:400;
@@ -57,7 +63,8 @@ h2
 
 h3
 {
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     font-size:11px;
     color:#2780e4;
     font-weight:400;
@@ -107,7 +114,8 @@ h3
 #slogan
 {
     float:left;
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     font-size:12px;
     color:#000;
     font-style:italic;
@@ -119,7 +127,8 @@ h3
     width:195px;
     height:80px;
     float:right;
-    margin:30px 0 0;
+    /*margin:30px 0 0;*/
+    margin:10px 0 20px;
 }
 
 #social form
@@ -137,7 +146,8 @@ h3
     height:21px;
     background:none repeat scroll 0 0 transparent;
     border:medium none;
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     color:#686868;
     margin:8px 0 0 10px;
 }
@@ -157,13 +167,14 @@ h3
 {
     float:right;
     border:medium none;
-    margin:0 20px 0 0;
+    /*margin:0 20px 0 0;*/
+    margin:0 10px 0 0;
 }
 
 #menu
 {
     float:right;
-    width: 980px;
+    width: 960px;
     height:40px;
     margin:5px 0 0;
     padding:0;
@@ -195,9 +206,11 @@ h3
     float:left;
     text-align:center;
     text-decoration:none;
-    color:#2a5f00;
-    font-family:Tahoma;
-    font-size:12px;
+    color: black;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
+    font-size:13px;
+    /*font-weight:bold;*/
     outline:medium none;
     padding:11px 20px;
 }
@@ -206,12 +219,13 @@ h3
 {
     float:left;
     text-align:center;
-    text-decoration:none;
+    text-decoration:underline;
     background:url("templatemo_menu_divider.png") no-repeat scroll right center transparent;
     color: white;
-    font-family:Tahoma;
-    font-weight:bold;
-    font-size:12px;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
+    /*font-weight:bold;*/
+    font-size:13px;
     outline:medium none;
     padding:11px 20px;
 }
@@ -223,12 +237,14 @@ h3
 
 #menu li .current
 {
-    color:#2a5f00;
+    color:#fff;
+    font-weight:bold;
 }
 
 #menu li a:hover
 {
-    color:#2a5f00;
+    color:#fff;
+    text-decoration:none;
 }
 
 #menu li .last
@@ -278,7 +294,8 @@ h3
 {
     float:right;
     display:block;
-    font-family:Tahoma;
+    /*font-family:Tahoma;*/
+    font-family:Verdana;
     font-size:10px;
     color:#000;
     margin:15px 10px 0 0;
@@ -356,13 +373,13 @@ h3
 div.new h2 a, div.new h3 a
 {
     color: #0895D6;
-    text-decoration: none;
+    text-decoration: underline;
     border: none;
 }
 
 div.new h2 a:hover, div.new h3 a:hover
 {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 div.new .info
@@ -392,7 +409,8 @@ div.new .info
 
 .section_3 h1
 {
-    font-family:Arial;
+    /*font-family:Arial;*/
+    font-family:Verdana;
     font-size:20px;
     color:#0895d6;
     display:block;
@@ -587,7 +605,7 @@ div.new .info
     padding:0;
 }
 
-/*Messages*/
+/* Messages */
 
 .subnavilist {
     list-style:none;
@@ -611,7 +629,7 @@ div.new .info
 }
 
 .subnavilist li small {
-    color: #2A5F00;
+    color: #000;
     font-weight: bold;
     font-size: 16px;
     margin-left: 5px;
@@ -663,7 +681,7 @@ div.new .info
 }
 
 .services .serv .information a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     font: 100% verdana,arial,sans-serif;
     font-weight: bold;
@@ -677,7 +695,7 @@ div.new .info
 }
 
 .services .serv .information a:hover, .services .serv .buttons .action:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .services .serv a {
@@ -692,7 +710,7 @@ div.new .info
 }
 
 .services .serv .information2 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .services .serv form input {
@@ -700,7 +718,7 @@ div.new .info
 }
 
 .services .serv .buttons .action {
-    text-decoration: none;
+    text-decoration: underline;
     margin: 0px;
     margin-top: -5px;
     padding: 5px;
@@ -709,8 +727,9 @@ div.new .info
     background:none;
     border:0;
     font-weight: bold;
-    font-size: 12px;
-    color: green;
+    font-size: 13px;
+    /*color: green;*/
+    color: black;
     font: 100% verdana,arial,sans-serif;
 }
 
@@ -733,6 +752,7 @@ div.new .info
     padding: 5px;
     padding-top: 0;
     border-left: 3px solid #64D507;
+    /*border-left: 3px solid #0B93D1;*/
     display: block;
     float: left;
     width: 600px;
@@ -759,7 +779,9 @@ div.new .info
 
 .services .serv .description:hover {
     background-color: #64D507;
-    color: white;
+    /*background-color: #0B93D1;*/
+    /*color: white;*/
+    color: black;
 }
 
 .services .serv.inactive .description:hover, .services .serv.demand.inactive .description:hover {
@@ -789,7 +811,8 @@ div.new .info
 }
 
 .services .serv .gravatar:hover {
-    background-color: #64D507;
+    /*background-color: #64D507;*/
+    background-color: #0B93D1;
 }
 
 .services .serv .gravatar:hover a {

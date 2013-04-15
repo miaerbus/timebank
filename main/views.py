@@ -36,7 +36,6 @@ class Index(ViewClass):
         return self.context_response('main/index.html', {'show_news': True,
         'services': services})
 
-
 class Contact(ViewClass):
     def GET(self):
         if self.request.user.is_authenticated():
@@ -69,7 +68,7 @@ class Contact(ViewClass):
                 'message': form.cleaned_data["message"]
             })
         else:
-            subject = I18nString(_("[%(site_name)s] %(email)s: %(email_subject)s"), {
+            subject = I18nString(_("[%(site_name)s] %(email)s: %(email_subject)s") % {
                 'site_name': settings.SITE_NAME,
                 'email': form.cleaned_data["email"],
                 'email_subject': form.cleaned_data["subject"]
@@ -86,15 +85,37 @@ class Contact(ViewClass):
         return redirect('main.views.index')
 
 
+class About(ViewClass):
+    def GET(self):
+        return self.context_response('main/about.html', {'current_tab': 'about'})
+
+
+class Links(ViewClass):
+    def GET(self):
+        return self.context_response('main/links.html', {'current_tab': 'links'})
+
+
+class Faq(ViewClass):
+    def GET(self):
+        return self.context_response('main/faq.html', {'current_tab': 'faq'})
+
+
+class Rules(ViewClass):
+    def GET(self):
+        return self.context_response('main/rules.html', {'current_tab': 'rules'})
+
+
+class Terms(ViewClass):
+    def GET(self):
+        return self.context_response('main/terms.html', {'current_tab': 'terms'})
+
+
 class ErrorHandler(ViewClass):
-    def __init__(self, template, retcode=200):
+    def __init__(self, template):
         self.template = template
-        self.retcode = retcode
 
     def GET(self):
-        response = self.context_response(self.template, {})
-        response.status_code = self.retcode
-        return response
+        return self.context_response(self.template, {})
 
     def POST(self):
         return self.GET()
@@ -125,8 +146,13 @@ class Report(ViewClass):
 
 index = Index()
 contact = Contact()
-handler404 = ErrorHandler('404.html', retcode=404)
-handler500 = ErrorHandler('500.html', retcode=500)
+about = About()
+links = Links()
+faq = Faq()
+rules = Rules()
+terms = Terms()
+handler404 = ErrorHandler('404.html')
+handler500 = ErrorHandler('500.html')
 set_language = SetLanguage()
 report1 = Report(1)
 report2 = Report(2)

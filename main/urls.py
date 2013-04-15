@@ -21,6 +21,11 @@ from django.views.generic.simple import direct_to_template
 
 urlpatterns = patterns('main.views',
     url(r'^contact/$', 'contact', name="contact"),
+    url(r'^about/$', 'about', name="about"),
+    url(r'^links/$', 'links', name="links"),
+    url(r'^faq/$', 'faq', name="faq"),
+    url(r'^rules/$', 'rules', name="rules"),
+    url(r'^terms/$', 'terms', name="terms"),
     url(r'^set_language/$', 'set_language', name="set_language"),
     url(r'^report1.csv$', 'report1', name="report1"),
     url(r'^report2.csv$', 'report2', name="report2"),
