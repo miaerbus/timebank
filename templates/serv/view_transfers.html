@@ -1,7 +1,7 @@
 {% extends "serv/base_transfer.html" %}
 {% load i18n %}
 {% block subtitle %}
-        {% trans "My transfers" %}
+        {% trans "Moji prenosi" %}
 {% endblock %}
 
 {% block subcontent %}
@@ -10,12 +10,12 @@
             {% include "serv/single_transfer_view.html" %}
         {% endif %}
     {% empty %}
-        {% trans "No transfers for now." %}
+        {% trans "Za zdaj nobenih prenosov." %}
     {% endfor %}
     <div class="pagination">
             <span class="step-links">
                 {% if transfers.has_previous %}
-                    <a href="?page={{ transfers.previous_page_number }}">{% trans "previous" %}</a>
+                    <a href="?page={{ transfers.previous_page_number }}">{% trans "prejšnja" %}</a>
                 {% endif %}
 
                 <span class="current">
@@ -25,7 +25,7 @@
                 </span>
 
                 {% if transfers.has_next %}
-                    <a href="?page={{ transfers.next_page_number }}">{% trans "next" %}</a>
+                    <a href="?page={{ transfers.next_page_number }}">{% trans "naslednja" %}</a>
                 {% endif %}
             </span>
         </div>
