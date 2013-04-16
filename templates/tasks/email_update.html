@@ -1,58 +1,58 @@
-{% load i18n %}{% blocktrans with recipient.username as recipient%}Hi {{ recipient }},
+{% load i18n %}{% blocktrans with recipient.username as recipient%}Pozdravljeni {{ recipient }},
 
-There are news in your profile in {{ site_name }} that require your attention:
+V vašem profilu na strani {{ site_name }}, ki želijo nekaj pozornosti:
 {% endblocktrans %}
 
 ## Unread messages
 
 {% for msg in unread_messages %}
-{% url messages_inbox as inbox_url %}{% if forloop.first %}{% blocktrans %}Go to inbox: {{ inbox_url }}{% endblocktrans %}{% endif %}
+{% url messages_inbox as inbox_url %}{% if forloop.first %}{% blocktrans %}Poglej poštni nabiralnik: {{ inbox_url }}{% endblocktrans %}{% endif %}
 {% url messages_detail msg.id as msg_url %}{% blocktrans with msg.sender.username as from and msg.sent_at|timesince as sent_ago and msg.body|truncate_chars as body %}
     {{ site_url }}{{ msg_url }}
-    Message from {{ from }} sent {{ sent_ago}} ago:
+    Sporočilo uporabnika {{ from }} poslano {{ sent_ago }} nazaj:
         {{ body }}
 
 {% endblocktrans %}{% empty %}
-    {% trans "No unread messages" %}{% endfor %}
+    {% trans "Ni neprebranih sporočil" %}{% endfor %}
 
-## {% trans "Unread comments in your profile" %}
+## {% trans "Neprebrani komentarji v vašem profilu" %}
 
 {% for msg in unread_comments %}
-{% url user-view-current as view_comments_url %}{% if forloop.first %}{% blocktrans %}Read all your comments in your profile: {{ view_comments_url }}{% endblocktrans %}{% endif %}
+{% url user-view-current as view_comments_url %}{% if forloop.first %}{% blocktrans %}Preberite vse komentarje v vašem profilu: {{ view_comments_url }}{% endblocktrans %}{% endif %}
 {% blocktrans with msg.sender.username as from and msg.sent_at|timesince as sent_ago and msg.body|truncate_chars as body %}
-	Comment from {{ from }}, sent {{ sent_ago }} ago:
+	Komentar uporabnika {{ from }}, poslan {{ sent_ago }} nazaj:
         {{ body }}
 
 {% endblocktrans %}{% empty %}
-    {% trans "No unread comments in your profile" %}{% endfor %}
+    {% trans "V vašem profilu ni neprebranih komentarjev" %}{% endfor %}
 
-## {% trans "Pending transfers" %}
+## {% trans "Čakajoči prenosi" %}
 
 {% for transfer in transfers_pending %}
-    {% url serv-transfers-mine as my_transfers_url %}{% if forloop.first %}{% blocktrans %}Manage all your transfers: {{ my_transfers_url }}{% endblocktrans %}{% endif %}
+    {% url serv-transfers-mine as my_transfers_url %}{% if forloop.first %}{% blocktrans %}Opravljanje s prenosi: {{ my_transfers_url }}{% endblocktrans %}{% endif %}
     {% url serv-transfer-view transfer.id as transfer_url %}{% blocktrans with transfer.creator.username as from and transfer.request_date|timesince as created_ago and transfer.description|truncate_chars as description and transfer.status_readable as status %}
     {{ site_url }}{{ transfer_url }}
-    Transfer with {{ from }}, created {{ created_ago }} ago in status {{ status }}
+    Prenos z {{ from }}, ustvarjen {{ created_ago }} nazaj s statusom {{ status }}
         {{ description }}
 
 {% endblocktrans %}{% empty %}
-    {% trans "No pending transfers" %}{% endfor %}
+    {% trans "Ni čakajočih prenosov" %}{% endfor %}
 
-{% trans "Besides all this, you may be interested in:" %}
+{% trans "Utegne vas zanimati:" %}
 
-## {% trans "Latest services" %}
+## {% trans "Najnovejše storitve" %}
 
 {% for service in new_services.object_list %}
-{% url serv-list as services_url %}{% if forloop.first %}{% blocktrans %}Service list: {{ services_url }}{% endblocktrans %}{% endif %}
+{% url serv-list as services_url %}{% if forloop.first %}{% blocktrans %}Seznam storitev: {{ services_url }}{% endblocktrans %}{% endif %}
 {% url serv-view service.id as service_url %}{% blocktrans with service.creator.username as from and service.pub_date|timesince as published_ago and service.description|truncate_chars as description and service.category.name as category and service.area.name as area %}
     {{ site_url }}{{ service_url }}
-    Service in the area of "{{ area }}" and category "{{category }}" created by {{ from }} published {{ published_ago }} ago
+    Storitve na območju "{{ area }}" in kategoriji "{{category }}" ustvaril/a {{ from }} objavljeno {{ published_ago }} nazaj
         {{ description }}
 {% endblocktrans %}{% empty %}
-    {% trans "No new services" %}{% endfor %}
+    {% trans "Ni novih storitev" %}{% endfor %}
 --
 {% url user-edit-profile as prefs_url %}{% blocktrans %}
 
-Exchange your time and skills in {{ site_name }}, {{ site_url }} .
+Izmenjajte svoj čas in veščine na {{ site_name }}, {{ site_url }}.
 
-Do not want to receive these notifications via email? Set the preferences in your profile in {{ site_url }}{{ prefs_url }}{% endblocktrans %}
+Ne želite prejemati obvestil preko e-pošte? Nastavite preference v vašem profilu na {{ site_url }}{{ prefs_url }}{% endblocktrans %}

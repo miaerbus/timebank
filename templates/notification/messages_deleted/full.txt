@@ -1,1 +1,1 @@
-{% load i18n %}{% blocktrans %}You have deleted the message '{{ message }}'.{% endblocktrans %}
+{% load i18n %}{% blocktrans %}Izbrisali ste sporočilo '{{ message }}'.{% endblocktrans %}
