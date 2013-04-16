@@ -1,19 +1,19 @@
 {% extends "messages/base.html" %} 
 {% load i18n %}
-{% block subtitle %} {% trans "View Message" %} {% endblock %}
+{% block subtitle %} {% trans "Poglej sporočilo" %} {% endblock %}
 {% block subcontent %}
 <dl class="message-headers">
-    <dt>{% trans "Sender" %}</dt>
+    <dt>{% trans "Pošiljatelj" %}</dt>
     <dd>{{ message.sender }}</dd>
-    <dt>{% trans "Date" %} </dt>
+    <dt>{% trans "Datum" %} </dt>
     <dd>{{ message.sent_at|timesince }}</dd>
-    <dt>{% trans "Recipient" %}</dt>
+    <dt>{% trans "Prejemnik" %}</dt>
     <dd>{{ message.recipient }}</dd>
 </dl>
 {{ message.body|linebreaksbr }}<br /><br />
 
 {% ifequal message.recipient.pk user.pk %}
-<a href="{% url messages_reply message.id %}">{% trans "Reply" %}</a>
+<a href="{% url messages_reply message.id %}">{% trans "Odgovori" %}</a>
 {% endifequal %}
-<a href="{% url messages_delete message.id %}">{% trans "Delete" %}</a>
+<a href="{% url messages_delete message.id %}">{% trans "Izbriši" %}</a>
 {% endblock %}
