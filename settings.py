@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'rosetta',
     'notification',
     'exts',
+    'storages',
 )
 
 LOGIN_URL = '/'
