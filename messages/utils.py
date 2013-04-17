@@ -5,7 +5,7 @@ from django.template import Context, loader
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from utils import send_mail, I18nString
+#from timebank.utils import send_mail, I18nString
 
 def format_quote(text):
     """
@@ -118,3 +118,63 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipients,
         fail_silently=True)
 
+def send_mail(subject, message, from_email, recipient_list,
+              fail_silently=False, auth_user=None, auth_password=None,
+              connection=None):
+    '''
+    Sends an email to the given recipients' user list in their language. Use
+    ugettext_lazy if you want the email to be correctly translated.
+    '''
+    from django.utils import translation
+    from django.core.mail import send_mail as django_send_mail
+
+    cur_language = translation.get_language()
+    default_language = settings.LANGUAGE_CODE
+    try:
+        for recipient in recipient_list:
+            print "language code: ", recipient.lang_code, default_language
+            if recipient.lang_code:
+                translation.activate(recipient.lang_code)
+            else:
+                translation.activate(default_language)
+
+            django_send_mail(unicode(subject), unicode(message), from_email,
+                [recipient.email,], fail_silently, auth_user, auth_password, connection)
+    finally:
+        translation.activate(cur_language)
+
+class I18nString(object):
+    '''
+    This string is similar to ugettext_lazy because it doesn't render the string
+    until needed, but improving this laziness, delaying this even when giving
+    arguments and using a template_rendering.
+    '''
+
+    def __init__(self, message, args, render=False):
+        '''
+        Constructs a I18nString, either having a message to translate in
+        english, or if render=True then message (first paramenter) is the
+        path to the template to render.
+        '''
+        self.message = message
+        self.args = args
+        self.render = render
+
+    def to_unicode(self, language_code=None):
+        from django.utils import translation
+        cur_language = translation.get_language()
+        renderized_string = None
+        try:
+            if language_code:
+                translation.activate(language_code)
+            if self.render:
+                renderized_string = render_to_string(self.message, self.args)
+            else:
+                renderized_string = self.message % self.args
+        finally:
+            if language_code:
+                translation.activate(settings.LANGUAGE_CODE)
+        return renderized_string
+
+    def __unicode__(self):
+        return self.to_unicode()
