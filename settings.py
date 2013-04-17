@@ -210,7 +210,7 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-      ('sl', _('Slovensko')),
+#      ('sl', _('Slovensko')),
 )
 
 # Just in case
