@@ -62,7 +62,7 @@ class Contact(ViewClass):
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = ("Registriran uporabnik %(username)s pošilja "\
+            message = (("Registriran uporabnik %(username)s pošilja "\
             " sporočilo:\n%(message)s"), {
                 'username': user.username,
                 'message': form.cleaned_data["message"]
