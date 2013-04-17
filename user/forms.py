@@ -27,20 +27,20 @@ from utils import (FormCharField, FormEmailField, FormDateField,
 from  serv.forms import CustomCharField
 
 class RegisterForm(UserCreationForm):
-    birth_date = FormDateField(label=_("Birth date"),
+    birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d/%m/%Y",))
 
-    first_name = FormCharField(label=_("Name"), required=True, max_length=30)
-    last_name = FormCharField(label=_("Last name"), required=True, max_length=30)
-    email = FormEmailField(label=_("Email address"), required=True)
-    address = FormCharField(label=_("Address"), required=True,
-        max_length=100, help_text=_("Example: Avda. Molina, 12, Sevilla"))
-    description = FormCharField(label=_("Personal description"), required=True,
+    first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
+    last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
+    email = FormEmailField(label=_("E-mail"), required=True)
+    address = FormCharField(label=_("Naslov"), required=True,
+        max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
+    description = FormCharField(label=_("Opis"), required=True,
         max_length=300, widget=forms.Textarea())
-    land_line = FormCharField(label=_("Land line"), max_length=20,
-        required=False, help_text="Example: 954 123 111")
-    mobile_tlf = FormCharField(label=_("Mobile Telephone"), max_length=20,
-        required=False, help_text="Example: 651 333 111")
+    land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
+        required=False, help_text="Primer: 02 123 4567")
+    mobile_tlf = FormCharField(label=_("Mobilni telefone"), max_length=20,
+        required=False, help_text="Primer: 041 123 456")
     captcha = FormCaptchaField()
 
     class Meta:
@@ -49,24 +49,24 @@ class RegisterForm(UserCreationForm):
 
 class EditProfileForm(forms.ModelForm):
     photo = forms.ImageField(label=_("Avatar"), required=False)
-    birth_date = FormDateField(label=_("Birth date"),
+    birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d/%m/%Y",))
 
-    first_name = FormCharField(label=_("Name"), required=True,
+    first_name = FormCharField(label=_("Ime"), required=True,
         max_length=30)
-    last_name = FormCharField(label=_("Last name"), required=True, max_length=30)
-    email = FormEmailField(label=_("Email address"), required=True)
-    address = FormCharField(label=_("Address"), required=True,
-        max_length=100, help_text=_("Example: Avda. Molina, 12, Sevilla"))
-    description = FormCharField(label=_("Personal description"), required=True,
+    last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
+    email = FormEmailField(label=_("E-mail"), required=True)
+    address = FormCharField(label=_("Naslov"), required=True,
+        max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
+    description = FormCharField(label=_("Opis"), required=True,
         max_length=300, widget=forms.Textarea())
-    password1 = forms.CharField(label=_("Current password"),
+    password1 = forms.CharField(label=_("Trenutno geslo"),
         widget=forms.PasswordInput, required=True,
-        help_text=_("Enter your current password to check your identity"))
-    land_line = FormCharField(label=_("Land line"), max_length=20,
-        required=False, help_text="Example: 954 123 111")
-    mobile_tlf = FormCharField(label=_("Mobile telephone"), max_length=20,
-        required=False, help_text="Example: 651 333 111")
+        help_text=_("Vnesite trenutno geslo"))
+    land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
+        required=False, help_text="Primer: 02 123 4567")
+    mobile_tlf = FormCharField(label=_("Mobilni telefone"), max_length=20,
+        required=False, help_text="Primer: 041 123 456")
 
     def __init__(self, request, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
@@ -75,7 +75,7 @@ class EditProfileForm(forms.ModelForm):
     def clean_password1(self):
         password1 = self.cleaned_data["password1"]
         if not self.request.user.check_password(password1):
-            raise forms.ValidationError(_("The two password fields didn't match."))
+            raise forms.ValidationError(_("Gesli se ne ujemata."))
         return password1
 
     class Meta:
@@ -85,10 +85,10 @@ class EditProfileForm(forms.ModelForm):
             'description', 'land_line', 'mobile_tlf', 'email_updates')
 
 class RemoveForm(forms.Form):
-    reason = FormCharField(label=_("Reason"), required=True,
+    reason = FormCharField(label=_("Razlog"), required=True,
         min_length=10, max_length=300, widget=forms.Textarea(),
-        help_text=_("Have we done something wrong? Please tell us why you want"
-            "rmeove your user."))
+        help_text=_("Smo naredili kaj narobe? Prosimo, sporočite nam, zakaj ne želite več "
+            "sodelovati v skupnosti."))
 
 class PublicMessageForm(forms.ModelForm):
     class Meta:
@@ -98,17 +98,17 @@ class PublicMessageForm(forms.ModelForm):
 class FindPeopleForm(forms.Form):
     USER_CHOICES = (
         ('0', _('---------')),
-        ('1', _(u'less than 24 hours ago')),
-        ('2', _(u'less than one week ago')),
-        ('3', _(u'less than one month ago')),
-        ('4', _(u'less than 3 months ago')),
-        ('5', _(u'less than 6 months ago')),
-        ('6', _(u'less than one year ago')),
+        ('1', _(u'manj kot 24 urami')),
+        ('2', _(u'manj kot tednom')),
+        ('3', _(u'manj kot mesecem')),
+        ('4', _(u'manj kot tremi meseci')),
+        ('5', _(u'manj kot šestimi meseci')),
+        ('6', _(u'manj kot letom')),
     )
 
-    user_status = CustomCharField(label=_("User connected"),
+    user_status = CustomCharField(label=_("Uporabnik povezan"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    username = forms.CharField(label=_("Username"), required=False)
+    username = forms.CharField(label=_("Uporabniško ime"), required=False)
 
     def as_url_args(self):
         import urllib
@@ -116,17 +116,17 @@ class FindPeopleForm(forms.Form):
 
 class FindPeople4AdminsForm(FindPeopleForm):
     USER_CHOICES = FindPeopleForm.USER_CHOICES + (
-        ('7', _(u'more than a week ago')),
-        ('8', _(u'more than one month ago')),
-        ('9', _(u'more than 3 months ago')),
-        ('10', _(u'more than 6 months ago')),
-        ('11', _(u'more than one year')),
+        ('7', _(u'več kot tednom')),
+        ('8', _(u'več kot mesecem')),
+        ('9', _(u'več kot tremi meseci')),
+        ('10', _(u'več kot šestimi meseci')),
+        ('11', _(u'več kot letom')),
     )
-    user_status = CustomCharField(label=_("User connected"),
+    user_status = CustomCharField(label=_("Uporabnik povezan"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    without_services = forms.BooleanField(label=_("Without services"), required=False)
+    without_services = forms.BooleanField(label=_("Ni storitev"), required=False)
 
 class SendEmailToAllForm(forms.Form):
-    subject = forms.CharField(label=_(u'Subject'), required=True)
-    message = forms.CharField(label=_(u'Message body'), required=True,
+    subject = forms.CharField(label=_(u'Zadeva'), required=True)
+    message = forms.CharField(label=_(u'Sporočilo'), required=True,
         widget=forms.Textarea)

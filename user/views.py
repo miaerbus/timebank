@@ -249,24 +249,22 @@ class Remove(ViewClass):
             'site_name': settings.SITE_NAME,
             'username': user.username
         })
-        message = I18nString(_("The user %(username)s has requested being removed from the"
-            " website. The reason given was:\n\n%(reason)s"), {
+        message = I18nString(_("Uporabnik %(username)s ne želi več sodelovati v skupnosti."
+            " Razlog:\n\n%(reason)s"), {
                 'username': user.username,
                 'reason': form.cleaned_data["reason"]
             })
         mail_owners(subject, message)
 
         current_site = Site.objects.get_current()
-        subject = I18nString(_("You removed your profile %(username)s in %(site_name)s"), {
+        subject = I18nString(_("Odstranili ste uporabnika %(username)s iz skupnosti %(site_name)s"), {
             'username': user.username,
             'site_name': settings.SITE_NAME
             })
-        message = I18nString(_("Hello %(username)s!\n You removed your profile in"
-            " http://%(url)s/ . We regret your decision to take this"
-            " step. We'll read the reason why you removed yourself from this"
-            " community that you provided to us and we'll have it in mind to"
-            " improve our service in the future."
-            "\n\n- The team of %(site_name)s."), {
+        message = I18nString(_("Pozdravljeni, %(username)s!\n Odstraniti želite svoj profil na strani"
+            " http://%(url)s/. Obžalujemo, da ste se odločili za ta korak."
+            " Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."
+            "\n\n- Ekipa %(site_name)s Maribor."), {
                 'username': user.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME
@@ -274,10 +272,9 @@ class Remove(ViewClass):
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user],
             fail_silently=True)
 
-        self.flash(_("We regret your decision to take this step.We'll read the"
-            " reason why you removed yourself from this community that you"
-            " provided to us and we'll have it in mind to improve our service"
-            " in the future."), title=_("User removed"))
+        self.flash(_("Obžalujemo, da ste se odločili za ta korak."
+            " Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."),
+		title=_("User removed"))
 
         return redirect("user-logout")
 
@@ -331,7 +328,7 @@ class FindPeople(ViewClass):
         else:
             form = FindPeopleForm(self.request.GET)
 
-        form.fields["user_status"].label=_("User connected")
+        form.fields["user_status"].label=_("Uporabnik povezan")
         people = Profile.objects.filter(is_active=True)
 
         try:
@@ -407,7 +404,7 @@ class SendMessage(ViewClass):
         new_message.recipient = recipient
         new_message.is_public = True
         new_message.save()
-        self.flash(_("Message added to %s public profile") %\
+        self.flash(_("Sporočilo objavljeno na javnem profilu uporabnika %s") %\
             recipient.username)
         return redirect("user-view", user_id=recipient_id)
 
@@ -418,8 +415,7 @@ class SendEmailToAll(ViewClass):
         # check permissions
         if not self.request.user.is_staff or\
             not self.request.user.is_superuser:
-            self.flash(_("You don't have permission to send an email to all"
-                " users"))
+            self.flash(_("Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
             return redirect('main.views.index')
 
         form = SendEmailToAllForm()
@@ -430,8 +426,7 @@ class SendEmailToAll(ViewClass):
         # check permissions
         if not self.request.user.is_staff or\
             not self.request.user.is_superuser:
-            self.flash(_("You don't have permission to send an email to all"
-                " users"))
+            self.flash(_("Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
             return redirect('main.views.index')
 
         form = SendEmailToAllForm(self.request.POST)
@@ -443,7 +438,7 @@ class SendEmailToAll(ViewClass):
             from_email=settings.DEFAULT_FROM_EMAIL, to=[],
             bcc=[user.email for user in Profile.objects.filter(is_active=True)])
         mass_email.send()
-        self.flash(_("Email sent to all users"))
+        self.flash(_("Sporočilo poslano vsem uporabnikom."))
         return redirect('main.views.index')
 
 

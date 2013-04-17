@@ -39,14 +39,14 @@ def create_profile_for_user(sender, **kwargs):
 
 class Profile(User):
     '''
-    User with time bank settings.
+    User with timebank settings.
     '''
 
     photo = models.ImageField(_("Avatar"), blank=True, null=True,
                               upload_to=os.path.join(settings.STATIC_DOC_ROOT, "photos"))
-    birth_date = models.DateField(_("Birth date"), default=date.today())
+    birth_date = models.DateField(_("Rojstni datum"), default=date.today())
 
-    address = models.CharField(_("Address"), max_length=100, default=_("address"))
+    address = models.CharField(_("Naslov"), max_length=100, default=_("address"))
 
     # credits in minutes
     balance = models.IntegerField(default=0)
@@ -57,23 +57,23 @@ class Profile(User):
 
         return self.balance/60.0
 
-    description = models.TextField(_("Personal address"), max_length=300,
+    description = models.TextField(_("Opis"), max_length=300,
         blank=True)
 
-    land_line = models.CharField(_("Land line"), max_length=20)
+    land_line = models.CharField(_("Stacionarni telefon"), max_length=20)
 
-    mobile_tlf = models.CharField(_("Mobile phone"), max_length=20)
+    mobile_tlf = models.CharField(_("Mobilni telefon"), max_length=20)
 
-    email_updates = models.BooleanField(_("Receive email updates"),
+    email_updates = models.BooleanField(_("Želim prejemati novice Časovne banke"),
         default=True)
 
     # Saving the user language allows sending emails to him in his desired
     # language (among other things)
-    lang_code = models.CharField(_("Language Code"), max_length=10, default='')
+    lang_code = models.CharField(_("Jezik"), max_length=10, default='')
 
     class Meta:
-        verbose_name = _("User")
-        verbose_name_plural = _("Users")
+        verbose_name = _("Uporabnik")
+        verbose_name_plural = _("Uporabniki")
 
     def __unicode__(self):
         return self.username

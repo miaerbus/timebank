@@ -33,17 +33,17 @@ class ExtraProfileInline(admin.StackedInline):
 
 def send_email_action(profile_admin, request, queryset):
     return redirect('user-send-email-to-all')
-send_email_action.short_description = _("Send email to all users")
+send_email_action.short_description = _("Pošlji sporočilo vsem uporabnikom")
 
 
 def activate_user_action(profile_admin, request, queryset):
     queryset.update(is_active=True)
-activate_user_action.short_description = _("Activate users")
+activate_user_action.short_description = _("Aktiviraj uporabnike")
 
 
 def deactivate_user_action(profile_admin, request, queryset):
     queryset.update(is_active=False)
-deactivate_user_action.short_description = _("Deactivate users")
+deactivate_user_action.short_description = _("Deaktiviraj uporabnike")
 
 def reset_password_user_action(profile_admin, request, queryset):
     import random
@@ -56,19 +56,19 @@ def reset_password_user_action(profile_admin, request, queryset):
         u.save()
 
         current_site = Site.objects.get_current()
-        title = I18nString(_("Your password has been reset for %(site_name)s"), {
+        title = I18nString(_("Vaše geslo na %(site_name)s je bilo ponastavljeno."), {
             'site_name': settings.SITE_NAME,
             'username': u.username
         })
-        message = I18nString(_(u" %(username)s!\n"
-        u"The admins have reset your password, "
-        u"You can enter in "
-        u"http://%(url)s/ with the following credentials:\n\n"
-        u"username: %(username)s\n"
-        u"password: %(password)s\n\n"
-        u"You can change your password in your profile:\n"
+        message = I18nString(_(u"Pozdravljeni %(username)s!\n"
+        u"Administratorji so ponastavili vaše geslo, "
+        u"prijavite se na "
+        u"http://%(url)s/ z naslednjimi podatki:\n\n"
+        u"uporabniško ime\t: %(username)s\n"
+        u"geslo\t\t: %(password)s\n\n"
+        u"Geslo lahko spremenite v svojem profilu:\n"
         u"http://%(url)s%(pwdchange)s"
-        u"\n\n- The team of %(site_name)s."), {
+        u"\n\n- Ekipa %(site_name)s."), {
             'username': u.username,
             'password': pwd,
             'url': current_site.domain,
@@ -79,7 +79,7 @@ def reset_password_user_action(profile_admin, request, queryset):
         send_mail(title, message, settings.DEFAULT_FROM_EMAIL,
             [u], fail_silently=True)
 
-reset_password_user_action.short_description = _("Reset password")
+reset_password_user_action.short_description = _("Ponastavi geslo")
 
 
 class ProfileAdmin(UserAdmin):
@@ -104,14 +104,14 @@ class ProfileAdmin(UserAdmin):
         if model.is_active == True and old_model.is_active == False:
             # user activated, send activation email
             current_site = Site.objects.get_current()
-            title = I18nString(_("Welcome to %(site_name)s, %(username)s"), {
+            title = I18nString(_("Dobrodošli na strani %(site_name)s, %(username)s"), {
                 'site_name': settings.SITE_NAME,
                 'username': model.username
             })
-            message = I18nString(_(u"Congratulations %(username)s!\n"
-            u"The admins have accepted your registration request, "
-            u"now you can start collaborating in our community in  "
-            u"http://%(url)s/.\n\n- The team of %(site_name)s."), {
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n"
+            u"Potrdili smo vašo registracijo, "
+            u"zdaj lahko začnete sodelovati v skupnosti  "
+            u"http://%(url)s/.\n\n- Ekipa %(site_name)s."), {
                 'username': model.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME

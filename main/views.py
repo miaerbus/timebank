@@ -62,8 +62,8 @@ class Contact(ViewClass):
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_(u"Registered user %(username)s sends the following "\
-            " message:\n%(message)s"), {
+            message = I18nString(_(u"Registriran uporabnik %(username)s pošilja "\
+            " sporočilo:\n%(message)s"), {
                 'username': user.username,
                 'message': form.cleaned_data["message"]
             })
@@ -73,15 +73,15 @@ class Contact(ViewClass):
                 'email': form.cleaned_data["email"],
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_("Registered user %(name)s whose email is %(email)s"\
-                " sends the following message:\n%(message)s"), {
+            message = I18nString(_("Registriran uporabnik %(name)s z emailom %(email)s"\
+                " pošilja sporočilo:\n%(message)s"), {
                     'name': form.cleaned_data["name"],
                     'email': form.cleaned_data["email"],
                     'message': form.cleaned_data["message"]
                 })
         mail_owners(subject, message)
 
-        self.flash(_("Mail sent, we'll answer you as soon as possible."))
+        self.flash(_("Sporočilo poslano, odgovorili vam bomo v najkrajšem možnem času."))
         return redirect('main.views.index')
 
 
