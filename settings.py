@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = DEBUG
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
-SITE_NAME="Casovna banka"
+SITE_NAME="Časovna banka"
 
 ADMINS = (
     ('admin', 'admin@localhost'),
