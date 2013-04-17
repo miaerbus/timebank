@@ -27,10 +27,10 @@ TEMPLATE_DEBUG = DEBUG
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
-SITE_NAME="Časovna banka"
+SITE_NAME="Casovna banka"
 
 ADMINS = (
-    ('admin', 'admin@localhost'),
+    ('admin', 'mia.erbus@gmail.com'),
 )
 
 OWNERS = MANAGERS = ADMINS
@@ -63,7 +63,7 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'sl'
+LANGUAGE_CODE = 'SI'
 
 SITE_ID = 1
 
@@ -189,13 +189,14 @@ RECAPTCHA_PUBLIC_KEY = "6LfA7d8SAAAAAPHYLhAyft-wNE1MNaDruCjvsxVa"
 RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
-DEFAULT_FROM_EMAIL = 'cbs.maribor@gmail.com'
-SERVER_EMAIL = 'cbs.maribor@gmail.com'
+EMAIL_SUBJECT_PREFIX = ''
+DEFAULT_FROM_EMAIL = 'Časovna banka <mia.erbus@gmail.com>'
+SERVER_EMAIL = 'mia.erbus@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'cbs.maribor@gmail.com'
-EMAIL_HOST_PASSWORD = 'infopeka17'
+EMAIL_HOST_USER = 'mia.erbus@gmail.com'
+EMAIL_HOST_PASSWORD = 'rugelj12n'
 
 ## For debugging, you can use the console email backend:
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

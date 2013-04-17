@@ -39,7 +39,7 @@ class RegisterForm(UserCreationForm):
         max_length=300, widget=forms.Textarea())
     land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
         required=False, help_text="Primer: 02 123 4567")
-    mobile_tlf = FormCharField(label=_("Mobilni telefone"), max_length=20,
+    mobile_tlf = FormCharField(label=_("Mobilni telefon"), max_length=20,
         required=False, help_text="Primer: 041 123 456")
     captcha = FormCaptchaField()
 
@@ -65,7 +65,7 @@ class EditProfileForm(forms.ModelForm):
         help_text=_("Vnesite trenutno geslo"))
     land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
         required=False, help_text="Primer: 02 123 4567")
-    mobile_tlf = FormCharField(label=_("Mobilni telefone"), max_length=20,
+    mobile_tlf = FormCharField(label=_("Mobilni telefon"), max_length=20,
         required=False, help_text="Primer: 041 123 456")
 
     def __init__(self, request, *args, **kwargs):
