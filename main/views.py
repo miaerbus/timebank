@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 # Copyright (C) 2010 Eduardo Robles Elvira <edulix AT gmail DOT com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -62,7 +62,7 @@ class Contact(ViewClass):
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_(u"Registriran uporabnik %(username)s pošilja "\
+            message = ("Registriran uporabnik %(username)s pošilja "\
             " sporočilo:\n%(message)s"), {
                 'username': user.username,
                 'message': form.cleaned_data["message"]
