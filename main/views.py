@@ -62,8 +62,8 @@ class Contact(ViewClass):
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_("Registriran uporabnik %(username)s pošilja "\
-            " sporočilo:\n%(message)s"), {
+            message = I18nString(_("Registriran uporabnik %(username)s posilja "\
+            " sporocilo:\n%(message)s"), {
                 'username': user.username,
                 'message': form.cleaned_data["message"]
             })

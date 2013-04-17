@@ -65,9 +65,10 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_("Pozdravljeni, %(username)s!\n Pravkar ste se pridružili skupnosti http://%(url)s/ ."
-                " Vaša vloga bo kmalu pregledala in če bo vse v redu,"
-                " boste lahko začeli sodelovati v skupnosti."
+            message = I18nString(_("Pozdravljeni, %(username)s!\n "
+		" Pravkar ste se pridruzili skupnosti http://%(url)s/."
+                " Vasa vloga bo kmalu pregledala in ce bo vse v redu,"
+                " boste lahko zaceli sodelovati v skupnosti."
                 u"\n\n- Ekipa %(site_name)s Maribor."), {
                     'username': new_user.username,
                     'url': current_site.domain,
@@ -90,8 +91,8 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_("Pozdravljeni, %(username)s!\n Pravkar ste se pridružili skupnosti http://%(url)s/."
-                " Zdaj lahko začnete sodelovati v skupnosti!"
+            message = I18nString(_("Pozdravljeni, %(username)s!\n Pravkar ste se pridruzili skupnosti http://%(url)s/."
+                " Zdaj lahko zacnete sodelovati v skupnosti!"
                 u"\n\n- Ekipa %(site_name)s Maribor."), {
                     'username': new_user.username,
                     'url': current_site.domain,
@@ -243,7 +244,7 @@ class Remove(ViewClass):
             'site_name': settings.SITE_NAME,
             'username': user.username
         })
-        message = I18nString(_("Uporabnik %(username)s ne želi več sodelovati v skupnosti."
+        message = I18nString(_("Uporabnik %(username)s ne zeli vec sodelovati v skupnosti."
             " Razlog:\n\n%(reason)s"), {
                 'username': user.username,
                 'reason': form.cleaned_data["reason"]
@@ -255,9 +256,9 @@ class Remove(ViewClass):
             'username': user.username,
             'site_name': settings.SITE_NAME
             })
-        message = I18nString(_("Pozdravljeni, %(username)s!\n Odstraniti želite svoj profil na strani"
-            " http://%(url)s/. Obžalujemo, da ste se odločili za ta korak."
-            " Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."
+        message = I18nString(_("Pozdravljeni, %(username)s!\n Odstraniti zelite svoj profil na strani"
+            " http://%(url)s/. Obzalujemo, da ste se odlocili za ta korak."
+            " Prebrali bomo vase razloge in z njimi izboljsati naso skupnost."
             "\n\n- Ekipa %(site_name)s Maribor."), {
                 'username': user.username,
                 'url': current_site.domain,

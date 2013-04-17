@@ -27,21 +27,7 @@
             <div id="logo_area">
                 <div id="logo"><a href="/"><img src="{{ MEDIA_URL }}imgs/timebank.png"></a></div>
           </div>
-        <!-- Izbira jezika 
-	<form action="{% url set_language %}" method="POST">
-            {% csrf_token %}
-            <select name="language" id="select-language-input">
-                {% get_current_language as LANGUAGE_CODE %}
-                {% get_available_languages as LANGUAGES %}
-                {% for key, value in LANGUAGES %}
-                {% ifequal key LANGUAGE_CODE %}
-                    <option value="{{ key }}" selected="selected">{{ value }}</option>
-                {% else %}
-                    <option value="{{ key }}">{{ value }}</option>
-                {% endifequal %}
-            {% endfor %}
-            </select>
-        </form>-->
+        <!-- Izbira jezika -->
             <div id="social">
                 <a href="{% url news.views.feed %}"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_3.jpg" alt="RSS"></a>
                 <a href="https://twitter.com/Zofijini"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_2.jpg" alt="Twitter"></a>
@@ -54,7 +40,7 @@
             <div id="menu">
                 {% if user.is_authenticated %}
                     <ul id="login">
-                        <li><span>{% blocktrans with user.first_name as name %}Hello, {{ name }}{% endblocktrans %}</span></li>
+                        <li><span>{% blocktrans with user.first_name as name %}Pozdravljeni, {{ name }}{% endblocktrans %}</span></li>
                         <li><a href="{% url user-logout %}"  class="last">{% trans 'Odjava' %}</a></li>
                     </ul>
                     <ul>
@@ -156,7 +142,7 @@
                 <li><a href="{% url news %}" class="{% current_tab 'news' %}">{% trans "Novice" %}</a></li>
                 <li><a href="{% url contact %}" class="{% current_tab 'contact' %}">{% trans "Kontakt" %}</a></li>
                 <li><a href="{% url about %}" class="{% current_tab 'about' %}">{% trans "O strani" %}</a></li>
-        		<li><a href="{% url links %}" class="{% current_tab 'links' %}">{% trans "Povezave" %}</a></li>
+       		<li><a href="{% url links %}" class="{% current_tab 'links' %}">{% trans "Povezave" %}</a></li>
                 <li><a href="{% url faq %}" class="{% current_tab 'faq' %}">{% trans "Pogosta vprašanja" %}</a></li>
                 <li><a href="{% url rules %}" class="{% current_tab 'rules' %}">{% trans "Pravila" %}</a></li>
                 <li><a href="{% url terms %}" class="{% current_tab 'terms' %}">{% trans "Pogoji" %}</a></li>

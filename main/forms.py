@@ -29,7 +29,7 @@ class AnonymousContactForm(forms.Form):
     email = FormEmailField(label=_(u"E-mail"), required=True)
     subject = FormCharField(label=_("Zadeva"), required=True,
         min_length=5, max_length=200)
-    message = FormCharField(label=_(u"Sporočilo"), required=True,
+    message = FormCharField(label=_(u"Sporocilo"), required=True,
         min_length=5, max_length=1000, widget=forms.Textarea())
     captcha = FormCaptchaField()
 
@@ -39,5 +39,5 @@ class ContactForm(forms.Form):
     '''
     subject = FormCharField(label=_("Zadeva"), required=True,
         min_length=5, max_length=200)
-    message = FormCharField(label=_(u"Sporočilo"), required=True,
+    message = FormCharField(label=_(u"Sporocilo"), required=True,
         min_length=5, max_length=1000, widget=forms.Textarea())
