@@ -65,11 +65,11 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_(unicode("Pozdravljeni, %(username)s!\n "
-		" Pravkar ste se pridružili skupnosti http://%(url)s/."
-                " Vaša vloga bo kmalu pregledala in če bo vse v redu,"
-                " boste lahko začeli sodelovati v skupnosti."
-                u"\n\n- Ekipa %(site_name)s Maribor."), 'utf8'), {
+            message = I18nString(_("Pozdravljeni, %(username)s!\n "
+		" Pravkar ste se pridruzili skupnosti http://%(url)s/."
+                " Vasa vloga bo kmalu pregledala in ce bo vse v redu,"
+                " boste lahko zaceli sodelovati v skupnosti."
+                u"\n\n- Ekipa %(site_name)s Maribor."), {
                     'username': new_user.username,
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
