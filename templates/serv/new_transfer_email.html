@@ -5,13 +5,13 @@
 - {{ site_url }} Maribor{% endblocktrans %}
 {% else %}{% if transfer.service.is_offer %}{% blocktrans with transfer.credits_payee.username as recipient and transfer.credits_debtor.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} povprašuje po storitvi, ki jo ponujate. S prenosom lahkoupravljate na {{ site_url }}{{ transfer_url }}.
+{{ sender }} povprasuje po storitvi, ki jo ponujate. S prenosom lahkoupravljate na {{ site_url }}{{ transfer_url }}.
 
 The team of {{ site_url }}{% endblocktrans %}
 {% else %}
 {% blocktrans with transfer.credits_debtor.username as recipient and transfer.credits_payee.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} je ustvaril prenos storitve, po kateri ste povpraševali. S prenosom lahko upravljate na strani {{ site_url }}{{ transfer_url }}.
+{{ sender }} je ustvaril prenos storitve, po kateri ste povprasevali. S prenosom lahko upravljate na strani {{ site_url }}{{ transfer_url }}.
 
 - {{ site_url }} Maribor{% endblocktrans %}
 {% endif %}

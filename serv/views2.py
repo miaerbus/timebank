@@ -209,8 +209,7 @@ class DeactiveService(ViewClass):
             instance.save()
             self.flash(_(u"Storitev uspešno onemogočena"))
         else:
-            self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
-                       "error")
+            self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"), "error")
         return redirect('serv-myservices')
 
 
@@ -220,8 +219,7 @@ class NewTransfer(ViewClass):
         if user_id:
             user = get_object_or_404(Profile, pk=user_id)
             if self.request.user.is_authenticated and self.request.user == user:
-                self.flash(_(u"Ne morete povprasevati po svoji storitvi"),
-                    "error")
+                self.flash(_(u"Ne morete povprasevati po svoji storitvi"), "error")
                 return redirect("serv-transfer-new")
             else:
                 form_data = dict(username=user.username)
@@ -236,8 +234,7 @@ class NewTransfer(ViewClass):
         # check user is not doing an "auto-transfer"
         if self.request.user.is_authenticated and\
             self.request.POST["username"] == self.request.user.username:
-            self.flash(_(u"Kredita ni mogoče prenesti nase"),
-                "error")
+            self.flash(_(u"Kredita ni mogoce prenesti nase"), "error")
             return redirect("serv-transfer-new")
 
         form = NewTransferForm(data=self.request.POST)
