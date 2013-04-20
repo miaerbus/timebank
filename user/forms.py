@@ -106,7 +106,7 @@ class FindPeopleForm(forms.Form):
         ('6', _(u'manj kot letom')),
     )
 
-    user_status = CustomCharField(label=_("Uporabnik povezan"),
+    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_("Uporabniško ime"), required=False)
 
@@ -122,7 +122,7 @@ class FindPeople4AdminsForm(FindPeopleForm):
         ('10', _(u'več kot šestimi meseci')),
         ('11', _(u'več kot letom')),
     )
-    user_status = CustomCharField(label=_("Uporabnik povezan"),
+    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     without_services = forms.BooleanField(label=_("Ni storitev"), required=False)
 

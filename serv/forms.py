@@ -77,8 +77,8 @@ class ListServicesForm(forms.Form):
     area = forms.ModelChoiceField(None, required=False, label=_("Območje"))
     user_status = CustomCharField(label=_("Status uporabnika"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    username = forms.CharField(label=_("Uporabniško ime"), required=False)
-    text = forms.CharField(label=_("Besedilo"), required=False)
+    username = forms.CharField(label=_("Uporabnik"), required=False)
+    text = forms.CharField(label=_("Ime storitve"), required=False)
 
     def __init__(self,  *args, **kwargs):
         super(ListServicesForm, self).__init__(*args, **kwargs)

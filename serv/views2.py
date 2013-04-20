@@ -220,7 +220,7 @@ class NewTransfer(ViewClass):
         if user_id:
             user = get_object_or_404(Profile, pk=user_id)
             if self.request.user.is_authenticated and self.request.user == user:
-                self.flash(_(u"Ne morete povpraševati po svoji storitvi"),
+                self.flash(_(u"Ne morete povprasevati po svoji storitvi"),
                     "error")
                 return redirect("serv-transfer-new")
             else:

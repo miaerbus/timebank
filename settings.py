@@ -154,7 +154,7 @@ INSTALLED_APPS = (
     'notification',
     'exts',
 #    'storages',
-    'smuggler',
+#    'smuggler',
 )
 
 LOGIN_URL = '/'
