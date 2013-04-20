@@ -23,7 +23,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    (r'^admin/', include('smuggler.urls')), # put it before admin url patterns
+#    (r'^admin/', include('smuggler.urls')), # put it before admin url patterns
     (r'^admin/', include(admin.site.urls)),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}),
