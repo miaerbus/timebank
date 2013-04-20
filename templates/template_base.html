@@ -119,7 +119,7 @@
 
                 <div class="section_2">
                     <h1>
-                        <a href="{% url news.views.feed %}"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_3.jpg" alt="RSS"></a>
+                        <a href="{% url news.views.feed %}" class="{% current_tab 'news' %}"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_3.jpg" alt="RSS"></a>
                         {% trans 'Novice' %}
                     </h1>
                     {% for new in front_news %}
