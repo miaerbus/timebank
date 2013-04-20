@@ -63,10 +63,10 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'sl-SI'
 
-LANG='en_US.UTF-8'
-LC_ALL='en_US.UTF-8'
+LANG='sl_SI.UTF-8'
+LC_ALL='sl_SI.UTF-8'
 
 SITE_ID = 1
 
@@ -203,7 +203,7 @@ EMAIL_HOST_USER = 'mia.erbus@gmail.com'
 EMAIL_HOST_PASSWORD = 'rugelj12n'
 
 ## For debugging, you can use the console email backend:
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIN_CREDIT = -10*60
 MAX_CREDIT = 20*60
@@ -214,7 +214,8 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-      ('en', _('English')),
+    ('en', _('English')),
+    ('sl', _('Slovenian')),
 )
 
 # Just in case

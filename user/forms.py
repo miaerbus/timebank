@@ -27,9 +27,20 @@ from utils import (FormCharField, FormEmailField, FormDateField,
 from  serv.forms import CustomCharField
 
 class RegisterForm(UserCreationForm):
+    username = forms.RegexField(label=_("Uporabniško ime"), max_length=30,
+        regex=r'^[\w.@+-]+$',
+        help_text=_("Zahtevano. Do 30 znakov. Samo alfanumerični znaki"
+		" ali znaki: @/./+/-/_."),
+        error_messages={
+            'invalid': _("To polje naj vsebuje samo alfanumerične znake,"
+		" številke ali znake: @/./+/-/_ characters.")})
+    password1 = forms.CharField(label=_("Geslo"),
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_("Ponovitev gesla"),
+        widget=forms.PasswordInput,
+        help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
     birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d/%m/%Y",))
-
     first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
     email = FormEmailField(label=_("E-mail"), required=True)

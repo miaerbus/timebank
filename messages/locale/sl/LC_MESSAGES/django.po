@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-10 12:47+0200\n"
+"PO-Revision-Date: 2013-04-20 16:21+0100\n"
+"Last-Translator: Mia Erbus <mia.erbus@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:19
+#: forms.py:20
+#: models.py:75
+msgid "Recipient"
+msgstr "Prejemnik"
+
+#: admin.py:21
+msgid "group"
+msgstr "Gruppe"
+
+#: admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr "Fügt die Nachricht wahlweise für jeden Benutzer der ausgewählten Gruppe hinzu."
+
+#: admin.py:29
+msgid "All users"
+msgstr "Alle Benutzer"
+
+#: admin.py:44
+#: forms.py:21
+#: models.py:73
+#: models.py:120
+msgid "Message"
+msgstr "Nachricht"
+
+#: admin.py:51
+msgid "Date/time"
+msgstr "Datum/Zeit"
+
+#: fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr "Die folgenden Benutzernamen sind nicht korrekt: %(users)s"
+
+#: management.py:9
+msgid "Message Received"
+msgstr "Nachricht erhalten"
+
+#: management.py:9
+msgid "you have received a message"
+msgstr "Du hast eine Nachricht erhalten"
+
+#: management.py:10
+msgid "Message Sent"
+msgstr "Nachricht gesendet"
+
+#: management.py:10
+msgid "you have sent a message"
+msgstr "Du hast eine Nachricht gesendet"
+
+#: management.py:11
+msgid "Message Replied"
+msgstr "Nachricht beantwortet"
+
+#: management.py:11
+msgid "you have replied to a message"
+msgstr "Du hast eine Nachricht beantwortet"
+
+#: management.py:12
+msgid "Reply Received"
+msgstr "Antwort erhalten"
+
+#: management.py:12
+msgid "you have received a reply to a message"
+msgstr "Du hast eine Antwort auf eine Nachricht erhalten"
+
+#: management.py:13
+msgid "Message Deleted"
+msgstr "Nachricht gelöscht"
+
+#: management.py:13
+msgid "you have deleted a message"
+msgstr "Du hast eine Nachricht gelöscht"
+
+#: management.py:14
+msgid "Message Recovered"
+msgstr "Nachricht wiederhergestellt"
+
+#: management.py:14
+msgid "you have undeleted a message"
+msgstr "Du hast eine Nachricht wiederhergestellt"
+
+#: models.py:72
+msgid "Subject"
+msgstr "Betreff"
+
+#: models.py:74
+msgid "Sender"
+msgstr "Absender"
+
+#: models.py:76
+msgid "Parent message"
+msgstr "Übergeordnete Nachricht"
+
+#: models.py:77
+msgid "sent at"
+msgstr "gesendet am"
+
+#: models.py:78
+msgid "read at"
+msgstr "gelesen am"
+
+#: models.py:79
+msgid "replied at"
+msgstr "beantwortet am"
+
+#: models.py:80
+msgid "Sender deleted at"
+msgstr "Vom Absender gelöscht"
+
+#: models.py:81
+msgid "Recipient deleted at"
+msgstr "Vom Empfänger gelöscht"
+
+#: models.py:82
+msgid "Public message"
+msgstr "Javno sporočilo"
+
+#: models.py:84
+msgid "Service"
+msgstr "Storitve"
+
+#: models.py:86
+msgid "Transfer"
+msgstr "Prenos"
+
+#: models.py:121
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: utils.py:22
+#, python-format
+msgid "New Message: %(subject)s"
+msgstr "Neue Nachricht: %(subject)s"
+
+#: utils.py:62
+#, python-format
+msgid "New transfer request from %s"
+msgstr "Nov zahtevek za prenos od uporabnika %s"
+
+#: utils.py:65
+#, python-format
+msgid "New direct transfer from %s"
+msgstr "Nov neposreden zahtevek za prenos od uporabnika %s"
+
+#: utils.py:81
+#, python-format
+msgid "Transfer from %s edited"
+msgstr "Prenos uporabnika %s, spremenjen"
+
+#: utils.py:87
+#, python-format
+msgid "Transfer of the service from %s accepted"
+msgstr "Prenos storitve uporabnika %s, sprejet"
+
+#: utils.py:90
+#, python-format
+msgid "Direct transfer from %s accepted"
+msgstr ""
+
+#: utils.py:95
+#, python-format
+msgid "Transfer to %(user1)s from a service of %(user2)s cancelled"
+msgstr ""
+
+#: utils.py:101
+#, python-format
+msgid "Direct transfer from %s cancelled"
+msgstr ""
+
+#: utils.py:106
+#, python-format
+msgid "Transfer of the service you did to %s confirmed"
+msgstr ""
+
+#: views.py:105
+#: views.py:163
+msgid "Message successfully sent."
+msgstr "Nachricht erfolgreich gesendet."
+
+#: views.py:133
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+"%(sender)s schrieb:\n"
+"%(body)s"
+
+#: views.py:137
+#, python-format
+msgid "Re: %(subject)s"
+msgstr "Re: %(subject)s"
+
+#: views.py:204
+msgid "Message successfully deleted."
+msgstr "Nachricht erfolgreich gelöscht."
+
+#: views.py:233
+msgid "Message successfully recovered."
+msgstr "Nachricht erfolgreich wiederhergestellt."
+
+#~ msgid "Body"
+#~ msgstr "Inhalt"
+
+#~ msgid "Inbox"
+#~ msgstr "Posteingang"
+
+#~ msgid "Sent Messages"
+#~ msgstr "Gesendete Nachrichten"
+
+#~ msgid "New Message"
+#~ msgstr "Neue Nachricht"
+
+#~ msgid "Trash"
+#~ msgstr "Papierkorb"
+
+#~ msgid "Compose Message"
+#~ msgstr "Nachricht verfassen"
+
+#~ msgid "Send"
+#~ msgstr "Senden"
+
+#~ msgid "Received"
+#~ msgstr "Erhalten"
+
+#~ msgid "Action"
+#~ msgstr "Aktion"
+
+#~ msgid "DATETIME_FORMAT"
+#~ msgstr "j. N Y, H:i"
+
+#~ msgid "delete"
+#~ msgstr "löschen"
+
+#~ msgid "No messages."
+#~ msgstr "Keine Nachrichten."
+
+#~ msgid ""
+#~ "Hello %(recipient)s,\n"
+#~ "\n"
+#~ "you received a private message from %(sender)s with\n"
+#~ "the following contents:"
+#~ msgstr ""
+#~ "Hallo %(recipient)s,\n"
+#~ "\n"
+#~ "du hast eine private Nachricht von %(sender)s mit\n"
+#~ "dem folgenden Inhalt erhalten:"
+
+#~ msgid "Sent from %(site_url)s"
+#~ msgstr "Gesendet von %(site_url)s"
+
+#~ msgid "Reply"
+#~ msgstr "Antworten"
+
+#~ msgid "Sent"
+#~ msgstr "Gesendet"
+
+#~ msgid "Deleted Messages"
+#~ msgstr "Gelöschte Nachrichten"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "undelete"
+#~ msgstr "wiederherstellen"
+
+#~ msgid ""
+#~ "Deleted Messages are removed from the trash at unregular intervals, don't "
+#~ "rely on this feature for long-time storage."
+#~ msgstr ""
+#~ "Gelöschte Nachrichten werden in unregelmäßigen Intervallen entfernt, "
+#~ "verlass dich nicht drauf, dass diese Nachrichten hier lange gespeichert "
+#~ "werden."
+
+#~ msgid "View Message"
+#~ msgstr "Nachrichtendetails"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid ""
+#~ "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+#~ msgstr ""
+#~ "Du hast die Nachricht <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "gelöscht."
+
+#~ msgid ""
+#~ "You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "from %(message_sender)s."
+#~ msgstr ""
+#~ "Du hast die Nachricht <a href=\"%(message_url)s\">%(message)s</a> von "
+#~ "%(message_sender)s erhalten."
+
+#~ msgid ""
+#~ "You have recovered the message <a href=\"%(message_url)s\">%(message)s</"
+#~ "a>."
+#~ msgstr ""
+#~ "Du hast die Nachricht <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "wiederhergestellt."
+
+#~ msgid ""
+#~ "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</"
+#~ "a> from %(message_recipient)s."
+#~ msgstr ""
+#~ "Du hast auf die Nachricht <a href=\"%(message_url)s\">"
+#~ "%(message_parent_msg)s</a> von %(message_recipient)s geantwortet."
+
+#~ msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+#~ msgstr ""
+#~ "%(message_sender)s hat dir eine Antwort auf %(message_parent_msg)s "
+#~ "gesendet."
+
+#~ msgid ""
+#~ "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
+#~ "%(message_recipient)s."
+#~ msgstr ""
+#~ "Du hast die Nachricht <a href=\"%(message_url)s\">%(message)s</a> an "
+#~ "%(message_recipient)s gesendet."

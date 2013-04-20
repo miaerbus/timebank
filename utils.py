@@ -135,17 +135,17 @@ class FormCharField(forms.CharField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Required. ")
+            self._auto_help_text += _(u"Zahtevano. ")
         else:
-            self._auto_help_text += _(u"Optional. ")
+            self._auto_help_text += _(u"Po želji. ")
         if self.max_length and self.min_length:
-            self._auto_help_text += _(u"From %(from)d to %(to)d characters. ")\
+            self._auto_help_text += _(u"Od %(from)d do %(to)d znakov. ")\
                 % {'from': self.min_length, 'to': self.max_length}
         elif self.max_length:
-            self._auto_help_text += _(u"Up to %d characters. ")\
+            self._auto_help_text += _(u"Do %d znakov. ")\
                 % self.max_length
         elif self.min_length:
-            self._auto_help_text += _(u"Minimum %d characters. ")\
+            self._auto_help_text += _(u"Najmanj %d znakov. ")\
                 % self.min_length
 
     help_text = property(get_help_text, set_help_text)
@@ -168,10 +168,10 @@ class FormEmailField(forms.EmailField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Requeried. ")
+            self._auto_help_text += _(u"Zahtevano. ")
         else:
-            self._auto_help_text += _(u"Optional. ")
-        self._auto_help_text += _(u" Example: name@example.com")
+            self._auto_help_text += _(u"Po želji. ")
+        self._auto_help_text += _(u" Primer: ime@domena.si")
 
     help_text = property(get_help_text, set_help_text)
 
@@ -201,11 +201,11 @@ class FormDateField(forms.DateField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Required. Example(s): ")
+            self._auto_help_text += _(u"Zahtevano. Primer: ")
         else:
-            self._auto_help_text += _(u"Optional. Example(s): ")
+            self._auto_help_text += _(u"Po želji. Primer: ")
 
-        the_date = datetime(1986, 9, 17).date()
+        the_date = datetime(1986, 4, 27).date()
 
         self._auto_help_text +=  ', '.join([the_date.strftime(format)
             for format in self.input_formats or
@@ -216,7 +216,7 @@ class FormDateField(forms.DateField):
 class FormCaptchaWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None):
         if not settings.SHOW_CAPTCHAS:
-            return  _('Captcha disabled')
+            return  _('Captcha onemogočen')
         return mark_safe(u'%s' % captcha.displayhtml(settings.RECAPTCHA_PUBLIC_KEY))
 
     def value_from_datadict(self, data, files, name):
@@ -240,7 +240,7 @@ class FormCaptchaField(forms.CharField):
         check_captcha = captcha.submit(recaptcha_challenge_value,
             recaptcha_response_value, settings.RECAPTCHA_PRIVATE_KEY, {})
         if not check_captcha.is_valid:
-            raise forms.util.ValidationError(_(u'Invalid captcha'))
+            raise forms.util.ValidationError(_(u'Neveljavni znaki'))
         return values[0]
 
 def mail_owners(subject, message, fail_silently=False, connection=None):
