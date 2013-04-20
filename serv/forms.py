@@ -49,37 +49,36 @@ class ServiceForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ServiceForm, self).__init__(*args, **kwargs)
-        self.fields['area'].empty_label = _("All")
-        self.fields['description'].help_text = _("Tip: do not introduce"
-            " personal data that you don't want to make public, use private"
-            " messages for that.")
-
+        self.fields['area'].empty_label = _("Vse")
+        self.fields['description'].help_text = _("Nasvet: ne vpisujte osebnih"
+	    " podatkov, za katere ne želite, da so javno objavljeni."
+	    " Za zasebne podatke uporabite zasebna sporočila.")
 
 class ListServicesForm(forms.Form):
     TYPE_CHOICES = (
         ('0', '---------'),
-        ('1', _('offer')),
-        ('2', _('demand')),
+        ('1', _('ponujam')),
+        ('2', _('povprašujem')),
     )
     USER_CHOICES = (
         ('0', _('---------')),
-        ('1', _(u'connected less than a day ago')),
-        ('2', _(u'connected less than a week ago')),
-        ('3', _(u'connected less than a month ago')),
-        ('4', _(u'connected less than 3 months ago')),
-        ('5', _(u'connected less than 6 months ago')),
-        ('6', _(u'connected less than a year ago')),
+        ('1', _(u'manj kot dnevom')),
+        ('2', _(u'manj kot tednom')),
+        ('3', _(u'manj kot mesecem')),
+        ('4', _(u'manj kot tremi meseci')),
+        ('5', _(u'manj kot šestimi meseci')),
+        ('6', _(u'manj kot letom')),
     )
 
-    mine = forms.BooleanField(label=_("Only list my services"), required=False)
-    the_type = CustomCharField(label=_("Service type"),
+    mine = forms.BooleanField(label=_("Prikaži samo moje stroitve"), required=False)
+    the_type = CustomCharField(label=_("Tip storitve"),
         widget=forms.Select(choices=TYPE_CHOICES), required=False)
-    category = forms.ModelChoiceField(None, required=False, label=_("Category"))
-    area = forms.ModelChoiceField(None, required=False, label=_("Area"))
-    user_status = CustomCharField(label=_("User status"),
+    category = forms.ModelChoiceField(None, required=False, label=_("Kategorija"))
+    area = forms.ModelChoiceField(None, required=False, label=_("Območje"))
+    user_status = CustomCharField(label=_("Status uporabnika"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    username = forms.CharField(label=_("Username"), required=False)
-    text = forms.CharField(label=_("Text"), required=False)
+    username = forms.CharField(label=_("Uporabniško ime"), required=False)
+    text = forms.CharField(label=_("Besedilo"), required=False)
 
     def __init__(self,  *args, **kwargs):
         super(ListServicesForm, self).__init__(*args, **kwargs)
@@ -91,34 +90,33 @@ class ListServicesForm(forms.Form):
 
 class NewTransferForm(forms.ModelForm):
     CREDITS_CHOICES = (
-        ('30', _('half hour')),
-        ('60', _('1 hour')),
-        ('90', _('1 hour and half')),
-        ('120', _('2 hours')),
-        ('150', _('2 hours and half')),
-        ('180', _('3 hours')),
-        ('210', _('3 hours and half')),
-        ('240', _('4 hours')),
-        ('270', _('4 hours and half')),
-        ('300', _('5 hours')),
-        ('330', _('5 hours and half')),
-        ('360', _('6 hours')),
-        ('390', _('6 hours and half')),
+        ('30', _('pol ure')),
+        ('60', _('1 ura')),
+        ('90', _('1 ura in pol')),
+        ('120', _('2 uri')),
+        ('150', _('2 uri in pol')),
+        ('180', _('3 ure')),
+        ('210', _('3 ure in pol')),
+        ('240', _('4 ure')),
+        ('270', _('4 ure in pol')),
+        ('300', _('5 ur')),
+        ('330', _('5 ur in pol')),
+        ('360', _('6 ur')),
+        ('390', _('6 ur in pol')),
     )
     OFFER_CHOICES = (
-        ('0', _(u'give credits')),
-        ('1', _(u'ask for credits')),
+        ('0', _(u'ponudil')),
+        ('1', _(u'povpraševal')),
     )
-    username = forms.CharField(label=_("Username"), help_text=_(
-        "Name the user who will receive or will be asked for the credits"
-        " to transfer"), required=True)
+    username = forms.CharField(label=_("Uporabniško ime"), help_text=_(
+        "Navedi uporabika, ki bo prejel ali dal kredit"), required=True)
 
-    credits = CustomCharField(label=_("Credits"),
+    credits = CustomCharField(label=_("Kredit"),
         widget=forms.Select(choices=CREDITS_CHOICES), required=True)
 
-    service_type = CustomCharField(label=_("Service type"),
-            help_text=_("Choose if you receive or ask for credits with"
-            " this transfer"),
+    service_type = CustomCharField(label=_("Tip storitve"),
+            help_text=_("Izberi, ali s tem prenosom prejmeš (ponudil)"
+	    " ali daš kredit (povpraševal)",
             widget=forms.Select(choices=OFFER_CHOICES))
 
     class Meta:
@@ -135,27 +133,27 @@ class NewTransferForm(forms.ModelForm):
         try:
             self.user = get_object_or_404(Profile, username=username)
         except Exception, e:
-            raise forms.ValidationError(_("No user exists with this username."))
+            raise forms.ValidationError(_("Uporabnik s tem uporabniškim imenom ne obstaja."))
 
 
 class AddTransferForm(forms.ModelForm):
     CREDITS_CHOICES = (
-        ('30', _('half hour')),
-        ('60', _('1 hour')),
-        ('90', _('1 hour and half')),
-        ('120', _('2 hours')),
-        ('150', _('2 hours and half')),
-        ('180', _('3 hours')),
-        ('210', _('3 hours and half')),
-        ('240', _('4 hours')),
-        ('270', _('4 hours and half')),
-        ('300', _('5 hours')),
-        ('330', _('5 hours and half')),
-        ('360', _('6 hours')),
-        ('390', _('6 hours and half')),
+        ('30', _('pol ure')),
+        ('60', _('1 ura')),
+        ('90', _('1 ura in pol')),
+        ('120', _('2 uri')),
+        ('150', _('2 uri in pol')),
+        ('180', _('3 ure')),
+        ('210', _('3 ure in pol')),
+        ('240', _('4 ure')),
+        ('270', _('4 ure in pol')),
+        ('300', _('5 ur')),
+        ('330', _('5 ur in pol')),
+        ('360', _('6 ur')),
+        ('390', _('6 ur in pol')),
     )
 
-    credits = CustomCharField(label=_("Credits"),
+    credits = CustomCharField(label=_("Kredit"),
         widget=forms.Select(choices=CREDITS_CHOICES), required=True)
 
     class Meta:

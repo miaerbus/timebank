@@ -29,7 +29,7 @@ def apply_transfer(modeladmin, request, queryset):
         transfer.credits_debtor.save()
         transfer.credits_payee.save()
         transfer.save()
-apply_transfer.short_description = _("Apply tranfer")
+apply_transfer.short_description = _("Potrdi prenos")
 
 class ServiceAdmin(admin.ModelAdmin):
     date_hierarchy = 'pub_date'
