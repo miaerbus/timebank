@@ -162,8 +162,8 @@ class EditService(ViewClass):
             if Transfer.objects.filter(service=instance,
                 status__in=["q", "a"]).count() > 0 and\
                 service.is_offer != current_is_offer:
-                self.flash(_(u"Ni mogoče spreminjati tipa storitve med ponudbo"
-                    " in povpraševanjem medtem ko se izvajajo prenosi."), "error")
+                self.flash(_(u"Ni mogoce spreminjati tipa storitve med ponudbo"
+                    " in povprasevanjem medtem ko se izvajajo prenosi."), "error")
                 return redirect('serv-myservices')
             service.save()
             self.flash(_(u"Storitev uspešno spremenjena"))
