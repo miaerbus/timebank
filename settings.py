@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'notification',
     'exts',
 #    'storages',
+    'smuggler',
 )
 
 LOGIN_URL = '/'
@@ -209,7 +210,7 @@ MAX_CREDIT = 20*60
 MAX_CREDITS_PER_TRANSFER = 10*60
 
 LOCALE_PATHS = (
-      os.path.join(curdir, 'locale'),
+      #os.path.join(curdir, 'locale'),
 )
 
 LANGUAGES = (

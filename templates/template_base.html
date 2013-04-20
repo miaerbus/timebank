@@ -27,7 +27,22 @@
             <div id="logo_area">
                 <div id="logo"><a href="/"><img src="{{ MEDIA_URL }}imgs/timebank.png"></a></div>
           </div>
-        <!-- Izbira jezika -->
+	<!-- Izbira jezika
+        <form action="{% url set_language %}" method="POST">
+            {% csrf_token %}
+            <select name="language" id="select-language-input">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for key, value in LANGUAGES %}
+                {% ifequal key LANGUAGE_CODE %}
+                    <option value="{{ key }}" selected="selected">{{ value }}</option>
+                {% else %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endifequal %}
+            {% endfor %}
+            </select>
+        </form>
+	-->
             <div id="social">
                 <a href="{% url news.views.feed %}"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_3.jpg" alt="RSS"></a>
                 <a href="https://twitter.com/Zofijini"><img src="{{ MEDIA_URL }}templatemo/templatemo_icon_2.jpg" alt="Twitter"></a>
@@ -40,8 +55,8 @@
             <div id="menu">
                 {% if user.is_authenticated %}
                     <ul id="login">
-                        <li><span>{% blocktrans with user.first_name as name %}Pozdravljeni, {{ name }}{% endblocktrans %}</span></li>
-                        <li><a href="{% url user-logout %}"  class="last">{% trans 'Odjava' %}</a></li>
+                        <li><span>{% blocktrans with user.first_name as name %}Hej, {{ name }}{% endblocktrans %}</span></li>
+                        <li><a href="{% url user-logout %}" class="last">Odjava</a></li>
                     </ul>
                     <ul>
                         {% if user.is_staff or user.is_superuser %}

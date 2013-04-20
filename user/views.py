@@ -125,7 +125,7 @@ class Login(ViewClass):
                 django_login(self.request, user)
                 self.flash(_("Pozdravljeni, %s") % user.username)
             else:
-                self.flash(_("Vaš račun je onemogočen, prosimo kontaktirajte administratorje."),
+                self.flash(_("Vaš račun še ni aktiven."),
                     "error")
         else:
             self.flash(_("Neveljavno uporabniško ime ali geslo"), "error")
