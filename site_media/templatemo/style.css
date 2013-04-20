@@ -755,7 +755,8 @@ div.new .info
     /*border-left: 3px solid #0B93D1;*/
     display: block;
     float: left;
-    width: 600px;
+    /*width: 600px;*/
+    width: 588px;
     background-color: white;
 }
 
@@ -802,8 +803,9 @@ div.new .info
 
 .services .serv .gravatar {
     text-align: center;
-    width: 48px;
-    display: block;
+    /*width: 48px;*/
+    width: 70px;
+    /*display: block;*/
     float: left;
     padding: 2px;
     font-weight: bold;

@@ -8,13 +8,8 @@
             {% endif %}
             {% trans "Območje" %}:
             <span class="zone"><a href="{% url serv-list %}?area={{ serv.area.id }}">
-            {% if serv.area %}
-                {{ serv.area }}
-            {% else %}
-                {% trans "Vse" %}
-            {% endif %}
-            </a></span> /
-            {% trans "Category" %}:
+            {% if serv.area %}{{ serv.area }}{% else %}{% trans "Vse" %}{% endif %}</a></span> /
+            {% trans "Kategorija" %}:
             <span class="category"><a href="{% url serv-list %}?category={{ serv.category.id }}">{{ serv.category }}</a></span> /
             <span class="date"> {% blocktrans with serv.pub_date|timesince as time %}Objavljeno {{ time }} nazaj{% endblocktrans %}</span>
         </div>
@@ -43,7 +38,7 @@
         {% endif %}
         <div class="cleaner"></div>
         <div class="information2">
-            {{ serv.transfers_count }} {% trans "prenosi" %} / {{ serv.messages_count }} {% trans "komentarji" %} / {{ serv.credit_hours_transfered }} {% trans "hours transferred" %}
+            {% trans "prenosov:" %} {{ serv.transfers_count }} / {% trans "komentarjev:" %} {{ serv.messages_count }} / {% trans "prenešenih ur:" %} {{ serv.credit_hours_transfered }}
         </div>
         <div class="cleaner"></div>
         <div class="buttons">
