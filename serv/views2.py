@@ -193,7 +193,7 @@ class ActiveService(ViewClass):
         if instance.creator == self.request.user:
             instance.is_active = True
             instance.save()
-            self.flash(_(u"Service enabled successfully"))
+            self.flash(_(u"Storitev uspešno omogočena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
                        "error")
@@ -413,7 +413,7 @@ class CancelTransfer(ViewClass):
             return redirect('serv-transfers-mine')
         transfer.status = "r"
         transfer.save()
-        self.flash(_("Transfer cancelled"))
+        self.flash(_("Prenos preklican"))
         return redirect('serv-transfers-mine')
 
 

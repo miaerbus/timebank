@@ -135,9 +135,9 @@ class FormCharField(forms.CharField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Required. ")
+            self._auto_help_text += _(u"Zahtevano. ")
         else:
-            self._auto_help_text += _(u"Optional. ")
+            self._auto_help_text += _(u"Poljubno. ")
         if self.max_length and self.min_length:
             self._auto_help_text += _(u"Od %(from)d do %(to)d znakov. ")\
                 % {'from': self.min_length, 'to': self.max_length}
@@ -168,9 +168,9 @@ class FormEmailField(forms.EmailField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Required. ")
+            self._auto_help_text += _(u"Zahtevano. ")
         else:
-            self._auto_help_text += _(u"Optional. ")
+            self._auto_help_text += _(u"Poljubno. ")
         self._auto_help_text += _(u" Primer: ime@domena.si")
 
     help_text = property(get_help_text, set_help_text)
@@ -201,9 +201,9 @@ class FormDateField(forms.DateField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Required. Example(s): ")
+            self._auto_help_text += _(u"Zahtevano. Primer: ")
         else:
-            self._auto_help_text += _(u"Optional. Example(s): ")
+            self._auto_help_text += _(u"Poljubno. Primer: ")
 
         the_date = datetime(1986, 4, 27).date()
 

@@ -323,7 +323,7 @@ class FindPeople(ViewClass):
         else:
             form = FindPeopleForm(self.request.GET)
 
-        form.fields["user_status"].label=_("Uporabnik povezan")
+        form.fields["user_status"].label=_("Uporabnik povezan pred")
         people = Profile.objects.filter(is_active=True)
 
         try:

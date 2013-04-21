@@ -70,7 +70,7 @@ class ListServicesForm(forms.Form):
         ('6', _(u'manj kot letom')),
     )
 
-    mine = forms.BooleanField(label=_("Only list my services"), required=False)
+    mine = forms.BooleanField(label=_(u"Prikaži samo moje storitve"), required=False)
     the_type = CustomCharField(label=_("Tip storitve"),
         widget=forms.Select(choices=TYPE_CHOICES), required=False)
     category = forms.ModelChoiceField(None, required=False, label=_("Kategorija"))
