@@ -4,4 +4,4 @@
 
 {{ message_body }}
 
-{{ current_site }}{{ message_url }}{% endblocktrans %}
+{% endblocktrans %}

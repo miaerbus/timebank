@@ -1,16 +1,16 @@
 {% extends "template_base.html" %}
 {% load i18n %}
-{% block title %} {% trans 'Odstrani uporabnika' %} {% endblock %}
+{% block title %} {% trans 'Odstrani profil' %} {% endblock %}
 
 {% block content %}
     <div class="section_3">
-        <h1>{% trans 'Odstrani uporabnika' %}</h1>
+        <h1>{% trans 'Odstrani profil' %}</h1>
         <form action="" method="post">
             {% csrf_token %}
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
-            <input class="submit" type="submit" value="{% trans 'Odstrani uporabnika' %}"/>
+            <input class="submit" type="submit" value="{% trans 'Odstrani profil' %}"/>
         </form>
     </div>
 {% endblock %}

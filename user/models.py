@@ -64,7 +64,7 @@ class Profile(User):
 
     mobile_tlf = models.CharField(_("Mobilni telefon"), max_length=20)
 
-    email_updates = models.BooleanField(_("Želim prejemati novice Časovne banke"),
+    email_updates = models.BooleanField(_(u"Želim prejemati novice Časovne banke"),
         default=True)
 
     # Saving the user language allows sending emails to him in his desired
@@ -72,8 +72,8 @@ class Profile(User):
     lang_code = models.CharField(_("Jezik"), max_length=10, default='')
 
     class Meta:
-        verbose_name = _("Uporabnik")
-        verbose_name_plural = _("Uporabniki")
+        verbose_name = _("user")
+        verbose_name_plural = _("users")
 
     def __unicode__(self):
         return self.username

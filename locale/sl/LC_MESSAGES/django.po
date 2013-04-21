@@ -9,20 +9,20 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-13 23:59+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Roby\n"
+"Last-Translator: Mia Erbus <mia.erbus@gmail.com>\n"
 "Language-Team: Sl <>\n"
 "Language: Slovenian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0)\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0)\n"
 
 #: local_settings.py:177
 msgid "Slovenian"
 msgstr "Slovenščina"
 
-#: local_settings.py:178 settings.py:177
+#: local_settings.py:178
+#: settings.py:177
 msgid "English"
 msgstr "Angleščina"
 
@@ -36,18 +36,15 @@ msgstr "Španščina (nevtralno)"
 
 #: utils.py:107
 #, python-format
-msgid ""
-"You might want to <a href=\"%(join_url)s\">join us now</a> or enter with "
-"your user using the grey login box at the left."
-msgstr ""
-"Če še niste registrirani, se <a href=\"%(join_url)s\">pridružite</a>, sicer "
-"za prijavo uporabite obrazec na levi."
+msgid "You might want to <a href=\"%(join_url)s\">join us now</a> or enter with your user using the grey login box at the left."
+msgstr "Če še niste registrirani, se <a href=\"%(join_url)s\">pridružite</a>, sicer za prijavo uporabite obrazec na levi."
 
 #: utils.py:137
 msgid "Required. "
-msgstr "Obvezno. "
+msgstr "Zahtevano. "
 
-#: utils.py:139 utils.py:172
+#: utils.py:139
+#: utils.py:172
 msgid "Optional. "
 msgstr "Po želji. "
 
@@ -68,7 +65,7 @@ msgstr "Najmanj %d znakov. "
 
 #: utils.py:170
 msgid "Requeried. "
-msgstr "Obvezno. "
+msgstr "Zahtevano"
 
 #: utils.py:173
 msgid " Example: name@example.com"
@@ -76,7 +73,7 @@ msgstr "Primer: ime@podjetje.si"
 
 #: utils.py:203
 msgid "Required. Example(s): "
-msgstr "Obvezno. Primer: "
+msgstr "Zahtevano. Primer: "
 
 #: utils.py:205
 msgid "Optional. Example(s): "
@@ -97,8 +94,10 @@ msgstr "Jezikovna koda"
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/languages.html:6
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/pofile.html:18
-#: templates/template_base.html:10 templates/template_base.html.py:86
-#: templates/template_base.html:165 templates/main/index.html:4
+#: templates/template_base.html:10
+#: templates/template_base.html.py:86
+#: templates/template_base.html:165
+#: templates/main/index.html:4
 msgid "Home"
 msgstr "Domov"
 
@@ -116,7 +115,8 @@ msgstr "Third party"
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/languages.html:15
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/pofile.html:35
-#: serv/forms.py:52 templates/serv/single_service_view.html:14
+#: serv/forms.py:52
+#: templates/serv/single_service_view.html:14
 msgid "All"
 msgstr "Vse"
 
@@ -129,8 +129,10 @@ msgid "Progress"
 msgstr "Napredek"
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/languages.html:30
-#: messages/models.py:121 templates/template_base.html:77
-#: templates/messages/base.html:3 templates/messages/base.html.py:7
+#: messages/models.py:121
+#: templates/template_base.html:77
+#: templates/messages/base.html:3
+#: templates/messages/base.html.py:7
 msgid "Messages"
 msgstr "Sporočila"
 
@@ -156,16 +158,12 @@ msgid "Nothing to translate!"
 msgstr "Vse je prevedeno"
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/languages.html:58
-msgid ""
-"You haven't specified any languages in your settings file, or haven't yet "
-"generated a batch of translation catalogs."
+msgid "You haven't specified any languages in your settings file, or haven't yet generated a batch of translation catalogs."
 msgstr ""
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/languages.html:59
 #, python-format
-msgid ""
-"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
-"a> for a guide on how to set up internationalization for your project."
+msgid "Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</a> for a guide on how to set up internationalization for your project."
 msgstr ""
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/pofile.html:8
@@ -186,9 +184,7 @@ msgid "File is read-only: download the file when done editing!"
 msgstr ""
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/pofile.html:24
-msgid ""
-"Some items in your last translation block couldn't be saved: this usually "
-"happens when the catalog file changes on disk after you last loaded it."
+msgid "Some items in your last translation block couldn't be saved: this usually happens when the catalog file changes on disk after you last loaded it."
 msgstr ""
 
 #: env/lib/python2.7/site-packages/rosetta/templates/rosetta/pofile.html:28
@@ -268,7 +264,8 @@ msgid_plural "%(hits)s/%(message_number)s messages"
 msgstr[0] ""
 msgstr[1] ""
 
-#: main/forms.py:27 templates/user/single_person_view.html:6
+#: main/forms.py:27
+#: templates/user/single_person_view.html:6
 msgid "Name and Surname"
 msgstr "Ime in priimek"
 
@@ -276,13 +273,21 @@ msgstr "Ime in priimek"
 msgid "Your contact email"
 msgstr "Vaš elektronski naslov"
 
-#: main/forms.py:30 main/forms.py:40 messages/models.py:72 user/forms.py:129
+#: main/forms.py:30
+#: main/forms.py:40
+#: messages/models.py:72
+#: user/forms.py:129
 msgid "Subject"
 msgstr "Zadeva"
 
-#: main/forms.py:32 main/forms.py:42 messages/admin.py:44 messages/forms.py:21
-#: messages/models.py:73 messages/models.py:120
-#: templates/messages/inbox.html:8 templates/messages/outbox.html:8
+#: main/forms.py:32
+#: main/forms.py:42
+#: messages/admin.py:44
+#: messages/forms.py:21
+#: messages/models.py:73
+#: messages/models.py:120
+#: templates/messages/inbox.html:8
+#: templates/messages/outbox.html:8
 #: templates/messages/trash.html:8
 msgid "Message"
 msgstr "Sporočilo"
@@ -309,20 +314,21 @@ msgstr "[%(site_name)s] %(email)s: %(email_subject)s"
 #: main/views.py:76
 #, python-format
 msgid ""
-"Registered user %(name)s whose email is %(email)s sends the following "
-"message:\n"
+"Registered user %(name)s whose email is %(email)s sends the following message:\n"
 "%(message)s"
 msgstr ""
-"Registriran uporabnik %(name)s, z elektronskim naslovom %(email)s, pošilja "
-"naslednje sporočilo:\n"
+"Registriran uporabnik %(name)s, z elektronskim naslovom %(email)s, pošilja naslednje sporočilo:\n"
 "%(message)s"
 
 #: main/views.py:84
 msgid "Mail sent, we'll answer you as soon as possible."
 msgstr "Sporočilo je bilo poslano, odgovorili vam bomo takoj ko bo mogoče."
 
-#: messages/admin.py:19 messages/forms.py:20 messages/models.py:75
-#: templates/messages/outbox.html:8 templates/messages/view.html:10
+#: messages/admin.py:19
+#: messages/forms.py:20
+#: messages/models.py:75
+#: templates/messages/outbox.html:8
+#: templates/messages/view.html:10
 msgid "Recipient"
 msgstr "Prejemnik"
 
@@ -332,8 +338,7 @@ msgstr "skupina"
 
 #: messages/admin.py:22
 msgid "Creates the message optionally for all users or a group of users."
-msgstr ""
-"Ustvari sporočilo kot možnost za vse uporabnike ali skupine uporabnikov."
+msgstr "Ustvari sporočilo kot možnost za vse uporabnike ali skupine uporabnikov."
 
 #: messages/admin.py:29
 msgid "All users"
@@ -396,8 +401,10 @@ msgstr "Sporočilo obnovljeno"
 msgid "you have undeleted a message"
 msgstr "obnovili ste sporočilo"
 
-#: messages/models.py:74 templates/messages/inbox.html:8
-#: templates/messages/trash.html:8 templates/messages/view.html:6
+#: messages/models.py:74
+#: templates/messages/inbox.html:8
+#: templates/messages/trash.html:8
+#: templates/messages/view.html:6
 msgid "Sender"
 msgstr "Pošiljatelj"
 
@@ -429,13 +436,16 @@ msgstr "Prejemnik izbrisan ob"
 msgid "Public message"
 msgstr "Javno sporočilo"
 
-#: messages/models.py:84 serv/models.py:142 templates/serv/add_transfer.html:8
+#: messages/models.py:84
+#: serv/models.py:142
+#: templates/serv/add_transfer.html:8
 #: templates/serv/edit_transfer.html:13
 #: templates/serv/service_add_comment.html:8
 msgid "Service"
 msgstr "Storitev"
 
-#: messages/models.py:86 templates/serv/edit_transfer.html:18
+#: messages/models.py:86
+#: templates/serv/edit_transfer.html:18
 msgid "Transfer"
 msgstr "Prenos"
 
@@ -484,7 +494,8 @@ msgstr "Neposreden prenos od %s preklican"
 msgid "Transfer of the service you did to %s confirmed"
 msgstr "Prenos storitve, ki ste jo opravili %s potrjen"
 
-#: messages/views.py:105 messages/views.py:163
+#: messages/views.py:105
+#: messages/views.py:163
 msgid "Message successfully sent."
 msgstr "Sporočilo uspešno posalno."
 
@@ -522,7 +533,8 @@ msgstr "Datum ustvarjenja "
 msgid "Last modification date"
 msgstr "Datum zadnje spremembe "
 
-#: news/models.py:32 serv/models.py:56
+#: news/models.py:32
+#: serv/models.py:56
 msgid "Publish date"
 msgstr "Datum objave"
 
@@ -534,7 +546,8 @@ msgstr "Skrito"
 msgid "Body"
 msgstr "Vsebina"
 
-#: news/models.py:36 user/models.py:70
+#: news/models.py:36
+#: user/models.py:70
 msgid "User"
 msgstr "Uporabnik"
 
@@ -542,35 +555,37 @@ msgstr "Uporabnik"
 msgid "Author"
 msgstr "Avtor"
 
-#: news/models.py:40 news/models.py:41 templates/template_base.html:132
+#: news/models.py:40
+#: news/models.py:41
+#: templates/template_base.html:132
 #: templates/template_base.html.py:166
 msgid "News"
 msgstr "Novice"
 
-#: news/views.py:61 news/views.py:63
+#: news/views.py:61
+#: news/views.py:63
 #, python-format
 msgid "News in %s"
 msgstr "Novice / %s"
 
 #: serv/forms.py:53
-msgid ""
-"Tip: do not introduce personal data that you don't want to make public, use "
-"private messages for that."
-msgstr ""
-"Nasvet: ne vpisujte osebnih podatkov, za katere ne želite, da so javno "
-"objavljeni. Za zasebne podatke uporabite zasebna sporočila."
+msgid "Tip: do not introduce personal data that you don't want to make public, use private messages for that."
+msgstr "Nasvet: ne vpisujte osebnih podatkov, za katere ne želite, da so javno objavljeni. Za zasebne podatke uporabite zasebna sporočila."
 
-#: serv/forms.py:61 serv/models.py:48
+#: serv/forms.py:61
+#: serv/models.py:48
 #: templates/serv/single_service_view.html:5
 msgid "offer"
 msgstr "ponudba"
 
-#: serv/forms.py:62 serv/models.py:49
+#: serv/forms.py:62
+#: serv/models.py:49
 #: templates/serv/single_service_view.html:5
 msgid "demand"
 msgstr "povpraševanje"
 
-#: serv/forms.py:65 user/forms.py:99
+#: serv/forms.py:65
+#: user/forms.py:99
 msgid "---------"
 msgstr "---------"
 
@@ -602,25 +617,34 @@ msgstr "manj kot letom dni"
 msgid "Only list my services"
 msgstr "Pokaži samo moje storitve"
 
-#: serv/forms.py:75 serv/forms.py:119 serv/models.py:55
+#: serv/forms.py:75
+#: serv/forms.py:119
+#: serv/models.py:55
 msgid "Service type"
 msgstr "Tip storitve"
 
-#: serv/forms.py:77 serv/models.py:37 serv/models.py:43 serv/models.py:60
+#: serv/forms.py:77
+#: serv/models.py:37
+#: serv/models.py:43
+#: serv/models.py:60
 #: templates/serv/single_service_view.html:16
 msgid "Category"
 msgstr "Kategorija"
 
-#: serv/forms.py:78 serv/models.py:29 serv/models.py:62
+#: serv/forms.py:78
+#: serv/models.py:29
+#: serv/models.py:62
 #: templates/serv/single_service_view.html:9
 msgid "Area"
-msgstr "Področje"
+msgstr "Območje"
 
 #: serv/forms.py:79
 msgid "User status"
 msgstr "Nazadnje viden pred"
 
-#: serv/forms.py:81 serv/forms.py:112 templates/user/view.html:40
+#: serv/forms.py:81
+#: serv/forms.py:112
+#: templates/user/view.html:40
 #: user/forms.py:110
 msgid "Username"
 msgstr "Uporabniško ime"
@@ -629,55 +653,68 @@ msgstr "Uporabniško ime"
 msgid "Text"
 msgstr "Ključna beseda"
 
-#: serv/forms.py:94 serv/forms.py:143
+#: serv/forms.py:94
+#: serv/forms.py:143
 msgid "half hour"
 msgstr "pol ure"
 
-#: serv/forms.py:95 serv/forms.py:144
+#: serv/forms.py:95
+#: serv/forms.py:144
 msgid "1 hour"
 msgstr "1 ura"
 
-#: serv/forms.py:96 serv/forms.py:145
+#: serv/forms.py:96
+#: serv/forms.py:145
 msgid "1 hour and half"
 msgstr "1 ura in pol"
 
-#: serv/forms.py:97 serv/forms.py:146
+#: serv/forms.py:97
+#: serv/forms.py:146
 msgid "2 hours"
 msgstr "2 uri"
 
-#: serv/forms.py:98 serv/forms.py:147
+#: serv/forms.py:98
+#: serv/forms.py:147
 msgid "2 hours and half"
 msgstr "2 uri in pol"
 
-#: serv/forms.py:99 serv/forms.py:148
+#: serv/forms.py:99
+#: serv/forms.py:148
 msgid "3 hours"
 msgstr "3 ure"
 
-#: serv/forms.py:100 serv/forms.py:149
+#: serv/forms.py:100
+#: serv/forms.py:149
 msgid "3 hours and half"
 msgstr "3 ure in pol"
 
-#: serv/forms.py:101 serv/forms.py:150
+#: serv/forms.py:101
+#: serv/forms.py:150
 msgid "4 hours"
 msgstr "4 ure"
 
-#: serv/forms.py:102 serv/forms.py:151
+#: serv/forms.py:102
+#: serv/forms.py:151
 msgid "4 hours and half"
 msgstr "4 ure in pol"
 
-#: serv/forms.py:103 serv/forms.py:152
+#: serv/forms.py:103
+#: serv/forms.py:152
 msgid "5 hours"
 msgstr "5 ur"
 
-#: serv/forms.py:104 serv/forms.py:153
+#: serv/forms.py:104
+#: serv/forms.py:153
 msgid "5 hours and half"
 msgstr "5 ur in pol"
 
-#: serv/forms.py:105 serv/forms.py:154
+#: serv/forms.py:105
+#: serv/forms.py:154
 msgid "6 hours"
 msgstr "6 ur"
 
-#: serv/forms.py:106 serv/forms.py:155
+#: serv/forms.py:106
+#: serv/forms.py:155
 msgid "6 hours and half"
 msgstr "6 ur in pol"
 
@@ -690,19 +727,20 @@ msgid "ask for credits"
 msgstr "povpraševal"
 
 #: serv/forms.py:113
-msgid ""
-"Name the user who will receive or will be asked for the credits to transfer"
+msgid "Name the user who will receive or will be asked for the credits to transfer"
 msgstr "Navedi uporabika, ki bo prejel ali dal kredit"
 
-#: serv/forms.py:116 serv/forms.py:158 serv/models.py:158
-#: templates/user/single_person_view.html:8 templates/user/view.html:52
+#: serv/forms.py:116
+#: serv/forms.py:158
+#: serv/models.py:158
+#: templates/user/single_person_view.html:8
+#: templates/user/view.html:52
 msgid "Credits"
 msgstr "Kredit"
 
 #: serv/forms.py:120
 msgid "Choose if you receive or ask for credits with this transfer"
-msgstr ""
-"Izberi, ali s tem prenosom prejmeš (ponudil) ali daš kredit (povpraševal)"
+msgstr "Izberi, ali s tem prenosom prejmeš (ponudil) ali daš kredit (povpraševal)"
 
 #: serv/forms.py:138
 msgid "No user exists with this username."
@@ -716,7 +754,9 @@ msgstr "Kategorije"
 msgid "Creator"
 msgstr "Avtor"
 
-#: serv/models.py:59 serv/models.py:145 templates/user/view.html:56
+#: serv/models.py:59
+#: serv/models.py:145
+#: templates/user/view.html:56
 msgid "Description"
 msgstr "Opis"
 
@@ -764,7 +804,8 @@ msgstr "Datum zahtevanega prenosa"
 msgid "Transfer confirmation date"
 msgstr "Datum potrjenega prenosa"
 
-#: serv/models.py:153 templates/serv/single_transfer_view.html:26
+#: serv/models.py:153
+#: templates/serv/single_transfer_view.html:26
 msgid "Status"
 msgstr "Status"
 
@@ -776,17 +817,16 @@ msgstr "Javno"
 msgid "Service added successfully"
 msgstr "Storitev je bila uspešno dodana"
 
-#: serv/views2.py:139 serv/views2.py:151 serv/views2.py:199 serv/views2.py:213
+#: serv/views2.py:139
+#: serv/views2.py:151
+#: serv/views2.py:199
+#: serv/views2.py:213
 msgid "You can't modify a service that isn't yours"
 msgstr "Ni mogoče spreminjati storitve, ki ni vaša"
 
 #: serv/views2.py:165
-msgid ""
-"You can't change the type of service between offer and demand with transfers "
-"while there are ongoing transfers."
-msgstr ""
-"Ni mogoče spreminjati tipa storitve med ponudbo in povpraševanjem med tem ko "
-"se izvajajo prenosi. "
+msgid "You can't change the type of service between offer and demand with transfers while there are ongoing transfers."
+msgstr "Ni mogoče spreminjati tipa storitve med ponudbo in povpraševanjem med tem ko se izvajajo prenosi. "
 
 #: serv/views2.py:170
 msgid "Service modified successfully"
@@ -808,21 +848,23 @@ msgstr "Storitev uspešno omogočena"
 msgid "Service disabled successfully"
 msgstr "Storitev uspešno onemogočena"
 
-#: serv/views2.py:224 serv/views2.py:240
+#: serv/views2.py:224
+#: serv/views2.py:240
 msgid "You can't transfer credits to yourself"
 msgstr "Ni mogoče prenesti kreditov nase"
 
-#: serv/views2.py:266 serv/views2.py:325 serv/views2.py:431
+#: serv/views2.py:266
+#: serv/views2.py:325
+#: serv/views2.py:431
 msgid "The transfer would exceed the credit limit of the credits receiver"
 msgstr "Prenos bi presegel omejitev kredita prejemanika kredita"
 
 #: serv/views2.py:272
-msgid ""
-"The transfer would exceed the minimum credit limit of the person giving the "
-"credits"
+msgid "The transfer would exceed the minimum credit limit of the person giving the credits"
 msgstr "Prenos bi presegel minimalno omejitev kredita osebe, ki daje kredit"
 
-#: serv/views2.py:278 serv/views2.py:345
+#: serv/views2.py:278
+#: serv/views2.py:345
 msgid "Transfer created successfully"
 msgstr "Prenos je bil uspešno ustvarjen "
 
@@ -834,22 +876,24 @@ msgstr "Nimate dovolj kredita"
 msgid "You can't demand a service to yourself"
 msgstr "Ni mogoče sebe povpraševati po storitvi"
 
-#: serv/views2.py:331 serv/views2.py:392 serv/views2.py:437 serv/views2.py:471
-msgid ""
-"The transfer would exceed the minimum credit limit of the person receiving "
-"the service"
-msgstr ""
-"Prenos bi presegel minimalno omejitev kredita osebe, ki prejema storitev"
+#: serv/views2.py:331
+#: serv/views2.py:392
+#: serv/views2.py:437
+#: serv/views2.py:471
+msgid "The transfer would exceed the minimum credit limit of the person receiving the service"
+msgstr "Prenos bi presegel minimalno omejitev kredita osebe, ki prejema storitev"
 
 #: serv/views2.py:340
 msgid "You already have an ongoing transfer for this service"
 msgstr "Prenos za to storitev že poteka"
 
-#: serv/views2.py:358 serv/views2.py:374
+#: serv/views2.py:358
+#: serv/views2.py:374
 msgid "You can't modify a transfer that isn't yours"
 msgstr "Ni mogoče spreminjati prenosa, ki ni vaš"
 
-#: serv/views2.py:362 serv/views2.py:377
+#: serv/views2.py:362
+#: serv/views2.py:377
 msgid "You can only modify transfers that haven't been accepted"
 msgstr "Lahko spreminjate samo prenose, ki niso bili sprejeti"
 
@@ -886,9 +930,7 @@ msgid "Transfer accepted"
 msgstr "Prenos sprejet"
 
 #: serv/views2.py:465
-msgid ""
-"The transfer would exceed the credit limit of the person receiving the "
-"credits"
+msgid "The transfer would exceed the credit limit of the person receiving the credits"
 msgstr "Prenos bi presegel omejitev kredita osebe, ki prejema kredit"
 
 #: serv/views2.py:477
@@ -939,7 +981,9 @@ msgstr "Ni mogoče odstraniti sporočila, ki ni vaše"
 msgid "Comment removed successfully"
 msgstr "Komentar uspešno odstranjen"
 
-#: tasks/models.py:26 templates/user/view.html:44 user/forms.py:33
+#: tasks/models.py:26
+#: templates/user/view.html:44
+#: user/forms.py:33
 #: user/forms.py:54
 msgid "Name"
 msgstr "Ime"
@@ -948,7 +992,8 @@ msgstr "Ime"
 msgid "Last execution"
 msgstr "Zadnja izvedba "
 
-#: tasks/views.py:65 tasks/views.py:75
+#: tasks/views.py:65
+#: tasks/views.py:75
 msgid "Update task postponed"
 msgstr "Posodobitev naloge odložena"
 
@@ -961,7 +1006,8 @@ msgstr "Posodobitev naloge opravljena"
 msgid "Updates from %s"
 msgstr "Posodobitve od %s"
 
-#: templates/404.html:4 templates/404.html.py:8
+#: templates/404.html:4
+#: templates/404.html.py:8
 msgid "Error 404: Page not found"
 msgstr "Napaka 404: Strani ni mogoče najti"
 
@@ -973,14 +1019,14 @@ msgstr ""
 "Strani, ki jo iščete, ni mogoče najti.\n"
 "            "
 
-#: templates/500.html:4 templates/500.html.py:8
+#: templates/500.html:4
+#: templates/500.html.py:8
 msgid "Error 500"
 msgstr "Napaka 500"
 
 #: templates/500.html:10
 msgid ""
-"Sorry, an error occurred. We have notified the site administrators to "
-"rectify.\n"
+"Sorry, an error occurred. We have notified the site administrators to rectify.\n"
 "            "
 msgstr ""
 "Oprostite, prišlo je do napake. Trudimo se, da jo čimprej odpravimo.\n"
@@ -999,17 +1045,21 @@ msgstr "Odjava"
 msgid "Administration"
 msgstr "Administracija"
 
-#: templates/template_base.html:74 templates/template_base.html.py:87
+#: templates/template_base.html:74
+#: templates/template_base.html.py:87
 #: templates/user/find_people.html:3
 msgid "People"
 msgstr "Skupnost"
 
-#: templates/template_base.html:75 templates/template_base.html.py:88
-#: templates/serv/base.html:3 templates/serv/base.html.py:7
+#: templates/template_base.html:75
+#: templates/template_base.html.py:88
+#: templates/serv/base.html:3
+#: templates/serv/base.html.py:7
 msgid "Services"
 msgstr "Storitve"
 
-#: templates/template_base.html:76 templates/serv/base_transfer.html:3
+#: templates/template_base.html:76
+#: templates/serv/base_transfer.html:3
 #: templates/serv/base_transfer.html:7
 msgid "Transfers"
 msgstr "Prenosi"
@@ -1018,7 +1068,8 @@ msgstr "Prenosi"
 msgid "Profile"
 msgstr "Uredi profil"
 
-#: templates/template_base.html:82 templates/template_base.html.py:99
+#: templates/template_base.html:82
+#: templates/template_base.html.py:99
 #: templates/template_base.html:109
 msgid "Login"
 msgstr "Prijava"
@@ -1031,7 +1082,8 @@ msgstr "Registracija"
 msgid "Forgot your password?"
 msgstr "Ste pozabili geslo?"
 
-#: templates/template_base.html:117 templates/user/preferences.html:3
+#: templates/template_base.html:117
+#: templates/user/preferences.html:3
 #: templates/user/preferences.html.py:7
 msgid "Preferences"
 msgstr "Nastavtive"
@@ -1040,7 +1092,8 @@ msgstr "Nastavtive"
 msgid "Credit: "
 msgstr "Kredit: "
 
-#: templates/template_base.html:123 templates/user/single_person_view.html:9
+#: templates/template_base.html:123
+#: templates/user/single_person_view.html:9
 #: templates/user/view.html:53
 msgid "hours"
 msgstr "ur"
@@ -1049,27 +1102,32 @@ msgstr "ur"
 msgid "+ news"
 msgstr "+ novice"
 
-#: templates/template_base.html:167 templates/main/contact.html:3
+#: templates/template_base.html:167
+#: templates/main/contact.html:3
 #: templates/main/contact.html.py:7
 msgid "Contact"
 msgstr "Kontakt"
 
-#: templates/template_base.html:168 templates/main/about.html:3
+#: templates/template_base.html:168
+#: templates/main/about.html:3
 #: templates/main/about.html.py:7
 msgid "About"
 msgstr "O strani"
 
-#: templates/template_base.html:169 templates/main/links.html:3
+#: templates/template_base.html:169
+#: templates/main/links.html:3
 #: templates/main/links.html.py:7
 msgid "Links"
 msgstr "Povezave"
 
-#: templates/template_base.html:170 templates/main/faq.html:3
+#: templates/template_base.html:170
+#: templates/main/faq.html:3
 #: templates/main/faq.html.py:7
 msgid "FAQ"
 msgstr "Pogosta vprašanja"
 
-#: templates/template_base.html:171 templates/main/rules.html:3
+#: templates/template_base.html:171
+#: templates/main/rules.html:3
 msgid "Rules"
 msgstr "Pravilnik"
 
@@ -1089,9 +1147,11 @@ msgstr "Časovna banka"
 msgid "Translations"
 msgstr "Prevodi"
 
-#: templates/admin/base_site.html:12 templates/user/send_email_to_all.html:3
+#: templates/admin/base_site.html:12
+#: templates/user/send_email_to_all.html:3
 #: templates/user/send_email_to_all.html:7
-#: templates/user/send_email_to_all.html:13 user/admin.py:36
+#: templates/user/send_email_to_all.html:13
+#: user/admin.py:36
 msgid "Send email to all users"
 msgstr "Pošlji sporočilo vsem uporabnikom"
 
@@ -1111,16 +1171,14 @@ msgstr "Poročilo 3"
 msgid "report 4"
 msgstr "Poročilo 4"
 
-#: templates/flatpages/default.html:14 templates/news/basenew.html:7
+#: templates/flatpages/default.html:14
+#: templates/news/basenew.html:7
 #: templates/serv/single_service_view.html:51
 msgid "Edit"
 msgstr "Uredi"
 
 #: templates/main/about.html:8
-msgid ""
-"Pozdravljeni na portalu Časovne banke Maribor! Časovna banka Maribor je "
-"skupnost, v kateri lahko z drugimi uporabniki menjujete storitve, pri čemer "
-"je menjalno sredstvo čas."
+msgid "Pozdravljeni na portalu Časovne banke Maribor! Časovna banka Maribor je skupnost, v kateri lahko z drugimi uporabniki menjujete storitve, pri čemer je menjalno sredstvo čas."
 msgstr ""
 
 #: templates/main/about.html:10
@@ -1128,17 +1186,7 @@ msgid "Pravilnik Časovne banke Maribor (PDF)"
 msgstr ""
 
 #: templates/main/about.html:12
-msgid ""
-"Časovna banka Maribor je spletna baza, ki beleži in spremlja kroženje in "
-"porabo časovne menjave v skupnosti Časovne banke Maribor. Menjave potekajo "
-"po principu - jaz tebi ti njej, ona meni in tako naprej vse do meja tistih, "
-"ki se odločimo za članstvo v banki. Časovna banka omogoča aktivno "
-"povezovanje konkretnih ponudb in povpraševanj po storitvah, znanju in "
-"spretnostih; je neke vrste »časovna posredovalnica« ali »menjalnica«. Osnova "
-"tovrstnega skupnostnega sodelovanja ali menjave je pravilo, da vsa  znanja "
-"in vse spretnosti vrednoti oziroma ceni enako – ena ura dela je enaka eni "
-"uri dela! Opravim delo, ker ga znam in ker me veseli, na podoben način drugi "
-"meni opravi delo, ki ga sam ne zmorem, ne znam."
+msgid "Časovna banka Maribor je spletna baza, ki beleži in spremlja kroženje in porabo časovne menjave v skupnosti Časovne banke Maribor. Menjave potekajo po principu - jaz tebi ti njej, ona meni in tako naprej vse do meja tistih, ki se odločimo za članstvo v banki. Časovna banka omogoča aktivno povezovanje konkretnih ponudb in povpraševanj po storitvah, znanju in spretnostih; je neke vrste »časovna posredovalnica« ali »menjalnica«. Osnova tovrstnega skupnostnega sodelovanja ali menjave je pravilo, da vsa  znanja in vse spretnosti vrednoti oziroma ceni enako – ena ura dela je enaka eni uri dela! Opravim delo, ker ga znam in ker me veseli, na podoben način drugi meni opravi delo, ki ga sam ne zmorem, ne znam."
 msgstr ""
 
 #: templates/main/about.html:14
@@ -1146,9 +1194,7 @@ msgid "Pravila in pogoji članstva v Časovni banki Maribor (PDF)"
 msgstr ""
 
 #: templates/main/about.html:16
-msgid ""
-"Podrobna navodila o upravljanju spletne strani najdete v naslednji "
-"predstavitvi:"
+msgid "Podrobna navodila o upravljanju spletne strani najdete v naslednji predstavitvi:"
 msgstr ""
 
 #: templates/main/about.html:20
@@ -1160,19 +1206,11 @@ msgid "Predstavitveni video – kaj je časovna banka:"
 msgstr ""
 
 #: templates/main/contact.html:9
-msgid ""
-"Pišete nam lahko tudi na elektronski naslov <a href=\"mailto:cbs."
-"maribor@gmail.com\">cbs.maribor@gmail.com</a>"
+msgid "Pišete nam lahko tudi na elektronski naslov <a href=\"mailto:cbs.maribor@gmail.com\">cbs.maribor@gmail.com</a>"
 msgstr ""
 
 #: templates/main/contact.html:11
-msgid ""
-"Osebno se pri nas lahko oglasite na naslovu: <br />Zofijini ljubimci – "
-"društvo za razvoj humanistike, <br />Ob železnici 16, <br />2000 Maribor "
-"<br />(Upravna zgradba, pisarna v prvem nadstropju) <br />Uradne ure so vsak "
-"delovnik med 10. in 18. uro <br /><br />Pokličete nas lahko na telefonsko "
-"številko: <br />(02) 300 68 500 <br />Uradne ure so vsak delovnik med 10. in "
-"18. uro <br />"
+msgid "Osebno se pri nas lahko oglasite na naslovu: <br />Zofijini ljubimci – društvo za razvoj humanistike, <br />Ob železnici 16, <br />2000 Maribor <br />(Upravna zgradba, pisarna v prvem nadstropju) <br />Uradne ure so vsak delovnik med 10. in 18. uro <br /><br />Pokličete nas lahko na telefonsko številko: <br />(02) 300 68 500 <br />Uradne ure so vsak delovnik med 10. in 18. uro <br />"
 msgstr ""
 
 #: templates/main/contact.html:17
@@ -1180,12 +1218,8 @@ msgid "Send message"
 msgstr "Pošlji sporočilo"
 
 #: templates/main/index.html:9
-msgid ""
-"Timebank is a community where you can exchange services with other users "
-"using time as currency."
-msgstr ""
-"Časovna banka je skupnost, v kateri lahko z drugimi uporabniki menjujete "
-"storitve, pri čemer je menjalno sredstvo čas."
+msgid "Timebank is a community where you can exchange services with other users using time as currency."
+msgstr "Časovna banka je skupnost, v kateri lahko z drugimi uporabniki menjujete storitve, pri čemer je menjalno sredstvo čas."
 
 #: templates/main/index.html:13
 msgid "New services"
@@ -1193,22 +1227,21 @@ msgstr "Nove storitve"
 
 #: templates/main/index.html:16
 #, python-format
-msgid ""
-"To see all services you need to <a href='%(user_register)s'>register</a>."
-msgstr ""
-"Da bi videli vse storitve, se morate <a "
-"href='%(user_register)s'>registrirati</a>."
+msgid "To see all services you need to <a href='%(user_register)s'>register</a>."
+msgstr "Da bi videli vse storitve, se morate <a href='%(user_register)s'>registrirati</a>."
 
 #: templates/main/index.html:21
 msgid "+ services"
 msgstr "+ storitve"
 
-#: templates/messages/base.html:9 templates/messages/inbox.html:3
+#: templates/messages/base.html:9
+#: templates/messages/inbox.html:3
 #: templates/messages/new_message.html:32
 msgid "Inbox"
 msgstr "Prejeto"
 
-#: templates/messages/base.html:10 templates/messages/outbox.html:3
+#: templates/messages/base.html:10
+#: templates/messages/outbox.html:3
 msgid "Sent Messages"
 msgstr "Poslana sporočila"
 
@@ -1232,16 +1265,19 @@ msgstr "Pošlji"
 msgid "Received"
 msgstr "Prejeto"
 
-#: templates/messages/inbox.html:8 templates/messages/outbox.html:8
+#: templates/messages/inbox.html:8
+#: templates/messages/outbox.html:8
 #: templates/messages/trash.html:8
 msgid "Action"
 msgstr "Dejanje"
 
-#: templates/messages/inbox.html:19 templates/messages/outbox.html:19
+#: templates/messages/inbox.html:19
+#: templates/messages/outbox.html:19
 msgid "delete"
 msgstr "izbriši"
 
-#: templates/messages/inbox.html:25 templates/messages/outbox.html:25
+#: templates/messages/inbox.html:25
+#: templates/messages/outbox.html:25
 #: templates/messages/trash.html:25
 msgid "No messages."
 msgstr "Ni sporočil."
@@ -1276,8 +1312,7 @@ msgstr ""
 msgid ""
 "Hi %(recipient)s,\n"
 "\n"
-"You have received the following public message from %(sender)s in the "
-"service\n"
+"You have received the following public message from %(sender)s in the service\n"
 "(%(site_url)s%(service_url)s):"
 msgstr ""
 "Pozdravljeni, %(recipient)s.\n"
@@ -1290,8 +1325,7 @@ msgstr ""
 msgid ""
 "Hi %(recipient)s,\n"
 "\n"
-"You have received the following private message from %(sender)s in the "
-"service\n"
+"You have received the following private message from %(sender)s in the service\n"
 "(%(site_url)s%(service_url)s):"
 msgstr ""
 "Pozdravljeni, %(recipient)s.\n"
@@ -1304,7 +1338,8 @@ msgstr ""
 msgid "Sent from %(site_url)s"
 msgstr "Poslano od %(site_url)s"
 
-#: templates/messages/new_message.html:33 templates/messages/view.html:16
+#: templates/messages/new_message.html:33
+#: templates/messages/view.html:16
 msgid "Reply"
 msgstr "Odgovori"
 
@@ -1316,7 +1351,8 @@ msgstr "Poslano"
 msgid "Deleted Messages"
 msgstr "Izbrisana sporočila"
 
-#: templates/messages/trash.html:8 templates/messages/view.html:8
+#: templates/messages/trash.html:8
+#: templates/messages/view.html:8
 msgid "Date"
 msgstr "Datum"
 
@@ -1325,12 +1361,8 @@ msgid "undelete"
 msgstr "obnovi"
 
 #: templates/messages/trash.html:28
-msgid ""
-"Deleted Messages are removed from the trash at unregular intervals, don't "
-"rely on this feature for long-time storage."
-msgstr ""
-"Izbrisana sporočila so v občasno izbrisana iz koša, zato se v primeru "
-"dolgotrajnega arhiviranja ne zanašajte na to funkcijo."
+msgid "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage."
+msgstr "Izbrisana sporočila so v občasno izbrisana iz koša, zato se v primeru dolgotrajnega arhiviranja ne zanašajte na to funkcijo."
 
 #: templates/messages/view.html:3
 msgid "View Message"
@@ -1344,8 +1376,10 @@ msgstr "Izbriši"
 msgid "Add a piece of news"
 msgstr "Dodaj novico"
 
-#: templates/news/allnews.html:14 templates/serv/services.html:16
-#: templates/serv/view_transfers.html:18 templates/user/find_people.html:23
+#: templates/news/allnews.html:14
+#: templates/serv/services.html:16
+#: templates/serv/view_transfers.html:18
+#: templates/user/find_people.html:23
 #: templates/user/list_user_services.html:31
 msgid "previous"
 msgstr "prejšnja"
@@ -1361,8 +1395,10 @@ msgstr ""
 "           Stran %(number)s od %(num_pages)s\n"
 "            "
 
-#: templates/news/allnews.html:24 templates/serv/services.html:26
-#: templates/serv/view_transfers.html:28 templates/user/find_people.html:33
+#: templates/news/allnews.html:24
+#: templates/serv/services.html:26
+#: templates/serv/view_transfers.html:28
+#: templates/user/find_people.html:33
 #: templates/user/list_user_services.html:41
 msgid "next"
 msgstr "naslednja"
@@ -1389,33 +1425,23 @@ msgstr ""
 
 #: templates/notification/messages_deleted/notice.html:1
 #, python-format
-msgid ""
-"You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgid "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
 msgstr "Izbrisali ste sporočilo <a href=\"%(message_url)s\">%(message)s</a>."
 
 #: templates/notification/messages_received/notice.html:2
 #, python-format
-msgid ""
-"You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
-"from %(message_sender)s."
-msgstr ""
-"Prejeli ste sporočilo <a href=\"%(message_url)s\">%(message)s</a> de "
-"%(message_sender)s."
+msgid "You have received the message <a href=\"%(message_url)s\">%(message)s</a> from %(message_sender)s."
+msgstr "Prejeli ste sporočilo <a href=\"%(message_url)s\">%(message)s</a> de %(message_sender)s."
 
 #: templates/notification/messages_recovered/notice.html:1
 #, python-format
-msgid ""
-"You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgid "You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
 msgstr "Obnovili ste sporočilo <a href=\"%(message_url)s\">%(message)s</a>."
 
 #: templates/notification/messages_replied/notice.html:2
 #, python-format
-msgid ""
-"You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> "
-"from %(message_recipient)s."
-msgstr ""
-"Odgovorili ste na <a href=\"%(message_url)s\">%(message_parent_msg)s</a> od "
-"%(message_recipient)s."
+msgid "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> from %(message_recipient)s."
+msgstr "Odgovorili ste na <a href=\"%(message_url)s\">%(message_parent_msg)s</a> od %(message_recipient)s."
 
 #: templates/notification/messages_reply_received/notice.html:2
 #, python-format
@@ -1424,29 +1450,21 @@ msgstr "%(message_sender)s vam je poslal odgovor na %(message_parent_msg)s."
 
 #: templates/notification/messages_sent/notice.html:2
 #, python-format
-msgid ""
-"You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
-"%(message_recipient)s."
-msgstr ""
-"Poslali ste sporočilo <a href=\"%(message_url)s\">%(message)s</a> k "
-"%(message_recipient)s."
+msgid "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %(message_recipient)s."
+msgstr "Poslali ste sporočilo <a href=\"%(message_url)s\">%(message)s</a> k %(message_recipient)s."
 
 #: templates/serv/accept_transfer_email.html:4
 #, python-format
 msgid ""
 "Hi %(transfer_creator)s,\n"
 "\n"
-"The transfer that you requested of a service from %(service_creator)s  has "
-"been accepted by him. You can see the details of the transfer in %(site_url)s"
-"%(transfer_url)s .\n"
+"The transfer that you requested of a service from %(service_creator)s  has been accepted by him. You can see the details of the transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(transfer_creator)s.\n"
 "\n"
-"Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika "
-"%(service_creator)s, je bil sprejet. Podrobnosti prenosa lahko vidite na "
-"%(site_url)s%(transfer_url)s .\n"
+"Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika %(service_creator)s, je bil sprejet. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
@@ -1455,20 +1473,18 @@ msgstr ""
 msgid ""
 "Hi %(transfer_creator)s,\n"
 "\n"
-"The direct transfer that you requested to %(transfer_recipient)s  has been "
-"accepted by him. You can see the details of the transfer in %(site_url)s"
-"%(transfer_url)s.\n"
+"The direct transfer that you requested to %(transfer_recipient)s  has been accepted by him. You can see the details of the transfer in %(site_url)s%(transfer_url)s.\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(transfer_creator)s.\n"
 "\n"
-"Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil "
-"sprejet. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
+"Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil sprejet. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
-#: templates/serv/add_transfer.html:4 templates/serv/add_transfer.html:13
+#: templates/serv/add_transfer.html:4
+#: templates/serv/add_transfer.html:13
 #: templates/serv/add_transfer.html:19
 #: templates/serv/service_transfer_actions.html:3
 msgid "Request transfer"
@@ -1478,7 +1494,8 @@ msgstr "Zahtevaj prenos"
 msgid "My Services"
 msgstr "Moje storitve"
 
-#: templates/serv/base.html:10 templates/serv/services.html:10
+#: templates/serv/base.html:10
+#: templates/serv/services.html:10
 msgid "Find Services"
 msgstr "Poišči storitve"
 
@@ -1499,17 +1516,13 @@ msgstr "Ustvari neposreden prenos"
 msgid ""
 "Hi,\n"
 "\n"
-"The transfer initially requested by %(transfer_creator)s from the service "
-"created by %(service_creator)s has been cancelled. You can see the details "
-"of the cancelled transfer in %(site_url)s%(transfer_url)s .\n"
+"The transfer initially requested by %(transfer_creator)s from the service created by %(service_creator)s has been cancelled. You can see the details of the cancelled transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni.\n"
 "\n"
-"Prenos, ki ga je zahteval uporabnik %(transfer_creator)s za storitev "
-"uporabnika %(service_creator)s, je bil preklican. Podrobnosti preklicanega "
-"prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
+"Prenos, ki ga je zahteval uporabnik %(transfer_creator)s za storitev uporabnika %(service_creator)s, je bil preklican. Podrobnosti preklicanega prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribot"
 
@@ -1518,17 +1531,13 @@ msgstr ""
 msgid ""
 "Hola %(transfer_recipient)s,\n"
 "\n"
-"The direct transfer created by %(transfer_creator)s with you has been "
-"cancelled. You can see the details of the cancelled transfer in %(site_url)s"
-"%(transfer_url)s .\n"
+"The direct transfer created by %(transfer_creator)s with you has been cancelled. You can see the details of the cancelled transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(transfer_recipient)s.\n"
 "\n"
-"Neposreden prenos, ki ga je z vami ustvaril uporabnik %(transfer_creator)s, "
-"je bil preklican. Podrobnosti preklicanega prenosa lahko vidite na "
-"%(site_url)s%(transfer_url)s .\n"
+"Neposreden prenos, ki ga je z vami ustvaril uporabnik %(transfer_creator)s, je bil preklican. Podrobnosti preklicanega prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
@@ -1537,16 +1546,13 @@ msgstr ""
 msgid ""
 "Hi %(payee)s,\n"
 "\n"
-"The transfer of the service rendered by  %(debtor)s has been confirmed by "
-"him. You can see the details of the transfer in  %(site_url)s"
-"%(transfer_url)s .\n"
+"The transfer of the service rendered by  %(debtor)s has been confirmed by him. You can see the details of the transfer in  %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(payee)s.\n"
 "\n"
-"Prenos storitve, ki jo je izvedel %(debtor)s je bil potrjen. Podrobnosti "
-"prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
+"Prenos storitve, ki jo je izvedel %(debtor)s je bil potrjen. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "%(site_url)s"
 
@@ -1558,18 +1564,21 @@ msgstr "Uredi storitev"
 msgid "Add service"
 msgstr "Dodaj storitev"
 
-#: templates/serv/edit_service.html:17 templates/user/profile.html:13
+#: templates/serv/edit_service.html:17
+#: templates/user/profile.html:13
 msgid "Save"
 msgstr "Shrani"
 
-#: templates/serv/edit_transfer.html:5 templates/serv/edit_transfer.html:23
+#: templates/serv/edit_transfer.html:5
+#: templates/serv/edit_transfer.html:23
 #: templates/serv/service_transfer_actions.html:5
 #: templates/serv/single_transfer_view.html:49
 #: templates/serv/single_transfer_view.html:71
 msgid "Edit transfer"
 msgstr "Uredi prenos"
 
-#: templates/serv/edit_transfer.html:7 templates/serv/edit_transfer.html:25
+#: templates/serv/edit_transfer.html:7
+#: templates/serv/edit_transfer.html:25
 msgid "Edit direct transfer"
 msgstr "Uredi neposreden prenos"
 
@@ -1582,17 +1591,13 @@ msgstr "Posodobi prenos"
 msgid ""
 "Hi %(service_creator)s,\n"
 "\n"
-"The transfer requested by %(transfer_creator)s of one of your services has "
-"been edited by him. You can see the updated details of the transfer in "
-"%(site_url)s%(transfer_url)s .\n"
+"The transfer requested by %(transfer_creator)s of one of your services has been edited by him. You can see the updated details of the transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(service_creator)s.\n"
 "\n"
-"Prenos, ki ga je zahteval uporabnik %(transfer_creator)s za eno vaših "
-"storitev, je posodobljen. Podrobnosti posodobitve prenosa lahko vidite na "
-"%(site_url)s%(transfer_url)s .\n"
+"Prenos, ki ga je zahteval uporabnik %(transfer_creator)s za eno vaših storitev, je posodobljen. Podrobnosti posodobitve prenosa lahko vidite na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s"
 
@@ -1600,9 +1605,11 @@ msgstr ""
 msgid "No services."
 msgstr "Ni storitev."
 
-#: templates/serv/new_transfer.html:4 templates/serv/new_transfer.html.py:9
+#: templates/serv/new_transfer.html:4
+#: templates/serv/new_transfer.html.py:9
 #: templates/user/list_user_services.html:22
-#: templates/user/single_person_view.html:23 templates/user/view.html:29
+#: templates/user/single_person_view.html:23
+#: templates/user/view.html:29
 msgid "Transfer hours"
 msgstr "Prenesi ure"
 
@@ -1615,15 +1622,13 @@ msgstr "Ustvari prenos"
 msgid ""
 "Hi %(transfer_recipient)s,\n"
 "\n"
-"%(transfer_creator)s has created a direct transfer with you. You can see and "
-"admin the transfer in %(site_url)s%(transfer_url)s .\n"
+"%(transfer_creator)s has created a direct transfer with you. You can see and admin the transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(transfer_recipient)s.\n"
 "\n"
-"Uporabnik %(transfer_creator)s je z vami ustvaril prenos. S prenosom lahko "
-"upravljate na %(site_url)s%(transfer_url)s .\n"
+"Uporabnik %(transfer_creator)s je z vami ustvaril prenos. S prenosom lahko upravljate na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
@@ -1632,15 +1637,13 @@ msgstr ""
 msgid ""
 "Hi %(recipient)s,\n"
 "\n"
-"%(sender)s has requested to you a service you offer. You can see and admin "
-"the transfer in %(site_url)s%(transfer_url)s .\n"
+"%(sender)s has requested to you a service you offer. You can see and admin the transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(recipient)s.\n"
 "\n"
-"Uporabnik %(sender)s povprašuje po storitvi, ki jo ponujate. S prenosom "
-"lahkoupravljate na %(site_url)s%(transfer_url)s .\n"
+"Uporabnik %(sender)s povprašuje po storitvi, ki jo ponujate. S prenosom lahkoupravljate na %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
@@ -1649,15 +1652,13 @@ msgstr ""
 msgid ""
 "Hi %(recipient)s,\n"
 "\n"
-"%(sender)s has created a transfer of a service you request. You can see and "
-"admin the transfer in %(site_url)s%(transfer_url)s .\n"
+"%(sender)s has created a transfer of a service you request. You can see and admin the transfer in %(site_url)s%(transfer_url)s .\n"
 "\n"
 "The team of %(site_url)s"
 msgstr ""
 "Pozdravljeni, %(recipient)s.\n"
 "\n"
-"%(sender)s je ustvaril prenos storitve, po kateri ste povpraševali. S "
-"prenosom lahko upravljate na strani %(site_url)s%(transfer_url)s .\n"
+"%(sender)s je ustvaril prenos storitve, po kateri ste povpraševali. S prenosom lahko upravljate na strani %(site_url)s%(transfer_url)s .\n"
 "\n"
 "- %(site_url)s Maribor"
 
@@ -1686,11 +1687,13 @@ msgstr "Prekliči prenos"
 msgid "Confirm Transfer"
 msgstr "Potrdi prenos"
 
-#: templates/serv/services.html:3 templates/user/preferences.html:13
+#: templates/serv/services.html:3
+#: templates/user/preferences.html:13
 msgid "My services"
 msgstr "Moje storitve"
 
-#: templates/serv/services.html:20 templates/serv/view_transfers.html:22
+#: templates/serv/services.html:20
+#: templates/serv/view_transfers.html:22
 #: templates/user/find_people.html:27
 #: templates/user/list_user_services.html:35
 #, python-format
@@ -1770,21 +1773,13 @@ msgstr "Pošlji zasebno sporočilo"
 
 #: templates/serv/single_transfer_view.html:23
 #, python-format
-msgid ""
-"Transfer of %(credits)s hours from <a href=\"%(debtor_url)s\">%(debtor)s</a> "
-"to <a href=\"%(payee_url)s\">%(payee)s</a>"
-msgstr ""
-"Prenos %(credits)s ur od <a href=\"%(debtor_url)s\">%(debtor)s</a> a <a href="
-"\"%(payee_url)s\">%(payee)s</a>"
+msgid "Transfer of %(credits)s hours from <a href=\"%(debtor_url)s\">%(debtor)s</a> to <a href=\"%(payee_url)s\">%(payee)s</a>"
+msgstr "Prenos %(credits)s ur od <a href=\"%(debtor_url)s\">%(debtor)s</a> a <a href=\"%(payee_url)s\">%(payee)s</a>"
 
 #: templates/serv/single_transfer_view.html:25
 #, python-format
-msgid ""
-"Private transfer of %(credits)s hours from <a href=\"%(debtor_url)s\">"
-"%(debtor)s</a> to <a href=\"%(payee_url)s\">%(payee)s</a>"
-msgstr ""
-"Zaseben prenos %(credits)s ur od <a href=\"%(debtor_url)s\">%(debtor)s</a> a "
-"<a href=\"%(payee_url)s\">%(payee)s</a>"
+msgid "Private transfer of %(credits)s hours from <a href=\"%(debtor_url)s\">%(debtor)s</a> to <a href=\"%(payee_url)s\">%(payee)s</a>"
+msgstr "Zaseben prenos %(credits)s ur od <a href=\"%(debtor_url)s\">%(debtor)s</a> a <a href=\"%(payee_url)s\">%(payee)s</a>"
 
 #: templates/serv/single_transfer_view.html:28
 #, python-format
@@ -1808,7 +1803,8 @@ msgstr "<strong>potrjeno</strong> %(time)s nazaj"
 
 #: templates/serv/single_transfer_view.html:42
 #: templates/serv/single_transfer_view.html:44
-#: templates/user/list_user_services.html:17 templates/user/view.html:23
+#: templates/user/list_user_services.html:17
+#: templates/user/view.html:23
 msgid "Send private message"
 msgstr "Pošlji zasebno sporočilo"
 
@@ -1829,15 +1825,18 @@ msgstr "Poglej storitev"
 msgid "My transfers in this service"
 msgstr "Moji prenosi v tej storitvi"
 
-#: templates/serv/view_service.html:17 templates/serv/view_transfers.html:13
+#: templates/serv/view_service.html:17
+#: templates/serv/view_transfers.html:13
 msgid "No transfers for now."
 msgstr "Za zdaj nobenih prenosov."
 
-#: templates/serv/view_service.html:19 templates/serv/view_transfer.html:14
+#: templates/serv/view_service.html:19
+#: templates/serv/view_transfer.html:14
 msgid "Comments on service"
 msgstr "Komentarji storitve"
 
-#: templates/serv/view_service.html:25 templates/serv/view_transfer.html:20
+#: templates/serv/view_service.html:25
+#: templates/serv/view_transfer.html:20
 msgid "No comments for now."
 msgstr "Za zdaj nobenih komentarjev."
 
@@ -1849,7 +1848,8 @@ msgstr "Poglej prenos"
 msgid "Service being transferred"
 msgstr "Storitve, ki se prenašajo"
 
-#: templates/serv/view_transfers.html:4 templates/user/preferences.html:10
+#: templates/serv/view_transfers.html:4
+#: templates/user/preferences.html:10
 msgid "My transfers"
 msgstr "Moji prenosi"
 
@@ -1858,13 +1858,11 @@ msgstr "Moji prenosi"
 msgid ""
 "Hi %(recipient)s,\n"
 "\n"
-"There are news in your profile in %(site_name)s that require your "
-"attention:\n"
+"There are news in your profile in %(site_name)s that require your attention:\n"
 msgstr ""
 "Pozdravljeni, %(recipient)s.\n"
 "\n"
-"V vašem profilu na strani %(site_name)s so novice, ki želijo nekaj "
-"pozornosti:\n"
+"V vašem profilu na strani %(site_name)s so novice, ki želijo nekaj pozornosti:\n"
 
 #: templates/tasks/email_update.html:9
 #, python-format
@@ -1929,8 +1927,7 @@ msgstr "Opravite vse svoje prenose: %(my_transfers_url)s"
 msgid ""
 "\n"
 "    %(site_url)s%(transfer_url)s\n"
-"    Transfer with %(from)s, created %(created_ago)s ago in status "
-"%(status)s\n"
+"    Transfer with %(from)s, created %(created_ago)s ago in status %(status)s\n"
 "        %(description)s\n"
 "\n"
 msgstr ""
@@ -1962,14 +1959,12 @@ msgstr "Seznam storitev: %(services_url)s"
 msgid ""
 "\n"
 "    %(site_url)s%(service_url)s\n"
-"    Service in the area of \"%(area)s\" and category \"%(category)s\" "
-"created by %(from)s published %(published_ago)s ago\n"
+"    Service in the area of \"%(area)s\" and category \"%(category)s\" created by %(from)s published %(published_ago)s ago\n"
 "        %(description)s\n"
 msgstr ""
 "\n"
 "    %(site_url)s%(service_url)s\n"
-"    Storitve na področju \"%(area)s\" in kategoriji \"%(category)s\" "
-"ustvaril %(from)s objavljeno pred %(published_ago)s\n"
+"    Storitve na področju \"%(area)s\" in kategoriji \"%(category)s\" ustvaril %(from)s objavljeno pred %(published_ago)s\n"
 "        %(description)s\n"
 
 #: templates/tasks/email_update.html:52
@@ -1983,15 +1978,13 @@ msgid ""
 "\n"
 "Exchange your time and skills in %(site_name)s, %(site_url)s .\n"
 "\n"
-"Do not want to receive these notifications via email? Set the preferences in "
-"your profile in %(site_url)s%(prefs_url)s"
+"Do not want to receive these notifications via email? Set the preferences in your profile in %(site_url)s%(prefs_url)s"
 msgstr ""
 "\n"
 "\n"
 "Izmenjajte svoj čas in veščine na %(site_name)s, %(site_url)s.\n"
 "\n"
-"Ne želite prejemati teh obvestil preko e-pošte? Nastavite preference v vašem "
-"profilu na %(site_url)s%(prefs_url)s"
+"Ne želite prejemati teh obvestil preko e-pošte? Nastavite preference v vašem profilu na %(site_url)s%(prefs_url)s"
 
 #: templates/user/find_people.html:11
 msgid "Find people"
@@ -2008,46 +2001,51 @@ msgid " %(username)s's Services "
 msgstr "Storitve %(username)s"
 
 #: templates/user/list_user_services.html:16
-#: templates/user/preferences.html:16 templates/user/view.html:5
-#: templates/user/view.html.py:14 templates/user/view.html:22
+#: templates/user/preferences.html:16
+#: templates/user/view.html:5
+#: templates/user/view.html.py:14
+#: templates/user/view.html:22
 msgid "View profile"
 msgstr "Poglej profil"
 
 #: templates/user/list_user_services.html:18
-#: templates/user/single_person_view.html:24 templates/user/view.html:24
+#: templates/user/single_person_view.html:24
+#: templates/user/view.html:24
 msgid "View his services"
 msgstr "Poglej storitve uporabnika"
 
 #: templates/user/list_user_services.html:20
-#: templates/user/preferences.html:19 templates/user/profile.html:3
-#: templates/user/profile.html.py:7 templates/user/view.html:27
+#: templates/user/preferences.html:19
+#: templates/user/profile.html:3
+#: templates/user/profile.html.py:7
+#: templates/user/view.html:27
 msgid "Edit profile"
 msgstr "Uredi profil"
 
-#: templates/user/organization.html:3 templates/user/organization.html:13
-#: templates/user/register.html:3 templates/user/register.html.py:7
+#: templates/user/organization.html:3
+#: templates/user/organization.html:13
+#: templates/user/register.html:3
+#: templates/user/register.html.py:7
 #: templates/user/register.html:14
 msgid "Join Us"
 msgstr "Pridruži se"
 
-#: templates/user/password_change.html:3 templates/user/password_change.html:7
+#: templates/user/password_change.html:3
+#: templates/user/password_change.html:7
 #: templates/user/password_change.html:13
 #: templates/user/password_reset_confirm.html:15
 #: templates/user/preferences.html:22
 msgid "Change password"
 msgstr "Spremeni geslo"
 
-#: templates/user/password_reset.html:3 templates/user/password_reset.html:7
+#: templates/user/password_reset.html:3
+#: templates/user/password_reset.html:7
 msgid "Did you forget your password?"
 msgstr "Ste pozabili svoje geslo?"
 
 #: templates/user/password_reset.html:8
-msgid ""
-"Fill the following form so that we can send you a link to your email address "
-"which will let you change your password."
-msgstr ""
-"Obrazec izpolnite tako, da vam lahko na vaš elektronski naslov pošljemo "
-"povezavo, ki vam bo omogočila spremeniti vaše geslo."
+msgid "Fill the following form so that we can send you a link to your email address which will let you change your password."
+msgstr "Obrazec izpolnite tako, da vam lahko na vaš elektronski naslov pošljemo povezavo, ki vam bo omogočila spremeniti vaše geslo."
 
 #: templates/user/password_reset.html:14
 msgid "Send verification email"
@@ -2059,25 +2057,12 @@ msgid "Change your password"
 msgstr "Spremeni svoje geslo"
 
 #: templates/user/password_reset_confirm.html:9
-msgid ""
-"Now that we have verified your identity, you can set your new password. Try "
-"not to forget it again. In case you forget it, you can still use again the "
-"same form to reset it if you at least remember your username or email "
-"address."
-msgstr ""
-"Potrdili smo vašo identiteto, lahko nastavite svoje novo geslo. Poskusite si "
-"ga tokrat zapomniti. V primeru, da ga pozabite, lahko isti obrazec uporabite "
-"ponovno, dovolj je, da vnesete uporabiško ime ali elektronski naslov."
+msgid "Now that we have verified your identity, you can set your new password. Try not to forget it again. In case you forget it, you can still use again the same form to reset it if you at least remember your username or email address."
+msgstr "Potrdili smo vašo identiteto, lahko nastavite svoje novo geslo. Poskusite si ga tokrat zapomniti. V primeru, da ga pozabite, lahko isti obrazec uporabite ponovno, dovolj je, da vnesete uporabiško ime ali elektronski naslov."
 
 #: templates/user/password_reset_confirm.html:18
-msgid ""
-"<strong>¡Error!</strong> This confirmation link is invalid or has expired. "
-"Check that you accessed the correct link, or try again to reset your "
-"password."
-msgstr ""
-"<strong>¡Error!</strong> Ta povezava do potrditve je napačna ali je potekla. "
-"Preverite ali uporabljate pravilno povezavo, ali poskusite ponovno na novo "
-"nastaviti svoje geslo."
+msgid "<strong>¡Error!</strong> This confirmation link is invalid or has expired. Check that you accessed the correct link, or try again to reset your password."
+msgstr "<strong>¡Error!</strong> Ta povezava do potrditve je napačna ali je potekla. Preverite ali uporabljate pravilno povezavo, ali poskusite ponovno na novo nastaviti svoje geslo."
 
 #: templates/user/password_reset_email.html:1
 #, python-format
@@ -2100,11 +2085,9 @@ msgid ""
 msgstr ""
 "Pozdravljeni.\n"
 "\n"
-"To e-pošto ste prejeli, ker ste zahtevali ponastavitev gesla za vaš račun na "
-"%(protocol)s://%(site_name)s .\n"
+"To e-pošto ste prejeli, ker ste zahtevali ponastavitev gesla za vaš račun na %(protocol)s://%(site_name)s .\n"
 "\n"
-"Če ponastavitve gesla niste zahtevali, potem prezrite to sporočilo. Svoje "
-"geslo lahko spremenite na naslednjem naslovu:\n"
+"Če ponastavitve gesla niste zahtevali, potem prezrite to sporočilo. Svoje geslo lahko spremenite na naslednjem naslovu:\n"
 "\n"
 "%(protocol)s://%(domain)s%(url_remember)s\n"
 "\n"
@@ -2114,8 +2097,10 @@ msgstr ""
 "\n"
 "- %(site_name)s Maribor"
 
-#: templates/user/preferences.html:25 templates/user/remove.html:3
-#: templates/user/remove.html.py:7 templates/user/remove.html:13
+#: templates/user/preferences.html:25
+#: templates/user/remove.html:3
+#: templates/user/remove.html.py:7
+#: templates/user/remove.html:13
 msgid "Remove user"
 msgstr "Izbriši račun"
 
@@ -2143,7 +2128,9 @@ msgstr "Ocena uporabnika"
 msgid "Age"
 msgstr "Starost"
 
-#: templates/user/view.html:69 user/forms.py:36 user/forms.py:58
+#: templates/user/view.html:69
+#: user/forms.py:36
+#: user/forms.py:58
 #: user/models.py:44
 msgid "Address"
 msgstr "Naslov"
@@ -2152,12 +2139,15 @@ msgstr "Naslov"
 msgid "Email"
 msgstr "E-pošta"
 
-#: templates/user/view.html:77 user/forms.py:40 user/forms.py:65
+#: templates/user/view.html:77
+#: user/forms.py:40
+#: user/forms.py:65
 #: user/models.py:58
 msgid "Land line"
 msgstr "Primarni telefon"
 
-#: templates/user/view.html:81 user/forms.py:67
+#: templates/user/view.html:81
+#: user/forms.py:67
 msgid "Mobile telephone"
 msgstr "Sekunadarni telefon"
 
@@ -2193,39 +2183,41 @@ msgstr "Dobrodošli na %(site_name)s, %(username)s"
 #: user/admin.py:74
 msgid ""
 "Congratulations %(username)s!\n"
-"The admins have accepted your registration request, now you can start "
-"collaborating in our community in  http://%(url)s/ .\n"
+"The admins have accepted your registration request, now you can start collaborating in our community in  http://%(url)s/ .\n"
 "\n"
 "- The team of %(site_name)s."
 msgstr ""
 "Pozdravljeni, %(username)s.\n"
 "\n"
-"Potrdili smo vašo registracijo in zdaj lahko začnete sodelovati v skupnosti "
-"strani na http://%(url)s/ .\n"
+"Potrdili smo vašo registracijo in zdaj lahko začnete sodelovati v skupnosti strani na http://%(url)s/ .\n"
 "\n"
 "- %(site_name)s Maribor"
 
-#: user/forms.py:30 user/forms.py:51 user/models.py:42
+#: user/forms.py:30
+#: user/forms.py:51
+#: user/models.py:42
 msgid "Birth date"
 msgstr "Datum rojstva"
 
-#: user/forms.py:34 user/forms.py:56
+#: user/forms.py:34
+#: user/forms.py:56
 msgid "Last name"
 msgstr "Priimek"
 
-#: user/forms.py:35 user/forms.py:57
+#: user/forms.py:35
+#: user/forms.py:57
 msgid "Email address"
 msgstr "Elektronski naslov"
 
-#: user/forms.py:37 user/forms.py:59
+#: user/forms.py:37
+#: user/forms.py:59
 msgid "Example: Avda. Molina, 12, Sevilla"
 msgstr "Primer: Cankarjeva 1, Maribor"
 
-#: user/forms.py:38 user/forms.py:60
+#: user/forms.py:38
+#: user/forms.py:60
 msgid "Personal description"
-msgstr ""
-"Napiši nekaj o sebi. Kdo si in zakaj si se odločil za sodelovanje v časovni "
-"banki?"
+msgstr "Napiši nekaj o sebi. Kdo si in zakaj si se odločil za sodelovanje v časovni banki?"
 
 #: user/forms.py:42
 msgid "Mobile Telephone"
@@ -2248,8 +2240,7 @@ msgid "Reason"
 msgstr "Razlog"
 
 #: user/forms.py:89
-msgid ""
-"Have we done something wrong? Please tell us why you wantremove your user."
+msgid "Have we done something wrong? Please tell us why you wantremove your user."
 msgstr "Prosimo, sporočite nam, zakaj ne želite več sodelovati v skupnosti."
 
 #: user/forms.py:100
@@ -2276,7 +2267,9 @@ msgstr "manj kot 6 meseci"
 msgid "less than one year ago"
 msgstr "manj kot enim letom"
 
-#: user/forms.py:108 user/forms.py:124 user/views.py:330
+#: user/forms.py:108
+#: user/forms.py:124
+#: user/views.py:330
 msgid "User connected"
 msgstr "Nazadnje viden pred"
 
@@ -2308,7 +2301,8 @@ msgstr "Brez storitev"
 msgid "Message body"
 msgstr "Besedilo"
 
-#: user/models.py:32 user/models.py:44
+#: user/models.py:32
+#: user/models.py:44
 msgid "address"
 msgstr "naslov"
 
@@ -2335,57 +2329,40 @@ msgstr "Uporabniki"
 #: user/views.py:55
 #, python-format
 msgid "[%(site_name)s] User %(username)s joined"
-msgstr ""
-"[%(site_name)s Maribor] Obvestilo o registraciji uporabniškega imena "
-"%(username)s"
+msgstr "[%(site_name)s Maribor] Obvestilo o registraciji uporabniškega imena %(username)s"
 
 #: user/views.py:59
 #, python-format
-msgid ""
-"A new user has joined with the name %s . Please review his data and make it "
-"active."
-msgstr ""
-"Pridružil se je novi uporabnik z imenom %s. Prosim, preveri njegove podatke "
-"in ga aktiviraj."
+msgid "A new user has joined with the name %s . Please review his data and make it active."
+msgstr "Pridružil se je novi uporabnik z imenom %s. Prosim, preveri njegove podatke in ga aktiviraj."
 
-#: user/views.py:64 user/views.py:91
+#: user/views.py:64
+#: user/views.py:91
 #, python-format
 msgid "You have joined as %(username)s in %(site_name)s"
-msgstr ""
-"[%(site_name)s Maribor] Obvestilo o registraciji uporabniškega imena "
-"%(username)s"
+msgstr "[%(site_name)s Maribor] Obvestilo o registraciji uporabniškega imena %(username)s"
 
 #: user/views.py:68
 #, python-format
 msgid ""
 "Hello %(username)s!\n"
-" You just joined to http://%(url)s/ . Soon the creation of your user will be "
-"reviewed by one of our admins and if everything is ok, we will enable your "
-"user and you will be able to start participating in our community.\n"
+" You just joined to http://%(url)s/ . Soon the creation of your user will be reviewed by one of our admins and if everything is ok, we will enable your user and you will be able to start participating in our community.\n"
 "\n"
 "- The team of %(site_name)s."
 msgstr ""
 "Pozdravljeni, %(username)s.\n"
 "\n"
-"Pravkar ste se pridružili strani http://%(url)s/ . Vaša vloga bo kmalu "
-"pregledala in če bo vse v redu, boste lahko začeli sodelovati v skupnosti.\n"
+"Pravkar ste se pridružili strani http://%(url)s/ . Vaša vloga bo kmalu pregledala in če bo vse v redu, boste lahko začeli sodelovati v skupnosti.\n"
 "\n"
 "- %(site_name)s Maribor"
 
 #: user/views.py:80
 #, python-format
-msgid ""
-"You just joined us, <strong>%(username)s</strong>. We have sent you an email "
-"to <strong>%(email)s</strong> confirming your inscription request. As soon "
-"as our admins review your request we will send you an email and you will be "
-"able to start to participate in our community."
-msgstr ""
-"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>. Poslali smo "
-"vam e-pošto na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo "
-"po vpisu. Takoj, ko bomo pregledali vašo zahtevo, vam bomo poslali e-pošto "
-"in lahko boste začeli sodelovati v skupnosti."
+msgid "You just joined us, <strong>%(username)s</strong>. We have sent you an email to <strong>%(email)s</strong> confirming your inscription request. As soon as our admins review your request we will send you an email and you will be able to start to participate in our community."
+msgstr "Hvala, da ste se nam pridružili, <strong>%(username)s</strong>. Poslali smo vam e-pošto na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu. Takoj, ko bomo pregledali vašo zahtevo, vam bomo poslali e-pošto in lahko boste začeli sodelovati v skupnosti."
 
-#: user/views.py:88 user/views.py:112
+#: user/views.py:88
+#: user/views.py:112
 msgid "User created successfully"
 msgstr "Uporabnik uspešno ustvarjen"
 
@@ -2393,28 +2370,20 @@ msgstr "Uporabnik uspešno ustvarjen"
 #, python-format
 msgid ""
 "Hello %(username)s!\n"
-" You just joined to http://%(url)s/ . Now you can start participating in our "
-"community!\n"
+" You just joined to http://%(url)s/ . Now you can start participating in our community!\n"
 "\n"
 "- The team of %(site_name)s."
 msgstr ""
 "Pozdravljeni, %(username)s.\n"
 "\n"
-"Pridruzili ste se skupnosti in lahko pricnete sodelovati na naslovu http://"
-"%(url)s/.\n"
+"Pridruzili ste se skupnosti in lahko pricnete sodelovati na naslovu http://%(url)s/.\n"
 "\n"
 "- %(site_name)s Maribor"
 
 #: user/views.py:105
 #, python-format
-msgid ""
-"You just joined us, <strong>%(username)s</strong>. We have sent you a "
-"confirmation email to <strong>%(email)s</strong>. Now you can start to "
-"participate in our community."
-msgstr ""
-"Pridružili ste se nam <strong>%(username)s</strong>. Potrditveno e-pošto smo "
-"vam poslali na <strong>%(email)s</strong>. Zdaj lahko pričnete sodelovati v "
-"naši skupnosti."
+msgid "You just joined us, <strong>%(username)s</strong>. We have sent you a confirmation email to <strong>%(email)s</strong>. Now you can start to participate in our community."
+msgstr "Pridružili ste se nam <strong>%(username)s</strong>. Potrditveno e-pošto smo vam poslali na <strong>%(email)s</strong>. Zdaj lahko pričnete sodelovati v naši skupnosti."
 
 #: user/views.py:128
 #, python-format
@@ -2430,27 +2399,16 @@ msgid "Invalid username or password"
 msgstr "Napačno uporabniško ime ali geslo"
 
 #: user/views.py:139
-msgid ""
-"We have sent you an email to your address with instructions to recover your "
-"password. It might take a bit to arrive  to your inbox so please be patient. "
-"If it seems that it doesn't arrive, you might want to check your spam folder."
-msgstr ""
-"Na vaš naslov smo poslali sporočilo z navodili kako obnoviti vaše geslo. "
-"Morda bo potrebovalo nekaj časa, da prispe do vašega poštnega nabiralnika, "
-"zato bodite potrpežljivi. Če se vam bo zdelo, da sporočilo ni prispelo, "
-"preverite še vašo mapo za spam."
+msgid "We have sent you an email to your address with instructions to recover your password. It might take a bit to arrive  to your inbox so please be patient. If it seems that it doesn't arrive, you might want to check your spam folder."
+msgstr "Na vaš naslov smo poslali sporočilo z navodili kako obnoviti vaše geslo. Morda bo potrebovalo nekaj časa, da prispe do vašega poštnega nabiralnika, zato bodite potrpežljivi. Če se vam bo zdelo, da sporočilo ni prispelo, preverite še vašo mapo za spam."
 
 #: user/views.py:143
 msgid "Password recovery in process"
 msgstr "Obnavljanje gesla poteka"
 
 #: user/views.py:149
-msgid ""
-"Your password was changed successfully, now you can login using your "
-"username and the new password using the login form in the grey box at the "
-"left."
-msgstr ""
-"Vaše geslo je bilo uspešno spremenjeno. Prijavite se lahko z novim geslom."
+msgid "Your password was changed successfully, now you can login using your username and the new password using the login form in the grey box at the left."
+msgstr "Vaše geslo je bilo uspešno spremenjeno. Prijavite se lahko z novim geslom."
 
 #: user/views.py:152
 msgid "Password changed successfully"
@@ -2519,13 +2477,11 @@ msgstr "[%(site_name)s] Uporabnik %(username)s onemogočen"
 #: user/views.py:248
 #, python-format
 msgid ""
-"The user %(username)s has requested being removed from the website. The "
-"reason given was:\n"
+"The user %(username)s has requested being removed from the website. The reason given was:\n"
 "\n"
 "%(reason)s"
 msgstr ""
-"Uporabnik %(username)s je zahteval, da ga odstranimo s spletne strani. "
-"Navedeni razlog je bil:\n"
+"Uporabnik %(username)s je zahteval, da ga odstranimo s spletne strani. Navedeni razlog je bil:\n"
 "\n"
 "%(reason)s"
 
@@ -2538,29 +2494,19 @@ msgstr "Odstranili ste svoj profil %(username)s na %(site_name)s"
 #, python-format
 msgid ""
 "Hello %(username)s!\n"
-" You removed your profile in http://%(url)s/ . We regret your decision to "
-"take this step. We'll read the reason why you removed yourself from this "
-"community that you provided to us and we'll have it in mind to improve our "
-"service in the future.\n"
+" You removed your profile in http://%(url)s/ . We regret your decision to take this step. We'll read the reason why you removed yourself from this community that you provided to us and we'll have it in mind to improve our service in the future.\n"
 "\n"
 "- The team of %(site_name)s."
 msgstr ""
 "Pozdravljeni, %(username)s.\n"
 "\n"
-"Odstranili ste svoj profil na http://%(url)s/ . Obžalujemo vašo odločitev. "
-"Prebrali bomo vaše razloge za odhod iz skupnosti in jih bomo upoštevaili pri "
-"prihodnjem delovanju.\n"
+"Odstranili ste svoj profil na http://%(url)s/ . Obžalujemo vašo odločitev. Prebrali bomo vaše razloge za odhod iz skupnosti in jih bomo upoštevaili pri prihodnjem delovanju.\n"
 "\n"
 "- %(site_name)s Maribor"
 
 #: user/views.py:273
-msgid ""
-"We regret your decision to take this step.We'll read the reason why you "
-"removed yourself from this community that you provided to us and we'll have "
-"it in mind to improve our service in the future."
-msgstr ""
-"Obžalujemo vašo odločitev. Prebrali bomo vaše razloge za odhod iz skupnosti, "
-"in jih bomo upoštevali pri prihodnjem delovanju."
+msgid "We regret your decision to take this step.We'll read the reason why you removed yourself from this community that you provided to us and we'll have it in mind to improve our service in the future."
+msgstr "Obžalujemo vašo odločitev. Prebrali bomo vaše razloge za odhod iz skupnosti, in jih bomo upoštevali pri prihodnjem delovanju."
 
 #: user/views.py:276
 msgid "User removed"
@@ -2571,10 +2517,12 @@ msgstr "Uporabnik je bil odstranjen"
 msgid "Message added to %s public profile"
 msgstr "Sporočilo je bilo dodano v javni profil %s"
 
-#: user/views.py:417 user/views.py:429
+#: user/views.py:417
+#: user/views.py:429
 msgid "You don't have permission to send an email to all users"
 msgstr "Nimate dovoljenja, da bi poslali e-pošto vsem uporabnikom"
 
 #: user/views.py:442
 msgid "Email sent to all users"
 msgstr "Sporočilo je bilo poslano vsem uporabnikom"
+

@@ -104,10 +104,10 @@ def login_required(fn):
     '''
     def wrapper(self, *args, **kwargs):
         if not self.request.user.is_authenticated():
-            self.flash(_(u'You must be registered to enter in'
-                ' <a href="%(link)s">%(link_text)s</a>. You might want to'
-                ' <a href="%(join_url)s">join us now</a> or enter with your'
-                ' user using the grey login box at the left.') %\
+            self.flash(_(smart_unicode(u'Biti morate registrirani, da lahko vidite storitev'
+                ' <a href="%(link)s">%(link_text)s</a>. Morda bi se nam'
+                ' <a href="%(join_url)s">zeleli pridruziti</a> ali vpisati'
+                ' svoje uporabnisko ime in geslo na levi.')) %\
                 {
                     'link': self.request.get_full_path(),
                     'link_text': self.request.get_full_path(),
@@ -130,14 +130,14 @@ class FormCharField(forms.CharField):
         return unicode(self._auto_help_text) + unicode(self._help_text)
 
     def set_help_text(self, help_text):
-        self._help_text = help_text
+        self._help_text = unicode(help_text)
 
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Zahtevano. ")
+            self._auto_help_text += _(u"Required. ")
         else:
-            self._auto_help_text += _(u"Po želji. ")
+            self._auto_help_text += _(u"Optional. ")
         if self.max_length and self.min_length:
             self._auto_help_text += _(u"Od %(from)d do %(to)d znakov. ")\
                 % {'from': self.min_length, 'to': self.max_length}
@@ -168,9 +168,9 @@ class FormEmailField(forms.EmailField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Zahtevano. ")
+            self._auto_help_text += _(u"Required. ")
         else:
-            self._auto_help_text += _(u"Po želji. ")
+            self._auto_help_text += _(u"Optional. ")
         self._auto_help_text += _(u" Primer: ime@domena.si")
 
     help_text = property(get_help_text, set_help_text)
@@ -201,9 +201,9 @@ class FormDateField(forms.DateField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
-            self._auto_help_text += _(u"Zahtevano. Primer: ")
+            self._auto_help_text += _(u"Required. Example(s): ")
         else:
-            self._auto_help_text += _(u"Po želji. Primer: ")
+            self._auto_help_text += _(u"Optional. Example(s): ")
 
         the_date = datetime(1986, 4, 27).date()
 
@@ -216,7 +216,7 @@ class FormDateField(forms.DateField):
 class FormCaptchaWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None):
         if not settings.SHOW_CAPTCHAS:
-            return  _('Captcha onemogočen')
+            return  _('Captcha onemogocen')
         return mark_safe(u'%s' % captcha.displayhtml(settings.RECAPTCHA_PUBLIC_KEY))
 
     def value_from_datadict(self, data, files, name):

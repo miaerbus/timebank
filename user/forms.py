@@ -27,13 +27,13 @@ from utils import (FormCharField, FormEmailField, FormDateField,
 from  serv.forms import CustomCharField
 
 class RegisterForm(UserCreationForm):
-    username = forms.RegexField(label=_("Uporabniško ime"), max_length=30,
+    username = forms.RegexField(label=_(u'Uporabniško ime'), max_length=30,
         regex=r'^[\w.@+-]+$',
-        help_text=_("Zahtevano. Do 30 znakov. Samo alfanumerični znaki"
-		" ali znaki: @/./+/-/_."),
+        help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
+		' ali znaki: @/./+/-/_.'),
         error_messages={
-            'invalid': _("To polje naj vsebuje samo alfanumerične znake,"
-		" številke ali znake: @/./+/-/_ characters.")})
+            'invalid': _(u'To polje naj vsebuje samo alfanumericne znake,'
+		' stevilke ali znake: @/./+/-/_.')})
     password1 = forms.CharField(label=_("Geslo"),
         widget=forms.PasswordInput)
     password2 = forms.CharField(label=_("Ponovitev gesla"),
@@ -98,8 +98,8 @@ class EditProfileForm(forms.ModelForm):
 class RemoveForm(forms.Form):
     reason = FormCharField(label=_("Razlog"), required=True,
         min_length=10, max_length=300, widget=forms.Textarea(),
-        help_text=_("Smo naredili kaj narobe? Prosimo, sporočite nam, zakaj ne želite več "
-            "sodelovati v skupnosti."))
+        help_text=_(u'Kaj smo naredili narobe? Prosimo, sporocite nam, zakaj'
+            ' ne zelite vec sodelovati v skupnosti.'))
 
 class PublicMessageForm(forms.ModelForm):
     class Meta:
@@ -119,7 +119,7 @@ class FindPeopleForm(forms.Form):
 
     user_status = CustomCharField(label=_("Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    username = forms.CharField(label=_("Uporabniško ime"), required=False)
+    username = forms.CharField(label=_(u'Uporabniško ime'), required=False)
 
     def as_url_args(self):
         import urllib

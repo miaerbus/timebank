@@ -70,11 +70,11 @@ class ListServicesForm(forms.Form):
         ('6', _(u'manj kot letom')),
     )
 
-    mine = forms.BooleanField(label=_("Prikaži samo moje stroitve"), required=False)
+    mine = forms.BooleanField(label=_("Only list my services"), required=False)
     the_type = CustomCharField(label=_("Tip storitve"),
         widget=forms.Select(choices=TYPE_CHOICES), required=False)
     category = forms.ModelChoiceField(None, required=False, label=_("Kategorija"))
-    area = forms.ModelChoiceField(None, required=False, label=_("Območje"))
+    area = forms.ModelChoiceField(None, required=False, label=_("Area"))
     user_status = CustomCharField(label=_("Status uporabnika"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_("Uporabnik"), required=False)

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.utils.text import wrap
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import Site

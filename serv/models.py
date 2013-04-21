@@ -56,7 +56,7 @@ class Service(models.Model):
     pub_date = models.DateTimeField(_(u"Publish date"),
         auto_now=True, auto_now_add=True)
     is_active = models.BooleanField(default=True)
-    description = models.TextField(_(u"Description"), max_length=400)
+    description = models.TextField(_(u"Opis"), max_length=400)
     category = models.ForeignKey(Category, verbose_name=_('Category'))
     area = models.ForeignKey(Area, null=True, blank=True,
         verbose_name=_("Area"))
@@ -142,7 +142,7 @@ class Transfer(models.Model):
         blank=True, verbose_name=_("Service"))
 
     # Small description for the received service
-    description = models.TextField(_(u"Description"), max_length=300)
+    description = models.TextField(_(u"Opis"), max_length=300)
 
     request_date = models.DateTimeField(_("Transfer request date"),
         auto_now=True, auto_now_add=True)

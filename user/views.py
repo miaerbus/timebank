@@ -78,9 +78,9 @@ class Register(ViewClass):
                 [new_user], fail_silently=True)
 
             self.flash(_("Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
-                " Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
-                " Takoj, ko bomo pregledali vašo zahtevo, vam bomo poslali še eno sporočilo,"
-                " in lahko boste začeli sodelovati v skupnosti.") % {
+                " Poslali smo vam sporocilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
+                " Takoj, ko bomo pregledali vašo zahtevo, vam bomo poslali še eno sporocilo,"
+                " in lahko boste zaceli sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
@@ -102,8 +102,8 @@ class Register(ViewClass):
                 [new_user], fail_silently=True)
 
             self.flash(_("Pozdravljeni, <strong>%(username)s</strong>."
-                " Poslali smo vam sporočilo na <strong>%(email)s</strong>."
-                " Zdaj lahko začnete sodelovati v skupnosti.") % {
+                " Poslali smo vam sporocilo na <strong>%(email)s</strong>."
+                " Zdaj lahko zacnete sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
@@ -136,7 +136,7 @@ class PasswordResetDone(ViewClass):
     def GET(self):
         self.flash(_("Na vaš naslov smo poslali sporočilo z navodili kako obnoviti vaše geslo."
 	    " Morda bo preteklo nekaj časa, da prispe do vašega poštnega nabiralnika. Bodite potrpežljivi."
-	    " Če se vam bo zdelo, da sporočilo ni prispelo, preverite še vašo mapo z vsiljeno pošto."),
+	    " Če se vam bo zdelo, da sporočilo ni prispelo, preverite še vašo mapo z vsiljeno posto."),
             title=_("Password recovery in process"))
         return redirect('main.views.index')
 

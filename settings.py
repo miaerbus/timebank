@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = DEBUG
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
-SITE_NAME="Casovna banka"
+SITE_NAME=u"Časovna banka"
 
 ADMINS = (
     ('admin', 'mia.erbus@gmail.com'),
@@ -63,7 +63,7 @@ TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'sl-SI'
+LANGUAGE_CODE = 'sl'
 
 LANG='sl_SI.UTF-8'
 LC_ALL='sl_SI.UTF-8'
@@ -72,7 +72,8 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
+USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -203,7 +204,7 @@ EMAIL_HOST_USER = 'mia.erbus@gmail.com'
 EMAIL_HOST_PASSWORD = 'rugelj12n'
 
 ## For debugging, you can use the console email backend:
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIN_CREDIT = -10*60
 MAX_CREDIT = 20*60
