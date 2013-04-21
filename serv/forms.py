@@ -49,7 +49,7 @@ class ServiceForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ServiceForm, self).__init__(*args, **kwargs)
-        self.fields['area'].empty_label = _("Vse")
+        self.fields['area'].empty_label = _("Povsod")
         self.fields['description'].help_text = _("Nasvet: ne vpisujte osebnih"
 	    " podatkov, za katere ne zelite, da so javno objavljeni."
 	    " Za zasebne podatke uporabite zasebna sporocila.")

@@ -8,7 +8,7 @@
             {% endif %}
             {% trans "Območje" %}:
             <span class="zone"><a href="{% url serv-list %}?area={{ serv.area.id }}">
-            {% if serv.area %}{{ serv.area }}{% else %}{% trans "Vse" %}{% endif %}</a></span> /
+            {% if serv.area %}{{ serv.area }}{% else %}{% trans "Povsod" %}{% endif %}</a></span> /
             {% trans "Kategorija" %}:
             <span class="category"><a href="{% url serv-list %}?category={{ serv.category.id }}">{{ serv.category }}</a></span> /
             <span class="date"> {% blocktrans with serv.pub_date|timesince as time %}Objavljeno {{ time }} nazaj{% endblocktrans %}</span>
