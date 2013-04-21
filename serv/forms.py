@@ -90,34 +90,33 @@ class ListServicesForm(forms.Form):
 
 class NewTransferForm(forms.ModelForm):
     CREDITS_CHOICES = (
-        ('30', _('half hour')),
-        ('60', _('1 hour')),
-        ('90', _('1 hour and half')),
-        ('120', _('2 hours')),
-        ('150', _('2 hours and half')),
-        ('180', _('3 hours')),
-        ('210', _('3 hours and half')),
-        ('240', _('4 hours')),
-        ('270', _('4 hours and half')),
-        ('300', _('5 hours')),
-        ('330', _('5 hours and half')),
-        ('360', _('6 hours')),
-        ('390', _('6 hours and half')),
+        ('30', _('pol ure')),
+        ('60', _('1 uro')),
+        ('90', _('1 uro in pol')),
+        ('120', _('2 uri')),
+        ('150', _('2 uri in pol')),
+        ('180', _('3 ure')),
+        ('210', _('3 ure in pol')),
+        ('240', _('4 ure')),
+        ('270', _('4 ure in pol')),
+        ('300', _('5 ur')),
+        ('330', _('5 ur in pol')),
+        ('360', _('6 ur')),
+        ('390', _('6 ur in pol')),
     )
     OFFER_CHOICES = (
-        ('0', _(u'give credits')),
-        ('1', _(u'ask for credits')),
+        ('0', _(u'ponudil')),
+        ('1', _(u'povpraseval')),
     )
     username = forms.CharField(label=_("Username"), help_text=_(
-        "Name the user who will receive or will be asked for the credits"
-        " to transfer"), required=True)
+        "Navedi uporabika, ki bo prejel ali dal kredit"), required=True)
 
-    credits = CustomCharField(label=_("Credits"),
+    credits = CustomCharField(label=_("Kredit"),
         widget=forms.Select(choices=CREDITS_CHOICES), required=True)
 
     service_type = CustomCharField(label=_("Service type"),
-            help_text=_("Choose if you receive or ask for credits with"
-            " this transfer"),
+            help_text=_(u"Izberi, ali s tem prenosom prejmes (ponudil)"
+		" ali das kredit (povpraseval)"),
             widget=forms.Select(choices=OFFER_CHOICES))
 
     class Meta:

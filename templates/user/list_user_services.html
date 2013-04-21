@@ -2,13 +2,13 @@
 {% load i18n %}
 
 {% block title %}
-    {% blocktrans with profile.username  as username %} Storitve uporabnika {{ username }} {% endblocktrans %}
+    {% blocktrans with profile.username as username %} Storitve uporabnika {{ username }} {% endblocktrans %}
 {% endblock %}
 
 {% block content %}
     <div class="section_3">
         <h1>
-            {% blocktrans with profile.username  as username %} Storitve uporabnika {{ username }} {% endblocktrans %}
+            {% blocktrans with profile.username as username %} Storitve uporabnika {{ username }} {% endblocktrans %}
         </h1>
 
         <ul class="subnavilist">

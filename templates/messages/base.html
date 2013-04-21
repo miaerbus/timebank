@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="section_3">
-        <h1>{% trans 'Messages' %} / {% block subtitle %} {% endblock %}</h1>
+        <h1>{% trans 'Sporočila' %} / {% block subtitle %} {% endblock %}</h1>
         <ul class="subnavilist">
             <li><a href="{% url messages_inbox %}" class="{% current_tab 'inbox' 'subtab' %}">{% trans "Prejeto" %}</a><small>/</small></li>
             <li><a href="{% url messages_outbox %}" class="{% current_tab 'outbox' 'subtab' %}">{% trans "Poslana sporočila" %}</a><small>/</small></li>
