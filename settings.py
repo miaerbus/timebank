@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = DEBUG
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
-SITE_NAME=u"Časovna banka"
+SITE_NAME = u"Časovna banka"
 
 ADMINS = (
     ('admin', 'mia.erbus@gmail.com'),
@@ -72,7 +72,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 USE_L10N = False
 
 # Absolute path to the directory that holds media.
@@ -195,7 +195,7 @@ RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
 EMAIL_SUBJECT_PREFIX = ''
-DEFAULT_FROM_EMAIL = 'Časovna banka <cbs.maribor@gmail.com>'
+DEFAULT_FROM_EMAIL = u'Časovna banka <cbs.maribor@gmail.com>'
 SERVER_EMAIL = 'cbs.maribor@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

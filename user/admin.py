@@ -33,7 +33,7 @@ class ExtraProfileInline(admin.StackedInline):
 
 def send_email_action(profile_admin, request, queryset):
     return redirect('user-send-email-to-all')
-send_email_action.short_description = _("Pošlji sporočilo vsem uporabnikom")
+send_email_action.short_description = _(u"Pošlji sporočilo vsem uporabnikom")
 
 
 def activate_user_action(profile_admin, request, queryset):

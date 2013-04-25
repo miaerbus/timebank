@@ -6,7 +6,7 @@
     <dt>{% trans "Pošiljatelj" %}</dt>
     <dd>{{ message.sender }}</dd>
     <dt>{% trans "Datum" %} </dt>
-    <dd>{{ message.sent_at|timesince }}</dd>
+    <dd>{{ message.sent_at|date:"H:i, j.n.Y" }}</dd>
     <dt>{% trans "Prejemnik" %}</dt>
     <dd>{{ message.recipient }}</dd>
 </dl>
