@@ -105,9 +105,9 @@ def login_required(fn):
     def wrapper(self, *args, **kwargs):
         if not self.request.user.is_authenticated():
             self.flash(_(smart_unicode(u'Biti morate registrirani, da lahko vidite storitev'
-                ' <a href="%(link)s">%(link_text)s</a>. Morda bi se nam'
-                ' <a href="%(join_url)s">zeleli pridruziti</a> ali vpisati'
-                ' svoje uporabnisko ime in geslo na levi.')) %\
+                u' <a href="%(link)s">%(link_text)s</a>. Morda bi se nam'
+                u' <a href="%(join_url)s">želeli pridružiti</a> ali vpisati'
+                u' svoje uporabnisko ime in geslo na levi.')) %\
                 {
                     'link': self.request.get_full_path(),
                     'link_text': self.request.get_full_path(),
@@ -216,7 +216,7 @@ class FormDateField(forms.DateField):
 class FormCaptchaWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None):
         if not settings.SHOW_CAPTCHAS:
-            return  _('Captcha onemogocen')
+            return  _(u'Captcha onemogočen')
         return mark_safe(u'%s' % captcha.displayhtml(settings.RECAPTCHA_PUBLIC_KEY))
 
     def value_from_datadict(self, data, files, name):

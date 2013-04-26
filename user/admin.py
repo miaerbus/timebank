@@ -56,19 +56,18 @@ def reset_password_user_action(profile_admin, request, queryset):
         u.save()
 
         current_site = Site.objects.get_current()
-        title = I18nString(_("Vaše geslo na %(site_name)s je bilo ponastavljeno."), {
+        title = I18nString(_(u"Vaše geslo na %(site_name)s je bilo ponastavljeno."), {
             'site_name': settings.SITE_NAME,
             'username': u.username
         })
-        message = I18nString(_(u"Pozdravljeni %(username)s!\n"
+        message = I18nString(_(u"Pozdravljeni %(username)s!\n\n"
         u"Administratorji so ponastavili vaše geslo, "
-        u"prijavite se na "
-        u"http://%(url)s/ z naslednjimi podatki:\n\n"
+        u"prijavite se lahko z naslednjimi podatki:\n\n"
         u"uporabniško ime\t: %(username)s\n"
         u"geslo\t\t: %(password)s\n\n"
         u"Geslo lahko spremenite v svojem profilu:\n"
         u"http://%(url)s%(pwdchange)s"
-        u"\n\n- Ekipa %(site_name)s."), {
+        u"\n\n- %(site_name)s"), {
             'username': u.username,
             'password': pwd,
             'url': current_site.domain,
@@ -104,14 +103,14 @@ class ProfileAdmin(UserAdmin):
         if model.is_active == True and old_model.is_active == False:
             # user activated, send activation email
             current_site = Site.objects.get_current()
-            title = I18nString(_("Dobrodošli na strani %(site_name)s, %(username)s"), {
+            title = I18nString(_(u"Dobrodošli na strani %(site_name)s, %(username)s"), {
                 'site_name': settings.SITE_NAME,
                 'username': model.username
             })
-            message = I18nString(_(u"Pozdravljeni, %(username)s!\n"
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
             u"Potrdili smo vašo registracijo, "
             u"zdaj lahko začnete sodelovati v skupnosti  "
-            u"http://%(url)s/.\n\n- Ekipa %(site_name)s."), {
+            u"%(site_name)s.\n\n- %(site_name)s"), {
                 'username': model.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME
