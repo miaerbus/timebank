@@ -109,7 +109,7 @@ class ProfileAdmin(UserAdmin):
             })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
             u"Potrdili smo vašo registracijo, "
-            u"zdaj lahko začnete sodelovati v skupnosti  "
+            u"zdaj lahko začnete sodelovati v skupnosti "
             u"%(site_name)s.\n\n- %(site_name)s"), {
                 'username': model.username,
                 'url': current_site.domain,

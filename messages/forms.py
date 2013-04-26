@@ -17,8 +17,8 @@ class ComposeForm(forms.Form):
     """
     A simple default form for private messages.
     """
-    recipient = CommaSeparatedUserField(label=_(u"Recipient"))
-    body = forms.CharField(label=_(u"Message"),
+    recipient = CommaSeparatedUserField(label=_(u"Prejemnik"))
+    body = forms.CharField(label=_(u"Sporočilo"),
         widget=forms.Textarea(attrs={'rows': '12', 'cols':'55'}))
     
     def __init__(self, *args, **kwargs):

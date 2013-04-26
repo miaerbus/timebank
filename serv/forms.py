@@ -121,7 +121,7 @@ class NewTransferForm(forms.ModelForm):
     credits = CustomCharField(label=_("Kredit"),
         widget=forms.Select(choices=CREDITS_CHOICES), required=True)
 
-    service_type = CustomCharField(label=_("Service type"),
+    service_type = CustomCharField(label=_("Tip storitve"),
             help_text=_(u"Izberi, ali s tem prenosom prejmeš (ponudil)"
 		u" ali daš kredit (povpraševal)"),
             widget=forms.Select(choices=OFFER_CHOICES))
