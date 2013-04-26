@@ -193,12 +193,12 @@ RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
 # Email configuration. Configure appropiately if emails are not directly sent by localhost
 EMAIL_SUBJECT_PREFIX = ''
+EMAIL_HOST = 'smtp.gmail.com'
 DEFAULT_FROM_EMAIL = u'Časovna banka <cbs.maribor@gmail.com>'
 SERVER_EMAIL = 'cbs.maribor@gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'cbs.maribor@gmail.com'
+EMAIL_HOST_USER = 'cbs.maribor'
 EMAIL_HOST_PASSWORD = 'solaris17'
 
 ## For debugging, you can use the console email backend:
