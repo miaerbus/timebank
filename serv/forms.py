@@ -50,9 +50,9 @@ class ServiceForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ServiceForm, self).__init__(*args, **kwargs)
         self.fields['area'].empty_label = _("Povsod")
-        self.fields['description'].help_text = _("Nasvet: ne vpisujte osebnih"
-	    " podatkov, za katere ne zelite, da so javno objavljeni."
-	    " Za zasebne podatke uporabite zasebna sporocila.")
+        self.fields['description'].help_text = _(u"Nasvet: ne vpisujte osebnih"
+	    u" podatkov, za katere ne želite, da so javno objavljeni."
+	    u" Za zasebne podatke uporabite zasebna sporočila.")
 
 class ListServicesForm(forms.Form):
     TYPE_CHOICES = (
@@ -103,20 +103,27 @@ class NewTransferForm(forms.ModelForm):
         ('330', _('5 ur in pol')),
         ('360', _('6 ur')),
         ('390', _('6 ur in pol')),
+	('420', _('7 ur')),
+        ('450', _('7 ur in pol')),
+        ('480', _('8 ur')),
+        ('510', _('8 ur in pol')),
+        ('540', _('9 ur')),
+        ('570', _('9 ur in pol')),
+        ('600', _('10 ur')),
     )
     OFFER_CHOICES = (
         ('0', _(u'ponudil')),
-        ('1', _(u'povpraseval')),
+        ('1', _(u'povpraševal')),
     )
-    username = forms.CharField(label=_("Username"), help_text=_(
-        "Navedi uporabika, ki bo prejel ali dal kredit"), required=True)
+    username = forms.CharField(label=_("Uporabnik"), help_text=_(
+        u"Navedi uporabika, ki bo prejel ali dal kredit"), required=True)
 
     credits = CustomCharField(label=_("Kredit"),
         widget=forms.Select(choices=CREDITS_CHOICES), required=True)
 
     service_type = CustomCharField(label=_("Service type"),
-            help_text=_(u"Izberi, ali s tem prenosom prejmes (ponudil)"
-		" ali das kredit (povpraseval)"),
+            help_text=_(u"Izberi, ali s tem prenosom prejmeš (ponudil)"
+		u" ali daš kredit (povpraševal)"),
             widget=forms.Select(choices=OFFER_CHOICES))
 
     class Meta:
@@ -133,7 +140,7 @@ class NewTransferForm(forms.ModelForm):
         try:
             self.user = get_object_or_404(Profile, username=username)
         except Exception, e:
-            raise forms.ValidationError(_("No user exists with this username."))
+            raise forms.ValidationError(_(u"Uporabnik s tem imenom ne obstaja."))
 
 
 class AddTransferForm(forms.ModelForm):
@@ -151,6 +158,13 @@ class AddTransferForm(forms.ModelForm):
         ('330', _('5 ur in pol')),
         ('360', _('6 ur')),
         ('390', _('6 ur in pol')),
+        ('420', _('7 ur')),
+        ('450', _('7 ur in pol')),
+        ('480', _('8 ur')),
+        ('510', _('8 ur in pol')),
+        ('540', _('9 ur')),
+        ('570', _('9 ur in pol')),
+        ('600', _('10 ur')),
     )
 
     credits = CustomCharField(label=_("Kredit"),

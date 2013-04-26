@@ -52,6 +52,9 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Primer: 02 123 4567")
     mobile_tlf = FormCharField(label=_("Mobilni telefon"), max_length=20,
         required=False, help_text="Primer: 041 123 456")
+    terms = forms.BooleanField(
+    	error_messages={'required': 'Sprejeti morate pogoje'},
+    	label="Strinjam se s pogoji Časovne banke")
     captcha = FormCaptchaField()
 
     class Meta:
@@ -117,7 +120,7 @@ class FindPeopleForm(forms.Form):
         ('6', _(u'manj kot letom')),
     )
 
-    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
+    user_status = CustomCharField(label=_(u"Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_(u'Uporabniško ime'), required=False)
 
@@ -133,7 +136,7 @@ class FindPeople4AdminsForm(FindPeopleForm):
         ('10', _(u'več kot šestimi meseci')),
         ('11', _(u'več kot letom')),
     )
-    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
+    user_status = CustomCharField(label=_(u"Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     without_services = forms.BooleanField(label=_("Ni storitev"), required=False)
 
