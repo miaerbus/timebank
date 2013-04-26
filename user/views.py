@@ -66,10 +66,10 @@ class Register(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u" Pravkar ste se pridružili skupnosti %(site_name)s ."
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
                 u" boste lahko začeli sodelovati v skupnosti."
-                u"\n\n- %(site_name)s."), {
+                u"\n\n- %(site_name)s"), {
                     'username': new_user.username,
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
@@ -91,9 +91,9 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n Pravkar ste se pridružili skupnosti %(site_name)s."
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\nPravkar ste se pridružili skupnosti %(site_name)s."
                 u" Zdaj lahko začnete sodelovati v njej!"
-                u"\n\n- %(site_name)s."), {
+                u"\n\n- %(site_name)s"), {
                     'username': new_user.username,
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
@@ -133,8 +133,8 @@ class Login(ViewClass):
 
 class PasswordResetDone(ViewClass):
     def GET(self):
-        self.flash(_(u"Na vas naslov smo poslali sporočilo z navodili, kako obnoviti vase geslo."
-	    u" Morda bo preteklo nekaj časa, da prispe do vašega poštnega nabiralnika. Bodite potrpežljivi."
+        self.flash(_(u"Na vas naslov smo poslali sporočilo z navodili, kako obnoviti vaše geslo."
+	    u" Morda bo preteklo nekaj časa, da prispe do vašega nabiralnika. Bodite potrpežljivi."
 	    u" Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno posto."),
             title=_(u"Obnovitev gesla poteka"))
         return redirect('main.views.index')
@@ -256,9 +256,9 @@ class Remove(ViewClass):
             'site_name': settings.SITE_NAME
             })
         message = I18nString(_(u"Pozdravljeni, %(username)s!\n\nOdstraniti želite svoj profil na strani"
-            u" %(site_name)s/. Obžalujemo, da ste se odločili za ta korak."
+            u" %(site_name)s. Obžalujemo, da ste se odločili za ta korak."
             u" Prebrali bomo vaše razloge in se trudili izboljšati našo skupnost."
-            u"\n\n- %(site_name)s."), {
+            u"\n\n- %(site_name)s"), {
                 'username': user.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME
