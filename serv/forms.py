@@ -57,8 +57,8 @@ class ServiceForm(forms.ModelForm):
 class ListServicesForm(forms.Form):
     TYPE_CHOICES = (
         ('0', '---------'),
-        ('1', _('offer')),
-        ('2', _('demand')),
+        ('1', _(u'ponujam')),
+        ('2', _(u'povprašujem')),
     )
     USER_CHOICES = (
         ('0', _('---------')),
@@ -74,11 +74,11 @@ class ListServicesForm(forms.Form):
     the_type = CustomCharField(label=_("Tip storitve"),
         widget=forms.Select(choices=TYPE_CHOICES), required=False)
     category = forms.ModelChoiceField(None, required=False, label=_("Kategorija"))
-    area = forms.ModelChoiceField(None, required=False, label=_("Area"))
-    user_status = CustomCharField(label=_("Status uporabnika"),
+    area = forms.ModelChoiceField(None, required=False, label=_(""))
+    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_("Uporabnik"), required=False)
-    text = forms.CharField(label=_("Ime storitve"), required=False)
+    text = forms.CharField(label=_("Opis storitve"), required=False)
 
     def __init__(self,  *args, **kwargs):
         super(ListServicesForm, self).__init__(*args, **kwargs)
