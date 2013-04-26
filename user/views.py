@@ -65,10 +65,10 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_("Pozdravljeni, %(username)s!\n\n"
-		" Pravkar ste se pridružili skupnosti %(site_name)s ."
-                " Vaša vloga bo kmalu pregledala in če bo vse v redu,"
-                " boste lahko začeli sodelovati v skupnosti."
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u" Pravkar ste se pridružili skupnosti %(site_name)s ."
+                u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
+                u" boste lahko začeli sodelovati v skupnosti."
                 u"\n\n- %(site_name)s."), {
                     'username': new_user.username,
                     'url': current_site.domain,
@@ -78,9 +78,9 @@ class Register(ViewClass):
                 [new_user], fail_silently=True)
 
             self.flash(_(u"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
-                " Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
-                " Takoj, ko jo bomo pregledali, vam bomo poslali še eno sporočilo,"
-                " in lahko boste začeli sodelovati v skupnosti.") % {
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
+                u" Takoj, ko jo bomo pregledali, vam bomo poslali še eno sporočilo,"
+                u" in lahko boste začeli sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
@@ -92,7 +92,7 @@ class Register(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n Pravkar ste se pridružili skupnosti %(site_name)s."
-                " Zdaj lahko zacnete sodelovati v njej!"
+                u" Zdaj lahko začnete sodelovati v njej!"
                 u"\n\n- %(site_name)s."), {
                     'username': new_user.username,
                     'url': current_site.domain,
@@ -102,8 +102,8 @@ class Register(ViewClass):
                 [new_user], fail_silently=True)
 
             self.flash(_(u"Pozdravljeni, <strong>%(username)s</strong>."
-                " Poslali smo vam sporočilo na <strong>%(email)s</strong>."
-                " Zdaj lahko začnete sodelovati v skupnosti.") % {
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>."
+                u" Zdaj lahko začnete sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
@@ -127,16 +127,16 @@ class Login(ViewClass):
             else:
                 self.flash(_(u"Vas račun še ni bil potrjen."), "error")
         else:
-            self.flash(_("Neveljavno uporabniško ime ali geslo"), "error")
+            self.flash(_(u"Neveljavno uporabniško ime ali geslo"), "error")
         return redirect('main.views.index')
 
 
 class PasswordResetDone(ViewClass):
     def GET(self):
         self.flash(_(u"Na vas naslov smo poslali sporočilo z navodili, kako obnoviti vase geslo."
-	    " Morda bo preteklo nekaj časa, da prispe do vašega poštnega nabiralnika. Bodite potrpežljivi."
-	    " Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno posto."),
-            title=_("Obnovitev gesla poteka"))
+	    u" Morda bo preteklo nekaj časa, da prispe do vašega poštnega nabiralnika. Bodite potrpežljivi."
+	    u" Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno posto."),
+            title=_(u"Obnovitev gesla poteka"))
         return redirect('main.views.index')
 
 
@@ -171,19 +171,19 @@ class EditProfile(ViewClass):
             'username': old_user.username
         })
         message = I18nString(_(u"Uporabnik %(username)s je spremenil podatke v svojem profilu. Stari podatki:\n\n"
-             " - Ime: %(old_name)s\n"
-             " - Priimek: %(old_surnames)s\n"
-             " - E-mail: %(old_email)s\n"
-             " - Naslov: %(old_address)s\n"
-             " - Rojstni datum: %(old_birth_date)s\n"
-             " - Opis: %(old_description)s\n\n"
-             "Novi podatki:\n\n"
-             " - Ime: %(name)s\n"
-             " - Priimek: %(surnames)s\n"
-             " - E-mail: %(email)s\n"
-             " - Naslov: %(address)s\n"
-             " - Rojstni datum: %(birth_date)s\n"
-             " - Opis: %(description)s\n\n"), {
+             u" - Ime: %(old_name)s\n"
+             u" - Priimek: %(old_surnames)s\n"
+             u" - E-mail: %(old_email)s\n"
+             u" - Naslov: %(old_address)s\n"
+             u" - Rojstni datum: %(old_birth_date)s\n"
+             u" - Opis: %(old_description)s\n\n"
+             u"Novi podatki:\n\n"
+             u" - Ime: %(name)s\n"
+             u" - Priimek: %(surnames)s\n"
+             u" - E-mail: %(email)s\n"
+             u" - Naslov: %(address)s\n"
+             u" - Rojstni datum: %(birth_date)s\n"
+             u" - Opis: %(description)s\n\n"), {
                 'username': old_user.username,
                 'old_name': old_user.first_name,
                 'old_surnames': old_user.last_name,
@@ -217,7 +217,7 @@ class Preferences(ViewClass):
 class PasswordChangeDone(ViewClass):
     @login_required
     def GET(self):
-        self.flash(_("Geslo je spremenjeno."))
+        self.flash(_(u"Geslo je spremenjeno."))
         return redirect('user-preferences')
 
 
@@ -243,7 +243,7 @@ class Remove(ViewClass):
             'site_name': settings.SITE_NAME,
             'username': user.username
         })
-        message = I18nString(_(u"Uporabnik %(username)s ne zeli vec sodelovati v skupnosti."
+        message = I18nString(_(u"Uporabnik %(username)s ne želi več sodelovati v skupnosti."
             " Razlog:\n\n%(reason)s"), {
                 'username': user.username,
                 'reason': form.cleaned_data["reason"]
@@ -256,9 +256,9 @@ class Remove(ViewClass):
             'site_name': settings.SITE_NAME
             })
         message = I18nString(_(u"Pozdravljeni, %(username)s!\n\nOdstraniti želite svoj profil na strani"
-            " %(site_name)s/. Obžalujemo, da ste se odločili za ta korak."
-            " Prebrali bomo vaše razloge in se trudili izboljšati našo skupnost."
-            "\n\n- %(site_name)s."), {
+            u" %(site_name)s/. Obžalujemo, da ste se odločili za ta korak."
+            u" Prebrali bomo vaše razloge in se trudili izboljšati našo skupnost."
+            u"\n\n- %(site_name)s."), {
                 'username': user.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME
@@ -267,8 +267,8 @@ class Remove(ViewClass):
             fail_silently=True)
 
         self.flash(_(u"Obžalujemo, da ste se odločili za ta korak."
-            " Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."),
-		title=_("Uporabnik odstranjen"))
+            u" Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."),
+		title=_(u"Uporabnik odstranjen"))
 
         return redirect("user-logout")
 
