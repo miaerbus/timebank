@@ -52,24 +52,24 @@ class Register(ViewClass):
 
         if not settings.AUTOACCEPT_REGISTRATION:
             # Send an email to admins and another to the user
-            subject = I18nString(_("[%(site_name)s] Nov uporabnik %(username)s"), {
+            subject = I18nString(_(u"[%(site_name)s] Nov uporabnik %(username)s"), {
                 'site_name': settings.SITE_NAME,
                 'username': new_user.username
             })
-            message = I18nString(_("Pridružil se je nov uporabnik %s."
+            message = I18nString(_(u"Pridružil se je nov uporabnik %s."
                 " Preglej njegove podatke in ga aktiviraj."), new_user.username)
             mail_owners(subject, message)
 
             current_site = Site.objects.get_current()
-            subject = I18nString(_("Pridružili ste se skupnosti %(site_name)s z uporabniškim imenom %(username)s"), {
+            subject = I18nString(_(u"Pridružili ste se skupnosti %(site_name)s z uporabniškim imenom %(username)s"), {
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_("Pozdravljeni, %(username)s!\n "
-		" Pravkar ste se pridruzili skupnosti http://%(url)s/."
-                " Vasa vloga bo kmalu pregledala in ce bo vse v redu,"
-                " boste lahko zaceli sodelovati v skupnosti."
-                u"\n\n- Ekipa %(site_name)s Maribor."), {
+            message = I18nString(_("Pozdravljeni, %(username)s!\n\n"
+		" Pravkar ste se pridružili skupnosti %(site_name)s ."
+                " Vaša vloga bo kmalu pregledala in če bo vse v redu,"
+                " boste lahko začeli sodelovati v skupnosti."
+                u"\n\n- %(site_name)s."), {
                     'username': new_user.username,
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
@@ -77,23 +77,23 @@ class Register(ViewClass):
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
                 [new_user], fail_silently=True)
 
-            self.flash(_("Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
-                " Poslali smo vam sporocilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
-                " Takoj, ko bomo pregledali vašo zahtevo, vam bomo poslali še eno sporocilo,"
-                " in lahko boste zaceli sodelovati v skupnosti.") % {
+            self.flash(_(u"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
+                " Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
+                " Takoj, ko jo bomo pregledali, vam bomo poslali še eno sporočilo,"
+                " in lahko boste začeli sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
-                title=_("Uporabnik uspešno ustvarjen"))
+                title=_(u"Uporabnik uspešno ustvarjen"))
         else:
             current_site = Site.objects.get_current()
-            subject = I18nString(_("Pozdravljeni, %(username)s v skupnosti %(site_name)s"), {
+            subject = I18nString(_(u"Pozdravljeni, %(username)s v skupnosti %(site_name)s"), {
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_("Pozdravljeni, %(username)s!\n Pravkar ste se pridruzili skupnosti http://%(url)s/."
-                " Zdaj lahko zacnete sodelovati v skupnosti!"
-                u"\n\n- Ekipa %(site_name)s Maribor."), {
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n Pravkar ste se pridružili skupnosti %(site_name)s."
+                " Zdaj lahko zacnete sodelovati v njej!"
+                u"\n\n- %(site_name)s."), {
                     'username': new_user.username,
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
@@ -101,13 +101,13 @@ class Register(ViewClass):
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
                 [new_user], fail_silently=True)
 
-            self.flash(_("Pozdravljeni, <strong>%(username)s</strong>."
-                " Poslali smo vam sporocilo na <strong>%(email)s</strong>."
-                " Zdaj lahko zacnete sodelovati v skupnosti.") % {
+            self.flash(_(u"Pozdravljeni, <strong>%(username)s</strong>."
+                " Poslali smo vam sporočilo na <strong>%(email)s</strong>."
+                " Zdaj lahko začnete sodelovati v skupnosti.") % {
                     'username': new_user.username,
                     'email': new_user.email
                 },
-                title=_("Uporabnik uspešno ustvarjen"))
+                title=_(u"Uporabnik uspešno ustvarjen"))
 
         return redirect('main.views.index')
 
@@ -123,10 +123,9 @@ class Login(ViewClass):
         if user is not None:
             if user.is_active:
                 django_login(self.request, user)
-                self.flash(_("Pozdravljeni, %s") % user.username)
+                self.flash(_(u"Pozdravljeni, %s") % user.username)
             else:
-                self.flash(_("Vaš račun še ni aktiven."),
-                    "error")
+                self.flash(_(u"Vas račun še ni bil potrjen."), "error")
         else:
             self.flash(_("Neveljavno uporabniško ime ali geslo"), "error")
         return redirect('main.views.index')
@@ -134,17 +133,17 @@ class Login(ViewClass):
 
 class PasswordResetDone(ViewClass):
     def GET(self):
-        self.flash(_("Na vaš naslov smo poslali sporočilo z navodili kako obnoviti vaše geslo."
+        self.flash(_(u"Na vas naslov smo poslali sporočilo z navodili, kako obnoviti vase geslo."
 	    " Morda bo preteklo nekaj časa, da prispe do vašega poštnega nabiralnika. Bodite potrpežljivi."
-	    " Če se vam bo zdelo, da sporočilo ni prispelo, preverite še vašo mapo z vsiljeno posto."),
-            title=_("Password recovery in process"))
+	    " Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno posto."),
+            title=_("Obnovitev gesla poteka"))
         return redirect('main.views.index')
 
 
 class PasswordResetComplete(ViewClass):
     def GET(self):
-        self.flash(_("Vaše geslo je bilo uspešno spremenjeno. Prijavite se lahko z novim geslom."),
-            title=_("Password changed successfully"))
+        self.flash(_(u"Vaše geslo je bilo uspešno spremenjeno. Prijavite se lahko z novim geslom."),
+            title=_(u"Geslo je bilo uspešno obnovljeno"))
         return redirect('main.views.index')
 
 
@@ -167,24 +166,24 @@ class EditProfile(ViewClass):
 
         # Send an email to admins with old data
         old_user = self.request.user
-        subject = I18nString(_("[%(site_name)s] Uporabnik %(username)s je spremenil podatke"), {
+        subject = I18nString(_(u"[%(site_name)s] Uporabnik %(username)s je spremenil podatke"), {
             'site_name': settings.SITE_NAME,
             'username': old_user.username
         })
-        message = I18nString(_("Uporabnik %(username)s je spremenil podatke v svojem profilu. Stari podatki:\n\n"
-            u" - Ime: %(old_name)s\n"
-            u" - Priimek: %(old_surnames)s\n"
-            u" - E-mail: %(old_email)s\n"
-            u" - Naslov: %(old_address)s\n"
-            u" - Rojstni datum: %(old_birth_date)s\n"
-            u" - Opis: %(old_description)s\n\n"
-            u"Novi podatki:\n\n"
-            u" - Ime: %(name)s\n"
-            u" - Priimek: %(surnames)s\n"
-            u" - E-mail: %(email)s\n"
-            u" - Naslov: %(address)s\n"
-            u" - Rojstni datum: %(birth_date)s\n"
-            u" - Opis: %(description)s\n\n"), {
+        message = I18nString(_(u"Uporabnik %(username)s je spremenil podatke v svojem profilu. Stari podatki:\n\n"
+             " - Ime: %(old_name)s\n"
+             " - Priimek: %(old_surnames)s\n"
+             " - E-mail: %(old_email)s\n"
+             " - Naslov: %(old_address)s\n"
+             " - Rojstni datum: %(old_birth_date)s\n"
+             " - Opis: %(old_description)s\n\n"
+             "Novi podatki:\n\n"
+             " - Ime: %(name)s\n"
+             " - Priimek: %(surnames)s\n"
+             " - E-mail: %(email)s\n"
+             " - Naslov: %(address)s\n"
+             " - Rojstni datum: %(birth_date)s\n"
+             " - Opis: %(description)s\n\n"), {
                 'username': old_user.username,
                 'old_name': old_user.first_name,
                 'old_surnames': old_user.last_name,
@@ -202,7 +201,7 @@ class EditProfile(ViewClass):
         mail_owners(subject, message)
         form.save()
 
-        self.flash(_("Profil je posodobljen: <a href=\"%s\">preveri profil</a>.") %
+        self.flash(_(u"Profil je posodobljen. <a href=\"%s\">Preveri podatke</a>.") %
             reverse("user-view-current"))
 
         return self.context_response('user/profile.html', {'form': form})
@@ -240,11 +239,11 @@ class Remove(ViewClass):
         user.save()
 
         # Send an email to admins and another to the user
-        subject = I18nString(_("[%(site_name)s] Uporabnik %(username)s je onemogočen"), {
+        subject = I18nString(_(u"[%(site_name)s] Uporabnik %(username)s je onemogočen"), {
             'site_name': settings.SITE_NAME,
             'username': user.username
         })
-        message = I18nString(_("Uporabnik %(username)s ne zeli vec sodelovati v skupnosti."
+        message = I18nString(_(u"Uporabnik %(username)s ne zeli vec sodelovati v skupnosti."
             " Razlog:\n\n%(reason)s"), {
                 'username': user.username,
                 'reason': form.cleaned_data["reason"]
@@ -252,14 +251,14 @@ class Remove(ViewClass):
         mail_owners(subject, message)
 
         current_site = Site.objects.get_current()
-        subject = I18nString(_("Odstranili ste uporabnika %(username)s iz skupnosti %(site_name)s"), {
+        subject = I18nString(_(u"Odstranili ste uporabnika %(username)s iz skupnosti %(site_name)s"), {
             'username': user.username,
             'site_name': settings.SITE_NAME
             })
-        message = I18nString(_("Pozdravljeni, %(username)s!\n Odstraniti zelite svoj profil na strani"
-            " http://%(url)s/. Obzalujemo, da ste se odlocili za ta korak."
-            " Prebrali bomo vase razloge in z njimi izboljsati naso skupnost."
-            "\n\n- Ekipa %(site_name)s Maribor."), {
+        message = I18nString(_(u"Pozdravljeni, %(username)s!\n\nOdstraniti želite svoj profil na strani"
+            " %(site_name)s/. Obžalujemo, da ste se odločili za ta korak."
+            " Prebrali bomo vaše razloge in se trudili izboljšati našo skupnost."
+            "\n\n- %(site_name)s."), {
                 'username': user.username,
                 'url': current_site.domain,
                 'site_name': settings.SITE_NAME
@@ -267,7 +266,7 @@ class Remove(ViewClass):
         send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user],
             fail_silently=True)
 
-        self.flash(_("Obžalujemo, da ste se odločili za ta korak."
+        self.flash(_(u"Obžalujemo, da ste se odločili za ta korak."
             " Prebrali bomo vaše razloge in z njimi izboljšati našo skupnost."),
 		title=_("Uporabnik odstranjen"))
 
@@ -399,7 +398,7 @@ class SendMessage(ViewClass):
         new_message.recipient = recipient
         new_message.is_public = True
         new_message.save()
-        self.flash(_("Sporočilo objavljeno na javnem profilu uporabnika %s") %\
+        self.flash(_(u"Sporočilo objavljeno na javnem profilu uporabnika %s") %\
             recipient.username)
         return redirect("user-view", user_id=recipient_id)
 
@@ -410,7 +409,7 @@ class SendEmailToAll(ViewClass):
         # check permissions
         if not self.request.user.is_staff or\
             not self.request.user.is_superuser:
-            self.flash(_("Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
+            self.flash(_(u"Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
             return redirect('main.views.index')
 
         form = SendEmailToAllForm()
@@ -421,7 +420,7 @@ class SendEmailToAll(ViewClass):
         # check permissions
         if not self.request.user.is_staff or\
             not self.request.user.is_superuser:
-            self.flash(_("Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
+            self.flash(_(u"Nimate dovoljenja, da bi poslali sporočilo vsem uporabnikom."))
             return redirect('main.views.index')
 
         form = SendEmailToAllForm(self.request.POST)
@@ -433,7 +432,7 @@ class SendEmailToAll(ViewClass):
             from_email=settings.DEFAULT_FROM_EMAIL, to=[],
             bcc=[user.email for user in Profile.objects.filter(is_active=True)])
         mass_email.send()
-        self.flash(_("Sporočilo poslano vsem uporabnikom."))
+        self.flash(_(u"Sporočilo poslano vsem uporabnikom."))
         return redirect('main.views.index')
 
 

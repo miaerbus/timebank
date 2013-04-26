@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = DEBUG
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
-SITE_NAME = u"Časovna banka"
+SITE_NAME = u"Časovna banka Maribor"
 
 ADMINS = (
     ('admin', 'mia.erbus@gmail.com'),
@@ -73,7 +73,7 @@ SITE_ID = 1
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
-USE_L10N = False
+USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -154,8 +154,6 @@ INSTALLED_APPS = (
     'rosetta',
     'notification',
     'exts',
-#    'storages',
-#    'smuggler',
 )
 
 LOGIN_URL = '/'
@@ -171,7 +169,7 @@ STATIC_ROOT = os.path.join(curdir, 'site_media')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/site_media/'
+STATIC_URL = '/site_media'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
