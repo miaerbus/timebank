@@ -49,7 +49,7 @@ class Profile(User):
     address = models.CharField(_("Naslov"), max_length=100, default=_("address"))
 
     # credits in minutes
-    balance = models.IntegerField(default=0)
+    balance = models.IntegerField(default=600)
 
     def balance_hours(self):
         if self.balance % 60 == 0:
