@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime
 from django import forms
 from django.conf import settings
