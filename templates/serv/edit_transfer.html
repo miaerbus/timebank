@@ -20,7 +20,7 @@
     {% endif %}
     <h2 style="margin-top: 30px">
     {% if not transfer.is_direct %}
-        {% trans "Uredi prenost" %}
+        {% trans "Uredi prenos" %}
     {% else %}
         {% trans "Uredi neposreden prenos" %}
     {% endif %}</h2>
@@ -29,7 +29,7 @@
         <fieldset>
             {% include "main/form_snippet.html" %}
         </fieldset>
-        <input type="submit" value="{% trans 'Posodobi prenos' %}"/>
+        <input type="submit" value="{% trans "Posodobi prenos" %}"/>
     </form>
 </div>
 {% endblock %}

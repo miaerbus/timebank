@@ -1,18 +1,18 @@
 {% load i18n %}{% url serv-transfer-view transfer.id as transfer_url %}{% if transfer.is_direct %}{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_recipient }},
 
-{{ transfer_creator }} je z vami ustvaril prenos. S prenosom lahko upravljate na {{ site_url }}{{ transfer_url }}.
+{{ transfer_creator }} je z vami ustvaril prenos.
 
-- {{ site_url }} Maribor{% endblocktrans %}
+- {{ site_name }}{% endblocktrans %}
 {% else %}{% if transfer.service.is_offer %}{% blocktrans with transfer.credits_payee.username as recipient and transfer.credits_debtor.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} povprasuje po storitvi, ki jo ponujate. S prenosom lahkoupravljate na {{ site_url }}{{ transfer_url }}.
+{{ sender }} povprašuje po storitvi, ki jo ponujate.
 
-The team of {{ site_url }}{% endblocktrans %}
+- {{ site_name }}{% endblocktrans %}
 {% else %}
 {% blocktrans with transfer.credits_debtor.username as recipient and transfer.credits_payee.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} je ustvaril prenos storitve, po kateri ste povprasevali. S prenosom lahko upravljate na strani {{ site_url }}{{ transfer_url }}.
+{{ sender }} je ustvaril prenos storitve, po kateri ste povpraševali.
 
-- {{ site_url }} Maribor{% endblocktrans %}
+- {{ site_url }}{% endblocktrans %}
 {% endif %}
 {% endif %}

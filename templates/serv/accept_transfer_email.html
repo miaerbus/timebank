@@ -3,13 +3,14 @@
 {% if not transfer.is_direct %}
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Pozdravljeni {{ transfer_creator }},
 
-Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika %(service_creator)s, je bil sprejet. Podrobnosti prenosa lahko vidite na {{ site_url }}{{ transfer_url }}.
+Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika %(service_creator)s, je bil sprejet.
 
-- {{ site_url }}{% endblocktrans %}
+- {{ site_name }}{% endblocktrans %}
 {% else %}
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_creator }},
 
-Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil sprejet. Podrobnosti prenosa lahko vidite na %(site_url)s%(transfer_url)s.
+Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil sprejet.
 
-- {{ site_url }}{% endblocktrans %}
+- {{ site_name }}
+{% endblocktrans %}
 {% endif %}

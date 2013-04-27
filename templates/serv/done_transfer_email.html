@@ -2,6 +2,8 @@
 {% url serv-transfer-view transfer.id as transfer_url %}
 {% blocktrans with transfer.credits_payee.username as payee and transfer.credits_debtor.username as debtor %}Pozdravljeni {{ payee }},
 
-Prenos storitve, ki jo je izvedel {{ debtor }}, je bil potrjen. Podrobnosti prenosa lahko vidite na {{ site_url }}{{ transfer_url }}.
+Prenos storitve, ki jo je izvedel {{ debtor }}, je bil potrjen.
 
-- {{ site_url }} Maribor{% endblocktrans %}
+- {{ site_name }}
+
+{% endblocktrans %}
