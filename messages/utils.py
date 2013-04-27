@@ -20,7 +20,7 @@ def format_quote(text):
     return '\n'.join(lines)
 
 def new_message_email(sender, instance, signal,
-        subject_prefix=_(u'New Message: %(subject)s'),
+        subject_prefix=_(u'Novo sporočilo: %(subject)s'),
         template_name="messages/new_message.html",
         default_protocol=None,
         *args, **kwargs):
@@ -60,10 +60,10 @@ def new_transfer_email(sender, instance, signal, *args, **kwargs):
 
     recipient = instance.recipient()
     if instance.service:
-        subject=I18nString(_('New transfer request from %s'),
+        subject=I18nString(_('Nov zahtevek za prenos uporabnika %s'),
             instance.creator().username)
     else:
-        subject=I18nString(_('New direct transfer from %s'),
+        subject=I18nString(_('Nov prenos uporabnika %s'),
             instance.creator().username)
     message = I18nString("serv/new_transfer_email.html", {
             'site_url': '%s://%s' % (default_protocol, current_domain),
