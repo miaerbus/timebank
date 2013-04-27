@@ -20,8 +20,8 @@ V vašem profilu na strani {{ site_name }}, ki želijo nekaj pozornosti:
 {% for msg in unread_comments %}
 {% url user-view-current as view_comments_url %}{% if forloop.first %}{% blocktrans %}Preberite vse komentarje v vašem profilu: {{ view_comments_url }}{% endblocktrans %}{% endif %}
 {% blocktrans with msg.sender.username as from and msg.sent_at|timesince as sent_ago and msg.body|truncate_chars as body %}
-	Komentar uporabnika {{ from }}, poslan {{ sent_ago }} nazaj:
-        {{ body }}
+Komentar uporabnika {{ from }}, poslan {{ sent_ago }} nazaj:
+{{ body }}
 
 {% endblocktrans %}{% empty %}
     {% trans "V vašem profilu ni neprebranih komentarjev" %}{% endfor %}
@@ -55,4 +55,4 @@ V vašem profilu na strani {{ site_name }}, ki želijo nekaj pozornosti:
 
 Izmenjajte svoj čas in veščine na {{ site_name }}, {{ site_url }}.
 
-Ne želite prejemati obvestil preko e-pošte? Nastavite preference v vašem profilu na {{ site_url }}{{ prefs_url }}{% endblocktrans %}
+Ne želite prejemati obvestil preko e-pošte? Nastavite v vašem profilu.{% endblocktrans %}

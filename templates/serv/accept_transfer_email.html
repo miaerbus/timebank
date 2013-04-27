@@ -5,12 +5,12 @@
 
 Prenos, ki ste ga zahtevali v zvezi s storitvijo od uporabnika %(service_creator)s, je bil sprejet.
 
-- {{ site_name }}{% endblocktrans %}
+- Časovna banka Maribor{% endblocktrans %}
 {% else %}
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_creator }},
 
 Neposreden prenos, ki ste ga zahtevali za %(transfer_recipient)s je bil sprejet.
 
-- {{ site_name }}
+- Časovna banka Maribor
 {% endblocktrans %}
 {% endif %}
