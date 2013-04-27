@@ -18,7 +18,9 @@ class ComposeForm(forms.Form):
     """
     A simple default form for private messages.
     """
-    recipient = CommaSeparatedUserField(label=_(u"Prejemnik"))
+    recipient = CommaSeparatedUserField(label=_(u"Prejemnik"),
+	help_text=_(u'Če želite poslati večim uporabnikom, jih ločite z vejico'))
+    subject = forms.CharField(label=_(u"Zadeva")
     body = forms.CharField(label=_(u"Sporočilo"),
         widget=forms.Textarea(attrs={'rows': '12', 'cols':'55'}))
     
@@ -31,7 +33,7 @@ class ComposeForm(forms.Form):
                 
     def save(self, sender, parent_msg=None):
         recipients = self.cleaned_data['recipient']
-        subject = ""
+        subject = self.cleaned_data['subject']
         body = self.cleaned_data['body']
         message_list = []
         for r in recipients:
