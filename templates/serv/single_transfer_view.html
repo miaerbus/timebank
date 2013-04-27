@@ -31,7 +31,7 @@
             {% endif %}{% if transfer.status == "r" %}
 				{% blocktrans with transfer.request_date|timesince as time %}<strong>preklicano</strong>, ustvarjeno {{ time }} nazaj{% endblocktrans %}
             {% endif %}{% if transfer.status == "d" %}
-				{% blocktrans with transfer.request_date|timesince as time %}<strong>potrjeno</strong>, {{ time }} ago{% endblocktrans %}
+				{% blocktrans with transfer.request_date|timesince as time %}<strong>potrjeno</strong>, {{ time }} nazaj{% endblocktrans %}
             {% endif %}
             {% transfer_rating transfer %}
         </div>

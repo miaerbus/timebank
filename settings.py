@@ -213,7 +213,7 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-    ('en', _('English')),
+#    ('en', _('English')),
     ('sl', _('Slovenian')),
 )
 
