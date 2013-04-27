@@ -3,6 +3,4 @@
 Zadeva: {{ message }}
 Sporočilo: {{ message_body }}
 
-
-
 {% endblocktrans %}
