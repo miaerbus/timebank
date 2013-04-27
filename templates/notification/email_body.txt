@@ -1,1 +1,3 @@
 {{ message }}
+
+- {{ %(site_name)s }}

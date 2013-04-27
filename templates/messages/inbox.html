@@ -13,7 +13,7 @@
     {% cycle 'row1' 'row2' %} {% if forloop.first %}prvo{% endif %}{% if forloop.last %}zadnje{% endif %}">
         <td class="sender"><a href="{% url user-view user.id %}">{{ message.sender }}</a></td>
         <td class="body">
-            <a href="{{ message.get_absolute_url }}">{{ message.body|truncate_chars:60 }}</a>
+            <a href="{{ message.get_absolute_url }}">{{ message.subject }} - {{ message.body|truncate_chars:20 }}</a>
         </td>
         <td class="date">{{ message.sent_at|date:"H:i, j.n.Y" }}</td>
         <td class="actions"><a href="{% url messages.views.delete message.id %}">{% trans "izbriši" %}</a></td>

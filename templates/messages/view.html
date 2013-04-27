@@ -9,6 +9,8 @@
     <dd>{{ message.sent_at|date:"H:i, j.n.Y" }}</dd>
     <dt>{% trans "Prejemnik" %}</dt>
     <dd>{{ message.recipient }}</dd>
+    <dt>{% trans "Zadeva" %}</dt>
+    <dd>{{ message.subject }}</dd>
 </dl>
 {{ message.body|linebreaksbr }}<br /><br />
 
