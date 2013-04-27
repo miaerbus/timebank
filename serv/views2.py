@@ -136,8 +136,7 @@ class EditService(ViewClass):
     def GET(self, sid):
         instance = get_object_or_404(Service, pk=sid)
         if not instance.creator == self.request.user:
-            self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
-                       "error")
+            self.flash(_(u"Ni mogoče spreminjati svoje storitve"), "error")
             return redirect('serv-myservices')
         form = ServiceForm(instance=instance)
         context = dict(form=form, instance=instance, current_tab="services",
@@ -148,8 +147,7 @@ class EditService(ViewClass):
     def POST(self, sid):
         instance = get_object_or_404(Service, pk=sid)
         if not instance.creator == self.request.user:
-            self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
-                       "error")
+            self.flash(_(u"Ni mogoče spreminjati svoje storitve"), "error")
             return redirect('serv-myservices')
         form = ServiceForm(self.request.POST, instance=instance)
 
@@ -162,8 +160,8 @@ class EditService(ViewClass):
             if Transfer.objects.filter(service=instance,
                 status__in=["q", "a"]).count() > 0 and\
                 service.is_offer != current_is_offer:
-                self.flash(_(u"Ni mogoce spreminjati tipa storitve med ponudbo"
-                    " in povprasevanjem medtem ko se izvajajo prenosi."), "error")
+                self.flash(_(u"Ni mogoče spreminjati tipa storitve med ponudbo"
+                    u" in povpraševanjem medtem ko se izvaja prenos."), "error")
                 return redirect('serv-myservices')
             service.save()
             self.flash(_(u"Storitev uspešno spremenjena"))
@@ -219,7 +217,7 @@ class NewTransfer(ViewClass):
         if user_id:
             user = get_object_or_404(Profile, pk=user_id)
             if self.request.user.is_authenticated and self.request.user == user:
-                self.flash(_(u"Ne morete povprasevati po svoji storitvi"), "error")
+                self.flash(_(u"Ne morete povpraševati po svoji storitvi"), "error")
                 return redirect("serv-transfer-new")
             else:
                 form_data = dict(username=user.username)
@@ -234,7 +232,7 @@ class NewTransfer(ViewClass):
         # check user is not doing an "auto-transfer"
         if self.request.user.is_authenticated and\
             self.request.POST["username"] == self.request.user.username:
-            self.flash(_(u"Kredita ni mogoce prenesti nase"), "error")
+            self.flash(_(u"Kredita ni mogoče prenesti nase"), "error")
             return redirect("serv-transfer-new")
 
         form = NewTransferForm(data=self.request.POST)
@@ -259,19 +257,16 @@ class NewTransfer(ViewClass):
 
         # Check user would not surpass max balance
         if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
-            self.flash(_(u"Prenos bi presegel omejitev kredita prejemanika"
-		" kredita"), 'error')
+            self.flash(_(u"Prenos bi presegel omejitev kredita"), 'error')
             return self.context_response('serv/new_transfer.html', context)
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
-            self.flash(_(u"The transfer would exceed the minimum credit limit"
-                " of the person giving the credits"),
-                'error')
+            self.flash(_(u"Prenos bi presegel omejitev kredila"), 'error')
             return self.context_response('serv/new_transfer.html', context)
 
         transfer.save()
-        self.flash(_(u"Transfer created successfully"))
+        self.flash(_(u"Prenos je uspešno ustvarjen"))
         return redirect('serv-transfers-mine')
 
 class AddTransfer(ViewClass):
@@ -296,7 +291,7 @@ class AddTransfer(ViewClass):
         # Check user would not surpass min balance
         if self.request.user.balance < settings.MIN_CREDIT and\
             service.is_offer:
-            self.flash(_(u"You don't have enough credit"), 'error')
+            self.flash(_(u"Nimate dovolj kredita"), 'error')
             return redirect('serv-transfers-mine')
 
         if service.creator == self.request.user:
@@ -338,7 +333,7 @@ class AddTransfer(ViewClass):
                 return redirect('serv-transfers-mine')
 
             transfer.save()
-            self.flash(_(u"Transfer created successfully"))
+            self.flash(_(u"Prenos je uspešno ustvarjen"))
             return redirect('serv-transfers-mine')
 
         context = dict(form=form, instance=None, current_tab="transfers",

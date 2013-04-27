@@ -467,7 +467,7 @@ msgstr "Novi neposreden prenos od %s"
 #: messages/utils.py:81
 #, python-format
 msgid "Transfer from %s edited"
-msgstr "Prenos od %s urejen"
+msgstr "Prenos uporabnika %s je posodobljen"
 
 #: messages/utils.py:87
 #, python-format

@@ -2,6 +2,7 @@
 {% url serv-transfer-view transfer.id as transfer_url %}
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Pozdravljeni {{ service_creator }},
 
-Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za eno vaših storitev, je posodobljen. Podrobnosti posodobitve prenosa lahko vidite na {{ site_url }}{{ transfer_url }}.
+Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za eno vaših storitev, je posodobljen.
 
-- {{ site_url }} Maribor{% endblocktrans %}
+- {{ site_name }}
+{% endblocktrans %}
