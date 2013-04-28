@@ -103,7 +103,7 @@ class Compose(ViewClass):
         form = form_class(self.request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
             form.save(sender=self.request.user)
-            self.flash(_(u"Sporočilo je bilo poslano."))
+            self.flash(_(u"Sporočilo poslano"))
             if success_url is None:
                 success_url = reverse('messages_inbox')
             if self.request.GET.has_key('next'):
@@ -161,7 +161,7 @@ class Reply(ViewClass):
         form = form_class(self.request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
             form.save(sender=self.request.user, parent_msg=parent)
-            self.flash(_(u"Sporočilo je bilo poslano."))
+            self.flash(_(u"Sporočilo poslano"))
             if success_url is None:
                 success_url = reverse('messages_inbox')
             return HttpResponseRedirect(success_url)
@@ -202,7 +202,7 @@ class Delete(ViewClass):
             deleted = True
         if deleted:
             message.save()
-            self.flash(_(u"Sporočilo je bilo izbrisano."))
+            self.flash(_(u"Sporočilo izbrisano"))
             if notification:
                 notification.send([user], "messages_deleted", {'message': message,})
             return HttpResponseRedirect(success_url)

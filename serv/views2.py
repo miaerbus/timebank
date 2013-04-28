@@ -550,7 +550,7 @@ class RateTransfer(ViewClass):
 
         transfer.rating.add(score=rating, user=self.request.user,
             ip_address=self.request.META['REMOTE_ADDR'])
-        self.flash(_(u"Transfer rating updated successfully"))
+        self.flash(_(u"Ocena prenosa posodobljena"))
 
         return redirect('serv-transfer-view', transfer_id)
 

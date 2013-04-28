@@ -52,20 +52,20 @@ OFFER_CHOICES = (
 class Service(models.Model):
     creator = models.ForeignKey(Profile, related_name="services",
         verbose_name=_("Creator"))
-    is_offer = models.BooleanField(_("Service type"), choices=OFFER_CHOICES)
+    is_offer = models.BooleanField(_(u"Tip storitve"), choices=OFFER_CHOICES)
     pub_date = models.DateTimeField(_(u"Publish date"),
         auto_now=True, auto_now_add=True)
     is_active = models.BooleanField(default=True)
     description = models.TextField(_(u"Opis"), max_length=400)
-    category = models.ForeignKey(Category, verbose_name=_('Category'))
+    category = models.ForeignKey(Category, verbose_name=_(u'Kategorija'))
     area = models.ForeignKey(Area, null=True, blank=True,
-        verbose_name=_("Area"))
+        verbose_name=_(u"Območje"))
 
     def __unicode__(self):
         if self.is_offer:
-            msj = _("offered")
+            msj = _(u"ponujam")
         else:
-            msj = _("demanded")
+            msj = _("povprašujem")
         msj = unicode(msj)
         return "%d: '%s' %s from %s" % (self.id, self.short_name(), msj, self.creator)
 
