@@ -1,1 +1,1 @@
-{% load i18n %}{% blocktrans %}[Časovna banka Maribor] {{ notice }}{% endblocktrans %}
+{% load i18n %}{% blocktrans %}{{ notice }}{% endblocktrans %}
