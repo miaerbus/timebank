@@ -83,7 +83,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/site_media/'
+#MEDIA_URL = '/site_media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -93,8 +93,8 @@ MEDIA_URL = '/site_media/'
 AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
-S3_URL = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
-ADMIN_MEDIA_PREFIX = S3_URL
+ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
