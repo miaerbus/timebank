@@ -100,6 +100,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = MEDIA_URL
+STATIC_DOC_ROOT = MEDIA_URL
+STATIC_ROOT = MEDIA_URL
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
@@ -165,9 +167,8 @@ LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # Path for static docs (css, images, etc)
-STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
-
-STATIC_ROOT = os.path.join(curdir, 'site_media')
+#STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
+#STATIC_ROOT = os.path.join(curdir, 'site_media')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
