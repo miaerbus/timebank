@@ -40,7 +40,7 @@ urlpatterns = patterns('',
     url(r'^remove/$', 'user.views.remove', name="user-remove"),
     url(r'^view/$', 'user.views.view_profile', name="user-view-current"),
     url(r'^view/(?P<user_id>\d+)/$', 'user.views.view_profile',
-        name="user-view"),
+        name="user-view"), # kje najde user_id?
     url(r'^view/services/(?P<user_id>\d+)/$', 'user.views.list_user_services',
         name="user-view-services"),
     url(r'^view/(?P<recipient_id>\d+)/sendmessage$', 'user.views.send_message',

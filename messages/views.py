@@ -231,7 +231,7 @@ class Undelete(ViewClass):
             undeleted = True
         if undeleted:
             message.save()
-            self.flash(_(u"Sporočilo je bilo obnovljeno."))
+            self.flash(_(u"Sporočilo obnovljeno"))
             if notification:
                 notification.send([user], "messages_recovered", {'message': message,})
             return HttpResponseRedirect(success_url)
