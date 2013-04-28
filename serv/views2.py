@@ -124,7 +124,7 @@ class AddService(ViewClass):
             service = form.save(commit=False)
             service.creator = self.request.user
             service.save()
-            self.flash(_(u"Storitev je bila uspešno dodana"))
+            self.flash(_(u"Storitev dodana"))
             return redirect('serv-myservices')
         context = dict(form=form, instance=None, current_tab="services",
             subtab="add")
@@ -164,7 +164,7 @@ class EditService(ViewClass):
                     u" in povpraševanjem medtem ko se izvaja prenos."), "error")
                 return redirect('serv-myservices')
             service.save()
-            self.flash(_(u"Storitev uspešno spremenjena"))
+            self.flash(_(u"Storitev spremenjena"))
             return redirect('serv-myservices')
         context = dict(form=form, instance=instance, current_tab="services",
             subtab="my-services")
@@ -177,7 +177,7 @@ class DeleteService(ViewClass):
         instance = get_object_or_404(Service, pk=sid)
         if instance.creator == self.request.user:
             instance.delete()
-            self.flash(_(u"Storitev uspešno odstranjena"))
+            self.flash(_(u"Storitev odstranjena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
                        "error")
@@ -191,7 +191,7 @@ class ActiveService(ViewClass):
         if instance.creator == self.request.user:
             instance.is_active = True
             instance.save()
-            self.flash(_(u"Storitev uspešno omogočena"))
+            self.flash(_(u"Storitev omogočena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
                        "error")
@@ -205,7 +205,7 @@ class DeactiveService(ViewClass):
         if instance.creator == self.request.user:
             instance.is_active = False
             instance.save()
-            self.flash(_(u"Storitev uspešno onemogočena"))
+            self.flash(_(u"Storitev onemogočena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"), "error")
         return redirect('serv-myservices')
@@ -333,7 +333,7 @@ class AddTransfer(ViewClass):
                 return redirect('serv-transfers-mine')
 
             transfer.save()
-            self.flash(_(u"Prenos je uspešno ustvarjen"))
+            self.flash(_(u"Prenos ustvarjen"))
             return redirect('serv-transfers-mine')
 
         context = dict(form=form, instance=None, current_tab="transfers",
@@ -481,7 +481,7 @@ class ConfirmTransfer(ViewClass):
         transfer.credits_payee.save()
         transfer.save()
 
-        self.flash(_("Prenos je zaključen"))
+        self.flash(_(u"Prenos je zaključen"))
         return redirect('serv-transfers-mine')
 
 
