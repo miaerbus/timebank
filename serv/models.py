@@ -45,8 +45,8 @@ class Category(models.Model):
 
 
 OFFER_CHOICES = (
-    (True, _('offer')),
-    (False, _('demand'))
+    (True, _(u'ponujam')),
+    (False, _(u'povprašujem'))
 )
 
 class Service(models.Model):
