@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-10 12:47+0200\n"
-"PO-Revision-Date: 2013-04-20 16:21+0100\n"
+"POT-Creation-Date: 2013-04-28 19:56+0200\n"
+"PO-Revision-Date: 2013-04-28 19:57+0100\n"
 "Last-Translator: Mia Erbus <mia.erbus@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: admin.py:19
-#: forms.py:20
 #: models.py:75
 msgid "Recipient"
 msgstr "Prejemnik"
@@ -35,7 +34,6 @@ msgid "All users"
 msgstr "Alle Benutzer"
 
 #: admin.py:44
-#: forms.py:21
 #: models.py:73
 #: models.py:120
 msgid "Message"
@@ -50,51 +48,67 @@ msgstr "Datum/Zeit"
 msgid "The following usernames are incorrect: %(users)s"
 msgstr "Die folgenden Benutzernamen sind nicht korrekt: %(users)s"
 
-#: management.py:9
+#: forms.py:21
+msgid "Prejemnik"
+msgstr ""
+
+#: forms.py:22
+msgid "Če želite sporočilo poslati večim uporabnikom, uporabnike ločite z vejico"
+msgstr ""
+
+#: forms.py:23
+msgid "Zadeva"
+msgstr ""
+
+#: forms.py:24
+msgid "Sporočilo"
+msgstr ""
+
+#: management.py:10
 msgid "Message Received"
-msgstr "Nachricht erhalten"
+msgstr "Prejeto sporočilo"
 
-#: management.py:9
+#: management.py:10
 msgid "you have received a message"
-msgstr "Du hast eine Nachricht erhalten"
-
-#: management.py:10
-msgid "Message Sent"
-msgstr "Nachricht gesendet"
-
-#: management.py:10
-msgid "you have sent a message"
-msgstr "Du hast eine Nachricht gesendet"
+msgstr "prejeli ste sporočilo"
 
 #: management.py:11
+msgid "Message Sent"
+msgstr "Sporočilo poslano"
+
+#: management.py:11
+msgid "you have sent a message"
+msgstr "poslali ste sporočilo"
+
+#: management.py:12
 msgid "Message Replied"
 msgstr "Nachricht beantwortet"
 
-#: management.py:11
+#: management.py:12
 msgid "you have replied to a message"
 msgstr "Du hast eine Nachricht beantwortet"
 
-#: management.py:12
+#: management.py:13
 msgid "Reply Received"
 msgstr "Antwort erhalten"
 
-#: management.py:12
+#: management.py:13
 msgid "you have received a reply to a message"
 msgstr "Du hast eine Antwort auf eine Nachricht erhalten"
 
-#: management.py:13
+#: management.py:14
 msgid "Message Deleted"
 msgstr "Nachricht gelöscht"
 
-#: management.py:13
+#: management.py:14
 msgid "you have deleted a message"
 msgstr "Du hast eine Nachricht gelöscht"
 
-#: management.py:14
+#: management.py:15
 msgid "Message Recovered"
 msgstr "Nachricht wiederhergestellt"
 
-#: management.py:14
+#: management.py:15
 msgid "you have undeleted a message"
 msgstr "Du hast eine Nachricht wiederhergestellt"
 
@@ -146,77 +160,92 @@ msgstr "Prenos"
 msgid "Messages"
 msgstr "Nachrichten"
 
-#: utils.py:22
-#, python-format
-msgid "New Message: %(subject)s"
+#: utils.py:23
+#, fuzzy, python-format
+msgid "Novo sporočilo: %(subject)s"
 msgstr "Neue Nachricht: %(subject)s"
 
-#: utils.py:62
+#: utils.py:63
 #, python-format
-msgid "New transfer request from %s"
-msgstr "Nov zahtevek za prenos od uporabnika %s"
+msgid "Nov zahtevek za prenos uporabnika %s"
+msgstr ""
 
-#: utils.py:65
+#: utils.py:66
 #, python-format
-msgid "New direct transfer from %s"
-msgstr "Nov neposreden zahtevek za prenos od uporabnika %s"
+msgid "Nov prenos uporabnika %s"
+msgstr ""
 
-#: utils.py:81
+#: utils.py:82
 #, python-format
 msgid "Transfer from %s edited"
 msgstr "Prenos uporabnika %s, spremenjen"
 
-#: utils.py:87
+#: utils.py:88
 #, python-format
 msgid "Transfer of the service from %s accepted"
 msgstr "Prenos storitve uporabnika %s, sprejet"
 
-#: utils.py:90
+#: utils.py:91
 #, python-format
-msgid "Direct transfer from %s accepted"
+msgid "Uporabnik %s je prenos sprejel/a"
 msgstr ""
 
-#: utils.py:95
+#: utils.py:96
 #, python-format
 msgid "Transfer to %(user1)s from a service of %(user2)s cancelled"
 msgstr ""
 
-#: utils.py:101
+#: utils.py:102
 #, python-format
-msgid "Direct transfer from %s cancelled"
+msgid "Prenos z uporabnikom %s je bil preklican"
 msgstr ""
 
-#: utils.py:106
+#: utils.py:107
 #, python-format
-msgid "Transfer of the service you did to %s confirmed"
+msgid "Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen"
 msgstr ""
 
-#: views.py:105
-#: views.py:163
-msgid "Message successfully sent."
-msgstr "Nachricht erfolgreich gesendet."
+#: views.py:106
+#: views.py:164
+msgid "Sporočilo poslano"
+msgstr ""
 
-#: views.py:133
-#, python-format
+#: views.py:134
+#, fuzzy, python-format
 msgid ""
-"%(sender)s wrote:\n"
+"%(sender)s je napisal/a:\n"
 "%(body)s"
 msgstr ""
 "%(sender)s schrieb:\n"
 "%(body)s"
 
-#: views.py:137
+#: views.py:138
 #, python-format
 msgid "Re: %(subject)s"
 msgstr "Re: %(subject)s"
 
-#: views.py:204
-msgid "Message successfully deleted."
-msgstr "Nachricht erfolgreich gelöscht."
+#: views.py:205
+msgid "Sporočilo izbrisano"
+msgstr ""
 
-#: views.py:233
-msgid "Message successfully recovered."
-msgstr "Nachricht erfolgreich wiederhergestellt."
+#: views.py:234
+msgid "Sporočilo obnovljeno"
+msgstr ""
+
+#~ msgid "New transfer request from %s"
+#~ msgstr "Nov zahtevek za prenos od uporabnika %s"
+
+#~ msgid "New direct transfer from %s"
+#~ msgstr "Nov neposreden zahtevek za prenos od uporabnika %s"
+
+#~ msgid "Message successfully sent."
+#~ msgstr "Nachricht erfolgreich gesendet."
+
+#~ msgid "Message successfully deleted."
+#~ msgstr "Nachricht erfolgreich gelöscht."
+
+#~ msgid "Message successfully recovered."
+#~ msgstr "Nachricht erfolgreich wiederhergestellt."
 
 #~ msgid "Body"
 #~ msgstr "Inhalt"
