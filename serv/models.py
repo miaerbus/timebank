@@ -66,7 +66,7 @@ class Service(models.Model):
         if self.is_offer:
             msj = _(u"ponujam")
         else:
-            msj = _("povprašujem")
+            msj = _(u"povprašujem")
         msj = unicode(msj)
         return "%d: '%s' %s from %s" % (self.id, self.short_name(), msj, self.creator)
 
