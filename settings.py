@@ -95,6 +95,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('PPQs+jlQ0Z0rUJ3DzzNRn9kA6TIS6d8q30Avqkjd
 AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
 ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = MEDIA_URL
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
@@ -166,7 +167,7 @@ STATIC_ROOT = os.path.join(curdir, 'site_media')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/site_media'
+#STATIC_URL = '/site_media'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
