@@ -1,17 +1,17 @@
 {% load i18n %}{% url serv-transfer-view transfer.id as transfer_url %}{% if transfer.is_direct %}{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_recipient }},
 
-{{ transfer_creator }} je z vami ustvaril prenos.
+Uporabnik {{ transfer_creator }} želi izvesti prenos storitve.
 
 - Časovna banka Maribor{% endblocktrans %}
 {% else %}{% if transfer.service.is_offer %}{% blocktrans with transfer.credits_payee.username as recipient and transfer.credits_debtor.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} povprašuje po storitvi, ki jo ponujate.
+Uporabnik {{ sender }} povprašuje po storitvi, ki jo ponujate.
 
 - Časovna banka Maribor{% endblocktrans %}
 {% else %}
 {% blocktrans with transfer.credits_debtor.username as recipient and transfer.credits_payee.username as sender %}Pozdravljeni {{ recipient }},
 
-{{ sender }} je ustvaril prenos storitve, po kateri ste povpraševali.
+Uporabnik {{ sender }} je ustvaril prenos storitve, po kateri ste povpraševali.
 
 - Časovna banka Maribor{% endblocktrans %}
 {% endif %}

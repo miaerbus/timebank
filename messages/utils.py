@@ -88,7 +88,7 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
             subject=I18nString(_('Transfer of the service from %s accepted'),
                 instance.service.creator.username)
         else:
-            subject=I18nString(_('Direct transfer from %s accepted'),
+            subject=I18nString(_('Uporabnik %s je prenos sprejel/a'),
                 instance.creator().username)
         template = "serv/accept_transfer_email.html"
     elif instance.status == 'r':
@@ -99,12 +99,12 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
                         'user2': instance.service.creator.username
                     })
         else:
-            subject=I18nString(_('Direct transfer from %s cancelled'),
+            subject=I18nString(_('Prenos z uporabnikom %s je bil preklican'),
                 instance.creator().username)
         template = "serv/cancel_transfer_email.html"
         recipients = [instance.credits_debtor, instance.credits_payee]
     elif instance.status == 'd':
-        subject=I18nString(_('Transfer of the service you did to %s confirmed'),
+        subject=I18nString(_('Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen'),
                 instance.credits_debtor.email)
         template = "serv/done_transfer_email.html"
         recipients = [instance.credits_payee,]

@@ -442,7 +442,7 @@ class AcceptTransfer(ViewClass):
             return redirect('serv-transfers-mine')
         transfer.status = "a"
         transfer.save()
-        self.flash(_("Transfer accepted"))
+        self.flash(_("Prenos sprejet"))
         return redirect('serv-transfers-mine')
 
 
@@ -481,7 +481,7 @@ class ConfirmTransfer(ViewClass):
         transfer.credits_payee.save()
         transfer.save()
 
-        self.flash(_("Transfer done"))
+        self.flash(_("Prenos je zaključen"))
         return redirect('serv-transfers-mine')
 
 
