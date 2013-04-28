@@ -90,15 +90,17 @@ MEDIA_URL = '/site_media/'
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
 
-#AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('PPQs+jlQ0Z0rUJ3DzzNRn9kA6TIS6d8q30Avqkjd')
-#AWS_STORAGE_BUCKET_NAME = 'bucket'
-
+AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
+AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
 #STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 #ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = S3_URL
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
