@@ -7,7 +7,7 @@ if "notification" in settings.INSTALLED_APPS:
     from notification import models as notification
 
     def create_notice_types(app, created_models, verbosity, **kwargs):
-        notification.create_notice_type("messages_received", _(u"Prejeto sporočilo"), _("you have received a message"), default=2)
+        notification.create_notice_type("messages_received", _("Message Received"), _("you have received a message"), default=2)
         notification.create_notice_type("messages_sent", _("Message Sent"), _("you have sent a message"), default=1)
         notification.create_notice_type("messages_replied", _("Message Replied"), _("you have replied to a message"), default=1)
         notification.create_notice_type("messages_reply_received", _("Reply Received"), _("you have received a reply to a message"), default=2)
