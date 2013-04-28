@@ -93,9 +93,13 @@ MEDIA_URL = '/site_media/'
 AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
 ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
-#MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
-#STATIC_URL = MEDIA_URL
+MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = MEDIA_URL
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
