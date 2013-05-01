@@ -99,7 +99,7 @@ msgstr ""
 
 #: main/forms.py:32 main/forms.py:42
 msgid "Sporocilo"
-msgstr ""
+msgstr "Sporočilo"
 
 #: main/views.py:60
 #, python-format

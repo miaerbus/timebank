@@ -101,8 +101,8 @@ class EditProfileForm(forms.ModelForm):
 class RemoveForm(forms.Form):
     reason = FormCharField(label=_("Razlog"), required=True,
         min_length=10, max_length=300, widget=forms.Textarea(),
-        help_text=_(u'Kaj smo naredili narobe? Prosimo, sporocite nam, zakaj'
-            ' ne zelite vec sodelovati v skupnosti.'))
+        help_text=_(u'Kaj smo naredili narobe? Prosimo, sporočite nam, zakaj'
+            u' ne zelite več sodelovati v skupnosti.'))
 
 class PublicMessageForm(forms.ModelForm):
     class Meta:

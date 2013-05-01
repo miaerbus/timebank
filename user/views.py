@@ -133,9 +133,9 @@ class Login(ViewClass):
 
 class PasswordResetDone(ViewClass):
     def GET(self):
-        self.flash(_(u"Na vas naslov smo poslali sporočilo z navodili, kako obnoviti vaše geslo."
-	    u" Morda bo preteklo nekaj časa, da prispe do vašega nabiralnika. Bodite potrpežljivi."
-	    u" Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno posto."),
+        self.flash(_(u"Na vaš naslov smo poslali sporočilo z navodili, kako obnoviti geslo."
+	    u" Morda bo trajalo nekaj časa, da prispe do vašega nabiralnika. Bodite potrpežljivi."
+	    u" Če se vam bo zdelo, da sporočilo ni prispelo, preverite mapo z vsiljeno pošto."),
             title=_(u"Obnovitev gesla poteka"))
         return redirect('main.views.index')
 
@@ -217,7 +217,7 @@ class Preferences(ViewClass):
 class PasswordChangeDone(ViewClass):
     @login_required
     def GET(self):
-        self.flash(_(u"Geslo je spremenjeno."))
+        self.flash(_(u"Geslo je spremenjeno"))
         return redirect('user-preferences')
 
 
