@@ -1,0 +1,62 @@
+[
+    {
+        "pk": 1,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 2,
+            "description": "prejeli ste sporočilo",
+            "display": "Prejeto sporočilo",
+            "label": "messages_received"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 1,
+            "description": "poslali ste sporočilo",
+            "display": "Spročilo poslano",
+            "label": "messages_sent"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 1,
+            "description": "odgovorili ste na sporočilo",
+            "display": "Sporočilo odgovorjeno",
+            "label": "messages_replied"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 2,
+            "description": "prejeli ste odgovor na sporočilo",
+            "display": "Prejet odgovor",
+            "label": "messages_reply_received"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 1,
+            "description": "izbrisali ste sporočilo",
+            "display": "Sporočilo izbrisano",
+            "label": "messages_deleted"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "notification.noticetype",
+        "fields": {
+            "default": 1,
+            "description": "obnovili ste sporočilo",
+            "display": "Sporočilo obnovljeno",
+            "label": "messages_recovered"
+        }
+    }
+]

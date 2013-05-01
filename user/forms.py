@@ -41,8 +41,8 @@ class RegisterForm(UserCreationForm):
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
     birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d/%m/%Y",))
-    first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
-    last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
+    first_name = FormCharField(label=_("Ime (oz. organizacija)"), required=True, max_length=30)
+    last_name = FormCharField(label=_("Priimek (oz. zastopnik organizacije)"), required=True, max_length=30)
     email = FormEmailField(label=_("E-mail"), required=True)
     address = FormCharField(label=_("Naslov"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))

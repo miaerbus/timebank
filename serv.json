@@ -1,0 +1,515 @@
+[
+    {
+        "pk": 1,
+        "model": "serv.area",
+        "fields": {
+            "name": "Maribor"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "serv.area",
+        "fields": {
+            "name": "Pesnica"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "serv.area",
+        "fields": {
+            "name": "Duplek"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "serv.area",
+        "fields": {
+            "name": "Male\u010dnik"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ru\u0161e"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "serv.area",
+        "fields": {
+            "name": "Limbu\u0161"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "serv.area",
+        "fields": {
+            "name": "Slovenska Bistrica"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "serv.area",
+        "fields": {
+            "name": "Slovenske Konjice"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "serv.area",
+        "fields": {
+            "name": "\u0160marje pri Jel\u0161ah"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "serv.area",
+        "fields": {
+            "name": "Lenart"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ljutomer"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ormo\u017e"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ptuj"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "serv.area",
+        "fields": {
+            "name": "Pragersko"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "serv.area",
+        "fields": {
+            "name": "Polj\u010dane"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ho\u010de"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "serv.area",
+        "fields": {
+            "name": "Ra\u010de"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "serv.area",
+        "fields": {
+            "name": "Kidri\u010devo"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "serv.area",
+        "fields": {
+            "name": "Maj\u0161perk"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "serv.area",
+        "fields": {
+            "name": "Podlehnik"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "serv.area",
+        "fields": {
+            "name": "\u017detale"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "serv.area",
+        "fields": {
+            "name": "Dornava"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "serv.area",
+        "fields": {
+            "name": "Drugje"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "serv.category",
+        "fields": {
+            "name": "Spremstvo in pomo\u010d pri opravkih"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pomo\u010d pri izpolnjevanju obrazcev"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pisanje pisem in tipkanje"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "serv.category",
+        "fields": {
+            "name": "Urejanje (osebnih) financ"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "serv.category",
+        "fields": {
+            "name": "\u0160ivanje, pletenje, vezenje, izdelava obla\u010dil"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "serv.category",
+        "fields": {
+            "name": "Igranje ali u\u010denje glasbenih in\u0161trumentov"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "serv.category",
+        "fields": {
+            "name": "DJ-anje"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "serv.category",
+        "fields": {
+            "name": "Film & video"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "serv.category",
+        "fields": {
+            "name": "Prevozi"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "serv.category",
+        "fields": {
+            "name": "Vo\u017enja avtomobila ali kombija"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "serv.category",
+        "fields": {
+            "name": "\u010ci\u0161\u010denje in pospravljanje"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "serv.category",
+        "fields": {
+            "name": "Preprosta doma\u010da (p)opravila"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "serv.category",
+        "fields": {
+            "name": "Vrtnarjenje"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "serv.category",
+        "fields": {
+            "name": "Preprosta popravila avtov, motorjev in koles"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pranje avtomobila"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "serv.category",
+        "fields": {
+            "name": "Drugo"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "serv.category",
+        "fields": {
+            "name": "Sodelovanje pri org. dru\u017eabnih dogodkov"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "serv.category",
+        "fields": {
+            "name": "Povezovanje dru\u017eabnega dogodka"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pomo\u010d pri branju, pisanju in ra\u010dunanju"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "serv.category",
+        "fields": {
+            "name": "U\u010denje jezikov in prevajanje"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pomo\u010d pri selitvah"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pripovedovanje zgodb, glasno branje"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "serv.category",
+        "fields": {
+            "name": "Ra\u010dunalni\u0161ke storitve"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "serv.category",
+        "fields": {
+            "name": "U\u010denje fitnesa, joge ipd."
+        }
+    },
+    {
+        "pk": 25,
+        "model": "serv.category",
+        "fields": {
+            "name": "Treniranje \u0161portov"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "serv.category",
+        "fields": {
+            "name": "Risanje in slikanje"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "serv.category",
+        "fields": {
+            "name": "Izdelovanje lon\u010darskih izdelkov"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "serv.category",
+        "fields": {
+            "name": "Promocija dogodkov (deljenje letakov ipd.)"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "serv.category",
+        "fields": {
+            "name": "Kuhanje, pranje, likanje"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "serv.category",
+        "fields": {
+            "name": "Varstvo/spremstvo otrok"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "serv.category",
+        "fields": {
+            "name": "Delo z mladimi"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "serv.category",
+        "fields": {
+            "name": "Obiskovanje na dom vezanih ob\u010danov"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pogovori po telefonu"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "serv.category",
+        "fields": {
+            "name": "Sprehajanje in urjenje psov"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "serv.category",
+        "fields": {
+            "name": "Skrb za hi\u0161ne ljubljen\u010dke"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "serv.category",
+        "fields": {
+            "name": "Zalivanje ro\u017e"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pravno svetovanje"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "serv.category",
+        "fields": {
+            "name": "Skupno kuhanje"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pomo\u010d/podpora pri iskanju stanovanja"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "serv.category",
+        "fields": {
+            "name": "Predstavitev \u0161tudijskih smeri"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "serv.category",
+        "fields": {
+            "name": "Pomo\u010d pri iskanju informacij"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "serv.service",
+        "fields": {
+            "category": 16,
+            "description": "Pripravljen sem pozdraviti cel svet, za\u010den\u0161i z Zofijo :)",
+            "is_offer": true,
+            "creator": 4,
+            "is_active": true,
+            "area": 1,
+            "pub_date": "2012-02-21 17:21:18"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "serv.service",
+        "fields": {
+            "category": 11,
+            "description": "pripravljen sem pomagati pri kidanju snega",
+            "is_offer": true,
+            "creator": 4,
+            "is_active": true,
+            "area": 1,
+            "pub_date": "2012-02-07 13:05:28"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "serv.service",
+        "fields": {
+            "category": 4,
+            "description": "i\u0161\u010dem nekoga, ki bi pomagal urediti svoje finance",
+            "is_offer": false,
+            "creator": 4,
+            "is_active": true,
+            "area": 1,
+            "pub_date": "2012-02-07 13:04:06"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "serv.service",
+        "fields": {
+            "category": 4,
+            "description": "Imam preve\u010d ur na \u010cB. I\u0161\u010dem nekoga, ki bi mi jih pomagal zapravit. :)",
+            "is_offer": false,
+            "creator": 4,
+            "is_active": true,
+            "area": 1,
+            "pub_date": "2012-01-31 09:30:27"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "serv.service",
+        "fields": {
+            "category": 16,
+            "description": "Ker slabo vidim, i\u0161\u010dem specialista za o\u010di, da bom lahko pri Zofiji pogledal, kaj se je zgodilo z njenim ra\u010dunalnikom.",
+            "is_offer": false,
+            "creator": 4,
+            "is_active": true,
+            "area": null,
+            "pub_date": "2012-01-26 16:19:39"
+        }
+    }
+]

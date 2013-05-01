@@ -37,22 +37,27 @@ OWNERS = MANAGERS = ADMINS
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
+#DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-#if bool(os.environ.get('LOCAL_DEV', False)):
-#	DATABASES = {
-#	    'default': {
-#        	'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#	        'NAME': 'database.sqlite',       # Or path to database file if using sqlite3.
-#	        'USER': '',                      # Not used with sqlite3.
-#	        'PASSWORD': '',                  # Not used with sqlite3.
-#	        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-#	        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#	    }
-#	}
+DATABASES = {
+    'defaul': {
+        'NAME': 'timebank',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'root',
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'd8lvag8nknevor',       # Or path to database file if using sqlite3.
+        'USER': 'dfcddnxxxyrlea',                      # Not used with sqlite3.
+        'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
+        'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -94,8 +99,8 @@ AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'timebank.s3utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'timebank.s3utils.StaticRootS3BotoStorage'
 
 ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
@@ -158,6 +163,7 @@ INSTALLED_APPS = (
     'rosetta',
     'notification',
     'exts',
+    #'django-storages',
 )
 
 LOGIN_URL = '/'

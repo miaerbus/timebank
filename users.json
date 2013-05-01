@@ -1,0 +1,457 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "admin",
+            "first_name": "Administrator",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-02-29 10:17:24",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$d21fa$824ddf461190c46afd8e45444de8a0450dcca9e7",
+            "email": "cbs.maribor@gmail.com",
+            "date_joined": "2011-01-31 14:00:49"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "user.profile",
+        "fields": {
+            "description": "osebje",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "02 300 68 500",
+            "user_permissions": [],
+            "land_line": "",
+            "groups": [],
+            "address": "Ob zeleznici 16, Maribor",
+            "birth_date": "1985-01-12",
+            "lang_code": "sl",
+            "balance": 0
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "mia",
+            "first_name": "Mia",
+            "last_name": "Erbus",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-02-18 16:20:08",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$17826$b8e297c1b22b6947df8bc32f13126696953b0bc4",
+            "email": "mia.erbus@gmail.com",
+            "date_joined": "2012-01-13 22:49:10"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "user.profile",
+        "fields": {
+            "description": "http://kiberpipa.org/~mia",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 616 802",
+            "groups": [],
+            "address": "Placar 42a, Ptuj",
+            "birth_date": "1986-04-27",
+            "lang_code": "",
+            "balance": 720
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "Rezija",
+            "first_name": "Rezko",
+            "last_name": "Novak",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-21 20:53:10",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$a8a02$a69ab4e7812795157022d323703c0093d8777574",
+            "email": "rezmaribor@gmail.com",
+            "date_joined": "2012-01-16 13:05:23"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "user.profile",
+        "fields": {
+            "description": "Sem ra\u010dunalni\u010dar, a delam \u0161e kaj drugega. Pomagam pri organizaciji kak\u0161nih prireditev, pa tudi fizi\u010dno delo mi ni tuje.",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 213 456",
+            "groups": [],
+            "address": "Kjuhova 1, Kidri\u010devo",
+            "birth_date": "1971-04-11",
+            "lang_code": "",
+            "balance": 540
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.user",
+        "fields": {
+            "username": "Zofija",
+            "first_name": "Zofka",
+            "last_name": "Zofijina",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-21 20:53:31",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$831e7$7b5292a016ad1c902fd3e0b2944753ce36e2396b",
+            "email": "zofka.zofijina@gmail.com",
+            "date_joined": "2012-01-16 13:17:50"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "user.profile",
+        "fields": {
+            "description": "Sem iz Ptuja, rada vrtnarim in pomagam. Lahko na \u0161ir\u0161em podro\u010dju \u0160tajerske v popoldanskih urah. Najraje ob vikendih. ",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "02 1234 576",
+            "groups": [],
+            "address": "Cankarjeva 1, Ptuj",
+            "birth_date": "1966-08-21",
+            "lang_code": "",
+            "balance": 480
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.user",
+        "fields": {
+            "username": "alterego",
+            "first_name": "test",
+            "last_name": "test",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-01-18 15:03:45",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$9705e$a0fe9c7cc5148f86a33a0d3c2f7f9df98125c707",
+            "email": "me9223@student.uni-lj.si",
+            "date_joined": "2012-01-18 14:20:23"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "user.profile",
+        "fields": {
+            "description": "nekaj o sebi",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 532 352",
+            "groups": [],
+            "address": "test",
+            "birth_date": "1986-09-18",
+            "lang_code": "",
+            "balance": 480
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.user",
+        "fields": {
+            "username": "anjat",
+            "first_name": "Anja",
+            "last_name": "Turin",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-13 22:40:11",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$b3dfa$54386257fb52509097552f1812ea83b2afd0463e",
+            "email": "anja.turin@gmail.com",
+            "date_joined": "2012-01-23 21:15:12"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "user.profile",
+        "fields": {
+            "description": "\u0160tudentka medicine v Mariboru. Za sodelovanje sem se odlo\u010dila iz radovednosti in \u017eelje po alternativi...",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 676 010",
+            "groups": [],
+            "address": "Jezdarska 22, Maribor",
+            "birth_date": "1986-09-19",
+            "lang_code": "",
+            "balance": 540
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.user",
+        "fields": {
+            "username": "aadam",
+            "first_name": "Andrej",
+            "last_name": "Adam",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-16 22:10:19",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$89b70$4500115ebcf6b14814eec6b889c2e43b2c880ea1",
+            "email": "andrej.adam@guest.arnes.si",
+            "date_joined": "2012-01-23 22:45:02"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "user.profile",
+        "fields": {
+            "description": "U\u010ditelj.\r\nKer je rekel Robi:)",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 702 207",
+            "groups": [],
+            "address": "Gori\u0161ka 20",
+            "birth_date": "1965-03-09",
+            "lang_code": "",
+            "balance": 720
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.user",
+        "fields": {
+            "username": "Prometej",
+            "first_name": "Samo ",
+            "last_name": "Bohak",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-21 17:06:28",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$f89bd$a7a2cbd46d5362dc887e34c87b93d964906e49c6",
+            "email": "samo.bohak@gmail.com",
+            "date_joined": "2012-01-24 08:24:08"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "user.profile",
+        "fields": {
+            "description": "Sem prevajalec in filozof, novinar in zdravilec in verjamem, da lahko z izmenjavo \u010dasa delujemo enako uspe\u0161no kot z izmenjavo denarja ter ob tem gradimo skupnost.\r\n\r\n",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "040241386",
+            "groups": [],
+            "address": "Smetanova 38a",
+            "birth_date": "1986-04-20",
+            "lang_code": "",
+            "balance": 600
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.user",
+        "fields": {
+            "username": "Aleksandra",
+            "first_name": "Aleksandra",
+            "last_name": "\u017dor\u017e",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-03-02 09:44:23",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$10056$91645ce0dc03809e0f829d8d7e2012df9b83fbd9",
+            "email": "aleksandrazorz@gmail.com",
+            "date_joined": "2012-01-24 10:31:58"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "user.profile",
+        "fields": {
+            "description": "Podpiram medosebno pomo\u010d in sem \u017eeljna novih znanj. ",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 200 495",
+            "groups": [],
+            "address": "Prekmurska 44, Maribor",
+            "birth_date": "1980-11-09",
+            "lang_code": "",
+            "balance": 660
+        }
+    },
+    {
+        "pk": 10,
+        "model": "auth.user",
+        "fields": {
+            "username": "brankogerlic",
+            "first_name": "Branko",
+            "last_name": "Gerli\u010d",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-09 10:46:58",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$6fcb5$b85d7e349e0ac54b4a96e69a28845fead83c8676",
+            "email": "branko.gerlic@gmail.com",
+            "date_joined": "2012-01-24 10:42:20"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "user.profile",
+        "fields": {
+            "description": "Jas sem jas. Za sodelovanje sem se odlo\u010dil, ker bi rad podprl dejavnost \u010dasovne banke.",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "031 445 781",
+            "groups": [],
+            "address": "Koro\u0161ka 18, Maribor",
+            "birth_date": "1949-02-27",
+            "lang_code": "",
+            "balance": 660
+        }
+    },
+    {
+        "pk": 11,
+        "model": "auth.user",
+        "fields": {
+            "username": "Boris",
+            "first_name": "Boris",
+            "last_name": "Vezjak",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-01-25 12:44:21",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$ce9de$776287e45761fea15f841792932672c459ea4e3d",
+            "email": "vezjak@yahoo.com",
+            "date_joined": "2012-01-25 09:38:14"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "user.profile",
+        "fields": {
+            "description": "Rad bi prodajal \u010das.",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "",
+            "user_permissions": [],
+            "land_line": "041 347 001",
+            "groups": [],
+            "address": "Doma\u010de 1",
+            "birth_date": "1988-11-11",
+            "lang_code": "",
+            "balance": 600
+        }
+    },
+    {
+        "pk": 12,
+        "model": "auth.user",
+        "fields": {
+            "username": "JKG",
+            "first_name": "Jo\u017ee",
+            "last_name": "Kos Grabar",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-28 19:30:14",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$c199c$822746440685e634f8541aa7e3046f983ed23885",
+            "email": "joze.kos.grabar@gmail.com",
+            "date_joined": "2012-01-26 21:42:47"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "user.profile",
+        "fields": {
+            "description": "Sem ve\u010dstransko delujo\u010d \u010dlovek, ki me zanimajo bolj\u0161e osebne, skupne in ob\u010de dru\u017ebene prakse.",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "02 2514 711",
+            "user_permissions": [],
+            "land_line": "031 886 801",
+            "groups": [],
+            "address": "Sadjarska 11 a, Maribor",
+            "birth_date": "1959-05-08",
+            "lang_code": "",
+            "balance": 600
+        }
+    },
+    {
+        "pk": 13,
+        "model": "auth.user",
+        "fields": {
+            "username": "Joze-KG",
+            "first_name": "Jo\u017ee",
+            "last_name": "Kos Grabar",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-02-28 19:25:30",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$8ec05$537f9db9ac10b1d584fd1d343e9d585beae852ce",
+            "email": "joze.kos.grabar@gmail.com",
+            "date_joined": "2012-02-28 19:25:30"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "user.profile",
+        "fields": {
+            "description": "Geodet-prostorski planer, multi-kulturnik, civilno-dru\u017ebenik, literat, pisec, idejnik in \u0161e kaj",
+            "photo": "",
+            "email_updates": true,
+            "mobile_tlf": "02 251 47 11",
+            "user_permissions": [],
+            "land_line": "031 886 801",
+            "groups": [],
+            "address": "Sadjarska 11 a, 2000 Maribor",
+            "birth_date": "1959-05-08",
+            "lang_code": "",
+            "balance": 600
+        }
+    }
+]

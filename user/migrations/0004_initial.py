@@ -12,9 +12,9 @@ class Migration(SchemaMigration):
         db.create_table('user_profile', (
             ('user_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['auth.User'], unique=True, primary_key=True)),
             ('photo', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
-            ('birth_date', self.gf('django.db.models.fields.DateField')(default=datetime.datetime(2013, 4, 15, 0, 0))),
+            ('birth_date', self.gf('django.db.models.fields.DateField')(default=datetime.datetime(2013, 5, 1, 0, 0))),
             ('address', self.gf('django.db.models.fields.CharField')(default=u'address', max_length=100)),
-            ('balance', self.gf('django.db.models.fields.IntegerField')(default=0)),
+            ('balance', self.gf('django.db.models.fields.IntegerField')(default=600)),
             ('description', self.gf('django.db.models.fields.TextField')(max_length=300, blank=True)),
             ('land_line', self.gf('django.db.models.fields.CharField')(max_length=20)),
             ('mobile_tlf', self.gf('django.db.models.fields.CharField')(max_length=20)),
@@ -69,8 +69,8 @@ class Migration(SchemaMigration):
         'user.profile': {
             'Meta': {'object_name': 'Profile', '_ormbases': ['auth.User']},
             'address': ('django.db.models.fields.CharField', [], {'default': "u'address'", 'max_length': '100'}),
-            'balance': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'birth_date': ('django.db.models.fields.DateField', [], {'default': 'datetime.datetime(2013, 4, 15, 0, 0)'}),
+            'balance': ('django.db.models.fields.IntegerField', [], {'default': '600'}),
+            'birth_date': ('django.db.models.fields.DateField', [], {'default': 'datetime.datetime(2013, 5, 1, 0, 0)'}),
             'description': ('django.db.models.fields.TextField', [], {'max_length': '300', 'blank': 'True'}),
             'email_updates': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'land_line': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
