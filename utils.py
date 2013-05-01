@@ -107,7 +107,7 @@ def login_required(fn):
             self.flash(_(smart_unicode(u'Biti morate registrirani, da lahko vidite storitev'
                 u' <a href="%(link)s">%(link_text)s</a>. Morda bi se nam'
                 u' <a href="%(join_url)s">želeli pridružiti</a> ali vpisati'
-                u' svoje uporabnisko ime in geslo na levi.')) %\
+                u' svoje uporabniško ime in geslo na levi.')) %\
                 {
                     'link': self.request.get_full_path(),
                     'link_text': self.request.get_full_path(),

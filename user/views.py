@@ -170,14 +170,14 @@ class EditProfile(ViewClass):
             'site_name': settings.SITE_NAME,
             'username': old_user.username
         })
-        message = I18nString(_(u"Uporabnik %(username)s je spremenil podatke v svojem profilu. Stari podatki:\n\n"
+        message = I18nString(_(u"Uporabnik %(username)s je spremenil/a podatke v svojem profilu.\n\nStari podatki:\n"
              u" - Ime: %(old_name)s\n"
              u" - Priimek: %(old_surnames)s\n"
              u" - E-mail: %(old_email)s\n"
              u" - Naslov: %(old_address)s\n"
              u" - Rojstni datum: %(old_birth_date)s\n"
              u" - Opis: %(old_description)s\n\n"
-             u"Novi podatki:\n\n"
+             u"Novi podatki:\n"
              u" - Ime: %(name)s\n"
              u" - Priimek: %(surnames)s\n"
              u" - E-mail: %(email)s\n"

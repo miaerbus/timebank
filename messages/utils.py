@@ -7,6 +7,22 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 #from timebank.utils import send_mail, I18nString
+from django.shortcuts import redirect
+from django.http import HttpResponse as response
+from django.http import HttpResponseNotAllowed
+from django.shortcuts import render_to_response
+from django.core.urlresolvers import reverse
+from django.template import RequestContext
+from django.utils.translation import ugettext as _
+from django import forms
+from datetime import datetime, date
+from django.utils import formats
+from django.utils.encoding import smart_unicode
+from django.utils.safestring import mark_safe
+from recaptcha.client import captcha
+from django.core.mail.message import EmailMessage
+from flashmsg import flash
+import types
 
 def format_quote(text):
     """
@@ -60,10 +76,10 @@ def new_transfer_email(sender, instance, signal, *args, **kwargs):
 
     recipient = instance.recipient()
     if instance.service:
-        subject=I18nString(_('Nov zahtevek za prenos uporabnika %s'),
+        subject=I18nString(_(u'Nov zahtevek za prenos uporabnika %s'),
             instance.creator().username)
     else:
-        subject=I18nString(_('Nov prenos uporabnika %s'),
+        subject=I18nString(_(u'Nov prenos uporabnika %s'),
             instance.creator().username)
     message = I18nString("serv/new_transfer_email.html", {
             'site_url': '%s://%s' % (default_protocol, current_domain),
@@ -88,7 +104,7 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
             subject=I18nString(_('Transfer of the service from %s accepted'),
                 instance.service.creator.username)
         else:
-            subject=I18nString(_('Uporabnik %s je prenos sprejel/a'),
+            subject=I18nString(_(u'Uporabnik %s je prenos sprejel'),
                 instance.creator().username)
         template = "serv/accept_transfer_email.html"
     elif instance.status == 'r':
@@ -99,12 +115,12 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
                         'user2': instance.service.creator.username
                     })
         else:
-            subject=I18nString(_('Prenos z uporabnikom %s je bil preklican'),
+            subject=I18nString(_(u'Prenos z uporabnikom %s je bil preklican'),
                 instance.creator().username)
         template = "serv/cancel_transfer_email.html"
         recipients = [instance.credits_debtor, instance.credits_payee]
     elif instance.status == 'd':
-        subject=I18nString(_('Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen'),
+        subject=I18nString(_(u'Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen'),
                 instance.credits_debtor.email)
         template = "serv/done_transfer_email.html"
         recipients = [instance.credits_payee,]
