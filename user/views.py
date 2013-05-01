@@ -57,7 +57,7 @@ class Register(ViewClass):
                 'username': new_user.username
             })
             message = I18nString(_(u"Pridružil se je nov uporabnik %s."
-                " Preglej njegove podatke in ga aktiviraj."), new_user.username)
+                u" Preglej njegove podatke in ga aktiviraj."), new_user.username)
             mail_owners(subject, message)
 
             current_site = Site.objects.get_current()
@@ -74,8 +74,9 @@ class Register(ViewClass):
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
                 })
+            print "tukaj"
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
-                [new_user], fail_silently=True)
+                [new_user], fail_silently=False)
 
             self.flash(_(u"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
                 u" Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
@@ -91,7 +92,8 @@ class Register(ViewClass):
                 'username': new_user.username,
                 'site_name': settings.SITE_NAME
                 })
-            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\nPravkar ste se pridružili skupnosti %(site_name)s."
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Zdaj lahko začnete sodelovati v njej!"
                 u"\n\n- %(site_name)s"), {
                     'username': new_user.username,
@@ -125,7 +127,7 @@ class Login(ViewClass):
                 django_login(self.request, user)
                 self.flash(_(u"Pozdravljeni, %s") % user.username)
             else:
-                self.flash(_(u"Vas račun še ni bil potrjen."), "error")
+                self.flash(_(u"Vaš račun še ni bil potrjen."), "error")
         else:
             self.flash(_(u"Neveljavno uporabniško ime ali geslo"), "error")
         return redirect('main.views.index')

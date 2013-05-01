@@ -76,7 +76,7 @@ class ListServicesForm(forms.Form):
         widget=forms.Select(choices=TYPE_CHOICES), required=False)
     category = forms.ModelChoiceField(None, required=False, label=_("Kategorija"))
     area = forms.ModelChoiceField(None, required=False, label=_(u"Območje"))
-    user_status = CustomCharField(label=_("Uporabnik povezan pred"),
+    user_status = CustomCharField(label=_(u"Uporabnik nazadnje povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_("Uporabnik"), required=False)
     text = forms.CharField(label=_("Opis storitve"), required=False)

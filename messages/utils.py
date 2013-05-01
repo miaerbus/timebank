@@ -7,22 +7,6 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 #from timebank.utils import send_mail, I18nString
-from django.shortcuts import redirect
-from django.http import HttpResponse as response
-from django.http import HttpResponseNotAllowed
-from django.shortcuts import render_to_response
-from django.core.urlresolvers import reverse
-from django.template import RequestContext
-from django.utils.translation import ugettext as _
-from django import forms
-from datetime import datetime, date
-from django.utils import formats
-from django.utils.encoding import smart_unicode
-from django.utils.safestring import mark_safe
-from recaptcha.client import captcha
-from django.core.mail.message import EmailMessage
-from flashmsg import flash
-import types
 
 def format_quote(text):
     """

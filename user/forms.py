@@ -54,7 +54,7 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label=u"Star sem nad 18 let in strinjam se s pogoji Časovne banke")
+    	label=u"Star/a sem nad 18 let in strinjam se s pogoji Časovne banke")
     captcha = FormCaptchaField()
 
     class Meta:
@@ -120,7 +120,7 @@ class FindPeopleForm(forms.Form):
         ('6', _(u'manj kot letom')),
     )
 
-    user_status = CustomCharField(label=_(u"Uporabnik povezan pred"),
+    user_status = CustomCharField(label=_(u"Uporabnik nazadnje povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     username = forms.CharField(label=_(u'Uporabniško ime'), required=False)
 
@@ -136,7 +136,7 @@ class FindPeople4AdminsForm(FindPeopleForm):
         ('10', _(u'več kot šestimi meseci')),
         ('11', _(u'več kot letom')),
     )
-    user_status = CustomCharField(label=_(u"Uporabnik povezan pred"),
+    user_status = CustomCharField(label=_(u"Uporabnik nazadnje povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
     without_services = forms.BooleanField(label=_("Ni storitev"), required=False)
 
