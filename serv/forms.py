@@ -62,7 +62,7 @@ class ListServicesForm(forms.Form):
         ('2', _(u'povprašujem')),
     )
     USER_CHOICES = (
-        ('0', _('---------')),
+        ('0', _('Kadarkoli')),
         ('1', _(u'manj kot dnevom')),
         ('2', _(u'manj kot tednom')),
         ('3', _(u'manj kot mesecem')),
@@ -83,8 +83,11 @@ class ListServicesForm(forms.Form):
 
     def __init__(self,  *args, **kwargs):
         super(ListServicesForm, self).__init__(*args, **kwargs)
+	self.fields['category'].empty_label = _(u"Vse kategorije")
         self.fields['category'].queryset = Category.objects.all().order_by('name')
+	self.fields['area'].empty_label = _(u"Povsod")
         self.fields['area'].queryset = Area.objects.all().order_by('name')
+	self.fields['user_status'].empty_label = _(u"Kadarkoli")
 
     def as_url_args(self):
         return urllib.urlencode(self.data)

@@ -465,7 +465,7 @@ msgid "Območje"
 msgstr ""
 
 #: serv/forms.py:79 user/forms.py:123 user/forms.py:139 user/views.py:325
-msgid "Uporabnik povezan pred"
+msgid "Uporabnik nazadnje povezan pred"
 msgstr ""
 
 #: serv/forms.py:81 serv/forms.py:119 templates/user/single_person_view.html:4

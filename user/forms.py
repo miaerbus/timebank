@@ -111,7 +111,7 @@ class PublicMessageForm(forms.ModelForm):
 
 class FindPeopleForm(forms.Form):
     USER_CHOICES = (
-        ('0', _('---------')),
+        ('0', _('Kadarkoli')),
         ('1', _(u'manj kot 24 urami')),
         ('2', _(u'manj kot tednom')),
         ('3', _(u'manj kot mesecem')),
