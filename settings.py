@@ -99,8 +99,8 @@ AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'casovnabanka'
 
-DEFAULT_FILE_STORAGE = 'timebank.s3utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'timebank.s3utils.StaticRootS3BotoStorage'
+#DEFAULT_FILE_STORAGE = 'timebank.s3utils.MediaRootS3BotoStorage'
+#STATICFILES_STORAGE = 'timebank.s3utils.StaticRootS3BotoStorage'
 
 ADMIN_MEDIA_PREFIX = 'http://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME

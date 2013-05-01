@@ -32,8 +32,8 @@ class RegisterForm(UserCreationForm):
         help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
 		' ali znaki: @/./+/-/_.'),
         error_messages={
-            'invalid': _(u'To polje naj vsebuje samo alfanumericne znake,'
-		' stevilke ali znake: @/./+/-/_.')})
+            'invalid': _(u'To polje naj vsebuje samo alfanumerične znake,'
+		u' številke ali znake: @/./+/-/_.')})
     password1 = forms.CharField(label=_("Geslo"),
         widget=forms.PasswordInput)
     password2 = forms.CharField(label=_("Ponovitev gesla"),
@@ -54,7 +54,7 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label="Strinjam se s pogoji Časovne banke")
+    	label=u"Star sem nad 18 let in strinjam se s pogoji Časovne banke")
     captcha = FormCaptchaField()
 
     class Meta:
