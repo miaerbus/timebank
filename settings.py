@@ -156,7 +156,7 @@ INSTALLED_APPS = (
     'djangoratings',
     'tasks',
     'rosetta',
-    #'notification',
+    'notification',
     'exts',
 )
 

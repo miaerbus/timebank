@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 # Django settings for timebank project.
 # Copyright (C) 2010 Eduardo Robles Elvira <edulix AT gmail DOT com>
