@@ -425,20 +425,20 @@ class AcceptTransfer(ViewClass):
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
-            self.flash(_("The transfer would exceed the minimum credit limit"
-                " of the person receiving the service"),
+            self.flash(_(u"The transfer would exceed the minimum credit limit"
+                u" of the person receiving the service"),
                 'error')
             return redirect('serv-transfers-mine')
 
         if transfer.creator() == self.request.user:
             self.flash(_(u"You can't accept a transfer of a service that isn't"
-                " yours"), "error")
+                u" yours"), "error")
             return redirect('serv-transfers-mine')
 
         if (transfer.status != "a" or not transfer.is_direct()) and\
             transfer.status != "q":
             self.flash(_(u"You can only modify transfers that haven't been"
-                " done"), "error")
+                u" done"), "error")
             return redirect('serv-transfers-mine')
         transfer.status = "a"
         transfer.save()
@@ -454,19 +454,19 @@ class ConfirmTransfer(ViewClass):
         # Check user would not surpass max balance
         if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
             self.flash(_(u"The transfer would exceed the credit limit of the"
-                " person receiving the credits"), 'error')
+                u" person receiving the credits"), 'error')
             return redirect('serv-transfers-mine')
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
             self.flash(_("The transfer would exceed the minimum credit limit"
-                " of the person receiving the service"),
+                u" of the person receiving the service"),
                 'error')
             return redirect('serv-transfers-mine')
 
         if transfer.credits_debtor != self.request.user:
-            self.flash(_("You can't confirm a transfer of a service that isn't"
-                " yours"), "error")
+            self.flash(_(u"You can't confirm a transfer of a service that isn't"
+                u" yours"), "error")
             return redirect('serv-transfers-mine')
 
         if transfer.status != "a":
@@ -567,8 +567,7 @@ class AddComment(ViewClass):
     def POST(self, service_id):
         service = get_object_or_404(Service, pk=service_id)
         if not service.is_active:
-            self.flash(_(u"You can't comment inactive services"),
-                "error")
+            self.flash(_(u"Ne morete komentirati neaktivne storitve"), "error")
             return redirect('/')
 
         form = AddCommentForm(self.request.POST)
@@ -604,7 +603,7 @@ class DeleteComment(ViewClass):
                 "error")
         else:
             message.delete()
-            self.flash(_(u"Comment removed successfully"))
+            self.flash(_(u"Komentar uspešno odstranjen"))
 
         if service:
             return redirect('serv-view', service.id)

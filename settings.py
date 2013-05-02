@@ -211,7 +211,7 @@ EMAIL_HOST_USER = 'cbs.maribor'
 EMAIL_HOST_PASSWORD = 'solaris17'
 
 # For debugging, you can use the console email backend:
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIN_CREDIT = -10*60
 MAX_CREDIT = 20*60
