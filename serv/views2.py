@@ -578,7 +578,7 @@ class AddComment(ViewClass):
             message.is_public = True
             message.service = service
             message.save()
-            self.flash(_(u"Comment added successfully"))
+            self.flash(_(u"Komentar objavljen"))
             return redirect('serv-view', message.service.id)
         context = dict(form=form, current_tab="services",
             subtab="comment")
