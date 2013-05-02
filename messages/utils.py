@@ -105,7 +105,8 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
         recipients = [instance.credits_debtor, instance.credits_payee]
     elif instance.status == 'd':
         subject=I18nString(_(u'Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen'),
-                instance.credits_debtor.email)
+                #instance.credits_debtor.email
+		instance.credits_debtor.username)
         template = "serv/done_transfer_email.html"
         recipients = [instance.credits_payee,]
     else:
