@@ -138,7 +138,7 @@ class FindPeople4AdminsForm(FindPeopleForm):
     )
     user_status = CustomCharField(label=_(u"Uporabnik nazadnje povezan pred"),
         widget=forms.Select(choices=USER_CHOICES), required=False)
-    without_services = forms.BooleanField(label=_("Ni storitev"), required=False)
+    without_services = forms.BooleanField(label=_("Nima storitev"), required=False)
 
 class SendEmailToAllForm(forms.Form):
     subject = forms.CharField(label=_(u'Zadeva'), required=True)
