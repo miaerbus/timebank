@@ -17,7 +17,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.utils.translation import ugettext_lazy as _
-
+from django.utils.safestring import mark_safe
 from tinymce.widgets import TinyMCE
 
 from models import Profile
@@ -30,7 +30,7 @@ class RegisterForm(UserCreationForm):
     username = forms.RegexField(label=_(u'Uporabniško ime'), max_length=30,
         regex=r'^[\w.@+-]+$',
         help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
-		' ali znaki: @/./+/-/_.'),
+		' ali znaki @/./+/-/_.'),
         error_messages={
             'invalid': _(u'To polje naj vsebuje samo alfanumerične znake,'
 		u' številke ali znake: @/./+/-/_.')})
@@ -39,11 +39,87 @@ class RegisterForm(UserCreationForm):
     password2 = forms.CharField(label=_("Ponovitev gesla"),
         widget=forms.PasswordInput,
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
-    birth_date = FormDateField(label=_("Rojstni datum"),
-        input_formats=("%d/%m/%Y",))
-    first_name = FormCharField(label=_("Ime (oz. organizacija)"), required=True, max_length=30)
-    last_name = FormCharField(label=_("Priimek (oz. zastopnik organizacije)"), required=True, max_length=30)
+    birth_date = FormDateField(label=_("Rojstni datum zastopnika"))
+        #input_formats=("%d/%m/%Y",))
+    first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
+    last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
     email = FormEmailField(label=_("E-mail"), required=True)
+    address = FormCharField(label=_("Naslov"), required=True,
+        max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
+    description = FormCharField(label=_("Opis oganizacije"), required=True,
+        max_length=300, widget=forms.Textarea())
+    land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
+        required=False, help_text="Primer: 02 123 4567")
+    mobile_tlf = FormCharField(label=_("Mobilni telefon"), max_length=20,
+        required=False, help_text="Primer: 041 123 456")
+    terms = forms.BooleanField(
+    	error_messages={'required': 'Sprejeti morate pogoje'},
+    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
+    captcha = FormCaptchaField()
+
+    class Meta:
+        model = Profile
+        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'birth_date', 'description', 'land_line', 'mobile_tlf')
+
+class RegisterFormOrg(UserCreationForm):
+    org_name = FormCharField(label=_(u"Ime organizacije"), required=True, max_length=30)
+    username = forms.RegexField(label=_(u'Uporabniško ime zastopnika'), max_length=30,
+        regex=r'^[\w.@+-]+$',
+        help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
+            u' ali znaki @/./+/-/_.'),
+        error_messages={
+            'invalid': _(u'To polje naj vsebuje samo alfanumerične znake,'
+            u' številke ali znake: @/./+/-/_.')})
+    password1 = forms.CharField(label=_("Geslo"),
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_("Ponovitev gesla"),
+        widget=forms.PasswordInput,
+        help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
+    birth_date = FormDateField(label=_("Rojstni datum zastopnika"))
+        #input_formats=("%d/%m/%Y",))
+    first_name = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
+    last_name = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
+    email = FormEmailField(label=_("E-mail zastopnika"), required=True)
+    address = FormCharField(label=_("Naslov zastopnika"), required=True,
+        max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
+    description = FormCharField(label=_("Opis organizacije"), required=True,
+        max_length=300, widget=forms.Textarea())
+    land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
+        required=False, help_text="Primer: 02 123 4567")
+    mobile_tlf = FormCharField(label=_("Mobilni telefon"), max_length=20,
+        required=False, help_text="Primer: 041 123 456")
+    terms = forms.BooleanField(
+    	error_messages={'required': 'Sprejeti morate pogoje'},
+    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
+    captcha = FormCaptchaField()
+
+    class Meta:
+        model = Profile
+        fields = ('org_name', 'username', 'first_name', 'last_name', 'email', 'address', 'birth_date', 'description', 'land_line', 'mobile_tlf')
+
+class RegisterFormYouth(UserCreationForm):
+    username = forms.RegexField(label=_(u'Uporabniško ime'), max_length=30,
+        regex=r'^[\w.@+-]+$',
+        help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
+		' ali znaki @/./+/-/_.'),
+        error_messages={
+            'invalid': _(u'To polje naj vsebuje samo alfanumerične znake,'
+		u' številke ali znake: @/./+/-/_.')})
+    password1 = forms.CharField(label=_("Geslo"),
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_("Ponovitev gesla"),
+        widget=forms.PasswordInput,
+        help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
+    birth_date = FormDateField(label=_("Rojstni datum"))
+        #input_formats=("%d/%m/%Y",))
+    first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
+    last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
+    email = FormEmailField(label=_("E-mail"), required=True)
+    first_name1 = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
+    last_name1 = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
+    email1 = FormEmailField(label=_("E-mail zastopnika"), required=True)
     address = FormCharField(label=_("Naslov"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
     description = FormCharField(label=_("Opis"), required=True,
@@ -54,12 +130,15 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label=u"Star/a sem nad 18 let in strinjam se s pogoji Časovne banke")
+    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
     class Meta:
         model = Profile
-        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'birth_date', 'description', 'land_line', 'mobile_tlf')
+        fields = ('username', 'first_name', 'last_name', 'email',
+            'first_name1', 'last_name1', 'email1', 'address',
+            'birth_date', 'description', 'land_line', 'mobile_tlf')
 
 class EditProfileForm(forms.ModelForm):
     #photo = forms.ImageField(label=_("Avatar"), required=False)

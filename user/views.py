@@ -28,7 +28,7 @@ from datetime import datetime, timedelta
 from utils import ViewClass, login_required, mail_owners, send_mail, I18nString
 from forms import (RegisterForm, EditProfileForm, RemoveForm,
     PublicMessageForm, FindPeopleForm, FindPeople4AdminsForm,
-    SendEmailToAllForm)
+    SendEmailToAllForm, RegisterFormOrg, RegisterFormYouth)
 from models import Profile
 from serv.models import Service
 from messages.models import Message
@@ -74,7 +74,166 @@ class Register(ViewClass):
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
                 })
-            print "tukaj"
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
+                [new_user], fail_silently=False)
+
+            self.flash(_(u"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
+                u" Takoj, ko jo bomo pregledali, vam bomo poslali še eno sporočilo,"
+                u" in lahko boste začeli sodelovati v skupnosti.") % {
+                    'username': new_user.username,
+                    'email': new_user.email
+                },
+                title=_(u"Uporabnik uspešno ustvarjen"))
+        else:
+            current_site = Site.objects.get_current()
+            subject = I18nString(_(u"Pozdravljeni, %(username)s v skupnosti %(site_name)s"), {
+                'username': new_user.username,
+                'site_name': settings.SITE_NAME
+                })
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u" Zdaj lahko začnete sodelovati v njej!"
+                u"\n\n- %(site_name)s"), {
+                    'username': new_user.username,
+                    'url': current_site.domain,
+                    'site_name': settings.SITE_NAME
+                })
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
+                [new_user], fail_silently=True)
+
+            self.flash(_(u"Pozdravljeni, <strong>%(username)s</strong>."
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>."
+                u" Zdaj lahko začnete sodelovati v skupnosti.") % {
+                    'username': new_user.username,
+                    'email': new_user.email
+                },
+                title=_(u"Uporabnik uspešno ustvarjen"))
+
+        return redirect('main.views.index')
+
+
+class RegisterYouth(ViewClass):
+    def GET(self):
+        form = RegisterFormYouth()
+        return self.context_response('user/register-youth.html', {'form': form,
+            'current_tab': 'register'})
+
+    def POST(self):
+        form = RegisterForm(self.request.POST)
+        if not form.is_valid():
+            return self.context_response('user/register-youth.html', {'form': form,
+            'current_tab': 'register'})
+
+        # Register user
+        new_user = form.save(commit=False)
+        new_user.is_active = settings.AUTOACCEPT_REGISTRATION
+        new_user.save()
+
+        if not settings.AUTOACCEPT_REGISTRATION:
+            # Send an email to admins and another to the user
+            subject = I18nString(_(u"[%(site_name)s] Nov uporabnik %(username)s"), {
+                'site_name': settings.SITE_NAME,
+                'username': new_user.username
+            })
+            message = I18nString(_(u"Pridružil se je nov uporabnik %s."
+                u" Preglej njegove podatke in ga aktiviraj."), new_user.username)
+            mail_owners(subject, message)
+
+            current_site = Site.objects.get_current()
+            subject = I18nString(_(u"Pridružili ste se skupnosti %(site_name)s z uporabniškim imenom %(username)s"), {
+                'username': new_user.username,
+                'site_name': settings.SITE_NAME
+                })
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
+                u" boste lahko začeli sodelovati v skupnosti."
+                u"\n\n- %(site_name)s"), {
+                    'username': new_user.username,
+                    'url': current_site.domain,
+                    'site_name': settings.SITE_NAME
+                })
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
+                [new_user], fail_silently=False)
+
+            self.flash(_(u"Hvala, da ste se nam pridružili, <strong>%(username)s</strong>."
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>, v kateri potrjujemo vašo zahtevo po vpisu."
+                u" Takoj, ko jo bomo pregledali, vam bomo poslali še eno sporočilo,"
+                u" in lahko boste začeli sodelovati v skupnosti.") % {
+                    'username': new_user.username,
+                    'email': new_user.email
+                },
+                title=_(u"Uporabnik uspešno ustvarjen"))
+        else:
+            current_site = Site.objects.get_current()
+            subject = I18nString(_(u"Pozdravljeni, %(username)s v skupnosti %(site_name)s"), {
+                'username': new_user.username,
+                'site_name': settings.SITE_NAME
+                })
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u" Zdaj lahko začnete sodelovati v njej!"
+                u"\n\n- %(site_name)s"), {
+                    'username': new_user.username,
+                    'url': current_site.domain,
+                    'site_name': settings.SITE_NAME
+                })
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
+                [new_user], fail_silently=True)
+
+            self.flash(_(u"Pozdravljeni, <strong>%(username)s</strong>."
+                u" Poslali smo vam sporočilo na <strong>%(email)s</strong>."
+                u" Zdaj lahko začnete sodelovati v skupnosti.") % {
+                    'username': new_user.username,
+                    'email': new_user.email
+                },
+                title=_(u"Uporabnik uspešno ustvarjen"))
+
+        return redirect('main.views.index')
+
+
+class RegisterOrg(ViewClass):
+    def GET(self):
+        form = RegisterFormOrg()
+        return self.context_response('user/register-org.html', {'form': form,
+            'current_tab': 'register'})
+
+    def POST(self):
+        form = RegisterForm(self.request.POST)
+        if not form.is_valid():
+            return self.context_response('user/register-org.html', {'form': form,
+            'current_tab': 'register'})
+
+        # Register user
+        new_user = form.save(commit=False)
+        new_user.is_active = settings.AUTOACCEPT_REGISTRATION
+        new_user.save()
+
+        if not settings.AUTOACCEPT_REGISTRATION:
+            # Send an email to admins and another to the user
+            subject = I18nString(_(u"[%(site_name)s] Nov uporabnik %(username)s"), {
+                'site_name': settings.SITE_NAME,
+                'username': new_user.username
+            })
+            message = I18nString(_(u"Pridružil se je nov uporabnik %s."
+                u" Preglej njegove podatke in ga aktiviraj."), new_user.username)
+            mail_owners(subject, message)
+
+            current_site = Site.objects.get_current()
+            subject = I18nString(_(u"Pridružili ste se skupnosti %(site_name)s z uporabniškim imenom %(username)s"), {
+                'username': new_user.username,
+                'site_name': settings.SITE_NAME
+                })
+            message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
+		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
+                u" boste lahko začeli sodelovati v skupnosti."
+                u"\n\n- %(site_name)s"), {
+                    'username': new_user.username,
+                    'url': current_site.domain,
+                    'site_name': settings.SITE_NAME
+                })
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
                 [new_user], fail_silently=False)
 
@@ -440,6 +599,8 @@ class SendEmailToAll(ViewClass):
 
 login = Login()
 register = Register()
+register_youth = RegisterYouth()
+register_org = RegisterOrg()
 password_reset_done = PasswordResetDone()
 password_reset_complete = PasswordResetComplete()
 edit_profile = EditProfile()

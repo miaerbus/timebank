@@ -346,12 +346,12 @@ class EditTransfer(ViewClass):
     def GET(self, transfer_id):
         transfer = get_object_or_404(Transfer, pk=transfer_id)
         if transfer.creator() != self.request.user:
-            self.flash(_(u"You can't modify a transfer that isn't yours"),
+            self.flash(_(u"Ne morete spremeniti prenosa, ki ni vaš"),
                 "error")
             return redirect('serv-transfers-mine')
         if transfer.status != "q":
-            self.flash(_("You can only modify transfers that haven't been"
-                " accepted"), "error")
+            self.flash(_(u"Spreminjate lahko samo prenose, ki še niso bili"
+                u" potrjeni"), "error")
             return redirect('serv-transfers-mine')
         form = AddTransferForm(instance=transfer)
         context = dict(form=form, transfer=transfer, current_tab="transfers",
@@ -362,11 +362,11 @@ class EditTransfer(ViewClass):
     def POST(self, transfer_id):
         transfer = get_object_or_404(Transfer, pk=transfer_id)
         if transfer.creator() != self.request.user:
-            self.flash(_("You can't modify a transfer that isn't yours"), "error")
+            self.flash(_(u"Ne morete spremeniti prenosa, ki ni vaš"), "error")
             return redirect('serv-transfers-mine')
         if transfer.status != "q":
-            self.flash(_("You can only modify transfers that haven't been"
-                " accepted"), "error")
+            self.flash(_(u"Spreminjate lahko samo prenose, ki še niso bili"
+                " potrjeni"), "error")
             return redirect('serv-transfers-mine')
 
         form = AddTransferForm(self.request.POST, instance=transfer)
@@ -374,19 +374,18 @@ class EditTransfer(ViewClass):
             transfer = form.save(commit=False)
             # Check user would not surpass max balance
             if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
-                self.flash(_("The transfer would exceed the credit limit of the"
-                    "credits receiver"), 'error')
+                self.flash(_("Prenos bi presegel limit prejemnika"), 'error')
                 return redirect('serv-transfers-mine')
 
             # Check user would not minimum min balance
             if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
-                self.flash(_(u"The transfer would exceed the minimum credit"
-                    " limit of the person receiving the service"),
+                self.flash(_(u"Prenos bi presegel minimalni kredit"
+                    u" osebe, ki je povpraševala po storitvi"),
                     'error')
                 return redirect('serv-transfers-mine')
 
             transfer.save()
-            self.flash(_(u"Transfer modified successfully"))
+            self.flash(_(u"Prenos uspešno spremenjen"))
             return redirect('serv-transfers-mine')
         context = dict(form=form, transfer=transfer, current_tab="transfer",
             subtab="mine")

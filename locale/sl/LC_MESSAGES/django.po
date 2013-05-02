@@ -747,7 +747,7 @@ msgstr "Ni mogoče spreminjati prenosa, ki ni vaš"
 
 #: serv/views2.py:353 serv/views2.py:368
 msgid "You can only modify transfers that haven't been accepted"
-msgstr "Lahko spreminjate samo prenose, ki niso bili sprejeti"
+msgstr "Spreminjate lahko samo prenose, ki niso bili sprejeti"
 
 #: serv/views2.py:377
 msgid "The transfer would exceed the credit limit of thecredits receiver"

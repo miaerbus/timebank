@@ -85,7 +85,7 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
     elif instance.status == 'a':
         recipients = [instance.creator(),]
         if instance.service:
-            subject=I18nString(_('Transfer of the service from %s accepted'),
+            subject=I18nString(_('Uporabnik %s je prenos potrdil/a'),
                 instance.service.creator.username)
         else:
             subject=I18nString(_(u'Uporabnik %s je prenos sprejel'),
