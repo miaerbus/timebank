@@ -56,34 +56,30 @@
                 <em>{% trans "Opis" %}:</em>
                 <div>{{ profile.description }}</div>
             </li>
-            <li>
+<!--            <li>
                 <em>{% trans "Ocena" %}:</em>
                 {% user_rating profile %}
+            </li>-->
+            <li>
+                <em>{% trans "Starost" %}:</em>
+                <div>{{ profile.birth_date|timesince }}</div>
             </li>
-            {% if user.is_staff %}
-                <li>
-                    <em>{% trans "Starost" %}:</em>
-                    <div>{{ profile.birth_date|timesince }}</div>
-                </li>
-                <li>
-                    <em>{% trans "Naslov" %}:</em>
-                    <div>{{ profile.address }}</div>
-                </li>
-            {% endif %}
-            {% if user.is_staff or PUBLIC_USER_INFO %}
-                <li>
-                    <em>{% trans "E-mail" %}:</em>
-                    <div>{{ profile.email }}</div>
-                </li>
-                <li>
-                    <em>{% trans "Stacionarni telefon" %}:</em>
-                    <div>{{ profile.land_line }}</div>
-                </li>
-                <li>
-                    <em>{% trans "Mobilni telefon" %}:</em>
-                    <div>{{ profile.mobile_tlf }}</div>
-                </li>
-            {% endif %}
+            <li>
+                <em>{% trans "Naslov" %}:</em>
+                <div>{{ profile.address }}</div>
+            </li>
+            <li>
+                <em>{% trans "E-mail" %}:</em>
+                <div>{{ profile.email }}</div>
+            </li>
+            <li>
+                <em>{% trans "Stacionarni telefon" %}:</em>
+                <div>{{ profile.land_line }}</div>
+            </li>
+            <li>
+                <em>{% trans "Mobilni telefon" %}:</em>
+                <div>{{ profile.mobile_tlf }}</div>
+            </li>
         </ul>
         <div class="cleaner"></div>
         {% if form %}

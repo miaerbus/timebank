@@ -66,7 +66,7 @@ class Register(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
                 u" boste lahko začeli sodelovati v skupnosti."
                 u"\n\n- %(site_name)s"), {
@@ -92,7 +92,7 @@ class Register(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Zdaj lahko začnete sodelovati v njej!"
                 u"\n\n- %(site_name)s"), {
                     'username': new_user.username,
@@ -172,7 +172,7 @@ class RegisterYouth(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Zdaj lahko začnete sodelovati v njej!"
                 u"\n\n- %(site_name)s"), {
                     'username': new_user.username,
@@ -226,7 +226,7 @@ class RegisterOrg(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Vaša vloga bo kmalu pregledala in če bo vse v redu,"
                 u" boste lahko začeli sodelovati v skupnosti."
                 u"\n\n- %(site_name)s"), {
@@ -252,7 +252,7 @@ class RegisterOrg(ViewClass):
                 'site_name': settings.SITE_NAME
                 })
             message = I18nString(_(u"Pozdravljeni, %(username)s!\n\n"
-		u"Pravkar ste se pridružili skupnosti %(site_name)s."
+                u"Pravkar ste se pridružili skupnosti %(site_name)s."
                 u" Zdaj lahko začnete sodelovati v njej!"
                 u"\n\n- %(site_name)s"), {
                     'username': new_user.username,

@@ -1015,7 +1015,7 @@ CREATE TABLE IF NOT EXISTS `django_site` (
 --
 
 INSERT INTO `django_site` (`id`, `domain`, `name`) VALUES
-(1, 'www.cbs-mb.si', 'Casovna banka Maribor');
+(1, '127.0.0.1', 'Časovna banka Maribor');
 
 -- --------------------------------------------------------
 

@@ -13,7 +13,9 @@
         <h1>{% trans 'Nove storitve' %}</h1>
         {% if not user.is_authenticated %}
             {% url user-register as user_register %}
-            <p>{% blocktrans %}Da bi videli vse storitve, se morate <a href='{{ user_register }}'>registrirati</a>.{% endblocktrans %}</p>
+            {% url user-register-youth as user_register_youth %}
+            {% url user-register-org as user_register_org %}
+            <p>{% blocktrans %}Da bi videli vse storitve, se morate <a href="{{ user_register }}">registrirati</a>. (Obrazca za <a href="{{ user_register_youth }}">mladoletne</a> in <a href="{{ user_register_org }}">organizacije</a>).{% endblocktrans %}</p>
         {% endif %}
         <p>
         <div class="subcontent services">

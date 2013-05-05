@@ -46,7 +46,7 @@ class RegisterForm(UserCreationForm):
     email = FormEmailField(label=_("E-mail"), required=True)
     address = FormCharField(label=_("Naslov"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
-    description = FormCharField(label=_("Opis oganizacije"), required=True,
+    description = FormCharField(label=_("Opis"), required=True,
         max_length=300, widget=forms.Textarea())
     land_line = FormCharField(label=_("Stacionarni telefon"), max_length=20,
         required=False, help_text="Primer: 02 123 4567")
@@ -54,7 +54,7 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+    	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
         help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
@@ -80,7 +80,7 @@ class RegisterFormOrg(UserCreationForm):
         #input_formats=("%d/%m/%Y",))
     first_name = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
-    email = FormEmailField(label=_("E-mail zastopnika"), required=True)
+    email = FormEmailField(label=_(u"E-poštni zastopnika"), required=True)
     address = FormCharField(label=_("Naslov zastopnika"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
     description = FormCharField(label=_("Opis organizacije"), required=True,
@@ -91,7 +91,7 @@ class RegisterFormOrg(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+    	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
         help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
@@ -103,10 +103,10 @@ class RegisterFormYouth(UserCreationForm):
     username = forms.RegexField(label=_(u'Uporabniško ime'), max_length=30,
         regex=r'^[\w.@+-]+$',
         help_text=_(u'Zahtevano. Do 30 znakov. Samo alfanumerični znaki'
-		' ali znaki @/./+/-/_.'),
+                ' ali znaki @/./+/-/_.'),
         error_messages={
             'invalid': _(u'To polje naj vsebuje samo alfanumerične znake,'
-		u' številke ali znake: @/./+/-/_.')})
+                u' številke ali znake: @/./+/-/_.')})
     password1 = forms.CharField(label=_("Geslo"),
         widget=forms.PasswordInput)
     password2 = forms.CharField(label=_("Ponovitev gesla"),
@@ -119,7 +119,7 @@ class RegisterFormYouth(UserCreationForm):
     email = FormEmailField(label=_("E-mail"), required=True)
     first_name1 = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
     last_name1 = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
-    email1 = FormEmailField(label=_("E-mail zastopnika"), required=True)
+    email1 = FormEmailField(label=_(u"E-poštni naslov zastopnika"), required=True)
     address = FormCharField(label=_("Naslov"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
     description = FormCharField(label=_("Opis"), required=True,
@@ -130,7 +130,7 @@ class RegisterFormYouth(UserCreationForm):
         required=False, help_text="Primer: 041 123 456")
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
-    	label=u"Prebral sem in strinjam se s pogoji in pravili Časovne banke",
+    	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
         help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 

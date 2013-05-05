@@ -27,9 +27,11 @@ from django.shortcuts import redirect
 class ExtraProfileInline(admin.StackedInline):
     model = Profile
     fieldsets = (('Extra data', {
-        'fields': ('photo', 'birth_date', 'address', 'balance')
+        'fields': ('photo', 'birth_date', 'address', 'balance',)
+            #'org_name', 'first_name1', 'last_name1', 'email1')
     }),)
-    list_display = ('birth_date', 'address', 'balance')
+    list_display = ('birth_date', 'address', 'balance',)
+            #'org_name', 'first_name1', 'last_name1', 'email1')
 
 def send_email_action(profile_admin, request, queryset):
     return redirect('user-send-email-to-all')

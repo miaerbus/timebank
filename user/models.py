@@ -48,6 +48,14 @@ class Profile(User):
 
     address = models.CharField(_("Naslov"), max_length=100, default=_("address"))
 
+    #org_name = models.CharField(_("Ime organizacije"), max_length=30, default=_("org_name"))
+
+    #first_name1 = models.CharField(_("Ime zastopnika"), max_length=30, default=_("first_name1"))
+
+    #last_name1 = models.CharField(_("Priimek zastopnika"), max_length=30, default=_("last_name1"))
+
+    #email1 = models.CharField(_("E-mail zastopnika"), max_length=30, default=_("email1"))
+
     # credits in minutes
     balance = models.IntegerField(default=600)
 

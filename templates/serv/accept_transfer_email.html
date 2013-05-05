@@ -9,7 +9,7 @@ Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za storitev uporabnik
 {% else %}
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Pozdravljeni {{ transfer_recipient }},
 
-Prenos, ki ga je z vami zahteval uporabnik {{ transfer_creator }} je bil sprejet.
+Prenos, ki ga je z vami zahteval uporabnik {{ transfer_creator }}, je bil sprejet.
 
 - Časovna banka Maribor{% endblocktrans %}
 {% endif %}
