@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="section_3">
-        <h1>{% trans 'Pridruži se - Navadni obrazec' %}</h1>
+        <h1>{% trans 'Pridruži se' %}</h1>
         <form action="" method="post">
 	<p style="text-align:right;font-size:16px;"><a href="{% url user-register-org %}">Obrazec za organizacije</a><br /><a href="{% url user-register-youth %}">Obrazec za mladoletne</a></p>
             {% csrf_token %}

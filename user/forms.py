@@ -39,7 +39,7 @@ class RegisterForm(UserCreationForm):
     password2 = forms.CharField(label=_("Ponovitev gesla"),
         widget=forms.PasswordInput,
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
-    birth_date = FormDateField(label=_("Rojstni datum zastopnika"))
+    birth_date = FormDateField(label=_("Rojstni datum"))
         #input_formats=("%d/%m/%Y",))
     first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
