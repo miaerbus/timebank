@@ -22,7 +22,7 @@ from django.utils.translation import ugettext_lazy as _
 
 curdir = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # To remove timebank.fcgi from urls
@@ -40,20 +40,20 @@ OWNERS = MANAGERS = ADMINS
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 DATABASES = {
-    'default': {
-        'NAME': 'timebank',
-        'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
-        'PASSWORD': 'root',
-    },
 #    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'd8lvag8nknevor',       # Or path to database file if using sqlite3.
-#        'USER': 'dfcddnxxxyrlea',                      # Not used with sqlite3.
-#        'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
-#        'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
-#        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-#    }
+#        'NAME': 'timebank',
+#        'ENGINE': 'django.db.backends.mysql',
+#        'USER': 'root',
+#        'PASSWORD': 'root',
+#    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'd8lvag8nknevor',       # Or path to database file if using sqlite3.
+        'USER': 'dfcddnxxxyrlea',                      # Not used with sqlite3.
+        'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
+        'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+    }
 }
 
 # Local time zone for this installation. Choices can be found here:

@@ -6,4 +6,3 @@ database.sqlite
 .kdev4
 venv
 local_settings.py
-settings.py
