@@ -86,6 +86,7 @@ class Register(ViewClass):
                 },
                 title=_(u"Uporabnik uspešno ustvarjen"))
         else:
+        #if new_user.is_active:
             current_site = Site.objects.get_current()
             subject = I18nString(_(u"Pozdravljeni, %(username)s v skupnosti %(site_name)s"), {
                 'username': new_user.username,
@@ -99,9 +100,10 @@ class Register(ViewClass):
                     'url': current_site.domain,
                     'site_name': settings.SITE_NAME
                 })
+            
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
                 [new_user], fail_silently=True)
-
+            
             self.flash(_(u"Pozdravljeni, <strong>%(username)s</strong>."
                 u" Poslali smo vam sporočilo na <strong>%(email)s</strong>."
                 u" Zdaj lahko začnete sodelovati v skupnosti.") % {
@@ -116,13 +118,13 @@ class Register(ViewClass):
 class RegisterYouth(ViewClass):
     def GET(self):
         form = RegisterFormYouth()
-        return self.context_response('user/register-youth.html', {'form': form,
+        return self.context_response('user/register_youth.html', {'form': form,
             'current_tab': 'register'})
 
     def POST(self):
         form = RegisterForm(self.request.POST)
         if not form.is_valid():
-            return self.context_response('user/register-youth.html', {'form': form,
+            return self.context_response('user/register_youth.html', {'form': form,
             'current_tab': 'register'})
 
         # Register user
@@ -196,13 +198,13 @@ class RegisterYouth(ViewClass):
 class RegisterOrg(ViewClass):
     def GET(self):
         form = RegisterFormOrg()
-        return self.context_response('user/register-org.html', {'form': form,
+        return self.context_response('user/register_org.html', {'form': form,
             'current_tab': 'register'})
 
     def POST(self):
         form = RegisterForm(self.request.POST)
         if not form.is_valid():
-            return self.context_response('user/register-org.html', {'form': form,
+            return self.context_response('user/register_org.html', {'form': form,
             'current_tab': 'register'})
 
         # Register user

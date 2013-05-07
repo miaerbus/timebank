@@ -17,11 +17,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
 curdir = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # To remove timebank.fcgi from urls
@@ -35,28 +36,24 @@ ADMINS = (
 
 OWNERS = MANAGERS = ADMINS
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-#DATABASES = { 'default': dj_database_url.config(default='postgres://dfcddnxxxyrlea:gwVbq8GOdBRBanwwAFunpiNtfC@ec2-54-243-241-23.compute-1.amazonaws.com:5432/d8lvag8nknevor') }
-
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 DATABASES = {
-#    'default': {
-#        'NAME': 'timebank',
-#        'ENGINE': 'django.db.backends.mysql',
-#        'USER': 'root',
-#        'PASSWORD': 'root',
-#    },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'd8lvag8nknevor',       # Or path to database file if using sqlite3.
-        'USER': 'dfcddnxxxyrlea',                      # Not used with sqlite3.
-        'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
-        'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-    }
+        'NAME': 'timebank',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'root',
+    },
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'd8lvag8nknevor',       # Or path to database file if using sqlite3.
+#        'USER': 'dfcddnxxxyrlea',                      # Not used with sqlite3.
+#        'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
+#        'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+#    }
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -228,11 +225,11 @@ LANGUAGES = (
 
 # Just in case
 RATINGS_VOTES_PER_IP = 3
-AUTOACCEPT_REGISTRATION=False
+AUTOACCEPT_REGISTRATION = False
 
-SHOW_CAPTCHAS=True
+SHOW_CAPTCHAS = True
 
-PUBLIC_USER_INFO = False
+PUBLIC_USER_INFO = True
 
 try:
     from local_settings import *
