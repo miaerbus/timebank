@@ -143,7 +143,7 @@ class RegisterFormYouth(UserCreationForm):
 class EditProfileForm(forms.ModelForm):
     #photo = forms.ImageField(label=_("Avatar"), required=False)
     birth_date = FormDateField(label=_("Rojstni datum"),
-        input_formats=("%d/%m/%Y",))
+        input_formats=("%d.%m.%Y",))
 
     first_name = FormCharField(label=_("Ime"), required=True,
         max_length=30)
