@@ -39,8 +39,8 @@ class RegisterForm(UserCreationForm):
     password2 = forms.CharField(label=_("Ponovitev gesla"),
         widget=forms.PasswordInput,
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
-    birth_date = FormDateField(label=_("Rojstni datum"))
-        #input_formats=("%d/%m/%Y",))
+    birth_date = FormDateField(label=_("Rojstni datum"),
+        input_formats=("%d.%m.%Y",))
     first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
     email = FormEmailField(label=_("E-mail"), required=True)
@@ -55,7 +55,7 @@ class RegisterForm(UserCreationForm):
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
     	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
-        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
+        help_text=mark_safe(u"<a href='http://cbs-mb.si/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://cbs-mb.si/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
     class Meta:
@@ -76,8 +76,8 @@ class RegisterFormOrg(UserCreationForm):
     password2 = forms.CharField(label=_("Ponovitev gesla"),
         widget=forms.PasswordInput,
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
-    birth_date = FormDateField(label=_("Rojstni datum zastopnika"))
-        #input_formats=("%d/%m/%Y",))
+    birth_date = FormDateField(label=_("Rojstni datum zastopnika"),
+        input_formats=("%d.%m.%Y",))
     first_name = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
     email = FormEmailField(label=_(u"E-poštni zastopnika"), required=True)
@@ -92,7 +92,7 @@ class RegisterFormOrg(UserCreationForm):
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
     	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
-        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
+        help_text=mark_safe(u"<a href='http://cbs-mb.si/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://cbs-mb.si/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
     class Meta:
@@ -112,8 +112,8 @@ class RegisterFormYouth(UserCreationForm):
     password2 = forms.CharField(label=_("Ponovitev gesla"),
         widget=forms.PasswordInput,
         help_text=_("Ponovite geslo, da se izognete tipkarskim napakam."))
-    birth_date = FormDateField(label=_("Rojstni datum"))
-        #input_formats=("%d/%m/%Y",))
+    birth_date = FormDateField(label=_("Rojstni datum"),
+        input_formats=("%d.%m.%Y",))
     first_name = FormCharField(label=_("Ime"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek"), required=True, max_length=30)
     email = FormEmailField(label=_("E-mail"), required=True)
@@ -131,7 +131,7 @@ class RegisterFormYouth(UserCreationForm):
     terms = forms.BooleanField(
     	error_messages={'required': 'Sprejeti morate pogoje'},
     	label=u"Prebral/a sem in strinjam se s pogoji in pravili Časovne banke",
-        help_text=mark_safe(u"<a href='http://mighty-sea-1384.herokuapp.com/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://mighty-sea-1384.herokuapp.com/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
+        help_text=mark_safe(u"<a href='http://cbs-mb.si/rules/'>Pravilnik Časovne banke Maribor</a><br /><a href='http://cbs-mb.si/terms/'>Pravila in pogoji Časovne banke Maribor</a>"))
     captcha = FormCaptchaField()
 
     class Meta:
