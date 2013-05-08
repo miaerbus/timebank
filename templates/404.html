@@ -5,10 +5,9 @@
 
 {% block content %}
     <div class="section_3 404">
-        <h1>{{ SITE_NAME }} - {% trans "Napaka 404: Strani ni mogoče najti" %}</h1>
+        <h1>{% trans "Napaka 404: Strani ni mogoče najti" %}</h1>
         <p>
-            {% blocktrans %}Strani, ki jo iščete, ni mogoče najti.
-            {% endblocktrans %}
+            {% blocktrans %}Strani, ki jo iščete, ni mogoče najti.{% endblocktrans %}
         </p>
     </div>
 {% endblock %}
