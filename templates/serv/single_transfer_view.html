@@ -4,14 +4,14 @@
         </div>
         <div class="gravatar">
             <a href="{% url user-view transfer.credits_debtor.id %}">
-                <img src="{% avatar transfer.credits_debtor 48 %}" alt="{{ transfer.credits_debtor.username }}" title="{{ transfer.credits_debtor.username }}"/>
-                {{ transfer.credits_debtor.username|truncate_chars:7 }}
+                <img src="{% avatar transfer.credits_debtor 48 %}" alt="{{ transfer.credits_debtor.username }}" title="{{ transfer.credits_debtor.first_name }} {{ transfer.credits_debtor.last_name }}"/>
+                {{ transfer.credits_debtor.username|truncate_chars:6 }}
             </a>
         </div>
         <div class="gravatar gravatar2">
             <a href="{% url user-view transfer.credits_payee.id %}">
-                <img src="{% avatar transfer.credits_payee 48 %}" alt="{{ transfer.credits_payee.username }}" title="{{ transfer.credits_payee.username }}"/>
-                {{ transfer.credits_payee.username|truncate_chars:7 }}
+                <img src="{% avatar transfer.credits_payee 48 %}" alt="{{ transfer.credits_payee.username }}" title="{{ transfer.credits_payee.first_name }}" "{{ transfer.credits_payee.last_name }}"/>
+                {{ transfer.credits_payee.username|truncate_chars:6 }}
             </a>
         </div>
         <a href="{% url serv-transfer-view transfer.id %}"><div class="description description2 status status_{{ transfer.status }}"><p>{{ transfer.description|linebreaks }}</p></div></a>

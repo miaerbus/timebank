@@ -141,7 +141,7 @@ class RegisterFormYouth(UserCreationForm):
             'birth_date', 'description', 'land_line', 'mobile_tlf')
 
 class EditProfileForm(forms.ModelForm):
-    #photo = forms.ImageField(label=_("Avatar"), required=False)
+    photo = forms.ImageField(label=_("Avatar"), required=False)
     birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d.%m.%Y",))
 
@@ -174,14 +174,14 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         hidden = ()
-        fields = ('first_name', 'last_name', 'email', 'address',  'birth_date',
+        fields = ('photo', 'first_name', 'last_name', 'email', 'address',  'birth_date',
             'description', 'land_line', 'mobile_tlf', 'email_updates')
 
 class RemoveForm(forms.Form):
     reason = FormCharField(label=_("Razlog"), required=True,
         min_length=10, max_length=300, widget=forms.Textarea(),
         help_text=_(u'Kaj smo naredili narobe? Prosimo, sporočite nam, zakaj'
-            u' ne zelite več sodelovati v skupnosti.'))
+            u' ne želite več sodelovati v skupnosti.'))
 
 class PublicMessageForm(forms.ModelForm):
     class Meta:

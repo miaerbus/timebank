@@ -12,8 +12,8 @@
         </div>
         <div class="gravatar">
             <a href="{% url user-view person.id %}">
-                <img src="{% avatar person 48 %}" alt="{{ person.username }}" title="{{ person.username }}"/>
-                {{ person.username|truncate_chars:7 }}
+                <img src="{% avatar person 48 %}" alt="{{ person.username }}" title="{{ person.first_name }}" "{{ person.last_name }}"/>
+                {{ person.username|truncate_chars:6 }}
             </a>
         </div>
         <a href="{% url user-view person.id %}"><div class="description">{{ person.description|linebreaks }}</div></a>
