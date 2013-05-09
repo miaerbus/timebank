@@ -231,6 +231,8 @@ SHOW_CAPTCHAS = True
 
 PUBLIC_USER_INFO = True
 
+SESSION_COOKIE_DOMAIN = ".cbs-mb.si"
+
 try:
     from local_settings import *
 except ImportError:
