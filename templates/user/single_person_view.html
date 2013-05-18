@@ -6,9 +6,7 @@
             {% trans "Ime in priimek" %}:
             <span>{{ person.first_name }} {{ person.last_name }}</span> /
             {% trans "Kredit" %}:
-            <span>{{ person.balance_hours }} ur</span> /
-            {% trans "Karma" %}:
-            <span>{{ person.karma }}</span>
+            <span>{{ person.balance_hours }} ur</span>
         </div>
         <div class="gravatar">
             <a href="{% url user-view person.id %}">
