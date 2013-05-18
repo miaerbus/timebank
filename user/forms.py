@@ -80,7 +80,7 @@ class RegisterFormOrg(UserCreationForm):
         input_formats=("%d.%m.%Y",))
     first_name = FormCharField(label=_("Ime zastopnika"), required=True, max_length=30)
     last_name = FormCharField(label=_("Priimek zastopnika"), required=True, max_length=30)
-    email = FormEmailField(label=_(u"E-poštni zastopnika"), required=True)
+    email = FormEmailField(label=_(u"E-poštninaslov zastopnika"), required=True)
     address = FormCharField(label=_("Naslov zastopnika"), required=True,
         max_length=100, help_text=_("Primer: Cankarjeva 1, Maribor"))
     description = FormCharField(label=_("Opis organizacije"), required=True,
