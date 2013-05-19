@@ -141,7 +141,7 @@ class RegisterFormYouth(UserCreationForm):
             'birth_date', 'description', 'land_line', 'mobile_tlf')
 
 class EditProfileForm(forms.ModelForm):
-    photo = forms.ImageField(label=_("Avatar"), required=False)
+    #photo = forms.ImageField(label=_("Avatar"), required=False)
     birth_date = FormDateField(label=_("Rojstni datum"),
         input_formats=("%d.%m.%Y",))
 
