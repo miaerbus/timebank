@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010 Daniel Garcia Moreno <dani@danigm.net>
 #
@@ -19,6 +20,7 @@ from datetime import datetime, timedelta
 
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
+from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from django.http import Http404
 from django.conf import settings
@@ -32,6 +34,8 @@ from serv.forms import (ServiceForm, ListServicesForm, AddTransferForm,
     AddCommentForm, NewTransferForm)
 from user.models import Profile
 from messages.models import Message
+from utils import send_mail, I18nString
+
 
 class ListServices(ViewClass):
     @login_required
@@ -577,6 +581,25 @@ class AddComment(ViewClass):
             message.is_public = True
             message.service = service
             message.save()
+
+            # Send an email
+            current_site = Site.objects.get_current()
+            subject = I18nString(_(u"Nov komentar uporabnika %(username)s"), {
+                'username': message.sender,
+                'site_name': settings.SITE_NAME
+                })
+            message1 = I18nString(_(u"Pozdravljeni, %(recipient)s!\n\n"
+                u"Uporabnik %(sender)s je komentiral vašo storitev."
+                #u"%(url)s"
+                u"\n\n- %(site_name)s"), {
+                    'recipient': message.recipient,
+                    'sender': message.sender,
+                    'url': current_site.domain,
+                    'site_name': settings.SITE_NAME
+                })
+            send_mail(subject, message1, settings.DEFAULT_FROM_EMAIL,
+                [message.recipient], fail_silently=False)
+
             self.flash(_(u"Komentar objavljen"))
             return redirect('serv-view', message.service.id)
         context = dict(form=form, current_tab="services",
