@@ -46,16 +46,17 @@ class ServiceForm(forms.ModelForm):
             'is_offer': forms.Select
         }
 
-
     def __init__(self, *args, **kwargs):
         super(ServiceForm, self).__init__(*args, **kwargs)
+        self.initial['is_offer'] = _(u"ponujam")
         self.fields['area'].empty_label = _(u"Povsod")
-	self.fields['area'].queryset = Area.objects.all().order_by('name')
-	self.fields['category'].empty_label = _(u"Vse kategorije")
-	self.fields['category'].queryset = Category.objects.all().order_by('name')
+        self.fields['area'].queryset = Area.objects.all().order_by('name')
+        self.fields['category'].empty_label = _(u"Vse kategorije")
+        self.fields['category'].queryset = Category.objects.all().order_by('name')
         self.fields['description'].help_text = _(u"Nasvet: ne vpisujte osebnih"
-	    u" podatkov, za katere ne želite, da so javno objavljeni."
-	    u" Za zasebne podatke uporabite zasebna sporočila.")
+            u" podatkov, za katere ne želite, da so javno objavljeni."
+            u" Za zasebne podatke uporabite zasebna sporočila.")
+
 
 class ListServicesForm(forms.Form):
     TYPE_CHOICES = (
