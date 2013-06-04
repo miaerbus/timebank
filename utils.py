@@ -104,8 +104,8 @@ def login_required(fn):
     '''
     def wrapper(self, *args, **kwargs):
         if not self.request.user.is_authenticated():
-            self.flash(_(smart_unicode(u'Biti morate registrirani, da lahko vidite storitev.'
-                #u' <a href="%(link)s">%(link_text)s</a>. Morda bi se nam'
+            self.flash(_(smart_unicode(u'Da lahko vidite storitev, morate biti registrirani.'
+                #u' <a href="%(link)s">%(link_text)s</a>.'
                 u' Morda bi se nam <a href="%(join_url)s">želeli pridružiti</a> ali vpisati'
                 u' svoje uporabniško ime in geslo na levi.')) %\
                 {
