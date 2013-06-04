@@ -74,7 +74,7 @@ class Contact(ViewClass):
                 'email_subject': form.cleaned_data["subject"]
             })
             message = I18nString(_(u"Uporabnik %(name)s z emailom %(email)s"\
-                u" pošilja sporočilo:\n%(message)s"), {
+                u" pošilja sporočilo:\nmessage)s"),
                     'name': form.cleaned_data["name"],
                     'email': form.cleaned_data["email"],
                     'message': form.cleaned_data["message"]
