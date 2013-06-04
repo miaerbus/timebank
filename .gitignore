@@ -6,3 +6,4 @@ database.sqlite
 .kdev4
 venv
 local_settings.py
+jquery-ui-1.9.2.custom

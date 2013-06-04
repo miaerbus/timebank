@@ -57,31 +57,31 @@ class Contact(ViewClass):
         # Send an email to admins
         if self.request.user.is_authenticated():
             user = self.request.user
-            subject = I18nString(_("[%(site_name)s] %(username)s: %(email_subject)s"), {
+            subject = I18nString(_(u"[%(site_name)s] %(username)s: %(email_subject)s"), {
                 'site_name': settings.SITE_NAME,
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_("Registriran uporabnik %(username)s posilja "\
-            " sporocilo:\n%(message)s"), {
+            message = I18nString(_(u"Uporabnik %(username)s pošilja"\
+            u" sporočilo:\n%(message)s"), {
                 'username': user.username,
                 'message': form.cleaned_data["message"]
             })
         else:
-            subject = I18nString(_("[%(site_name)s] %(email)s: %(email_subject)s") % {
+            subject = I18nString(_("u[%(site_name)s] %(email)s: %(email_subject)s") % {
                 'site_name': settings.SITE_NAME,
                 'email': form.cleaned_data["email"],
                 'email_subject': form.cleaned_data["subject"]
             })
-            message = I18nString(_("Registriran uporabnik %(name)s z emailom %(email)s"\
-                " pošilja sporočilo:\n%(message)s"), {
+            message = I18nString(_(u"Uporabnik %(name)s z emailom %(email)s"\
+                u" pošilja sporočilo:\n%(message)s"), {
                     'name': form.cleaned_data["name"],
                     'email': form.cleaned_data["email"],
                     'message': form.cleaned_data["message"]
                 })
         mail_owners(subject, message)
 
-        self.flash(_("Sporočilo poslano, odgovorili vam bomo v najkrajšem možnem času."))
+        self.flash(_(u"Sporočilo poslano, odgovorili vam bomo v najkrajšem možnem času."))
         return redirect('main.views.index')
 
 
