@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 # the absolute_import ensures that the import of utils.py is from parent dir
 from __future__ import absolute_import
 import datetime
@@ -103,7 +106,11 @@ class Compose(ViewClass):
         form = form_class(self.request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
             form.save(sender=self.request.user)
+<<<<<<< HEAD
             self.flash(_(u"Sporočilo poslano"))
+=======
+            self.flash(_(u"Message successfully sent."))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             if success_url is None:
                 success_url = reverse('messages_inbox')
             if self.request.GET.has_key('next'):
@@ -131,7 +138,11 @@ class Reply(ViewClass):
             raise Http404
 
         form = form_class({
+<<<<<<< HEAD
             'body': _(u"%(sender)s je napisal/a:\n%(body)s") % {
+=======
+            'body': _(u"%(sender)s wrote:\n%(body)s") % {
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'sender': parent.sender,
                 'body': format_quote(parent.body)
                 },
@@ -161,7 +172,11 @@ class Reply(ViewClass):
         form = form_class(self.request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
             form.save(sender=self.request.user, parent_msg=parent)
+<<<<<<< HEAD
             self.flash(_(u"Sporočilo poslano"))
+=======
+            self.flash(_(u"Message successfully sent."))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             if success_url is None:
                 success_url = reverse('messages_inbox')
             return HttpResponseRedirect(success_url)
@@ -202,7 +217,11 @@ class Delete(ViewClass):
             deleted = True
         if deleted:
             message.save()
+<<<<<<< HEAD
             self.flash(_(u"Sporočilo izbrisano"))
+=======
+            self.flash(_(u"Message successfully deleted."))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             if notification:
                 notification.send([user], "messages_deleted", {'message': message,})
             return HttpResponseRedirect(success_url)
@@ -231,7 +250,11 @@ class Undelete(ViewClass):
             undeleted = True
         if undeleted:
             message.save()
+<<<<<<< HEAD
             self.flash(_(u"Sporočilo obnovljeno"))
+=======
+            self.flash(_(u"Message successfully recovered."))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             if notification:
                 notification.send([user], "messages_recovered", {'message': message,})
             return HttpResponseRedirect(success_url)

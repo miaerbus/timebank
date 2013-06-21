@@ -1,6 +1,7 @@
 {% load i18n %}
 <div class="serv person">
         <div class="information">
+<<<<<<< HEAD
             {% trans "Uporabnik" %}:
             <span>{{ person.username }}</span> /
             {% trans "Ime in priimek" %}:
@@ -12,14 +13,34 @@
             <a href="{% url user-view person.id %}">
                 <img src="{% avatar person 48 %}" alt="{{ person.username }}" title="{{ person.first_name }}" "{{ person.last_name }}"/>
                 {{ person.username|truncate_chars:6 }}
+=======
+            {% trans "Nick" %}:
+            <span>{{ person.username }}</span> /
+            {% trans "Name and Surname" %}:
+            <span>{{ person.first_name }} {{ person.last_name }}</span> /
+            {% trans "Credits" %}:
+            <span>{{ person.balance_hours }} horas</span> /
+            {% trans "Karma" %}:
+            <span>{{ person.karma }}</span>
+        </div>
+        <div class="gravatar">
+            <a href="{% url user-view person.id %}">
+                <img src="{% avatar person 48 %}" alt="{{ person.username }}" title="{{ person.username }}"/>
+                {{ person.username|truncate_chars:7 }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             </a>
         </div>
         <a href="{% url user-view person.id %}"><div class="description">{{ person.description|linebreaks }}</div></a>
         {% if user.is_authenticated %}
         <div class="cleaner"></div>
         <div class="buttons">
+<<<<<<< HEAD
             <a class="action" href="{% url serv-transfer-new-to person.id %}">{% trans "Prenesi ure" %}</a>
             <a class="action" href="{% url user-view-services person.id %}">{% trans "Poglej storitve uporabnika" %}</a>
+=======
+            <a class="action" href="{% url serv-transfer-new-to person.id %}">{% trans "Transfer hours" %}</a>
+            <a class="action" href="{% url user-view-services person.id %}">{% trans "View his services" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </div>
         {% endif %}
 </div>

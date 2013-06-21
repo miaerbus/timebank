@@ -69,8 +69,13 @@ class Message(models.Model):
     """
     A private message from user to user
     """
+<<<<<<< HEAD
     subject = models.CharField(_(u"Zadeva"), max_length=120)
     body = models.TextField(_(u"Sporočilo"))
+=======
+    subject = models.CharField(_("Subject"), max_length=120)
+    body = models.TextField(_("Message"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     sender = models.ForeignKey(User, related_name='sent_messages', verbose_name=_("Sender"))
     recipient = models.ForeignKey(User, related_name='received_messages', null=True, blank=True, verbose_name=_("Recipient"))
     parent_msg = models.ForeignKey('self', related_name='next_messages', null=True, blank=True, verbose_name=_("Parent message"))

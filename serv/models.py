@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿# -*- coding: utf-8 -*-
 # Copyright (C) 2009 Tim Gaggstatter <Tim.Gaggstatter AT gmx DOT net>
+=======
+﻿# Copyright (C) 2009 Tim Gaggstatter <Tim.Gaggstatter AT gmx DOT net>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 # Copyright (C) 2010 Eduardo Robles Elvira <edulix AT gmail DOT com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -32,6 +36,12 @@ class Area(models.Model):
     def __unicode__(self):
         return self.name
 
+<<<<<<< HEAD
+=======
+    class Meta:
+        ordering = ["name"]
+
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 class Category(models.Model):
 
@@ -41,18 +51,28 @@ class Category(models.Model):
         return self.name
 
     class Meta:
+<<<<<<< HEAD
+=======
+        ordering = ["name"]
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         verbose_name = _(u"Category")
         verbose_name_plural = _(u"Categories")
 
 
 OFFER_CHOICES = (
+<<<<<<< HEAD
     (True, _(u'ponujam')),
     (False, _(u'povprašujem'))
+=======
+    (True, _('offer')),
+    (False, _('demand'))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 )
 
 class Service(models.Model):
     creator = models.ForeignKey(Profile, related_name="services",
         verbose_name=_("Creator"))
+<<<<<<< HEAD
     is_offer = models.BooleanField(_(u"Tip storitve"), choices=OFFER_CHOICES)
     pub_date = models.DateTimeField(_(u"Publish date"),
         auto_now=True, auto_now_add=True)
@@ -67,6 +87,22 @@ class Service(models.Model):
             msj = _(u"ponujam")
         else:
             msj = _(u"povprašujem")
+=======
+    is_offer = models.BooleanField(_("Service type"), choices=OFFER_CHOICES)
+    pub_date = models.DateTimeField(_(u"Publish date"),
+        auto_now=True, auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+    description = models.TextField(_(u"Description"), max_length=400)
+    category = models.ForeignKey(Category, verbose_name=_('Category'))
+    area = models.ForeignKey(Area, null=True, blank=True,
+        verbose_name=_("Area"))
+
+    def __unicode__(self):
+        if self.is_offer:
+            msj = _("offered")
+        else:
+            msj = _("demanded")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         msj = unicode(msj)
         return "%d: '%s' %s from %s" % (self.id, self.short_name(), msj, self.creator)
 
@@ -143,7 +179,11 @@ class Transfer(models.Model):
         blank=True, verbose_name=_("Service"))
 
     # Small description for the received service
+<<<<<<< HEAD
     description = models.TextField(_(u"Opis"), max_length=300)
+=======
+    description = models.TextField(_(u"Description"), max_length=300)
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     request_date = models.DateTimeField(_("Transfer request date"),
         auto_now=True, auto_now_add=True)

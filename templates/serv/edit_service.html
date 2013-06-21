@@ -2,9 +2,15 @@
 {% load i18n %}
 {% block subtitle %}
     {% if instance %}
+<<<<<<< HEAD
         {% trans "Uredi storitev" %}
     {% else %}
         {% trans "Dodaj storitev" %}
+=======
+        {% trans "Edit service" %}
+    {% else %}
+        {% trans "Add service" %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% endif %}
 {% endblock %}
 
@@ -14,7 +20,11 @@
         <fieldset>
             {% include "main/form_snippet.html" %}
         </fieldset>
+<<<<<<< HEAD
         <input type="submit" value="{% trans "Shrani" %}"/>
+=======
+        <input type="submit" value="{% trans "Save" %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     </form>
 </div>
 {% endblock %}

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010 Daniel Garcia Moreno <dani@danigm.net>
 #
@@ -20,7 +23,10 @@ from datetime import datetime, timedelta
 
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
+<<<<<<< HEAD
 from django.contrib.sites.models import Site
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 from django.utils.translation import ugettext_lazy as _
 from django.http import Http404
 from django.conf import settings
@@ -34,8 +40,11 @@ from serv.forms import (ServiceForm, ListServicesForm, AddTransferForm,
     AddCommentForm, NewTransferForm)
 from user.models import Profile
 from messages.models import Message
+<<<<<<< HEAD
 from utils import send_mail, I18nString
 
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 class ListServices(ViewClass):
     @login_required
@@ -128,7 +137,11 @@ class AddService(ViewClass):
             service = form.save(commit=False)
             service.creator = self.request.user
             service.save()
+<<<<<<< HEAD
             self.flash(_(u"Storitev dodana"))
+=======
+            self.flash(_(u"Service added successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-myservices')
         context = dict(form=form, instance=None, current_tab="services",
             subtab="add")
@@ -140,7 +153,12 @@ class EditService(ViewClass):
     def GET(self, sid):
         instance = get_object_or_404(Service, pk=sid)
         if not instance.creator == self.request.user:
+<<<<<<< HEAD
             self.flash(_(u"Ni mogoče spreminjati svoje storitve"), "error")
+=======
+            self.flash(_(u"You can't modify a service that isn't yours"),
+                       "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-myservices')
         form = ServiceForm(instance=instance)
         context = dict(form=form, instance=instance, current_tab="services",
@@ -151,7 +169,12 @@ class EditService(ViewClass):
     def POST(self, sid):
         instance = get_object_or_404(Service, pk=sid)
         if not instance.creator == self.request.user:
+<<<<<<< HEAD
             self.flash(_(u"Ni mogoče spreminjati svoje storitve"), "error")
+=======
+            self.flash(_(u"You can't modify a service that isn't yours"),
+                       "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-myservices')
         form = ServiceForm(self.request.POST, instance=instance)
 
@@ -164,11 +187,20 @@ class EditService(ViewClass):
             if Transfer.objects.filter(service=instance,
                 status__in=["q", "a"]).count() > 0 and\
                 service.is_offer != current_is_offer:
+<<<<<<< HEAD
                 self.flash(_(u"Ni mogoče spreminjati tipa storitve med ponudbo"
                     u" in povpraševanjem medtem ko se izvaja prenos."), "error")
                 return redirect('serv-myservices')
             service.save()
             self.flash(_(u"Storitev spremenjena"))
+=======
+                self.flash(_(u"You can't change the type of service between"
+                    " offer and demand with transfers while there are ongoing"
+                    " transfers."), "error")
+                return redirect('serv-myservices')
+            service.save()
+            self.flash(_(u"Service modified successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-myservices')
         context = dict(form=form, instance=instance, current_tab="services",
             subtab="my-services")
@@ -181,9 +213,15 @@ class DeleteService(ViewClass):
         instance = get_object_or_404(Service, pk=sid)
         if instance.creator == self.request.user:
             instance.delete()
+<<<<<<< HEAD
             self.flash(_(u"Storitev odstranjena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
+=======
+            self.flash(_(u"Service removed successfully"))
+        else:
+            self.flash(_(u"You can't remove a service that isn't yours"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                        "error")
         return redirect('serv-myservices')
 
@@ -195,9 +233,15 @@ class ActiveService(ViewClass):
         if instance.creator == self.request.user:
             instance.is_active = True
             instance.save()
+<<<<<<< HEAD
             self.flash(_(u"Storitev omogočena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"),
+=======
+            self.flash(_(u"Service enabled successfully"))
+        else:
+            self.flash(_(u"You can't modify a service that isn't yours"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                        "error")
         return redirect('serv-myservices')
 
@@ -209,9 +253,16 @@ class DeactiveService(ViewClass):
         if instance.creator == self.request.user:
             instance.is_active = False
             instance.save()
+<<<<<<< HEAD
             self.flash(_(u"Storitev onemogočena"))
         else:
             self.flash(_(u"Ni mogoče spreminjati storitve, ki ni vaša"), "error")
+=======
+            self.flash(_(u"Service disabled successfully"))
+        else:
+            self.flash(_(u"You can't modify a service that isn't yours"),
+                       "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return redirect('serv-myservices')
 
 
@@ -221,7 +272,12 @@ class NewTransfer(ViewClass):
         if user_id:
             user = get_object_or_404(Profile, pk=user_id)
             if self.request.user.is_authenticated and self.request.user == user:
+<<<<<<< HEAD
                 self.flash(_(u"Ne morete povpraševati po svoji storitvi"), "error")
+=======
+                self.flash(_(u"You can't transfer credits to yourself"),
+                    "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 return redirect("serv-transfer-new")
             else:
                 form_data = dict(username=user.username)
@@ -236,7 +292,12 @@ class NewTransfer(ViewClass):
         # check user is not doing an "auto-transfer"
         if self.request.user.is_authenticated and\
             self.request.POST["username"] == self.request.user.username:
+<<<<<<< HEAD
             self.flash(_(u"Kredita ni mogoče prenesti nase"), "error")
+=======
+            self.flash(_(u"You can't transfer credits to yourself"),
+                "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect("serv-transfer-new")
 
         form = NewTransferForm(data=self.request.POST)
@@ -261,16 +322,31 @@ class NewTransfer(ViewClass):
 
         # Check user would not surpass max balance
         if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
+<<<<<<< HEAD
             self.flash(_(u"Prenos bi presegel omejitev kredita"), 'error')
+=======
+            self.flash(_(u"The transfer would exceed the credit limit of the"
+                " credits receiver"), 'error')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return self.context_response('serv/new_transfer.html', context)
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
+<<<<<<< HEAD
             self.flash(_(u"Prenos bi presegel omejitev kredila"), 'error')
             return self.context_response('serv/new_transfer.html', context)
 
         transfer.save()
         self.flash(_(u"Prenos je uspešno ustvarjen"))
+=======
+            self.flash(_(u"The transfer would exceed the minimum credit limit"
+                " of the person giving the credits"),
+                'error')
+            return self.context_response('serv/new_transfer.html', context)
+
+        transfer.save()
+        self.flash(_(u"Transfer created successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return redirect('serv-transfers-mine')
 
 class AddTransfer(ViewClass):
@@ -295,7 +371,11 @@ class AddTransfer(ViewClass):
         # Check user would not surpass min balance
         if self.request.user.balance < settings.MIN_CREDIT and\
             service.is_offer:
+<<<<<<< HEAD
             self.flash(_(u"Nimate dovolj kredita"), 'error')
+=======
+            self.flash(_(u"You don't have enough credit"), 'error')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         if service.creator == self.request.user:
@@ -337,7 +417,11 @@ class AddTransfer(ViewClass):
                 return redirect('serv-transfers-mine')
 
             transfer.save()
+<<<<<<< HEAD
             self.flash(_(u"Prenos ustvarjen"))
+=======
+            self.flash(_(u"Transfer created successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         context = dict(form=form, instance=None, current_tab="transfers",
@@ -350,12 +434,21 @@ class EditTransfer(ViewClass):
     def GET(self, transfer_id):
         transfer = get_object_or_404(Transfer, pk=transfer_id)
         if transfer.creator() != self.request.user:
+<<<<<<< HEAD
             self.flash(_(u"Ne morete spremeniti prenosa, ki ni vaš"),
                 "error")
             return redirect('serv-transfers-mine')
         if transfer.status != "q":
             self.flash(_(u"Spreminjate lahko samo prenose, ki še niso bili"
                 u" potrjeni"), "error")
+=======
+            self.flash(_(u"You can't modify a transfer that isn't yours"),
+                "error")
+            return redirect('serv-transfers-mine')
+        if transfer.status != "q":
+            self.flash(_("You can only modify transfers that haven't been"
+                " accepted"), "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
         form = AddTransferForm(instance=transfer)
         context = dict(form=form, transfer=transfer, current_tab="transfers",
@@ -366,11 +459,19 @@ class EditTransfer(ViewClass):
     def POST(self, transfer_id):
         transfer = get_object_or_404(Transfer, pk=transfer_id)
         if transfer.creator() != self.request.user:
+<<<<<<< HEAD
             self.flash(_(u"Ne morete spremeniti prenosa, ki ni vaš"), "error")
             return redirect('serv-transfers-mine')
         if transfer.status != "q":
             self.flash(_(u"Spreminjate lahko samo prenose, ki še niso bili"
                 " potrjeni"), "error")
+=======
+            self.flash(_("You can't modify a transfer that isn't yours"), "error")
+            return redirect('serv-transfers-mine')
+        if transfer.status != "q":
+            self.flash(_("You can only modify transfers that haven't been"
+                " accepted"), "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         form = AddTransferForm(self.request.POST, instance=transfer)
@@ -378,18 +479,32 @@ class EditTransfer(ViewClass):
             transfer = form.save(commit=False)
             # Check user would not surpass max balance
             if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
+<<<<<<< HEAD
                 self.flash(_("Prenos bi presegel limit prejemnika"), 'error')
+=======
+                self.flash(_("The transfer would exceed the credit limit of the"
+                    "credits receiver"), 'error')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 return redirect('serv-transfers-mine')
 
             # Check user would not minimum min balance
             if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
+<<<<<<< HEAD
                 self.flash(_(u"Prenos bi presegel minimalni kredit"
                     u" osebe, ki je povpraševala po storitvi"),
+=======
+                self.flash(_(u"The transfer would exceed the minimum credit"
+                    " limit of the person receiving the service"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     'error')
                 return redirect('serv-transfers-mine')
 
             transfer.save()
+<<<<<<< HEAD
             self.flash(_(u"Prenos uspešno spremenjen"))
+=======
+            self.flash(_(u"Transfer modified successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
         context = dict(form=form, transfer=transfer, current_tab="transfer",
             subtab="mine")
@@ -411,7 +526,11 @@ class CancelTransfer(ViewClass):
             return redirect('serv-transfers-mine')
         transfer.status = "r"
         transfer.save()
+<<<<<<< HEAD
         self.flash(_("Prenos preklican"))
+=======
+        self.flash(_("Transfer cancelled"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return redirect('serv-transfers-mine')
 
 
@@ -428,24 +547,41 @@ class AcceptTransfer(ViewClass):
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
+<<<<<<< HEAD
             self.flash(_(u"The transfer would exceed the minimum credit limit"
                 u" of the person receiving the service"),
+=======
+            self.flash(_("The transfer would exceed the minimum credit limit"
+                " of the person receiving the service"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'error')
             return redirect('serv-transfers-mine')
 
         if transfer.creator() == self.request.user:
             self.flash(_(u"You can't accept a transfer of a service that isn't"
+<<<<<<< HEAD
                 u" yours"), "error")
+=======
+                " yours"), "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         if (transfer.status != "a" or not transfer.is_direct()) and\
             transfer.status != "q":
             self.flash(_(u"You can only modify transfers that haven't been"
+<<<<<<< HEAD
                 u" done"), "error")
             return redirect('serv-transfers-mine')
         transfer.status = "a"
         transfer.save()
         self.flash(_("Prenos sprejet"))
+=======
+                " done"), "error")
+            return redirect('serv-transfers-mine')
+        transfer.status = "a"
+        transfer.save()
+        self.flash(_("Transfer accepted"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return redirect('serv-transfers-mine')
 
 
@@ -457,19 +593,32 @@ class ConfirmTransfer(ViewClass):
         # Check user would not surpass max balance
         if transfer.credits_payee.balance + transfer.credits > settings.MAX_CREDIT:
             self.flash(_(u"The transfer would exceed the credit limit of the"
+<<<<<<< HEAD
                 u" person receiving the credits"), 'error')
+=======
+                " person receiving the credits"), 'error')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         # Check user would not minimum min balance
         if transfer.credits_debtor.balance - transfer.credits < settings.MIN_CREDIT:
             self.flash(_("The transfer would exceed the minimum credit limit"
+<<<<<<< HEAD
                 u" of the person receiving the service"),
+=======
+                " of the person receiving the service"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'error')
             return redirect('serv-transfers-mine')
 
         if transfer.credits_debtor != self.request.user:
+<<<<<<< HEAD
             self.flash(_(u"You can't confirm a transfer of a service that isn't"
                 u" yours"), "error")
+=======
+            self.flash(_("You can't confirm a transfer of a service that isn't"
+                " yours"), "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-transfers-mine')
 
         if transfer.status != "a":
@@ -484,7 +633,11 @@ class ConfirmTransfer(ViewClass):
         transfer.credits_payee.save()
         transfer.save()
 
+<<<<<<< HEAD
         self.flash(_(u"Prenos je zaključen"))
+=======
+        self.flash(_("Transfer done"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return redirect('serv-transfers-mine')
 
 
@@ -553,7 +706,11 @@ class RateTransfer(ViewClass):
 
         transfer.rating.add(score=rating, user=self.request.user,
             ip_address=self.request.META['REMOTE_ADDR'])
+<<<<<<< HEAD
         self.flash(_(u"Ocena prenosa posodobljena"))
+=======
+        self.flash(_(u"Transfer rating updated successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
         return redirect('serv-transfer-view', transfer_id)
 
@@ -570,7 +727,12 @@ class AddComment(ViewClass):
     def POST(self, service_id):
         service = get_object_or_404(Service, pk=service_id)
         if not service.is_active:
+<<<<<<< HEAD
             self.flash(_(u"Ne morete komentirati neaktivne storitve"), "error")
+=======
+            self.flash(_(u"You can't comment inactive services"),
+                "error")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('/')
 
         form = AddCommentForm(self.request.POST)
@@ -581,6 +743,7 @@ class AddComment(ViewClass):
             message.is_public = True
             message.service = service
             message.save()
+<<<<<<< HEAD
 
             # Send an email
             current_site = Site.objects.get_current()
@@ -601,6 +764,9 @@ class AddComment(ViewClass):
                 [message.recipient], fail_silently=False)
 
             self.flash(_(u"Komentar objavljen"))
+=======
+            self.flash(_(u"Comment added successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             return redirect('serv-view', message.service.id)
         context = dict(form=form, current_tab="services",
             subtab="comment")
@@ -625,7 +791,11 @@ class DeleteComment(ViewClass):
                 "error")
         else:
             message.delete()
+<<<<<<< HEAD
             self.flash(_(u"Komentar uspešno odstranjen"))
+=======
+            self.flash(_(u"Comment removed successfully"))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
         if service:
             return redirect('serv-view', service.id)

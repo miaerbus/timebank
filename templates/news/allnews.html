@@ -1,7 +1,11 @@
 {% load i18n %}
 
 {% if user.is_staff %}
+<<<<<<< HEAD
     <a href="{% url admin:news_new_add %}">{% trans "Dodaj novico" %}</a>
+=======
+    <a href="{% url admin:news_new_add %}">{% trans "Add a piece of news" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% endif %}
 {% for new in news.object_list %}
     <div class="new">
@@ -11,17 +15,29 @@
 <div class="pagination">
     <span class="step-links">
         {% if news.has_previous %}
+<<<<<<< HEAD
             <a href="?page={{ news.previous_page_number }}">{% trans "prejšnja" %}</a>
+=======
+            <a href="?page={{ news.previous_page_number }}">{% trans "previous" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         {% endif %}
 
         <span class="current">
             {% blocktrans with news.number as number and news.paginator.num_pages as num_pages %}
+<<<<<<< HEAD
             Stran {{ number }} od {{ num_pages }}
+=======
+            Page {{ number }} of {{ num_pages }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             {% endblocktrans %}
         </span>
 
         {% if news.has_next %}
+<<<<<<< HEAD
             <a href="?page={{ news.next_page_number }}">{% trans "naslednja" %}</a>
+=======
+            <a href="?page={{ news.next_page_number }}">{% trans "next" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         {% endif %}
     </span>
 </div>

@@ -1,5 +1,6 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Kontakt' %} {% endblock %}
 {% block content %}
     <div class="section_3">
@@ -34,5 +35,20 @@
 						<input class="submit" type="submit" value="{% trans 'Pošlji sporočilo' %}"/>
 					</form>
 	    </div>
+=======
+{% block title %} {% trans 'Contact' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h1>{% trans 'Contact' %}</h1>
+        {% trans 'Contact with the site owners via this form.' %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset>
+                {% include "main/form_snippet.html" %}
+            </fieldset>
+            <input class="submit" type="submit" value="{% trans 'Send message' %}"/>
+        </form>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     </div>
 {% endblock %}

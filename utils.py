@@ -104,10 +104,17 @@ def login_required(fn):
     '''
     def wrapper(self, *args, **kwargs):
         if not self.request.user.is_authenticated():
+<<<<<<< HEAD
             self.flash(_(smart_unicode(u'Da lahko vidite storitev, morate biti registrirani.'
                 #u' <a href="%(link)s">%(link_text)s</a>.'
                 u' Morda bi se nam <a href="%(join_url)s">želeli pridružiti</a> ali vpisati'
                 u' svoje uporabniško ime in geslo na levi.')) %\
+=======
+            self.flash(_(u'You must be registered to enter in'
+                ' <a href="%(link)s">%(link_text)s</a>. You might want to'
+                ' <a href="%(join_url)s">join us now</a> or enter with your'
+                ' user using the grey login box at the left.') %\
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {
                     'link': self.request.get_full_path(),
                     'link_text': self.request.get_full_path(),
@@ -130,11 +137,16 @@ class FormCharField(forms.CharField):
         return unicode(self._auto_help_text) + unicode(self._help_text)
 
     def set_help_text(self, help_text):
+<<<<<<< HEAD
         self._help_text = unicode(help_text)
+=======
+        self._help_text = help_text
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
+<<<<<<< HEAD
             self._auto_help_text += _(u"Zahtevano. ")
         else:
             self._auto_help_text += _(u"Poljubno. ")
@@ -146,6 +158,19 @@ class FormCharField(forms.CharField):
                 % self.max_length
         elif self.min_length:
             self._auto_help_text += _(u"Najmanj %d znakov. ")\
+=======
+            self._auto_help_text += _(u"Required. ")
+        else:
+            self._auto_help_text += _(u"Optional. ")
+        if self.max_length and self.min_length:
+            self._auto_help_text += _(u"From %(from)d to %(to)d characters. ")\
+                % {'from': self.min_length, 'to': self.max_length}
+        elif self.max_length:
+            self._auto_help_text += _(u"Up to %d characters. ")\
+                % self.max_length
+        elif self.min_length:
+            self._auto_help_text += _(u"Minimum %d characters. ")\
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 % self.min_length
 
     help_text = property(get_help_text, set_help_text)
@@ -168,10 +193,17 @@ class FormEmailField(forms.EmailField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
+<<<<<<< HEAD
             self._auto_help_text += _(u"Zahtevano. ")
         else:
             self._auto_help_text += _(u"Poljubno. ")
         self._auto_help_text += _(u" Primer: ime@domena.si")
+=======
+            self._auto_help_text += _(u"Requeried. ")
+        else:
+            self._auto_help_text += _(u"Optional. ")
+        self._auto_help_text += _(u" Example: name@example.com")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     help_text = property(get_help_text, set_help_text)
 
@@ -201,11 +233,19 @@ class FormDateField(forms.DateField):
     def update_auto_help_text(self):
         self._auto_help_text = u''
         if self.required:
+<<<<<<< HEAD
             self._auto_help_text += _(u"Zahtevano. Primer: ")
         else:
             self._auto_help_text += _(u"Poljubno. Primer: ")
 
         the_date = datetime(1986, 4, 27).date()
+=======
+            self._auto_help_text += _(u"Required. Example(s): ")
+        else:
+            self._auto_help_text += _(u"Optional. Example(s): ")
+
+        the_date = datetime(1986, 9, 17).date()
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
         self._auto_help_text +=  ', '.join([the_date.strftime(format)
             for format in self.input_formats or
@@ -216,7 +256,11 @@ class FormDateField(forms.DateField):
 class FormCaptchaWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None):
         if not settings.SHOW_CAPTCHAS:
+<<<<<<< HEAD
             return  _(u'Captcha onemogočen')
+=======
+            return  _('Captcha disabled')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return mark_safe(u'%s' % captcha.displayhtml(settings.RECAPTCHA_PUBLIC_KEY))
 
     def value_from_datadict(self, data, files, name):
@@ -240,7 +284,11 @@ class FormCaptchaField(forms.CharField):
         check_captcha = captcha.submit(recaptcha_challenge_value,
             recaptcha_response_value, settings.RECAPTCHA_PRIVATE_KEY, {})
         if not check_captcha.is_valid:
+<<<<<<< HEAD
             raise forms.util.ValidationError(_(u'Neveljavni znaki'))
+=======
+            raise forms.util.ValidationError(_(u'Invalid captcha'))
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         return values[0]
 
 def mail_owners(subject, message, fail_silently=False, connection=None):

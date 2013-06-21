@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 # -*- coding: utf-8 -*-
 # Django settings for timebank project.
 # Copyright (C) 2010 Eduardo Robles Elvira <edulix AT gmail DOT com>

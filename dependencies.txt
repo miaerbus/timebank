@@ -5,5 +5,9 @@ ipdb==0.2
 ipython==0.10.1
 wsgiref==0.1.2
 south
+<<<<<<< HEAD
 django-notification==0.2
+=======
+django-notification
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 pil

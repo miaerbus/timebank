@@ -1,5 +1,6 @@
 {% load i18n %}
 {% if service %}
+<<<<<<< HEAD
     <a class="action" href="{% url serv-transfer-add service.id %}">{% trans "Zahtevaj prenos" %}</a>
 {% else %}
     <a class="action" href="{% url serv-transfer-edit transfer.id %}">{% trans "Uredi prenos" %}</a>
@@ -9,6 +10,17 @@
     {% if user.is_authenticated and transfer.credits_debtor == user and transfer.status == "a" %}
         <form method="POST" action="{% url serv-transfer-confirm transfer.id %}"> {% csrf_token %}
             <input class="action" name="submit" type="submit" value="{% trans 'Potrdi prenos' %}"/>
+=======
+    <a class="action" href="{% url serv-transfer-add service.id %}">{% trans "Request transfer" %}</a>
+{% else %}
+    <a class="action" href="{% url serv-transfer-edit transfer.id %}">{% trans "Edit transfer" %}</a>
+    <form method="POST" action="{% url serv-transfer-cancel transfer.id %}"> {% csrf_token %}
+        <input class="action" name="submit" type="submit" value="{% trans 'Cancel transfer' %}"/>
+    </form>
+    {% if user.is_authenticated and transfer.credits_debtor == user and transfer.status == "a" %}
+        <form method="POST" action="{% url serv-transfer-confirm transfer.id %}"> {% csrf_token %}
+            <input class="action" name="submit" type="submit" value="{% trans 'Confirm Transfer' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </form>
     {% endif %}
 {% endif %}

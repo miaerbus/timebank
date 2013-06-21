@@ -1,6 +1,10 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Skupnost' %} {% endblock %}
+=======
+{% block title %} {% trans 'People' %} {% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 {% block content %}
     <div class="section_3">
@@ -8,29 +12,49 @@
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
+<<<<<<< HEAD
             <input class="submit" type="submit" value="{% trans 'Najdi ljudi' %}"/>
+=======
+            <input class="submit" type="submit" value="{% trans 'Find people' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </form>
         <div class="services people">
             {% for person in people.object_list %}
                 {% include "user/single_person_view.html" %}
             {% empty %}
+<<<<<<< HEAD
                 <p>{% trans "Nikogar nismo našli" %}.</p>
+=======
+                <p>{% trans "No one was found" %}.</p>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             {% endfor %}
         </div>
         <div class="pagination">
             <span class="step-links">
                 {% if people.has_previous %}
+<<<<<<< HEAD
                     <a href="?{{ form.as_url_args }}&amp;page={{ people.previous_page_number }}">{% trans "prejšnja" %}</a>
+=======
+                    <a href="?{{ form.as_url_args }}&amp;page={{ people.previous_page_number }}">{% trans "previous" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {% endif %}
 
                 <span class="current">
                     {% blocktrans with people.number as number and people.paginator.num_pages as num_pages %}
+<<<<<<< HEAD
                     Stran {{ number }} od {{ num_pages }}
+=======
+                    Page {{ number }} of {{ num_pages }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     {% endblocktrans %}
                 </span>
 
                 {% if people.has_next %}
+<<<<<<< HEAD
                     <a href="?{{ form.as_url_args }}&amp;page={{ people.next_page_number }}">{% trans "naslednja" %}</a>
+=======
+                    <a href="?{{ form.as_url_args }}&amp;page={{ people.next_page_number }}">{% trans "next" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {% endif %}
             </span>
         </div>

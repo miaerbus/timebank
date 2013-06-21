@@ -1,16 +1,28 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Pošlji sporočilo vsem uporabnikom' %} {% endblock %}
 
 {% block content %}
     <div class="section_3">
         <h2>{% trans 'Pošlji sporočilo vsem uporabnikom' %}</h2>
+=======
+{% block title %} {% trans 'Send email to all users' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h2>{% trans 'Send email to all users' %}</h2>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         <form method="POST">
             {% csrf_token %}
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
+<<<<<<< HEAD
             <input type="submit" value="{% trans 'Pošlji sporočilo vsem uporabnikom' %}"/>
+=======
+            <input type="submit" value="{% trans 'Send email to all users' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </form>
     </div>
 {% endblock %}

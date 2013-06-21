@@ -1,29 +1,49 @@
 {% extends "serv/base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block subtitle %} {% trans 'Moje storitve' %} {% endblock %}
+=======
+{% block subtitle %} {% trans 'My services' %} {% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 {% block subcontent %}
         <form action="." method="get" class="find_services">
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
+<<<<<<< HEAD
             <input class="submit" type="submit" value="{% trans 'Najdi storitve' %}"/>
+=======
+            <input class="submit" type="submit" value="{% trans 'Find Services' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </form>
         {% include "serv/listservs.html" %}
         <div class="pagination">
             <span class="step-links">
                 {% if services.has_previous %}
+<<<<<<< HEAD
                     <a href="?{{ form.as_url_args }}&amp;page={{ services.previous_page_number }}">{% trans "prejšnja" %}</a>
+=======
+                    <a href="?{{ form.as_url_args }}&amp;page={{ services.previous_page_number }}">{% trans "previous" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {% endif %}
 
                 <span class="current">
                     {% blocktrans with services.number as number and services.paginator.num_pages as num_pages %}
+<<<<<<< HEAD
                     Stran {{ number }} od {{ num_pages }}
+=======
+                    Page {{ number }} of {{ num_pages }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     {% endblocktrans %}
                 </span>
 
                 {% if services.has_next %}
+<<<<<<< HEAD
                     <a href="?{{ form.as_url_args }}&amp;page={{ services.next_page_number }}">{% trans "naslednja" %}</a>
+=======
+                    <a href="?{{ form.as_url_args }}&amp;page={{ services.next_page_number }}">{% trans "next" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {% endif %}
             </span>
         </div>

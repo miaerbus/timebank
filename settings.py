@@ -17,17 +17,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+<<<<<<< HEAD
 import dj_database_url
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 from django.utils.translation import ugettext_lazy as _
 
 curdir = os.path.abspath(os.path.dirname(__file__))
 
+<<<<<<< HEAD
 DEBUG = False
+=======
+DEBUG = True
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 TEMPLATE_DEBUG = DEBUG
 
 # To remove timebank.fcgi from urls
 FORCE_SCRIPT_NAME = ""
 
+<<<<<<< HEAD
 SITE_NAME = u"Časovna banka Maribor"
 
 ADMINS = (
@@ -53,6 +61,26 @@ DATABASES = {
         'PASSWORD': 'gwVbq8GOdBRBanwwAFunpiNtfC',                  # Not used with sqlite3.
         'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+=======
+SITE_NAME="Timebank"
+
+ADMINS = (
+    ('admin', 'admin@localhost'),
+)
+
+DEFAULT_FROM_EMAIL="admin@localhost"
+
+OWNERS = MANAGERS = ADMINS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'database.sqlite',       # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     }
 }
 
@@ -61,6 +89,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
+<<<<<<< HEAD
 TIME_ZONE = 'Europe/Ljubljana'
 
 # Language code for this installation. All choices can be found here:
@@ -70,13 +99,23 @@ LANG='sl_SI.UTF-8'
 LC_ALL='sl_SI.UTF-8'
 
 #NOTIFICATION_LANGUAGE_MODULE = 'sl_SI'
+=======
+TIME_ZONE = 'Europe/Madrid'
+
+# Language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+LANGUAGE_CODE = 'en'
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
+<<<<<<< HEAD
 USE_L10N = True
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -90,6 +129,7 @@ MEDIA_URL = '/site_media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
+<<<<<<< HEAD
 #ADMIN_MEDIA_PREFIX = '/media/'
 
 AWS_ACCESS_KEY_ID = os.environ.get('AKIAID7YDELDBZVXCKWA')
@@ -104,6 +144,9 @@ MEDIA_URL = 'http://s3.amazonaws.com/%s/site_media/' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = MEDIA_URL
 STATIC_DOC_ROOT = MEDIA_URL
 STATIC_ROOT = MEDIA_URL
+=======
+ADMIN_MEDIA_PREFIX = '/media/'
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 # Make this unique, and don't share it with anybody.
 # Automatically when executing python manage.py start-project
@@ -160,7 +203,10 @@ INSTALLED_APPS = (
     'rosetta',
     'notification',
     'exts',
+<<<<<<< HEAD
     #'django-storages',
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 )
 
 LOGIN_URL = '/'
@@ -170,6 +216,7 @@ LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # Path for static docs (css, images, etc)
+<<<<<<< HEAD
 #STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
 #STATIC_ROOT = os.path.join(curdir, 'site_media')
 
@@ -183,6 +230,9 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+=======
+STATIC_DOC_ROOT = os.path.join(curdir, 'site_media')
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 DATE_FORMAT = 'd/m/Y'
 DATETIME_FORMAT = 'd/m/Y, H:i'
@@ -194,6 +244,7 @@ AUTHENTICATION_BACKENDS = (
 CUSTOM_USER_MODEL = 'user.Profile'
 
 # reCAPTCHA fill in local_settings.py, not here
+<<<<<<< HEAD
 RECAPTCHA_PUBLIC_KEY = "6LfA7d8SAAAAAPHYLhAyft-wNE1MNaDruCjvsxVa"
 RECAPTCHA_PRIVATE_KEY = "6LfA7d8SAAAAACan_ZviubXy1-knfYh8tavtVeJL"
 
@@ -208,12 +259,25 @@ EMAIL_HOST_USER = 'cbs.maribor'
 EMAIL_HOST_PASSWORD = 'solaris17'
 
 # For debugging, you can use the console email backend:
+=======
+RECAPTCHA_PUBLIC_KEY = ""
+RECAPTCHA_PRIVATE_KEY = ""
+
+# Email configuration. Configure appropiately if emails are not directly sent by localhost
+#EMAIL_HOST = ''
+#EMAIL_PORT = 0
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+
+## For debugging, you can use the console email backend:
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIN_CREDIT = -10*60
 MAX_CREDIT = 20*60
 MAX_CREDITS_PER_TRANSFER = 10*60
 
+<<<<<<< HEAD
 LOCALE_PATHS = (
       #os.path.join(curdir, 'locale'),
 )
@@ -221,10 +285,19 @@ LOCALE_PATHS = (
 LANGUAGES = (
 #    ('en', _('English')),
     ('sl', _('Slovenian')),
+=======
+
+LANGUAGES = (
+      ('es', _('Spanish')),
+      ('es_ng', _('Spanish (neutral gender)')),
+      ('en', _('English')),
+      ('gl', _('Gallego')),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 )
 
 # Just in case
 RATINGS_VOTES_PER_IP = 3
+<<<<<<< HEAD
 AUTOACCEPT_REGISTRATION = False
 
 SHOW_CAPTCHAS = True
@@ -232,6 +305,13 @@ SHOW_CAPTCHAS = True
 PUBLIC_USER_INFO = True
 
 SESSION_COOKIE_DOMAIN = ".cbs-mb.si"
+=======
+AUTOACCEPT_REGISTRATION=False
+
+SHOW_CAPTCHAS=True
+
+PUBLIC_USER_INFO = False
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 try:
     from local_settings import *

@@ -12,17 +12,28 @@
     <div class="cleaner"></div>
     <div class="information2">
         {% if not comment.is_public %}
+<<<<<<< HEAD
             {% trans "komentar je zaseben" %}
         {% endif %}
         {% blocktrans with comment.sent_at|timesince as time %}
         Objavljeno {{ time }} nazaj
+=======
+            {% trans "comment is private" %}
+        {% endif %}
+        {% blocktrans with comment.sent_at|timesince as time %}
+        Published {{ time }} ago
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         {% endblocktrans %} 
     </div>
     <div class="cleaner"></div>
     <div class="buttons">
         {% if user.is_authenticated and comment.sender == user %}
             <form method="POST" action="{% url serv-comment-delete comment.id %}"> {% csrf_token %}
+<<<<<<< HEAD
                 <input class="action" name="submit" type="submit" value="{% trans 'Odstrani komentar' %}"/>
+=======
+                <input class="action" name="submit" type="submit" value="{% trans 'Remove comment' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             </form>
         {% endif %}
     </div>

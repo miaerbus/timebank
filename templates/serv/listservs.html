@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% load i18n %}
 {% for serv in services.object_list %}
     {% include "serv/single_service_view.html" %}
 {% empty %}
+<<<<<<< HEAD
     <p>{% trans "Ni storitev." %}</p>
+=======
+    <p>{% trans "No services." %}</p>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% endfor %}

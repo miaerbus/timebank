@@ -1,13 +1,24 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+# encoding: utf-8
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
+<<<<<<< HEAD
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+=======
+class Migration(SchemaMigration):
+
+    def forwards(self, orm):
+        
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         # Adding model 'Area'
         db.create_table('serv_area', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -55,6 +66,10 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         # Deleting model 'Area'
         db.delete_table('serv_area')
 
@@ -144,6 +159,7 @@ class Migration(SchemaMigration):
         },
         'user.profile': {
             'Meta': {'object_name': 'Profile', '_ormbases': ['auth.User']},
+<<<<<<< HEAD
             'address': ('django.db.models.fields.CharField', [], {'default': "u'address'", 'max_length': '100'}),
             'balance': ('django.db.models.fields.IntegerField', [], {'default': '600'}),
             'birth_date': ('django.db.models.fields.DateField', [], {'default': 'datetime.datetime(2013, 5, 1, 0, 0)'}),
@@ -153,8 +169,21 @@ class Migration(SchemaMigration):
             'lang_code': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '10'}),
             'mobile_tlf': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             'photo': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+=======
+            'address': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'balance': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
+            'birth_date': ('django.db.models.fields.DateField', [], {}),
+            'description': ('django.db.models.fields.TextField', [], {'max_length': '300', 'blank': 'True'}),
+            'email_updates': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'land_line': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'mobile_tlf': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             'user_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['auth.User']", 'unique': 'True', 'primary_key': 'True'})
         }
     }
 
+<<<<<<< HEAD
     complete_apps = ['serv']
+=======
+    complete_apps = ['serv']
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 from django.utils.text import wrap
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import Site
@@ -6,7 +9,11 @@ from django.template import Context, loader
 from django.template.loader import render_to_string
 from django.conf import settings
 
+<<<<<<< HEAD
 #from timebank.utils import send_mail, I18nString
+=======
+from timebank.utils import send_mail, I18nString
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 def format_quote(text):
     """
@@ -20,7 +27,11 @@ def format_quote(text):
     return '\n'.join(lines)
 
 def new_message_email(sender, instance, signal,
+<<<<<<< HEAD
         subject_prefix=_(u'Novo sporočilo: %(subject)s'),
+=======
+        subject_prefix=_(u'New Message: %(subject)s'),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         template_name="messages/new_message.html",
         default_protocol=None,
         *args, **kwargs):
@@ -60,10 +71,17 @@ def new_transfer_email(sender, instance, signal, *args, **kwargs):
 
     recipient = instance.recipient()
     if instance.service:
+<<<<<<< HEAD
         subject=I18nString(_(u'Nov zahtevek za prenos uporabnika %s'),
             instance.creator().username)
     else:
         subject=I18nString(_(u'Nov prenos uporabnika %s'),
+=======
+        subject=I18nString(_('New transfer request from %s'),
+            instance.creator().username)
+    else:
+        subject=I18nString(_('New direct transfer from %s'),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             instance.creator().username)
     message = I18nString("serv/new_transfer_email.html", {
             'site_url': '%s://%s' % (default_protocol, current_domain),
@@ -85,10 +103,17 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
     elif instance.status == 'a':
         recipients = [instance.creator(),]
         if instance.service:
+<<<<<<< HEAD
             subject=I18nString(_('Uporabnik %s je prenos potrdil/a'),
                 instance.service.creator.username)
         else:
             subject=I18nString(_(u'Uporabnik %s je prenos sprejel'),
+=======
+            subject=I18nString(_('Transfer of the service from %s accepted'),
+                instance.service.creator.username)
+        else:
+            subject=I18nString(_('Direct transfer from %s accepted'),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 instance.creator().username)
         template = "serv/accept_transfer_email.html"
     elif instance.status == 'r':
@@ -99,14 +124,23 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
                         'user2': instance.service.creator.username
                     })
         else:
+<<<<<<< HEAD
             subject=I18nString(_(u'Prenos z uporabnikom %s je bil preklican'),
+=======
+            subject=I18nString(_('Direct transfer from %s cancelled'),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 instance.creator().username)
         template = "serv/cancel_transfer_email.html"
         recipients = [instance.credits_debtor, instance.credits_payee]
     elif instance.status == 'd':
+<<<<<<< HEAD
         subject=I18nString(_(u'Prenos storitve, ki ste jo izvedli za uporabnika %s, je bil potrjen'),
                 #instance.credits_debtor.email
 		instance.credits_debtor.username)
+=======
+        subject=I18nString(_('Transfer of the service you did to %s confirmed'),
+                instance.credits_debtor.email)
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         template = "serv/done_transfer_email.html"
         recipients = [instance.credits_payee,]
     else:
@@ -119,6 +153,7 @@ def update_transfer_email(sender, instance, signal, *args, **kwargs):
     }, True)
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipients,
         fail_silently=True)
+<<<<<<< HEAD
 
 def send_mail(subject, message, from_email, recipient_list,
               fail_silently=False, auth_user=None, auth_password=None,
@@ -180,3 +215,5 @@ class I18nString(object):
 
     def __unicode__(self):
         return self.to_unicode()
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

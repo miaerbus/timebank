@@ -1,5 +1,6 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Sporočila' %} {% endblock %}
 
 {% block content %}
@@ -10,6 +11,18 @@
             <li><a href="{% url messages_outbox %}" class="{% current_tab 'outbox' 'subtab' %}">{% trans "Poslana sporočila" %}</a><small>/</small></li>
             <li><a href="{% url messages_compose %}" class="{% current_tab 'new' 'subtab' %}">{% trans "Novo sporočilo" %}</a><small>/</small></li>
             <li><a href="{% url messages_trash %}" class="{% current_tab 'trash' 'subtab' %}">{% trans "Izbrisano" %}</a></li>
+=======
+{% block title %} {% trans 'Messages' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h1>{% trans 'Messages' %} / {% block subtitle %} {% endblock %}</h1>
+        <ul class="subnavilist">
+            <li><a href="{% url messages_inbox %}" class="{% current_tab 'inbox' 'subtab' %}">{% trans "Inbox" %}</a><small>/</small></li>
+            <li><a href="{% url messages_outbox %}" class="{% current_tab 'outbox' 'subtab' %}">{% trans "Sent Messages" %}</a><small>/</small></li>
+            <li><a href="{% url messages_compose %}" class="{% current_tab 'new' 'subtab' %}">{% trans "New Message" %}</a><small>/</small></li>
+            <li><a href="{% url messages_trash %}" class="{% current_tab 'trash' 'subtab' %}">{% trans "Trash" %}</a></li>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </ul>
         <div id="subcontent">
             {% block subcontent %}

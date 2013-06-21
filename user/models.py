@@ -39,11 +39,16 @@ def create_profile_for_user(sender, **kwargs):
 
 class Profile(User):
     '''
+<<<<<<< HEAD
     User with timebank settings.
+=======
+    User with time bank settings.
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     '''
 
     photo = models.ImageField(_("Avatar"), blank=True, null=True,
                               upload_to=os.path.join(settings.STATIC_DOC_ROOT, "photos"))
+<<<<<<< HEAD
     birth_date = models.DateField(_("Rojstni datum"), default=date.today())
 
     address = models.CharField(_("Naslov"), max_length=100, default=_("address"))
@@ -58,6 +63,14 @@ class Profile(User):
 
     # credits in minutes
     balance = models.IntegerField(default=600)
+=======
+    birth_date = models.DateField(_("Birth date"), default=date.today())
+
+    address = models.CharField(_("Address"), max_length=100, default=_("address"))
+
+    # credits in minutes
+    balance = models.IntegerField(default=0)
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     def balance_hours(self):
         if self.balance % 60 == 0:
@@ -65,6 +78,7 @@ class Profile(User):
 
         return self.balance/60.0
 
+<<<<<<< HEAD
     description = models.TextField(_("Opis"), max_length=300,
         blank=True)
 
@@ -73,15 +87,33 @@ class Profile(User):
     mobile_tlf = models.CharField(_("Mobilni telefon"), max_length=20)
 
     email_updates = models.BooleanField(_(u"Želim prejemati novice Časovne banke"),
+=======
+    description = models.TextField(_("Personal address"), max_length=300,
+        blank=True)
+
+    land_line = models.CharField(_("Land line"), max_length=20)
+
+    mobile_tlf = models.CharField(_("Mobile phone"), max_length=20)
+
+    email_updates = models.BooleanField(_("Receive email updates"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         default=True)
 
     # Saving the user language allows sending emails to him in his desired
     # language (among other things)
+<<<<<<< HEAD
     lang_code = models.CharField(_("Jezik"), max_length=10, default='')
 
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
+=======
+    lang_code = models.CharField(_("Language Code"), max_length=10, default='')
+
+    class Meta:
+        verbose_name = _("User")
+        verbose_name_plural = _("Users")
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     def __unicode__(self):
         return self.username

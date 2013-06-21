@@ -1,13 +1,24 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+# encoding: utf-8
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
+<<<<<<< HEAD
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+=======
+class Migration(SchemaMigration):
+
+    def forwards(self, orm):
+        
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         # Adding model 'Extension'
         db.create_table('exts_extension', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -18,6 +29,10 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         # Deleting model 'Extension'
         db.delete_table('exts_extension')
 
@@ -31,4 +46,8 @@ class Migration(SchemaMigration):
         }
     }
 
+<<<<<<< HEAD
     complete_apps = ['exts']
+=======
+    complete_apps = ['exts']
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

@@ -1,8 +1,16 @@
 {% load i18n %}
 {% url serv-transfer-view transfer.id as transfer_url %}
+<<<<<<< HEAD
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Pozdravljeni {{ service_creator }},
 
 Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za eno vaših storitev, je posodobljen.
 
 - Časovna banka Maribor
 {% endblocktrans %}
+=======
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Hi {{ service_creator }},
+
+The transfer requested by {{ transfer_creator }} of one of your services has been edited by him. You can see the updated details of the transfer in {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

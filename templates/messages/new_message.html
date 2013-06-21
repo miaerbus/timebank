@@ -1,13 +1,21 @@
 {% load i18n %}
 {% if message.service %}
 {% url serv-view message.service.id as service_url %}
+<<<<<<< HEAD
 {% blocktrans with message.recipient.username as recipient and message.sender.username as sender and message.body|safe as body %}Pozdravljeni {{ recipient }},
 
 Prejeli ste komentar uporabnika {{ sender }} o storitvi ({{ site_url }}{{ service_url }}):
+=======
+{% blocktrans with message.recipient.username as recipient and message.sender.username as sender and message.body|safe as body %}Hi {{ recipient }},
+
+You have received the following comment from {{ sender }} in the service
+({{ site_url }}{{ service_url }}):
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 {{ body }}
 
 --
+<<<<<<< HEAD
 Poslano preko {{ site_url }}
 Poglej storitev: ({{ site_url }}{{ service_url }}
 {% endblocktrans %}
@@ -20,14 +28,35 @@ Prejeli ste javno sporočilo uporabnika {{ sender }} o storitvi
 {% else %}
 {% blocktrans with message.recipient.username as recipient and message.sender.username as sender%}Pozdravljeni {{ recipient }},
 Prejeli ste javno sporočilo {{ sender }} o storitvi
+=======
+Sent from {{ site_url }}
+View service: ({{ site_url }}{{ service_url }}
+{% endblocktrans %}
+{% else %}
+{% if message.is_public %}
+{% blocktrans with message.recipient.username as recipient and message.sender.username as sender%}Hi {{ recipient }},
+
+You have received the following public message from {{ sender }} in the service
+({{ site_url }}{{ service_url }}):{% endblocktrans %}
+{% else %}
+{% blocktrans with message.recipient.username as recipient and message.sender.username as sender%}Hi {{ recipient }},
+
+You have received the following private message from {{ sender }} in the service
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 ({{ site_url }}{{ service_url }}):{% endblocktrans %}
 {% endif %}
 
 {{ message.body|safe }}
 
 --
+<<<<<<< HEAD
 {% blocktrans %}Poslano preko {{ site_url }}{% endblocktrans %}
 {% trans "Prejeto" %}: {{ site_url }}{% url messages_inbox %}
 {% trans "Odgovori" %}: {{ site_url }}{% url messages_reply message.pk %}
+=======
+{% blocktrans %}Sent from {{ site_url }}{% endblocktrans %}
+{% trans "Inbox" %}: {{ site_url }}{% url messages_inbox %}
+{% trans "Reply" %}: {{ site_url }}{% url messages_reply message.pk %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% endif %}
 

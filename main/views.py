@@ -36,6 +36,10 @@ class Index(ViewClass):
         return self.context_response('main/index.html', {'show_news': True,
         'services': services})
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 class Contact(ViewClass):
     def GET(self):
         if self.request.user.is_authenticated():
@@ -57,30 +61,49 @@ class Contact(ViewClass):
         # Send an email to admins
         if self.request.user.is_authenticated():
             user = self.request.user
+<<<<<<< HEAD
             subject = I18nString(_(u"[%(site_name)s] %(username)s: %(email_subject)s"), {
+=======
+            subject = I18nString(_("[%(site_name)s] %(username)s: %(email_subject)s"), {
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'site_name': settings.SITE_NAME,
                 'username': user.username,
                 'email_subject': form.cleaned_data["subject"]
             })
+<<<<<<< HEAD
             message = I18nString(_(u"Uporabnik %(username)s pošilja"\
             u" sporočilo:\n%(message)s"), {
+=======
+            message = I18nString(_(u"Registered user %(username)s sends the following "\
+            " message:\n%(message)s"), {
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'username': user.username,
                 'message': form.cleaned_data["message"]
             })
         else:
+<<<<<<< HEAD
             subject = I18nString(_("u[%(site_name)s] %(email)s: %(email_subject)s") % {
+=======
+            subject = I18nString(_("[%(site_name)s] %(email)s: %(email_subject)s"), {
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 'site_name': settings.SITE_NAME,
                 'email': form.cleaned_data["email"],
                 'email_subject': form.cleaned_data["subject"]
             })
+<<<<<<< HEAD
             message = I18nString(_(u"Uporabnik %(name)s z emailom %(email)s"\
                 u" pošilja sporočilo:\n%(message)s"), {
+=======
+            message = I18nString(_("Registered user %(name)s whose email is %(email)s"\
+                " sends the following message:\n%(message)s"), {
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     'name': form.cleaned_data["name"],
                     'email': form.cleaned_data["email"],
                     'message': form.cleaned_data["message"]
                 })
         mail_owners(subject, message)
 
+<<<<<<< HEAD
         self.flash(_(u"Sporočilo poslano, odgovorili vam bomo v najkrajšem možnem času."))
         return redirect('main.views.index')
 
@@ -116,6 +139,21 @@ class ErrorHandler(ViewClass):
 
     def GET(self):
         return self.context_response(self.template, {})
+=======
+        self.flash(_("Mail sent, we'll answer you as soon as possible."))
+        return redirect('main.views.index')
+
+
+class ErrorHandler(ViewClass):
+    def __init__(self, template, retcode=200):
+        self.template = template
+        self.retcode = retcode
+
+    def GET(self):
+        response = self.context_response(self.template, {})
+        response.status_code = self.retcode
+        return response
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
     def POST(self):
         return self.GET()
@@ -146,6 +184,7 @@ class Report(ViewClass):
 
 index = Index()
 contact = Contact()
+<<<<<<< HEAD
 about = About()
 links = Links()
 faq = Faq()
@@ -153,6 +192,10 @@ rules = Rules()
 terms = Terms()
 handler404 = ErrorHandler('404.html')
 handler500 = ErrorHandler('500.html')
+=======
+handler404 = ErrorHandler('404.html', retcode=404)
+handler500 = ErrorHandler('500.html', retcode=500)
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 set_language = SetLanguage()
 report1 = Report(1)
 report2 = Report(2)

@@ -1,5 +1,6 @@
 {% load i18n %}
 {% url serv-transfer-view transfer.id as transfer_url %}
+<<<<<<< HEAD
 {% blocktrans with transfer.credits_payee.username as payee and transfer.credits_debtor.username as debtor %}Pozdravljeni {{ payee }},
 
 Prenos storitve, ki jo je izvedel {{ debtor }}, je bil potrjen.
@@ -7,3 +8,10 @@ Prenos storitve, ki jo je izvedel {{ debtor }}, je bil potrjen.
 - Časovna banka Maribor
 
 {% endblocktrans %}
+=======
+{% blocktrans with transfer.credits_payee.username as payee and transfer.credits_debtor.username as debtor %}Hi {{ payee }},
+
+The transfer of the service rendered by  {{ debtor }} has been confirmed by him. You can see the details of the transfer in  {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

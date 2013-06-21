@@ -2,15 +2,23 @@
 html
 {
     background:none repeat scroll 0 0 #fff;
+<<<<<<< HEAD
     -webkit-any-link:none;
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 body
 {
+<<<<<<< HEAD
     /*font-family:Arial,Helvetica,sans-serif;*/
     font-family: Verdana;
     /*font-size:12px;*/
     font-size:13px;
+=======
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     line-height:1.5em;
     width:100%;
     display:table;
@@ -33,9 +41,14 @@ a:active, a:hover
 
 p
 {
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
     font-size:12px;
+=======
+    font-family:Tahoma;
+    font-size:13px;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     color:#484848;
     text-align:justify;
     margin:0 0 10px;
@@ -43,8 +56,12 @@ p
 
 h1
 {
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:18px;
     color:#676767;
     font-weight:400;
@@ -53,8 +70,12 @@ h1
 
 h2
 {
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:16px;
     color:#0895d6;
     font-weight:400;
@@ -63,8 +84,12 @@ h2
 
 h3
 {
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:11px;
     color:#2780e4;
     font-weight:400;
@@ -114,8 +139,12 @@ h3
 #slogan
 {
     float:left;
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:12px;
     color:#000;
     font-style:italic;
@@ -127,8 +156,12 @@ h3
     width:195px;
     height:80px;
     float:right;
+<<<<<<< HEAD
     /*margin:30px 0 0;*/
     margin:10px 0 20px;
+=======
+    margin:30px 0 0;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 #social form
@@ -146,8 +179,12 @@ h3
     height:21px;
     background:none repeat scroll 0 0 transparent;
     border:medium none;
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     color:#686868;
     margin:8px 0 0 10px;
 }
@@ -167,14 +204,22 @@ h3
 {
     float:right;
     border:medium none;
+<<<<<<< HEAD
     /*margin:0 20px 0 0;*/
     margin:0 10px 0 0;
+=======
+    margin:0 20px 0 0;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 #menu
 {
     float:right;
+<<<<<<< HEAD
     width: 960px;
+=======
+    width: 980px;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     height:40px;
     margin:5px 0 0;
     padding:0;
@@ -206,11 +251,17 @@ h3
     float:left;
     text-align:center;
     text-decoration:none;
+<<<<<<< HEAD
     color: black;
     /*font-family:Tahoma;*/
     font-family:Verdana;
     font-size:13px;
     /*font-weight:bold;*/
+=======
+    color:#2a5f00;
+    font-family:Tahoma;
+    font-size:12px;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     outline:medium none;
     padding:11px 20px;
 }
@@ -219,6 +270,7 @@ h3
 {
     float:left;
     text-align:center;
+<<<<<<< HEAD
     text-decoration:underline;
     background:url("templatemo_menu_divider.png") no-repeat scroll right center transparent;
     color: white;
@@ -226,6 +278,14 @@ h3
     font-family:Verdana;
     /*font-weight:bold;*/
     font-size:13px;
+=======
+    text-decoration:none;
+    background:url("templatemo_menu_divider.png") no-repeat scroll right center transparent;
+    color: white;
+    font-family:Tahoma;
+    font-weight:bold;
+    font-size:12px;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     outline:medium none;
     padding:11px 20px;
 }
@@ -237,14 +297,22 @@ h3
 
 #menu li .current
 {
+<<<<<<< HEAD
     color:#fff;
     font-weight:bold;
+=======
+    color:#2a5f00;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 #menu li a:hover
 {
+<<<<<<< HEAD
     color:#fff;
     text-decoration:none;
+=======
+    color:#2a5f00;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 #menu li .last
@@ -294,8 +362,12 @@ h3
 {
     float:right;
     display:block;
+<<<<<<< HEAD
     /*font-family:Tahoma;*/
     font-family:Verdana;
+=======
+    font-family:Tahoma;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:10px;
     color:#000;
     margin:15px 10px 0 0;
@@ -373,13 +445,21 @@ h3
 div.new h2 a, div.new h3 a
 {
     color: #0895D6;
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+    text-decoration: none;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     border: none;
 }
 
 div.new h2 a:hover, div.new h3 a:hover
 {
+<<<<<<< HEAD
     text-decoration: none;
+=======
+    text-decoration: underline;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 div.new .info
@@ -409,8 +489,12 @@ div.new .info
 
 .section_3 h1
 {
+<<<<<<< HEAD
     /*font-family:Arial;*/
     font-family:Verdana;
+=======
+    font-family:Arial;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-size:20px;
     color:#0895d6;
     display:block;
@@ -605,7 +689,11 @@ div.new .info
     padding:0;
 }
 
+<<<<<<< HEAD
 /* Messages */
+=======
+/*Messages*/
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 
 .subnavilist {
     list-style:none;
@@ -629,7 +717,11 @@ div.new .info
 }
 
 .subnavilist li small {
+<<<<<<< HEAD
     color: #000;
+=======
+    color: #2A5F00;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font-weight: bold;
     font-size: 16px;
     margin-left: 5px;
@@ -681,7 +773,11 @@ div.new .info
 }
 
 .services .serv .information a {
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+    text-decoration: none;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     color: black;
     font: 100% verdana,arial,sans-serif;
     font-weight: bold;
@@ -695,7 +791,11 @@ div.new .info
 }
 
 .services .serv .information a:hover, .services .serv .buttons .action:hover {
+<<<<<<< HEAD
     text-decoration: none;
+=======
+    text-decoration: underline;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 .services .serv a {
@@ -710,7 +810,11 @@ div.new .info
 }
 
 .services .serv .information2 a:hover {
+<<<<<<< HEAD
     text-decoration: none;
+=======
+    text-decoration: underline;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 .services .serv form input {
@@ -718,7 +822,11 @@ div.new .info
 }
 
 .services .serv .buttons .action {
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+    text-decoration: none;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     margin: 0px;
     margin-top: -5px;
     padding: 5px;
@@ -727,9 +835,14 @@ div.new .info
     background:none;
     border:0;
     font-weight: bold;
+<<<<<<< HEAD
     font-size: 13px;
     /*color: green;*/
     color: black;
+=======
+    font-size: 12px;
+    color: green;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     font: 100% verdana,arial,sans-serif;
 }
 
@@ -752,9 +865,14 @@ div.new .info
     padding: 5px;
     padding-top: 0;
     border-left: 3px solid #64D507;
+<<<<<<< HEAD
     /*border-left: 3px solid #0B93D1;*/
     display: block;
     float: right;
+=======
+    display: block;
+    float: left;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     width: 600px;
     background-color: white;
 }
@@ -779,9 +897,13 @@ div.new .info
 
 .services .serv .description:hover {
     background-color: #64D507;
+<<<<<<< HEAD
     /*background-color: #0B93D1;*/
     /*color: white;*/
     color: black;
+=======
+    color: white;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 .services .serv.inactive .description:hover, .services .serv.demand.inactive .description:hover {
@@ -803,7 +925,11 @@ div.new .info
 .services .serv .gravatar {
     text-align: center;
     width: 48px;
+<<<<<<< HEAD
     /*display: block;*/
+=======
+    display: block;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     float: left;
     padding: 2px;
     font-weight: bold;
@@ -811,8 +937,12 @@ div.new .info
 }
 
 .services .serv .gravatar:hover {
+<<<<<<< HEAD
     /*background-color: #64D507;*/
     background-color: #0B93D1;
+=======
+    background-color: #64D507;
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 }
 
 .services .serv .gravatar:hover a {
@@ -962,8 +1092,11 @@ a.important_link:hover {
     background-color: #64D507;
     color: black !important;
 }
+<<<<<<< HEAD
 
 ul.custom {
     font-size: 12px;
     color: #484848;
 }
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

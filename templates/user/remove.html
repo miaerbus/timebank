@@ -1,16 +1,28 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Odstrani profil' %} {% endblock %}
 
 {% block content %}
     <div class="section_3">
         <h1>{% trans 'Odstrani profil' %}</h1>
+=======
+{% block title %} {% trans 'Remove user' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h1>{% trans 'Remove user' %}</h1>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         <form action="" method="post">
             {% csrf_token %}
             <fieldset>
                 {% include "main/form_snippet.html" %}
             </fieldset>
+<<<<<<< HEAD
             <input class="submit" type="submit" value="{% trans 'Odstrani profil' %}"/>
+=======
+            <input class="submit" type="submit" value="{% trans 'Remove user' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </form>
     </div>
 {% endblock %}

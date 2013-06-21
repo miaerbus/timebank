@@ -1,12 +1,22 @@
 {% extends "messages/base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block subtitle %} {% trans "Novo sporočilo" %} {% endblock %}
+=======
+{% block subtitle %} {% trans "New message" %} {% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% block subcontent %}
 <form action="" method="post">
 {% csrf_token %}
 <table>
 {{ form.as_table }}
 </table>
+<<<<<<< HEAD
 <input class="submit" type="submit" value="{% trans "Pošlji" %}"/>
 </form>
 {% endblock %}
+=======
+<input class="submit" type="submit" value="{% trans "Send" %}"/>
+</form>
+{% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

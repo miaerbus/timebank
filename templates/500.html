@@ -1,6 +1,7 @@
 
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans "Napaka 500" %} {% endblock %}
 
 {% block content %}
@@ -12,3 +13,16 @@
         </p>
     </div>
 {% endblock %}
+=======
+{% block title %} {% trans "Error 500" %} {% endblock %}
+
+{% block content %}
+    <div class="section_3 404">
+        <h1>{{ SITE_NAME }} - {% trans "Error 500" %}</h1>
+        <p>
+            {% blocktrans %}Sorry, an error occurred. We have notified the site administrators to rectify.
+            {% endblocktrans %}
+        </p>
+    </div>
+{% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

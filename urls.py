@@ -23,7 +23,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^i18n/', include('django.conf.urls.i18n')),
+<<<<<<< HEAD
 #    (r'^admin/', include('smuggler.urls')), # put it before admin url patterns
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     (r'^admin/', include(admin.site.urls)),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}),
@@ -34,8 +37,11 @@ urlpatterns = patterns('',
     (r'^tasks/', include('tasks.urls')),
     (r'^notification/', include('notification.urls')),
     (r'^', include('main.urls')),
+<<<<<<< HEAD
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.ADMIN_MEDIA_PREFIX, 'show_indexes': True}),
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 )
 
 handler404 = 'main.views.handler404'

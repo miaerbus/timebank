@@ -1,7 +1,11 @@
 {% extends "serv/base_transfer.html" %}
 {% load i18n %}
 {% block subtitle %}
+<<<<<<< HEAD
         {% trans "Moji prenosi" %}
+=======
+        {% trans "My transfers" %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% endblock %}
 
 {% block subcontent %}
@@ -10,23 +14,43 @@
             {% include "serv/single_transfer_view.html" %}
         {% endif %}
     {% empty %}
+<<<<<<< HEAD
         {% trans "Za zdaj nobenih prenosov." %}
+=======
+        {% trans "No transfers for now." %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% endfor %}
     <div class="pagination">
             <span class="step-links">
                 {% if transfers.has_previous %}
+<<<<<<< HEAD
                     <a href="?page={{ transfers.previous_page_number }}">{% trans "prejšnja" %}</a>
+=======
+                    <a href="?page={{ transfers.previous_page_number }}">{% trans "previous" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 {% endif %}
 
                 <span class="current">
                     {% blocktrans with transfers.number as number and transfers.paginator.num_pages as num_pages %}
+<<<<<<< HEAD
                     Stran {{ number }} od {{ num_pages }}
+=======
+                    Page {{ number }} of {{ num_pages }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     {% endblocktrans %}
                 </span>
 
                 {% if transfers.has_next %}
+<<<<<<< HEAD
                     <a href="?page={{ transfers.next_page_number }}">{% trans "naslednja" %}</a>
                 {% endif %}
             </span>
         </div>
 {% endblock %}
+=======
+                    <a href="?page={{ transfers.next_page_number }}">{% trans "next" %}</a>
+                {% endif %}
+            </span>
+        </div>
+{% endblock %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

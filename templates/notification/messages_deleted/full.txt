@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {% load i18n %}{% blocktrans %}Izbrisali ste sporočilo '{{ message }}'.{% endblocktrans %}
+=======
+{% load i18n %}{% blocktrans %}You have deleted the message '{{ message }}'.{% endblocktrans %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

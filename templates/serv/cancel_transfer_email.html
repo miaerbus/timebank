@@ -1,6 +1,7 @@
 {% load i18n %}
 {% url serv-transfer-view transfer.id as transfer_url %}
 {% if not transfer.is_direct %}
+<<<<<<< HEAD
 {% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Pozdravljeni,
 
 Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za storitev uporabnika {{ service_creator }}, je bil preklican.
@@ -12,4 +13,17 @@ Prenos, ki ga je zahteval uporabnik {{ transfer_creator }} za storitev uporabnik
 Prenos, ki ga je z vami ustvaril uporabnik {{ transfer_creator }}, je bil preklican.
 
 - Časovna banka Maribor{% endblocktrans %}
+=======
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.service.creator.username as service_creator %}Hi,
+
+The transfer initially requested by {{ transfer_creator }} from the service created by {{ service_creator }} has been cancelled. You can see the details of the cancelled transfer in {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+{% else %}
+{% blocktrans with transfer.creator.username as transfer_creator and transfer.recipient.username as transfer_recipient %}Hola {{ transfer_recipient }},
+
+The direct transfer created by {{ transfer_creator }} with you has been cancelled. You can see the details of the cancelled transfer in {{ site_url }}{{ transfer_url }} .
+
+The team of {{ site_url }}{% endblocktrans %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
 {% endif %}

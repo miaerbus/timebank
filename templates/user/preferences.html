@@ -1,5 +1,6 @@
 {% extends "template_base.html" %}
 {% load i18n %}
+<<<<<<< HEAD
 {% block title %} {% trans 'Nastavitve' %} {% endblock %}
 
 {% block content %}
@@ -23,6 +24,31 @@
             </li>
             <li>
                 <a href="{% url user-remove %}">{% trans "Odstrani profil" %}</a>
+=======
+{% block title %} {% trans 'Preferences' %} {% endblock %}
+
+{% block content %}
+    <div class="section_3">
+        <h1>{% trans 'Preferences' %}</h1>
+        <ul class="preferences">
+            <li>
+                <a href="{% url serv-transfers-mine %}">{% trans "My transfers" %}</a>
+            </li>
+            <li>
+                <a href="{% url serv-myservices %}">{% trans "My services" %}</a>
+            </li>
+            <li>
+                <a href="{% url user-view-current %}">{% trans "View profile" %}</a>
+            </li>
+            <li>
+                <a href="{% url user-edit-profile %}">{% trans "Edit profile" %}</a>
+            </li>
+            <li>
+                <a href="{% url user-password-change %}">{% trans "Change password" %}</a>
+            </li>
+            <li>
+                <a href="{% url user-remove %}">{% trans "Remove user" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             </li>
         </ul>
     </div>

@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 {{ message }}
 - Časovna banka Maribor
+=======
+{{ message }}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6

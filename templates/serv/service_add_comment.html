@@ -1,6 +1,7 @@
 {% extends "serv/base.html" %}
 {% load i18n %}
 {% block subtitle %}
+<<<<<<< HEAD
     {% trans "Komentiraj storitve" %}
 {% endblock %}
 
@@ -10,12 +11,27 @@
         {% include "serv/single_service_view.html" %}
     {% endwith %}
     <h2 style="margin-top: 30px">{% trans "Komentiraj storitev" %}</h2>
+=======
+    {% trans "Comment a service" %}
+{% endblock %}
+
+{% block subcontent %}
+    <h2>{% trans "Service" %}</h2>
+    {% with service as serv %}
+        {% include "serv/single_service_view.html" %}
+    {% endwith %}
+    <h2 style="margin-top: 30px">{% trans "Comment the service" %}</h2>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     <form method="POST">
         {% csrf_token %}
         <fieldset>
             {% include "main/form_snippet.html" %}
         </fieldset>
+<<<<<<< HEAD
         <input type="submit" value="{% trans 'Pošlji komentar' %}"/>
+=======
+        <input type="submit" value="{% trans 'Send comment' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     </form>
 </div>
 {% endblock %}

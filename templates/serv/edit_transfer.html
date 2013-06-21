@@ -2,34 +2,58 @@
 {% load i18n %}
 {% block subtitle %}
     {% if not transfer.is_direct %}
+<<<<<<< HEAD
         {% trans "Uredi prenos" %}
     {% else %}
         {% trans "Uredi neposreden prenos" %}
+=======
+        {% trans "Edit transfer" %}
+    {% else %}
+        {% trans "Edit direct transfer" %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% endif %}
 {% endblock %}
 
 {% block subcontent %}
     {% if not transfer.is_direct %}
+<<<<<<< HEAD
         <h2>{% trans "Storitev" %}</h2>
+=======
+        <h2>{% trans "Service" %}</h2>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         {% with transfer.service as serv %}
             {% include "serv/single_service_view.html" %}
         {% endwith %}
     {% else %}
+<<<<<<< HEAD
         <h2>{% trans "Prenos" %}</h2>
+=======
+        <h2>{% trans "Transfer" %}</h2>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         {% include "serv/single_transfer_view.html" %}
     {% endif %}
     <h2 style="margin-top: 30px">
     {% if not transfer.is_direct %}
+<<<<<<< HEAD
         {% trans "Uredi prenos" %}
     {% else %}
         {% trans "Uredi neposreden prenos" %}
+=======
+        {% trans "Edit transfer" %}
+    {% else %}
+        {% trans "Edit direct transfer" %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% endif %}</h2>
     <form method="POST">
         {% csrf_token %}
         <fieldset>
             {% include "main/form_snippet.html" %}
         </fieldset>
+<<<<<<< HEAD
         <input type="submit" value="{% trans "Posodobi prenos" %}"/>
+=======
+        <input type="submit" value="{% trans 'Update transfer' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     </form>
 </div>
 {% endblock %}

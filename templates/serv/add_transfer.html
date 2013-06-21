@@ -1,22 +1,38 @@
 {% extends "serv/base_transfer.html" %}
 {% load i18n %}
 {% block subtitle %}
+<<<<<<< HEAD
         {% trans "Zahtevaj prenos" %}
 {% endblock %}
 
 {% block subcontent %}
     <h2>{% trans "Storitve" %}</h2>
+=======
+        {% trans "Request transfer" %}
+{% endblock %}
+
+{% block subcontent %}
+    <h2>{% trans "Service" %}</h2>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% with service as serv %}
         {% include "serv/single_service_view.html" %}
     {% endwith %}
     <div class="cleaner"></div>
+<<<<<<< HEAD
     <h2 style="margin-top: 30px">{% trans "Zahtevaj prenos" %}</h2>    
+=======
+    <h2 style="margin-top: 30px">{% trans "Request transfer" %}</h2>    
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     <form method="POST">
         {% csrf_token %}
         <fieldset>
             {% include "main/form_snippet.html" %}
         </fieldset>
+<<<<<<< HEAD
         <input type="submit" value="{% trans 'Zahtevaj prenos' %}"/>
+=======
+        <input type="submit" value="{% trans 'Request transfer' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     </form>
 </div>
 {% endblock %}

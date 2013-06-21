@@ -1,6 +1,7 @@
 {% load i18n %} 
 <div class="serv {% if serv.is_offer %}offer{% else %}demand{% endif %} {% if not serv.is_active %}inactive{% endif %}">
         <div class="information">
+<<<<<<< HEAD
             {% trans "Tip" %}:
             <span class="type">{% if serv.is_offer %}<a href="{% url serv-list %}?the_type=1">{% trans "ponujam" %}{% else %}<a href="{% url serv-list %}?the_type=2">{% trans "povprašujem" %}{% endif %}</a></span> /
             {% if not serv.is_active %}
@@ -12,12 +13,35 @@
             {% trans "Kategorija" %}:
             <span class="category"><a href="{% url serv-list %}?category={{ serv.category.id }}">{{ serv.category }}</a></span> /
             <span class="date"> {% blocktrans with serv.pub_date|timesince as time %}Objavljeno {{ time }} nazaj{% endblocktrans %}</span>
+=======
+            {% trans "Type" %}:
+            <span class="type">{% if serv.is_offer %}<a href="{% url serv-list %}?the_type=1">{% trans "offer" %}{% else %}<a href="{% url serv-list %}?the_type=2">{% trans "demand" %}{% endif %}</a></span> /
+            {% if not serv.is_active %}
+                <span class="inactive">{% trans "Inactive"  %}</span> /
+            {% endif %}
+            {% trans "Area" %}:
+            <span class="zone"><a href="{% url serv-list %}?area={{ serv.area.id }}">
+            {% if serv.area %}
+                {{ serv.area }}
+            {% else %}
+                {% trans "All" %}
+            {% endif %}
+            </a></span> /
+            {% trans "Category" %}:
+            <span class="category"><a href="{% url serv-list %}?category={{ serv.category.id }}">{{ serv.category }}</a></span> /
+            <span class="date"> {% blocktrans with serv.pub_date|timesince as time %}Published {{ time }} ago{% endblocktrans %}</span>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </div>
         <div class="gravatar">
             {% if user.is_authenticated %}
                 <a href="{% url user-view serv.creator.id %}">
+<<<<<<< HEAD
                     <img src="{% avatar serv.creator 48 %}" alt="{{ serv.creator.username }}" title="{{ serv.creator.first_name }} {{ serv.creator.last_name }}"/>
                     <div>{{ serv.creator.username|truncate_chars:6 }}</div>
+=======
+                    <img src="{% avatar serv.creator 48 %}" alt="{{ serv.creator.username }}" title="{{ serv.creator.username }}"/>
+                    <div>{{ serv.creator.username|truncate_chars:7 }}</div>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                 </a>
             {% else %}
                 <img src="{% avatar serv.creator 48 %}"/>
@@ -38,11 +62,16 @@
         {% endif %}
         <div class="cleaner"></div>
         <div class="information2">
+<<<<<<< HEAD
             {% trans "prenosov:" %} {{ serv.transfers_count }} / {% trans "komentarjev:" %} {{ serv.messages_count }} / {% trans "prenešenih ur:" %} {{ serv.credit_hours_transfered }}
+=======
+            {{ serv.transfers_count }} {% trans "transfers" %} / {{ serv.messages_count }} {% trans "comments" %} / {{ serv.credit_hours_transfered }} {% trans "hours transferred" %}
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         </div>
         <div class="cleaner"></div>
         <div class="buttons">
             {% if user.is_authenticated and serv.creator == user %}
+<<<<<<< HEAD
                 <a class="action" href="{% url serv-comment-add serv.id %}">{% trans "Komentiraj" %}</a>
                 <a class="action" href="{% url serv-edit serv.id %}">{% trans "Uredi" %}</a>
                 <form method="POST" action="{% url serv-del serv.id %}"> {% csrf_token %}
@@ -55,13 +84,32 @@
                 {% else %}
                     <form method="POST" action="{% url serv-active serv.id %}"> {% csrf_token %}
                         <input class="action" name="active" type="submit" value="{% trans 'Omogoči' %}"/>
+=======
+                <a class="action" href="{% url serv-comment-add serv.id %}">{% trans "Comment" %}</a>
+                <a class="action" href="{% url serv-edit serv.id %}">{% trans "Edit" %}</a>
+                <form method="POST" action="{% url serv-del serv.id %}"> {% csrf_token %}
+                    <input class="action" name="delete" type="submit" value="{% trans 'Remove' %}"/>
+                </form>
+                {% if serv.is_active %}
+                    <form method="POST" action="{% url serv-deactive serv.id %}"> {% csrf_token %}
+                        <input class="action" name="deactive" type="submit" value="{% trans 'Disable' %}"/>
+                    </form>
+                {% else %}
+                    <form method="POST" action="{% url serv-active serv.id %}"> {% csrf_token %}
+                        <input class="action" name="active" type="submit" value="{% trans 'Enable' %}"/>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
                     </form>
                 {% endif %}
             {% endif %}
             {% if user.is_authenticated and serv.creator != user %}
                 {% transfer_actions serv %}
+<<<<<<< HEAD
                 <a class="action" href="{% url serv-comment-add serv.id %}">{% trans "Komentiraj" %}</a>
                 <a class="action" href="{% url messages_compose_to serv.creator.username %}">{% trans "Pošlji zasebno sporočilo" %}</a>
+=======
+                <a class="action" href="{% url serv-comment-add serv.id %}">{% trans "Comment" %}</a>
+                <a class="action" href="{% url messages_compose_to serv.creator.username %}">{% trans "Send pivate message" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
             {% endif %}
         </div>
     </div>

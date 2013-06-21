@@ -24,12 +24,21 @@ class AnonymousContactForm(forms.Form):
     can send it. Hence, we need information about the sender to be able to get
     back to it, and a captcha to avoid spammers.
     '''
+<<<<<<< HEAD
     name = FormCharField(label=_("Ime in priimek"), required=True,
         min_length=3, max_length=30)
     email = FormEmailField(label=_(u"E-mail"), required=True)
     subject = FormCharField(label=_("Zadeva"), required=True,
         min_length=5, max_length=200)
     message = FormCharField(label=_(u"Sporočilo"), required=True,
+=======
+    name = FormCharField(label=_("Name and Surname"), required=True,
+        min_length=3, max_length=30)
+    email = FormEmailField(label=_(u"Your contact email"), required=True)
+    subject = FormCharField(label=_("Subject"), required=True,
+        min_length=5, max_length=200)
+    message = FormCharField(label=_(u"Message"), required=True,
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         min_length=5, max_length=1000, widget=forms.Textarea())
     captcha = FormCaptchaField()
 
@@ -37,7 +46,13 @@ class ContactForm(forms.Form):
     '''
     Simple contact form to be used for logged in users.
     '''
+<<<<<<< HEAD
     subject = FormCharField(label=_("Zadeva"), required=True,
         min_length=5, max_length=200)
     message = FormCharField(label=_(u"Sporočilo"), required=True,
+=======
+    subject = FormCharField(label=_("Subject"), required=True,
+        min_length=5, max_length=200)
+    message = FormCharField(label=_(u"Message"), required=True,
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
         min_length=5, max_length=1000, widget=forms.Textarea())

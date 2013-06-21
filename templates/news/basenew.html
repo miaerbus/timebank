@@ -4,7 +4,11 @@
     <h2><a href="{% url news-view new.id %}">{{ new.title }}</a></h2>
 
     {% if user.is_staff %}
+<<<<<<< HEAD
         <a href="{% url admin:news_new_change new.id %}">{% trans "Uredi" %}</a>
+=======
+        <a href="{% url admin:news_new_change new.id %}">{% trans "Edit" %}</a>
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     {% endif %}
     <h3 class="info">
     {% block newinfo %}

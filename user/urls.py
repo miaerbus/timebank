@@ -29,8 +29,11 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'django.contrib.auth.views.logout',
         {'next_page': '/'}, name="user-logout"),
     url(r'^register/$', 'user.views.register', name="user-register"),
+<<<<<<< HEAD
     url(r'^register/youth/$', 'user.views.register_youth', name="user-register-youth"),
     url(r'^register/organizations/$', 'user.views.register_org', name="user-register-org"),
+=======
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     url(r'^%s$' % remember_sent_url, 'user.views.password_reset_done',
         name="user-remember-sent"),
     url(r'^%s$' % remember_complete_url, 'user.views.password_reset_complete',
@@ -42,7 +45,11 @@ urlpatterns = patterns('',
     url(r'^remove/$', 'user.views.remove', name="user-remove"),
     url(r'^view/$', 'user.views.view_profile', name="user-view-current"),
     url(r'^view/(?P<user_id>\d+)/$', 'user.views.view_profile',
+<<<<<<< HEAD
         name="user-view"), # kje najde user_id?
+=======
+        name="user-view"),
+>>>>>>> 2db144ba2c6c34a8f17f795a1186a524059b1aa6
     url(r'^view/services/(?P<user_id>\d+)/$', 'user.views.list_user_services',
         name="user-view-services"),
     url(r'^view/(?P<recipient_id>\d+)/sendmessage$', 'user.views.send_message',
